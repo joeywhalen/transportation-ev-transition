@@ -8,6 +8,7 @@ import java.util.Collection;
 
 @Entity
 public class ArticleTopic {
+
     @Id
     @GeneratedValue
     private Long id;
