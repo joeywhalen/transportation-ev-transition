@@ -12,6 +12,7 @@ public class Article {
     private Long id;
     private String articleTitle;
     private String authorName;
+    private String imageUrl;
 
     @ManyToOne
     private ArticleTopic articleTopic;
@@ -27,12 +28,45 @@ public class Article {
 
     }
 
-    public Article(ArticleTopic articleTopic, String articleTitle, String authorName, String articleContent,
-                   String... articleComments) {
+    public Article(ArticleTopic articleTopic, String articleTitle, String authorName, String imageUrl,
+                   String articleContent, String... articleComments) {
         this.articleTopic = articleTopic;
         this.articleTitle = articleTitle;
         this.authorName = authorName;
+        this.imageUrl = imageUrl;
         this.articleContent = articleContent;
         this.articleComments = Set.of(articleComments);
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getArticleTitle() {
+        return articleTitle;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public ArticleTopic getArticleTopic() {
+        return articleTopic;
+    }
+
+    public String getArticleContent() {
+        return articleContent;
+    }
+
+    public Iterable<String> getArticleComments() {
+        return articleComments;
+    }
+
+    public void addArticleComment(String newArticleComment) {
+        this.articleComments.add(newArticleComment);
     }
 }
