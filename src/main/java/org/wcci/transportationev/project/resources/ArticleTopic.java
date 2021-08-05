@@ -12,25 +12,25 @@ public class ArticleTopic {
     @Id
     @GeneratedValue
     private Long id;
-    private String topicTitle;
+    private String articleTopicTitle;
 
-    @OneToMany(mappedBy = "topic")
+    @OneToMany(mappedBy = "articleTopic")
     private Collection<Article> articles;
 
     protected ArticleTopic() {
 
     }
 
-    public ArticleTopic(String topicTitle) {
-        this.topicTitle = topicTitle;
+    public ArticleTopic(String articleTopicTitle) {
+        this.articleTopicTitle = articleTopicTitle;
     }
 
     public Long getId() {
         return id;
     }
 
-    public String getTopicTitle() {
-        return topicTitle;
+    public String getArticleTopicTitle() {
+        return articleTopicTitle;
     }
 
     public Collection<Article> getArticles() {
