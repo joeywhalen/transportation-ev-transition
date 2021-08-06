@@ -2,9 +2,11 @@ package org.wcci.transportationev.project;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.wcci.transportationev.project.resources.IceVehicle;
 import org.wcci.transportationev.project.resources.Make;
 import org.wcci.transportationev.project.resources.Model;
 import org.wcci.transportationev.project.resources.Year;
+import org.wcci.transportationev.project.storage.IceVehicleStorage;
 import org.wcci.transportationev.project.storage.MakeStorage;
 import org.wcci.transportationev.project.storage.ModelStorage;
 import org.wcci.transportationev.project.storage.YearStorage;
@@ -15,11 +17,14 @@ public class iceVehiclePopulator implements CommandLineRunner {
     private MakeStorage makeStorage;
     private ModelStorage modelStorage;
     private YearStorage yearStorage;
+    private IceVehicleStorage iceVehicleStorage;
 
-    public iceVehiclePopulator(MakeStorage makeStorage, ModelStorage modelStorage, YearStorage yearStorage) {
+    public iceVehiclePopulator(MakeStorage makeStorage, ModelStorage modelStorage,
+                               YearStorage yearStorage, IceVehicleStorage iceVehicleStorage) {
         this.makeStorage = makeStorage;
         this.modelStorage = modelStorage;
         this.yearStorage = yearStorage;
+        this.iceVehicleStorage = iceVehicleStorage;
     }
 
     @Override
@@ -46,9 +51,9 @@ public class iceVehiclePopulator implements CommandLineRunner {
         modelStorage.saveModel(civic);
         modelStorage.saveModel(accord);
 
-
-
-
+        IceVehicle userVehicle = new IceVehicle(24,350,24000,1800,
+                7f,120, twoTwelve,ford,f150);
+        iceVehicleStorage.saveIceVehicle(userVehicle);
     }
 
 

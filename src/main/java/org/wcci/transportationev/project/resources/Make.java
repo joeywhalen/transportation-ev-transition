@@ -18,6 +18,9 @@ public class Make {
     @ManyToMany
     private Collection<Year> years;
 
+    @OneToMany(mappedBy = "make")
+    private Collection<IceVehicle> iceVehicles;
+
     //CONSTRUCTOR
     public Make(String makeName, Year... years) {
         this.makeName = makeName;

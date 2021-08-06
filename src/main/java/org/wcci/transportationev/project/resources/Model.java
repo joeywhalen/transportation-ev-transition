@@ -1,5 +1,6 @@
 package org.wcci.transportationev.project.resources;
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class Model {
@@ -13,8 +14,8 @@ public class Model {
     @ManyToOne
     private Make make;
 
-    @OneToOne
-    private IceVehicle iceVehicle;
+    @OneToMany(mappedBy = "model")
+    private Collection<IceVehicle> iceVehicles;
 
     //CONSTRUCTOR
     public Model(String modelName, Make make) {

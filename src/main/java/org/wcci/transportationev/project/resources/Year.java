@@ -1,9 +1,6 @@
 package org.wcci.transportationev.project.resources;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
@@ -15,6 +12,9 @@ public class Year {
 
     @ManyToMany(mappedBy = "years")
     private Collection<Make> makes;
+
+    @OneToMany(mappedBy = "year")
+    private Collection<IceVehicle> iceVehicles;
 
     public Year(int year) {
         this.year = year;

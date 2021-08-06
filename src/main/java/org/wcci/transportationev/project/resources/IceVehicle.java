@@ -1,9 +1,6 @@
 package org.wcci.transportationev.project.resources;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class IceVehicle {
@@ -17,17 +14,24 @@ public class IceVehicle {
     private float zeroToSixty;
     private int topSpeed;
 
-    @OneToOne(mappedBy = "model")
+    @ManyToOne
     private Model model;
+    @ManyToOne
+    private Year year;
+    @ManyToOne
+    private Make make;
+
 
     public IceVehicle(int mpg, int range, int msrp, float yearlyMaintCost,
-                      float zeroToSixty, int topSpeed, Model model) {
+                      float zeroToSixty, int topSpeed, Year year, Make make, Model model) {
         this.mpg = mpg;
         this.range = range;
         this.msrp = msrp;
         this.yearlyMaintCost = yearlyMaintCost;
         this.zeroToSixty = zeroToSixty;
         this.topSpeed = topSpeed;
+        this.year = year;
+        this.make = make;
         this.model = model;
     }
 
