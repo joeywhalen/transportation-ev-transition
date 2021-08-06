@@ -31,6 +31,10 @@ public class ElectricVehicle {
     private boolean phoneKey;
     private String imageUrl;
 
+    protected ElectricVehicle() {
+
+    }
+
     public ElectricVehicle(String makeName, String modelName, float msrp, boolean taxCredit,
                            int range, int mpgE, int zeroToSixty, int topSpeed, String wheelDrive,
                            int homeCharge, int travelCharge, int seating, boolean autonomous,
@@ -56,5 +60,89 @@ public class ElectricVehicle {
         this.safetyRating = safetyRating;
         this.phoneKey = phoneKey;
         this.imageUrl = imageUrl;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getMakeName() {
+        return makeName;
+    }
+
+    public String getModelName() {
+        return modelName;
+    }
+
+    public float getMsrp() {
+        return msrp;
+    }
+
+    public boolean isTaxCredit() {
+        return taxCredit;
+    }
+
+    public int getRange() {
+        return range;
+    }
+
+    public int getMpgE() {
+        return mpgE;
+    }
+
+    public int getZeroToSixty() {
+        return zeroToSixty;
+    }
+
+    public int getTopSpeed() {
+        return topSpeed;
+    }
+
+    public String getWheelDrive() {
+        return wheelDrive;
+    }
+
+    public int getHomeCharge() {
+        return homeCharge;
+    }
+
+    public int getTravelCharge() {
+        return travelCharge;
+    }
+
+    public int getSeating() {
+        return seating;
+    }
+
+    public boolean isAutonomous() {
+        return autonomous;
+    }
+
+    public boolean isDriverAssist() {
+        return driverAssist;
+    }
+
+    public boolean isFreeOtaUpdate() {
+        return freeOtaUpdate;
+    }
+
+    public int getRearCargoSpace() {
+        return rearCargoSpace;
+    }
+
+    public int getFrunkSpace() {
+        return frunkSpace;
+    }
+
+    public int getSafetyRating() {
+        return safetyRating;
+    }
+
+    public boolean isPhoneKey() {
+        return phoneKey;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
     }
 }
