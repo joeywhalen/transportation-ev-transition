@@ -3,6 +3,7 @@ package org.wcci.transportationev.project.resources;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 
 @Entity
 public class ElectricVehicle {
@@ -12,22 +13,22 @@ public class ElectricVehicle {
     private Long id;
     private String makeName;
     private String modelName;
-    private float msrp;
+    private double msrp;
     private boolean taxCredit;
     private int range;
     private int mpgE;
-    private int zeroToSixty;
+    private double zeroToSixty;
     private int topSpeed;
     private String wheelDrive;
-    private int homeCharge;
+    private double homeCharge;
     private int travelCharge;
     private int seating;
     private boolean autonomous;
     private boolean driverAssist;
     private boolean freeOtaUpdate;
-    private int rearCargoSpace;
-    private int frunkSpace;
-    private int safetyRating;
+    private double rearCargoSpace;
+    private double frunkSpace;
+    private double safetyRating;
     private boolean phoneKey;
     private String imageUrl;
 
@@ -35,11 +36,11 @@ public class ElectricVehicle {
 
     }
 
-    public ElectricVehicle(String makeName, String modelName, float msrp, boolean taxCredit,
-                           int range, int mpgE, int zeroToSixty, int topSpeed, String wheelDrive,
-                           int homeCharge, int travelCharge, int seating, boolean autonomous,
-                           boolean driverAssist, boolean freeOtaUpdate, int rearCargoSpace,
-                           int frunkSpace, int safetyRating, boolean phoneKey, String imageUrl) {
+    public ElectricVehicle(String makeName, String modelName, double msrp, boolean taxCredit,
+                           int range, int mpgE, double zeroToSixty, int topSpeed, String wheelDrive,
+                           double homeCharge, int travelCharge, int seating, boolean autonomous,
+                           boolean driverAssist, boolean freeOtaUpdate, double rearCargoSpace,
+                           double frunkSpace, double safetyRating, boolean phoneKey, String imageUrl) {
         this.makeName = makeName;
         this.modelName = modelName;
         this.msrp = msrp;
@@ -74,7 +75,7 @@ public class ElectricVehicle {
         return modelName;
     }
 
-    public float getMsrp() {
+    public double getMsrp() {
         return msrp;
     }
 
@@ -90,7 +91,7 @@ public class ElectricVehicle {
         return mpgE;
     }
 
-    public int getZeroToSixty() {
+    public double getZeroToSixty() {
         return zeroToSixty;
     }
 
@@ -102,7 +103,7 @@ public class ElectricVehicle {
         return wheelDrive;
     }
 
-    public int getHomeCharge() {
+    public double getHomeCharge() {
         return homeCharge;
     }
 
@@ -126,15 +127,15 @@ public class ElectricVehicle {
         return freeOtaUpdate;
     }
 
-    public int getRearCargoSpace() {
+    public double getRearCargoSpace() {
         return rearCargoSpace;
     }
 
-    public int getFrunkSpace() {
+    public double getFrunkSpace() {
         return frunkSpace;
     }
 
-    public int getSafetyRating() {
+    public double getSafetyRating() {
         return safetyRating;
     }
 
