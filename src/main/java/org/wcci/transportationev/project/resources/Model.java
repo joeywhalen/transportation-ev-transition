@@ -1,8 +1,6 @@
 package org.wcci.transportationev.project.resources;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class Model {
@@ -15,6 +13,9 @@ public class Model {
 
     @ManyToOne
     private Make make;
+
+    @OneToMany(mappedBy = "model")
+    private Collection<IceVehicle> iceVehicles;
 
     //CONSTRUCTOR
     public Model(String modelName, Make make) {

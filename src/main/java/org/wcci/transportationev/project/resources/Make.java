@@ -2,6 +2,7 @@ package org.wcci.transportationev.project.resources;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Set;
 
 @Entity
 public class Make {
@@ -14,12 +15,16 @@ public class Make {
     @OneToMany(mappedBy = "make")
     private Collection<Model> models;
 
-    @ManyToOne
-    private Year year;
+    @ManyToMany
+    private Collection<Year> years;
+
+    @OneToMany(mappedBy = "make")
+    private Collection<IceVehicle> iceVehicles;
 
     //CONSTRUCTOR
-    public Make(String makeName) {
+    public Make(String makeName, Year... years) {
         this.makeName = makeName;
+        this.years = Set.of(years);
     }
 
 
