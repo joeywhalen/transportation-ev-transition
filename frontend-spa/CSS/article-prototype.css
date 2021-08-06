@@ -1,0 +1,18 @@
+
+
+.article-page-title{
+    color: rgb(0, 0, 0);
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 rgb(128,176,85), 0 -1px rgb(128,176,85);
+    text-align: center;
+    padding: 40px;
+    font-size: 22px;
+    background-color: rgb(128,176,85);
+}
+
+.title-text{
+    /* border: 1px solid white; */
+    /* margin-left: 500px; */
+    /* margin-right: 500px; */
+    padding: 10px;
+    /* background-color: rgb(128,176,85); */
+}
