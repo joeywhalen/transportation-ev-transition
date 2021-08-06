@@ -15,8 +15,8 @@ public class YearStorage {
         return yearRepo.findAll();
     }
 
-    public Year retrieveYearById(Long Id){
-        return yearRepo.findById().get();
+    public Year retrieveYearById(Long id){
+        return yearRepo.findById(id).get();
     }
 
     public void saveYear(Year yearToSave){
