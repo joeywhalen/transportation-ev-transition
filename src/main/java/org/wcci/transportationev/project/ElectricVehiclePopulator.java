@@ -17,7 +17,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        //Audi e-tron Sportback EV
+        //Audi e-tron Sportback EV to test data
         ElectricVehicle audiETronSB = new ElectricVehicle("Audi", "e-tron Sportback", 69100.00, true, 218, 77,
                 5.5, 118, "AWD", 10, 30, 5, false, true, false,
                 27.2, 3, 4.5, false,
