@@ -76,7 +76,28 @@ public class ArticleReviewPopulator implements CommandLineRunner {
                         "                \"est laborum.");
         articleStorage.saveArticle(chargeOnTheRoad);
 
-        
+        ArticleTopic factFromFiction = new ArticleTopic ("Electric Vehicles - Separating Fact From Fiction");
+        articleTopicStorage.saveArticleTopic(factFromFiction);
+
+        Article commonMyths = new Article(factFromFiction, "5 common Electric Vehicle myths", "Billy Crash",
+                "https://www.jojusolar.co.uk/wp-content/uploads/2018/03/myths.jpg",
+                "Lorem ipsum dolor sit amet, consectetur \" +\n" +
+                        "                \"adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim\" +\n" +
+                        "                \" veniam, he checks so many boxes; critical thinker: check; problem solver: check; collaborator: check. \" +\n" +
+                        "                \"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. \" +\n" +
+                        "                \"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id \" +\n" +
+                        "                \"est laborum.");
+        articleStorage.saveArticle(commonMyths);
+
+        Article mythbusters = new Article(factFromFiction, "EV Mythbusters: Who you gonna call?", "Daisy Domergue",
+                "https://news-media.energysage.com/wp-content/uploads/2021/03/03.09.21-ev-myth-busted.png",
+                "Lorem ipsum dolor sit amet, consectetur \" +\n" +
+                        "                \"adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim\" +\n" +
+                        "                \" veniam, when you combine his Software Engineering skills with his IT Support skills, you really have\" +\n" +
+                        "                \" to ask yourself, How is this guy not one of our employees?  Duis aute irure dolor in reprehenderit in \" +\n" +
+                        "                \"voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non \" +\n" +
+                        "                \"proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+        articleStorage.saveArticle(mythbusters);
 
         ReviewTopic currentlyAvailableEvs = new ReviewTopic("Currently Available EVs");
         reviewTopicStorage.saveReviewTopic(currentlyAvailableEvs);
@@ -90,6 +111,8 @@ public class ArticleReviewPopulator implements CommandLineRunner {
                         "                \"voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non \" +\n" +
                         "                \"proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
         reviewStorage.saveReview(audiEtronSportback);
+
+        
 
 
     }
