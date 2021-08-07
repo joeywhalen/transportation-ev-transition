@@ -53,6 +53,31 @@ public class ArticleReviewPopulator implements CommandLineRunner {
                         "                \"est laborum.");
         articleStorage.saveArticle(checkYourFacts);
 
+        ArticleTopic howToCharge = new ArticleTopic("How To Charge At Home And On The Road");
+        articleTopicStorage.saveArticleTopic(howToCharge);
+
+        Article chargeAtHome = new Article(howToCharge, "What you need to charge at home.", "Rick Dalton",
+                "https://cdn.jdpower.com/JDPA_Woman%20Using%20Home%20Charging%20Station%20to%20Charge%20Electric%20Car.jpg",
+                "Lorem ipsum dolor sit amet, consectetur \" +\n" +
+                        "                \"adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim\" +\n" +
+                        "                \" veniam, when you combine his Software Engineering skills with his IT Support skills, you really have\" +\n" +
+                        "                \" to ask yourself, How is this guy not one of our employees?  Duis aute irure dolor in reprehenderit in \" +\n" +
+                        "                \"voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non \" +\n" +
+                        "                \"proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+        articleStorage.saveArticle(chargeAtHome);
+
+        Article chargeOnTheRoad = new Article(howToCharge, "Tips & Tricks to charging on the road", "Hans Landa",
+                "https://electrek.co/wp-content/uploads/sites/3/2017/09/screen-shot-2017-09-11-at-12-20-44-pm.png",
+                "Lorem ipsum dolor sit amet, consectetur \" +\n" +
+                        "                \"adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim\" +\n" +
+                        "                \" veniam, The creator of this Blog site would make a great addition to your Software Engineering team. \" +\n" +
+                        "                \"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. \" +\n" +
+                        "                \"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id \" +\n" +
+                        "                \"est laborum.");
+        articleStorage.saveArticle(chargeOnTheRoad);
+
+        
+
         ReviewTopic currentlyAvailableEvs = new ReviewTopic("Currently Available EVs");
         reviewTopicStorage.saveReviewTopic(currentlyAvailableEvs);
 
@@ -66,6 +91,6 @@ public class ArticleReviewPopulator implements CommandLineRunner {
                         "                \"proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
         reviewStorage.saveReview(audiEtronSportback);
 
-        
+
     }
 }
