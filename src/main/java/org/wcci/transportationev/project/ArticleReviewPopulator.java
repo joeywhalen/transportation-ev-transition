@@ -4,6 +4,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.wcci.transportationev.project.resources.Article;
 import org.wcci.transportationev.project.resources.ArticleTopic;
+import org.wcci.transportationev.project.resources.Review;
+import org.wcci.transportationev.project.resources.ReviewTopic;
 import org.wcci.transportationev.project.storage.ArticleStorage;
 import org.wcci.transportationev.project.storage.ArticleTopicStorage;
 import org.wcci.transportationev.project.storage.ReviewStorage;
@@ -50,6 +52,19 @@ public class ArticleReviewPopulator implements CommandLineRunner {
                         "                \"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id \" +\n" +
                         "                \"est laborum.");
         articleStorage.saveArticle(checkYourFacts);
+
+        ReviewTopic currentlyAvailableEvs = new ReviewTopic("Currently Available EVs");
+        reviewTopicStorage.saveReviewTopic(currentlyAvailableEvs);
+
+        Review audiEtronSportback = new Review(currentlyAvailableEvs, "Audi e-tron Sportback", "Cliff Booth",
+                "https://www.cnet.com/a/img/jF9XjA7gNJLQQo9ivIG6zEno4Qo=/2019/11/19/efbb58b4-bc42-46c6-8142-16ff002fd12d/ogi-audi-e-tron-sportback-2020-ogi.jpg",
+                "Lorem ipsum dolor sit amet, consectetur \" +\n" +
+                        "                \"adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim\" +\n" +
+                        "                \" veniam, when you combine their Software Engineering skills with their suft skills, you really have\" +\n" +
+                        "                \" to ask yourself, How is this group not currently employed by us?  Duis aute irure dolor in reprehenderit in \" +\n" +
+                        "                \"voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non \" +\n" +
+                        "                \"proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+        reviewStorage.saveReview(audiEtronSportback);
 
         
     }
