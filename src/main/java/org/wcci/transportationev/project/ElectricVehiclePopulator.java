@@ -114,6 +114,18 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "https://www.tesla.com/assets/img/my_fb_s.jpg");
         electricVehicleStorage.saveElectricVehicle(teslaY);
 
+        ElectricVehicle volksIdFour = new ElectricVehicle("Volkswagen", "ID.4", 44495.00, true,
+                250, 99, 5.7, 112, "AWD", 7.5, 38, 5, false,
+                true, true, 30, 0, 4.5, false,
+                "https://techcrunch.com/wp-content/uploads/2021/03/vw-Large-12562-2021ID.4ProSwithGradientPackage.jpg?w=730&crop=1");
+        electricVehicleStorage.saveElectricVehicle(volksIdFour);
+
+        ElectricVehicle volvoXcForty = new ElectricVehicle("Volvo", "XC40 Recharge", 53990.00, true,
+                208, 80, 4.3, 112, "AWD", 11, 40, 5, false,
+                true, true, 20, 5, 5.0, true,
+                "https://cdn.motor1.com/images/mgl/A8zbL/s1/volvo-xc40-recharge-2020.webp");
+        electricVehicleStorage.saveElectricVehicle(volvoXcForty);
+
         
     }
 }
