@@ -150,6 +150,18 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bollinger-b2-201-1607721643.jpg");
         electricVehicleStorage.saveElectricVehicle(bollingerBTwo);
 
+        ElectricVehicle caddyLyriq = new ElectricVehicle("Cadillac", "Lyriq", 59995.00, true,
+                300, 80, 4.3, 130, "RWD", 6, 35, 7, true,
+                true, true, 12.6, 0, 4.5, false,
+                "https://i0.wp.com/electrek.co/wp-content/uploads/sites/3/2021/04/Cadillac-Lyriq-2.jpg?ssl=1");
+        electricVehicleStorage.saveElectricVehicle(caddyLyriq);
+
+        ElectricVehicle fordLightning = new ElectricVehicle("Ford", "F-150 Lightning", 42000.00, true,
+                230, 75, 4.5, 100, "AWD", 8, 44, 5, true,
+                true, true, 80, 14.1, 5, true,
+                "https://cdn.motor1.com/images/mgl/3yeZp/s1/2022-ford-f-150-lightning-side-view.webp");
+        electricVehicleStorage.saveElectricVehicle(fordLightning);
+
         
     }
 }
