@@ -126,6 +126,18 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "https://cdn.motor1.com/images/mgl/A8zbL/s1/volvo-xc40-recharge-2020.webp");
         electricVehicleStorage.saveElectricVehicle(volvoXcForty);
 
+        ElectricVehicle audiA6Etron = new ElectricVehicle("Audi", "A6 e-tron", 80000.00, true,
+                400, 80, 5.1, 125, "AWD", 10, 30, 5, false,
+                true, false, 29.5, 3, 4.5, false,
+                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/audi-a6-e-tron-concept-113-1618585274.jpg?crop=0.739xw:0.494xh;0.0369xw,0.346xh&resize=1200:*");
+        electricVehicleStorage.saveElectricVehicle(audiA6Etron);
+
+        ElectricVehicle bmwIFour = new ElectricVehicle("BMW", "I4", 56395.00, true,
+                300, 90, 5.7, 118, "RWD", 8.75, 30, 5, false,
+                true, true, 16.6, 0, 4.5, true,
+                "https://www.cnet.com/a/img/-fC9r7EA4SUrpAJVm211h2aGZ7I=/940x0/2020/02/28/4f5e69fe-2497-494c-b738-24f864561236/bmw-i4-concept-003.jpg");
+        electricVehicleStorage.saveElectricVehicle(bmwIFour);
+
         
     }
 }
