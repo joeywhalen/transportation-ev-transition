@@ -78,6 +78,30 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "https://inv.assets.sincrod.com/ChromeColorMatch/us/TRANSPARENT_cc_2021NIC160018_01_1280_KH3.png");
         electricVehicleStorage.saveElectricVehicle(nissanLeaf);
 
+        ElectricVehicle polestarTwo = new ElectricVehicle("Polestar", "Two", 59900.00, true,
+                233, 92, 4.5, 127, "AWD", 8, 47, 5, false,
+                true, true, 14.3, 1.23, 5.0, true,
+                "https://www.gannett-cdn.com/presto/2020/08/20/PDTF/636d94b2-68d6-424b-ada2-21103a7057f7-IMG_3086.JPG?crop=3504,1971,x15,y0&width=3200&height=1800&format=pjpg&auto=webp");
+        electricVehicleStorage.saveElectricVehicle(polestarTwo);
+
+        ElectricVehicle porscheTaycan = new ElectricVehicle("Porsche", "Taycan", 103800.00, true,
+                200, 69, 3.4, 155, "RWD", 12, 15, 4, false,
+                true, true, 12.9, 2.8, 5.0, false,
+                "https://www.motortrend.com/uploads/sites/5/2021/01/2021_Porsche_Taycan_2.jpeg?fit=around%7C875:492.1875");
+        electricVehicleStorage.saveElectricVehicle(porscheTaycan);
+
+        ElectricVehicle teslaThree = new ElectricVehicle("Tesla", "Model 3 SR+", 39900.00, false,
+                263, 133, 5.3, 140, "RWD", 5.5, 21, 5, true,
+                true, true, 18, 5, 5.0, true,
+                "https://upload.wikimedia.org/wikipedia/commons/9/91/2019_Tesla_Model_3_Performance_AWD_Front.jpg");
+        electricVehicleStorage.saveElectricVehicle(teslaThree);
+
+        ElectricVehicle teslaSPlaid = new ElectricVehicle("Tesla", "Model S Plaid", 129990.00, false,
+                396, 101, 1.99, 200, "AWD", 6.5, 27, 5, true,
+                true, true, 25, 3, 5.0, true,
+                "https://i.insider.com/605ce29e106eb50019d05a89?width=700");
+        electricVehicleStorage.saveElectricVehicle(teslaSPlaid);
+
         
     }
 }
