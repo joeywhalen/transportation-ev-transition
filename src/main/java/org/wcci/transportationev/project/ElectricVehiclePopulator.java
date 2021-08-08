@@ -138,6 +138,18 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "https://www.cnet.com/a/img/-fC9r7EA4SUrpAJVm211h2aGZ7I=/940x0/2020/02/28/4f5e69fe-2497-494c-b738-24f864561236/bmw-i4-concept-003.jpg");
         electricVehicleStorage.saveElectricVehicle(bmwIFour);
 
+        ElectricVehicle bmwIX = new ElectricVehicle("BMW", "IX", 84194.00, true,
+                300, 85, 4.6, 124, "AWD", 11, 35, 5, false,
+                true, true, 27.4, 0, 4.5, true,
+                "https://cdn.motor1.com/images/mgl/Kj0qM/s1/bmw-ix.jpg");
+        electricVehicleStorage.saveElectricVehicle(bmwIX);
+
+        ElectricVehicle bollingerBTwo = new ElectricVehicle("Bollinger", "B2", 125000.00, true,
+                200, 70, 4.5, 100, "AWD", 10, 75, 4, false,
+                false, false, 86, 8.0, 4.0, false,
+                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bollinger-b2-201-1607721643.jpg");
+        electricVehicleStorage.saveElectricVehicle(bollingerBTwo);
+
         
     }
 }
