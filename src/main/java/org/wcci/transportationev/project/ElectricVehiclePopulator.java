@@ -48,6 +48,24 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "https://cdn.jdpower.com/JDPA_2020%20Hyundai%20Kona%20Ultimate%20White%20Front%20View.jpg");
         electricVehicleStorage.saveElectricVehicle(hyundaiKona);
 
+        ElectricVehicle jaguarIpace = new ElectricVehicle("Jaguar", "I-Pace", 69900.00, true,
+                234, 76, 4.5, 124, "AWD", 10.2, 90, 5, false,
+                true, true, 23.2, 1.0, 5.0, false,
+                "https://electrek.co/wp-content/uploads/sites/3/2019/01/Jaguar-I-Pace-hero-e1547961480245.jpg?quality=82&strip=all");
+        electricVehicleStorage.saveElectricVehicle(jaguarIpace);
+
+        ElectricVehicle kiaNiro = new ElectricVehicle("Kia", "Niro", 39090.00, true,
+                239, 112, 6.5, 103, "FWD", 9.5, 60, 5, false,
+                true, false, 18.5, 0, 5.0, false,
+                "https://www.kia.com/us/en/vehicles/niro-plug-in-hybrid/2021/_jcr_content/root/responsivegrid/mediatext.coreimg.100.1400.jpeg/1616531623780.jpeg");
+        electricVehicleStorage.saveElectricVehicle(kiaNiro);
+
+        ElectricVehicle lucidAir = new ElectricVehicle("Lucid", "Air Touring", 87500.00, true,
+                406, 100, 3.2, 168, "AWD", 6, 20, 5, false,
+                true, true, 26.1, 9.9, 4.5, true,
+                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/lucid-air-103-1599688020.jpg?crop=0.652xw:0.733xh;0.104xw,0.0769xh&resize=640:*");
+        electricVehicleStorage.saveElectricVehicle(lucidAir);
+
         
     }
 }
