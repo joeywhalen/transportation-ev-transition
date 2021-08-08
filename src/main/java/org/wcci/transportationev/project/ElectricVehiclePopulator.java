@@ -36,6 +36,18 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "https://www.ford.com/ntzlibs/content/dam/bev/us/november-2020-updates/21_FRD_MCH_50700_GTP.jpg.renditions.original.png");
         electricVehicleStorage.saveElectricVehicle(fordMustang);
 
+        ElectricVehicle hyundaiIoniq = new ElectricVehicle("Hyundai", "Ioniq", 33245.00, true,
+                170, 133, 10, 102, "FWD", 5.8, 60, 5, false,
+                true, false, 23, 0, 4.0, false,
+                "https://ev-database.org/img/auto/Hyundai_IONIQ_Electric_2020/Hyundai_IONIQ_Electric_2020-01.jpg");
+        electricVehicleStorage.saveElectricVehicle(hyundaiIoniq);
+
+        ElectricVehicle hyundaiKona = new ElectricVehicle("Hyundai", "Kona", 37900.00, true,
+                258, 120, 6.4, 96, "FWD", 9, 54, 5, false,
+                true, false, 19.2, 0, 5.0, false,
+                "https://cdn.jdpower.com/JDPA_2020%20Hyundai%20Kona%20Ultimate%20White%20Front%20View.jpg");
+        electricVehicleStorage.saveElectricVehicle(hyundaiKona);
+
         
     }
 }
