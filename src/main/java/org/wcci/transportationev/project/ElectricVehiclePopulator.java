@@ -66,6 +66,18 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/lucid-air-103-1599688020.jpg?crop=0.652xw:0.733xh;0.104xw,0.0769xh&resize=640:*");
         electricVehicleStorage.saveElectricVehicle(lucidAir);
 
+        ElectricVehicle miniCooperSE = new ElectricVehicle("Mini Cooper", "SE", 29900.00, true,
+                114, 108, 6.9, 93, "FWD", 4, 36, 4, false,
+                true, false, 8.7, 0, 4, false,
+                "https://cdn.motor1.com/images/mgl/0lp6V/s1/mini-cooper-se-2020-im-test.jpg");
+        electricVehicleStorage.saveElectricVehicle(miniCooperSE);
+
+        ElectricVehicle nissanLeaf = new ElectricVehicle("Nissan", "Leaf S Plus", 37400.00, true,
+                226, 114, 7.4, 90, "FWD", 11, 60, 5, false,
+                true, false, 23.6, 0, 5.0, false,
+                "https://inv.assets.sincrod.com/ChromeColorMatch/us/TRANSPARENT_cc_2021NIC160018_01_1280_KH3.png");
+        electricVehicleStorage.saveElectricVehicle(nissanLeaf);
+
         
     }
 }
