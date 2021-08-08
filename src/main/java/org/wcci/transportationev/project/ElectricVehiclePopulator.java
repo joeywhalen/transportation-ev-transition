@@ -162,6 +162,20 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "https://cdn.motor1.com/images/mgl/3yeZp/s1/2022-ford-f-150-lightning-side-view.webp");
         electricVehicleStorage.saveElectricVehicle(fordLightning);
 
+        ElectricVehicle genesisGEighty = new ElectricVehicle("Genesis", "G80", 50000.00, true,
+                310, 90, 4.8, 100, "e-AWD", 9, 22, 5, false,
+                true, false, 13.1, 0, 4.5, true,
+                "https://www.motortrend.com/uploads/sites/5/2020/03/2021-Genesis-G80-4.jpg");
+        electricVehicleStorage.saveElectricVehicle(genesisGEighty);
+
+        ElectricVehicle gmcHummer = new ElectricVehicle("GMC", "Hummer EV", 79995.00, true,
+                350, 75, 3.0, 100, "AWD", 12, 30, 5, true,
+                true, false, 80, 11.3, 4.5, true,
+                "https://www.motortrend.com/uploads/sites/5/2020/10/2022-GMC-Hummer-EV-03.jpg");
+        electricVehicleStorage.saveElectricVehicle(gmcHummer);
+
         
+
+
     }
 }
