@@ -198,6 +198,18 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "https://s.yimg.com/os/creatr-uploaded-images/2021-01/99601910-5b08-11eb-abff-1193b560fe7f");
         electricVehicleStorage.saveElectricVehicle(mercedesEqa);
 
+        ElectricVehicle nissaAriya = new ElectricVehicle("Nissan", "Ariya", 40000.00, true,
+                300, 105, 7.5, 99, "FWD", 10, 31, 5, true,
+                true, false, 16.5, 0, 4.5, false,
+                "https://www.cnet.com/a/img/u8T28wvt1gBqp47Rm_6jxBeia08=/1200x675/2021/03/19/0bb10fed-d925-47c0-ba90-a4b42837b7a3/ogi-nissan.jpg");
+        electricVehicleStorage.saveElectricVehicle(nissaAriya);
+
+        ElectricVehicle rivianROneT = new ElectricVehicle("Rivian", "R1T", 73000.00, true,
+                300, 80, 3.0, 100, "AWD", 10, 35, 5, true,
+                true, true, 57, 11.0, 4.5, false,
+                "https://cdn.motor1.com/images/mgl/B37xA/s3/rivian-r1t-c-2020-jeff-johnson.jpg");
+        electricVehicleStorage.saveElectricVehicle(rivianROneT);
+
         
 
 
