@@ -102,6 +102,18 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "https://i.insider.com/605ce29e106eb50019d05a89?width=700");
         electricVehicleStorage.saveElectricVehicle(teslaSPlaid);
 
+        ElectricVehicle teslaX = new ElectricVehicle("Tesla", "Model X LR", 94990.00, false,
+                360, 96, 3.8, 155, "AWD", 12, 22, 7, true,
+                true, true, 83, 5, 5.0, true,
+                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2021-01-27-at-6-16-08-pm-1611789398.png?crop=0.534xw:0.691xh;0.234xw,0.110xh&resize=640:*");
+        electricVehicleStorage.saveElectricVehicle((teslaX));
+
+        ElectricVehicle teslaY = new ElectricVehicle("Tesla", "Model Y LR", 53990.00, false,
+                326, 121, 4.8, 135, "AWD", 10, 40, 5, true,
+                true, true, 71, 5, 5.0, true,
+                "https://www.tesla.com/assets/img/my_fb_s.jpg");
+        electricVehicleStorage.saveElectricVehicle(teslaY);
+
         
     }
 }
