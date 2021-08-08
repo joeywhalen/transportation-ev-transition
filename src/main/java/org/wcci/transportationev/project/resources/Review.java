@@ -12,6 +12,7 @@ public class Review {
     private Long id;
     private String reviewTitle;
     private String authorName;
+    @Lob
     private String imageUrl;
 
     @ManyToOne

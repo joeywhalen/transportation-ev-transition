@@ -3,6 +3,7 @@ package org.wcci.transportationev.project.resources;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import java.math.BigDecimal;
 
 @Entity
@@ -30,6 +31,7 @@ public class ElectricVehicle {
     private double frunkSpace;
     private double safetyRating;
     private boolean phoneKey;
+    @Lob
     private String imageUrl;
 
     protected ElectricVehicle() {
