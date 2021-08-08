@@ -68,7 +68,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
 
         ElectricVehicle miniCooperSE = new ElectricVehicle("Mini Cooper", "SE", 29900.00, true,
                 114, 108, 6.9, 93, "FWD", 4, 36, 4, false,
-                true, false, 8.7, 0, 4, false,
+                true, false, 8.7, 0, 4.0, false,
                 "https://cdn.motor1.com/images/mgl/0lp6V/s1/mini-cooper-se-2020-im-test.jpg");
         electricVehicleStorage.saveElectricVehicle(miniCooperSE);
 
@@ -158,7 +158,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
 
         ElectricVehicle fordLightning = new ElectricVehicle("Ford", "F-150 Lightning", 42000.00, true,
                 230, 75, 4.5, 100, "AWD", 8, 44, 5, true,
-                true, true, 80, 14.1, 5, true,
+                true, true, 80, 14.1, 5.0, true,
                 "https://cdn.motor1.com/images/mgl/3yeZp/s1/2022-ford-f-150-lightning-side-view.webp");
         electricVehicleStorage.saveElectricVehicle(fordLightning);
 
@@ -173,6 +173,30 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 true, false, 80, 11.3, 4.5, true,
                 "https://www.motortrend.com/uploads/sites/5/2020/10/2022-GMC-Hummer-EV-03.jpg");
         electricVehicleStorage.saveElectricVehicle(gmcHummer);
+
+        ElectricVehicle hyundaiIoniqFive = new ElectricVehicle("Hyundai", "Ioniq 5", 45000.00, true,
+                225, 125, 5.2, 115, "AWD", 7.75, 18, 5, false,
+                true, false, 18.8, 0.85, 4.5, true,
+                "https://www.topgear.com/sites/default/files/images/news-article/2021/02/fa6aac51e8f8f99b67802fbec8432e04/ioniq5kvs_4.jpg");
+        electricVehicleStorage.saveElectricVehicle(hyundaiIoniqFive);
+
+        ElectricVehicle jeepMagneto = new ElectricVehicle("Jeep", "Wrangler Magneto", 52500.00, true,
+                200, 95, 6.8, 120, "AWD", 9, 45, 4, false,
+                true, false, 17, 0, 4.0, false,
+                "https://www.motortrend.com/uploads/sites/5/2021/03/Jeep-Magneto-1.jpg?fit=around%7C875:492");
+        electricVehicleStorage.saveElectricVehicle(jeepMagneto);
+
+        ElectricVehicle kiaEvSix = new ElectricVehicle("Kia", "EV6", 45000.00, true,
+                270, 110, 5.2, 115, "RWD", 7, 18, 5, false,
+                true, false, 28, 0, 4.5, true,
+                "https://cimg0.ibsrv.net/ibimg/hgm/1920x1080-1/100/786/2022-kia-ev6_100786824.jpg");
+        electricVehicleStorage.saveElectricVehicle(kiaEvSix);
+
+        ElectricVehicle mercedesEqa = new ElectricVehicle("Mercedes-Benz", "EQA", 57000.00, true,
+                250, 100, 7.0, 99, "AWD", 7.25, 35, 5, false,
+                true, false, 12, 0, 4.5, true,
+                "https://s.yimg.com/os/creatr-uploaded-images/2021-01/99601910-5b08-11eb-abff-1193b560fe7f");
+        electricVehicleStorage.saveElectricVehicle(mercedesEqa);
 
         
 
