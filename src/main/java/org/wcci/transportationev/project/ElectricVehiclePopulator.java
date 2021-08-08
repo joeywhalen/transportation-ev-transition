@@ -210,7 +210,17 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "https://cdn.motor1.com/images/mgl/B37xA/s3/rivian-r1t-c-2020-jeff-johnson.jpg");
         electricVehicleStorage.saveElectricVehicle(rivianROneT);
 
-        
+        ElectricVehicle teslaCybertruck = new ElectricVehicle("Tesla", "Cybertruck", 70000.00, false,
+                500, 90, 3.0, 130, "AWD", 10, 44, 6, true,
+                true, true, 90, 10.0, 5.0, true,
+                "https://i.gaw.to/content/photos/45/28/452817-le-tesla-cybertruck-ne-sera-finalement-pas-pret-avant-2022.jpeg?460x287");
+        electricVehicleStorage.saveElectricVehicle(teslaCybertruck);
+
+        ElectricVehicle teslaRoadsterTwo = new ElectricVehicle("Tesla", "Roadster 2", 200000.00, false,
+                620, 90, 1.9, 250, "AWD", 8, 44, 4, true,
+                true, true, 15, 4.0, 5.0, true,
+                "https://cdn.vox-cdn.com/thumbor/HTcou-2jE-vt33LaXJN_tmmN4pY=/0x0:3840x2160/1400x933/filters:focal(1562x816:2176x1430):no_upscale()/cdn.vox-cdn.com/uploads/chorus_image/image/57642853/Roadster_Front_58.0.jpg");
+        electricVehicleStorage.saveElectricVehicle(teslaRoadsterTwo);
 
 
     }
