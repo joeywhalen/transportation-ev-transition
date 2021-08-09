@@ -40,5 +40,14 @@ public class ArticleReviewController {
         return articleStorage.findById(articleId).get();
     }
 
+    //PATCH http://localhost:8080/api/articleTopics/7/articles/9/comments
+    @PatchMapping("/api/articleTopics/{id}/articles/{articleId/comments}")
+    public Article addNewArticleComment(@PathVariable Long id, @PathVariable Long articleId, @RequestBody String newArticleComment) {
+        Article articleToChange = articleStorage.findById(articleId).get();
+        articleToChange.addArticleComment(newArticleComment);
+        articleStorage.saveArticle(articleToChange);
+        return articleToChange;
+    }
+
     
 }
