@@ -5,3 +5,7 @@ Accept: application/json
 ### Get all makes of said year
 GET http://localhost:8080/api/ice/years/2012
 Accept: application/json
+
+### Get all models of said make
+GET http://localhost:8080/api/ice/years/2012/ford
+Accept: application/json
