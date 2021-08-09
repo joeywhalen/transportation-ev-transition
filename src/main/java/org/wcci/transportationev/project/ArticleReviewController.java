@@ -22,4 +22,11 @@ public class ArticleReviewController {
         return articleTopicStorage.retrieveAllArticleTopics();
     }
     
+    //GET http://localhost:8080/api/articleTopics/1
+    @GetMapping("/api/articleTopics/{id}")
+    public ArticleTopic retrieveArticleTopicById(@PathVariable Long id) {
+        return articleTopicStorage.retrieveArticleTopicById(id);
+    }
+
+    
 }
