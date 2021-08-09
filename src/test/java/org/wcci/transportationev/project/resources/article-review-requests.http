@@ -1,0 +1,14 @@
+### Get all Article Topics.
+GET http://localhost:8080/api/articleTopics
+Accept: application/json
+
+### Get an Article Topic with the given id.
+GET http://localhost:8080/api/articleTopics/1
+
+### Get all Articles for a Topic.
+GET http://localhost:8080/api/articleTopics/1/articles
+Content-Type: application/json
+
+### Get a single Article for a Topic.
+GET http://localhost:8080/api/articleTopics/4/articles/5
+
