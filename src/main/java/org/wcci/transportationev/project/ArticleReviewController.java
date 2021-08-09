@@ -28,5 +28,17 @@ public class ArticleReviewController {
         return articleTopicStorage.retrieveArticleTopicById(id);
     }
 
+    //GET http://localhost:8080/api/articleTopics/1/articles
+    @GetMapping("/api/articleTopics/{id}/articles")
+    public Iterable<Article> retrieveAllArticlesInTopic(@PathVariable Long id) {
+        return articleTopicStorage.retrieveArticleTopicById(id).getArticles();
+    }
+
+    //GET http://localhost:8080/api/articleTopics/4/articles/5
+    @GetMapping("/api/articleTopics/{id}/articles/{articleId}")
+    public Article retrieveArticleById(@PathVariable Long id, @PathVariable Long articleId) {
+        return articleStorage.findById(articleId).get();
+    }
+
     
 }
