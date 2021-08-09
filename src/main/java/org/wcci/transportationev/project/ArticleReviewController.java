@@ -21,11 +21,23 @@ public class ArticleReviewController {
     public Iterable<ArticleTopic> retrieveAllArticleTopics() {
         return articleTopicStorage.retrieveAllArticleTopics();
     }
+
+    //GET http://localhost:8080/api/reviewTopics
+    @GetMapping("/api/reviewTopics")
+    public Iterable<ReviewTopic> retrieveAllReviewTopics() {
+        return reviewTopicStorage.retrieveAllReviewTopics();
+    }
     
     //GET http://localhost:8080/api/articleTopics/1
     @GetMapping("/api/articleTopics/{id}")
     public ArticleTopic retrieveArticleTopicById(@PathVariable Long id) {
         return articleTopicStorage.retrieveArticleTopicById(id);
+    }
+
+    //GET http://localhost:8080/api/reviewTopics/10
+    @GetMapping("/api/reviewTopics/{id}")
+    public ReviewTopic retrieveReviewTopicById(@PathVariable Long id) {
+        return reviewTopicStorage.retrieveReviewTopicById(id);
     }
 
     //GET http://localhost:8080/api/articleTopics/1/articles
