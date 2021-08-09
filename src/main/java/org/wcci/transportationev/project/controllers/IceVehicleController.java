@@ -1,8 +1,10 @@
 package org.wcci.transportationev.project.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.wcci.transportationev.project.resources.IceVehicle;
+import org.wcci.transportationev.project.resources.Make;
 import org.wcci.transportationev.project.resources.Year;
 import org.wcci.transportationev.project.storage.IceVehicleStorage;
 import org.wcci.transportationev.project.storage.MakeStorage;
@@ -29,6 +31,14 @@ public class IceVehicleController {
     @GetMapping("/api/ice/years")
     public Iterable<Year> retrieveAllYears(){
         return yearStorage.retrieveAllYears();
+    }
+
+//     ### Get all makes of said year
+// GET http://localhost:8080/api/ice/years/2012
+    @GetMapping("/api/ice/years/{year}")
+    public Iterable<Make> retrieveAllMakesByYear(@PathVariable int year){
+        Year currentYear = yearStorage.retrieveMakesByYear(year);
+        return currentYear.getMakes();
     }
 }
 
