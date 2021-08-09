@@ -1,6 +1,9 @@
 package org.wcci.transportationev.project.resources;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Collection;
 import java.util.Set;
 
@@ -16,6 +19,7 @@ public class Make {
     private Collection<Model> models;
 
     @ManyToMany
+    @JsonIgnore
     private Collection<Year> years;
 
     @OneToMany(mappedBy = "make")

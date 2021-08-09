@@ -1,0 +1,34 @@
+package org.wcci.transportationev.project.controllers;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.wcci.transportationev.project.resources.IceVehicle;
+import org.wcci.transportationev.project.resources.Year;
+import org.wcci.transportationev.project.storage.IceVehicleStorage;
+import org.wcci.transportationev.project.storage.MakeStorage;
+import org.wcci.transportationev.project.storage.ModelStorage;
+import org.wcci.transportationev.project.storage.YearStorage;
+
+@RestController
+public class IceVehicleController {
+    private YearStorage yearStorage;
+    private MakeStorage makeStorage;
+    private ModelStorage modelStorage;
+    private IceVehicleStorage iceVehicleStorage;
+
+    public IceVehicleController(YearStorage yearStorage, MakeStorage makeStorage,
+    ModelStorage modelStorage,IceVehicleStorage iceVehicleStorage){
+        this.yearStorage = yearStorage;
+        this.makeStorage = makeStorage;
+        this.modelStorage = modelStorage;
+        this.iceVehicleStorage = iceVehicleStorage;
+    }
+
+    //GET http://localhost:8080/api/ice/years
+
+    @GetMapping("/api/ice/years")
+    public Iterable<Year> retrieveAllYears(){
+        return yearStorage.retrieveAllYears();
+    }
+}
+

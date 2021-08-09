@@ -1,0 +1,3 @@
+### Get all ice vehicle years
+GET http://localhost:8080/api/ice/years
+Accept: application/json
