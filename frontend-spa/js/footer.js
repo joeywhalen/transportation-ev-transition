@@ -9,6 +9,6 @@ const displayFooter = function() {
 export { displayFooter }
 
 
-{/* <footer class="footer-section">
-    <small class="copyright-text">ComparEv &copy;2021</small>
-</footer> */}
+// <!-- <footer class="footer-section">
+//     <small class="copyright-text">ComparEv &copy;2021</small>
+// </footer> -->

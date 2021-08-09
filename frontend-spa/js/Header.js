@@ -2,23 +2,34 @@
 const displayHeader = function () {
     const header = document.createElement("header");
     header.classList.add("header-container");
-    header.innerHTML = '<nav class="nav-bar"><ul><li class="website-title"><h1>Compar<span>EV</span><h1></li><li class="nav-buttons"><a href="index.html">Home</a></li><li class="nav-buttons"><a href="vehicle-prototype.html">Vehicles</a></li><li class="nav-buttons"><a href="article-prototype.html">Articles</a></li><li class="nav-buttons"></li><a href="">Contacts</a></li></ul></nav>'
+    header.innerHTML = '<div class="header"><ul><li class="website-title"><h1>Compar<span>EV</span></h1></li></ul></div><input type="checkbox" class="openSidebarMenu" id="openSidebarMenu"><label for="openSidebarMenu" class="sidebarIconToggle"><div class="spinner diagonal part-1"></div><div class="spinner horizontal"></div><div class="spinner diagonal part-2"></div></label><div id="sidebarMenu"><ul class="sidebarMenuInner"><li><a href="./index.html" target="_blank">Home</a></li><li><a href="https://vanila.io" target="_blank">Vehicles</a></li><li><a href="https://instagram.com/plavookac" target="_blank">Articles</a></li><li><a href="https://twitter.com/plavookac" target="_blank">Contacts</a></li></ul></div>'
     return header;
 }
 
 export { displayHeader }
 
-
 {/* <header class="header-container">
-    <nav class="nav-bar">
-        <ul>
-            <li class="website-title">
-                <h1>Compar<span>EV</span></h1>
-            </li>
-            <li class="nav-buttons"><a href="index.html">Home</a></li>
-            <li class="nav-buttons"><a href="vehicle-prototype.html">Vehicles</a></li>
-            <li class="nav-buttons"><a href="article-prototype.html">Articles</a></li>
-            <li class="nav-buttons"></li><a href="">Contacts</a></li>
-        </ul>
-    </nav>
-</header > */}
+
+<div class="header">
+    <ul>
+        <li class="website-title">
+            <h1>Compar<span>EV</span></h1>
+        </li>
+    </ul>
+</div>
+<input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+<label for="openSidebarMenu" class="sidebarIconToggle">
+  <div class="spinner diagonal part-1"></div>
+  <div class="spinner horizontal"></div>
+  <div class="spinner diagonal part-2"></div>
+</label>
+<div id="sidebarMenu">
+  <ul class="sidebarMenuInner">
+    <li><a href="./index.html" target="_blank">Home</a></li>
+    <li><a href="https://vanila.io" target="_blank">Vehicles</a></li>
+    <li><a href="https://instagram.com/plavookac" target="_blank">Articles</a></li>
+    <li><a href="https://twitter.com/plavookac" target="_blank">Contacts</a></li>
+  </ul>
+</div>
+
+</header> */}
