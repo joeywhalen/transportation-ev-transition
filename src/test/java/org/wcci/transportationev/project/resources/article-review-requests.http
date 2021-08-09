@@ -12,3 +12,7 @@ Content-Type: application/json
 ### Get a single Article for a Topic.
 GET http://localhost:8080/api/articleTopics/4/articles/5
 
+### Add a comment to an Article.
+PATCH http://localhost:8080/api/articleTopics/7/articles/9/comments
+Content-Type: application/json
+

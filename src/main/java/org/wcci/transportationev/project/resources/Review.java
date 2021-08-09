@@ -16,6 +16,7 @@ public class Review {
     private String imageUrl;
 
     @ManyToOne
+    @JsonIgnore
     private ReviewTopic reviewTopic;
 
     @Lob

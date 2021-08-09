@@ -15,6 +15,7 @@ public class Article {
     private String imageUrl;
 
     @ManyToOne
+    @JsonIgnore
     private ArticleTopic articleTopic;
 
     @Lob
