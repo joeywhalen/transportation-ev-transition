@@ -29,3 +29,9 @@ GET http://localhost:8080/api/reviewTopics/10
 GET http://localhost:8080/api/reviewTopics/10/reviews
 Content-Type: application/json
 
+### Get a single Review for a Topic.
+GET http://localhost:8080/api/reviewTopics/10/reviews/24
+
+### Add a comment to a Review.
+PATCH http://localhost:8080/api/reviewTopics/29/reviews/35/comments
+Content-Type: application/json
