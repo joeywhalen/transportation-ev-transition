@@ -46,10 +46,22 @@ public class ArticleReviewController {
         return articleTopicStorage.retrieveArticleTopicById(id).getArticles();
     }
 
+    //GET http://localhost:8080/api/reviewTopics/10/reviews
+    @GetMapping("/api/reviewTopics/{id}/reviews")
+    public Iterable<Review> retrieveAllReviewsInTopic(@PathVariable Long id) {
+        return reviewTopicStorage.retrieveReviewTopicById(id).getReviews();
+    }
+
     //GET http://localhost:8080/api/articleTopics/4/articles/5
     @GetMapping("/api/articleTopics/{id}/articles/{articleId}")
     public Article retrieveArticleById(@PathVariable Long id, @PathVariable Long articleId) {
         return articleStorage.findById(articleId).get();
+    }
+
+    //GET http://localhost:8080/api/reviewTopics/10/reviews/24
+    @GetMapping("/api/reviewTopics/{id}/reviews/{reviewId}")
+    public Review retrieveReviewById(@PathVariable Long id, @PathVariable Long reviewId) {
+        return reviewStorage.findById(reviewId).get();
     }
 
     //PATCH http://localhost:8080/api/articleTopics/7/articles/9/comments
@@ -61,5 +73,13 @@ public class ArticleReviewController {
         return articleToChange;
     }
 
+    //PATCH http://localhost:8080/api/reviewTopics/29/reviews/35/comments
+    @PatchMapping("/api/reviewTopics/{id}/reviews/{reviewId}/comments")
+    public Review addNewReviewComment(@PathVariable Long id, @PathVariable Long reviewId, @RequestBody String newReviewComment) {
+        Review reviewToChange = reviewStorage.findById(reviewId).get();
+        reviewToChange.addReviewComment(newReviewComment);
+        reviewStorage.saveReview(reviewToChange);
+        return reviewToChange;
+    }
     
 }
