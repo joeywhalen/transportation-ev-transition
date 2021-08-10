@@ -1,4 +1,14 @@
+package org.wcci.transportationev.project;
 
+import org.springframework.web.bind.annotation.*;
+import org.wcci.transportationev.project.resources.Article;
+import org.wcci.transportationev.project.resources.ArticleTopic;
+import org.wcci.transportationev.project.resources.Review;
+import org.wcci.transportationev.project.resources.ReviewTopic;
+import org.wcci.transportationev.project.storage.ArticleStorage;
+import org.wcci.transportationev.project.storage.ArticleTopicStorage;
+import org.wcci.transportationev.project.storage.ReviewStorage;
+import org.wcci.transportationev.project.storage.ReviewTopicStorage;
 
 @RestController
 public class ArticleReviewController {
@@ -55,19 +65,19 @@ public class ArticleReviewController {
     //GET http://localhost:8080/api/articleTopics/4/articles/5
     @GetMapping("/api/articleTopics/{id}/articles/{articleId}")
     public Article retrieveArticleById(@PathVariable Long id, @PathVariable Long articleId) {
-        return articleStorage.findById(articleId).get();
+        return articleStorage.retrieveArticleById(articleId);
     }
 
     //GET http://localhost:8080/api/reviewTopics/10/reviews/24
     @GetMapping("/api/reviewTopics/{id}/reviews/{reviewId}")
     public Review retrieveReviewById(@PathVariable Long id, @PathVariable Long reviewId) {
-        return reviewStorage.findById(reviewId).get();
+        return reviewStorage.retrieveReviewById(reviewId);
     }
 
     //PATCH http://localhost:8080/api/articleTopics/7/articles/9/comments
     @PatchMapping("/api/articleTopics/{id}/articles/{articleId/comments}")
     public Article addNewArticleComment(@PathVariable Long id, @PathVariable Long articleId, @RequestBody String newArticleComment) {
-        Article articleToChange = articleStorage.findById(articleId).get();
+        Article articleToChange = articleStorage.retrieveArticleById(articleId);
         articleToChange.addArticleComment(newArticleComment);
         articleStorage.saveArticle(articleToChange);
         return articleToChange;
@@ -76,7 +86,7 @@ public class ArticleReviewController {
     //PATCH http://localhost:8080/api/reviewTopics/29/reviews/35/comments
     @PatchMapping("/api/reviewTopics/{id}/reviews/{reviewId}/comments")
     public Review addNewReviewComment(@PathVariable Long id, @PathVariable Long reviewId, @RequestBody String newReviewComment) {
-        Review reviewToChange = reviewStorage.findById(reviewId).get();
+        Review reviewToChange = reviewStorage.retrieveReviewById(reviewId);
         reviewToChange.addReviewComment(newReviewComment);
         reviewStorage.saveReview(reviewToChange);
         return reviewToChange;
