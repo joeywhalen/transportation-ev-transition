@@ -1,4 +1,4 @@
-package org.wcci.transportationev.project;
+package org.wcci.transportationev.project.controllers;
 
 import org.springframework.web.bind.annotation.*;
 import org.wcci.transportationev.project.resources.Article;
@@ -75,7 +75,7 @@ public class ArticleReviewController {
     }
 
     //PATCH http://localhost:8080/api/articleTopics/7/articles/9/comments
-    @PatchMapping("/api/articleTopics/{id}/articles/{articleId/comments}")
+    @PatchMapping("/api/articleTopics/{id}/articles/{articleId}/{comments}")
     public Article addNewArticleComment(@PathVariable Long id, @PathVariable Long articleId, @RequestBody String newArticleComment) {
         Article articleToChange = articleStorage.retrieveArticleById(articleId);
         articleToChange.addArticleComment(newArticleComment);
