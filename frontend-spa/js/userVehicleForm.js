@@ -3,12 +3,20 @@ fetch("http://localhost:8080/api/ice/years")
     .then(years => genYears(years))
     .catch(error => console.log(error))
 
+const clearChildren = function (element) {
+    while (element.firstChild) {
+        element.removeChild(element.lastChild);
+    }
+}
+
+const yearSelectElement = document.querySelector("#years")
+const makeSelectElement = document.querySelector("#makes")
+const modelSelectElement = document.querySelector("#models")
 
 const genYears = function (years) {
 
-    const yearSelectElement = document.querySelector("#years")
-    clearChildren(yearSelectElement)
 
+    clearChildren(yearSelectElement)
     const defaultOption = document.createElement("option")
     defaultOption.setAttribute("value", "choose-year")
     defaultOption.innerText = 'Year'
@@ -22,16 +30,19 @@ const genYears = function (years) {
     })
 
     yearSelectElement.addEventListener("change", () => {
-        const userYear = yearSelectElement.value
-        //http://localhost:8080/api/ice/years/{year}
-        fetch("http://localhost:8080/api/ice/years/" + userYear, {
+
+        clearChildren(makeSelectElement)
+        clearChildren(modelSelectElement)
+        console.log("Test ran!")
+        
+        fetch("http://localhost:8080/api/ice/years/" + yearSelectElement.value, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
                 }
             })
             .then(response => response.json())
-            .then(makes => genMakes(makes,userYear))
+            .then(makes => genMakes(makes))
             .catch(error => console.log(error))
 
         const textUpdate = document.querySelector(".test-year")
@@ -40,14 +51,13 @@ const genYears = function (years) {
     })
 }
 
-const genMakes = function (makes,year) {
-    const makeSelectElement = document.querySelector("#makes")
-    clearChildren(makeSelectElement)
-    //add default blank line option
-    const defaultOption = document.createElement("option")
-    defaultOption.setAttribute("value", "choose-make")
-    defaultOption.innerText = 'Make'
-    makeSelectElement.appendChild(defaultOption)
+const genMakes = function (makes) {
+    
+    clearChildren(modelSelectElement)
+    const makeDefault = document.createElement("option")
+    makeDefault.setAttribute("value", "choose-make")
+    makeDefault.innerText = 'Make'
+    makeSelectElement.appendChild(makeDefault)
 
     makes.forEach((make) => {
         const newOptionElement = document.createElement("option")
@@ -57,11 +67,10 @@ const genMakes = function (makes,year) {
     })
 
     makeSelectElement.addEventListener("change", () => {
-        const textUpdate = document.querySelector(".test-make")
-        textUpdate.innerText = "User selected make: " + makeSelectElement.value
         
+        let userMake = makeSelectElement.value
         // http://localhost:8080/api/ice/years/2012/ford
-        fetch("http://localhost:8080/api/ice/years/" + year + "/" + makeSelectElement.value.toLowerCase(), {
+        fetch("http://localhost:8080/api/ice/years/" + yearSelectElement.value + "/" + userMake.toLowerCase(), {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -71,19 +80,33 @@ const genMakes = function (makes,year) {
             .then(models => genModels(models))
             .catch(error => console.log(error))
 
-        
+        const textUpdate = document.querySelector(".test-make")
+        textUpdate.innerText = "User selected make: " + makeSelectElement.value
 
+    })
+}
+
+const genModels = function (models) {
+
+    clearChildren(modelSelectElement)
+
+    const defaultOption = document.createElement("option")
+    defaultOption.setAttribute("value", "choose-model")
+    defaultOption.innerText = 'Model'
+    modelSelectElement.appendChild(defaultOption)
+
+    models.forEach((model) => {
+        const newOptionElement = document.createElement("option")
+        newOptionElement.setAttribute("value", model.modelName)
+        newOptionElement.innerText = model.modelName
+        modelSelectElement.appendChild(newOptionElement)
+    })
+
+    modelSelectElement.addEventListener("change", () => {
+
+        const textUpdate = document.querySelector(".test-model")
+        textUpdate.innerText = "User selected model: " + modelSelectElement.value
     })
 
 
 }
-
-const genModels = function(models) {
-
-}
-
-const clearChildren = function (element) {
-    while (element.firstChild) {
-        element.removeChild(element.lastChild);
-    }
-};
