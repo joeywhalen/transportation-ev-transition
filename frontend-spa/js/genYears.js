@@ -10,14 +10,17 @@ const genYears = function (years) {
     defaultOption.innerText = '----'
     yearSelectElement.appendChild(defaultOption)
 
-    //loop to generate options based on years
+    //loop to generate options for all years
     years.forEach((year) => {
         const newOptionElement = document.createElement("option")
         newOptionElement.setAttribute("value", year.year)
         newOptionElement.innerText = year.year
-
         yearSelectElement.appendChild(newOptionElement)
     })
+}
+
+const genMakes = function(makes) {
+    
 }
 
 const setAttributes = function (el, attrs) {
