@@ -1,5 +1,8 @@
 package org.wcci.transportationev.project.resources;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Collection;
 
 @Entity
@@ -12,6 +15,7 @@ public class Model {
     private String modelName;
 
     @ManyToOne
+    @JsonIgnore
     private Make make;
 
     @OneToMany(mappedBy = "model")

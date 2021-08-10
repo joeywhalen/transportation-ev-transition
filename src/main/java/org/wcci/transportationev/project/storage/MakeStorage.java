@@ -1,6 +1,7 @@
 package org.wcci.transportationev.project.storage;
 import org.springframework.stereotype.Service;
 import org.wcci.transportationev.project.resources.Make;
+import org.wcci.transportationev.project.resources.Year;
 
 @Service
 public class MakeStorage {
@@ -22,5 +23,4 @@ public class MakeStorage {
     public void saveMake(Make makeToSave) {
         makeRepo.save(makeToSave);
     }
-
 }

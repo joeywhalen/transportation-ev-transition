@@ -1,6 +1,7 @@
 package org.wcci.transportationev.project.storage;
 
 import org.springframework.stereotype.Service;
+import org.wcci.transportationev.project.resources.Make;
 import org.wcci.transportationev.project.resources.Year;
 
 @Service
@@ -21,5 +22,8 @@ public class YearStorage {
 
     public void saveYear(Year yearToSave){
         yearRepo.save(yearToSave);
+    }
+    public Year retrieveMakesByYear(int year){
+        return yearRepo.findByYear(year);
     }
 }
