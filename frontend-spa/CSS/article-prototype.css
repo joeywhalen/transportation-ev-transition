@@ -1,12 +1,16 @@
-
+body{
+    background-image: url("https://i.insider.com/560ea3c8bd86ef20008bec8f");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
 
 .article-page-title{
     color: rgb(0, 0, 0);
     text-shadow: -1px 0 white, 0 1px white, 1px 0 rgb(128,176,85), 0 -1px rgb(128,176,85);
     text-align: center;
     padding: 40px;
-    font-size: 22px;
-    background-color: rgb(128,176,85);
+    font-size: 20px;
 }
 
 .title-text{
