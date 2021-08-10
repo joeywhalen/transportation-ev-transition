@@ -1,4 +1,4 @@
-import {genYears} from "./genYears.js"
+import {genYears,clearChildren} from "./genYears.js"
 
 const container = document.querySelector(".container")
 
