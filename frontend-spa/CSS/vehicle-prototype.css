@@ -1,13 +1,18 @@
+body{
+  background-image: url("https://i.insider.com/560ea3c8bd86ef20008bec8f");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 .vehicle-page-title{
     color: rgb(0, 0, 0);
     text-shadow: -1px 0 white, 0 1px white, 1px 0 rgb(128,176,85), 0 -1px rgb(128,176,85);
     text-align: center;
     padding: 40px;
     font-size: 20px;
-    background-color: rgb(128,176,85);
 }
 
-.grid-container {
+.grid-container{
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: 500px 500px 500px;
@@ -15,48 +20,142 @@
     padding: 10px;
     grid-row-gap: 10px; 
     grid-column-gap: 10px; 
+    cursor: pointer;
   }
-  .grid-item {
+  .grid-item{
     color: white;
     background-color: rgb(0, 0, 0);
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 10px;
     font-size: 15px;
     text-align: center;
+    cursor: pointer;
+  }
+  .grid-item button:hover{
+    cursor: pointer;
+    transition-duration: .25s;
+    color:rgba(0, 0, 0, 0.8);
+    font-size: 20px;
+  }
+  
+  .grid-item #vehicle1:hover{
+    transition-duration: .25s;
+    transform: scale(110%);
+    font-size: 1rem;
+  }
+  
+  .grid-item #vehicle2:hover{
+    transition-duration: .25s;
+    transform: scale(110%);
+  }
+  .grid-item #vehicle3:hover{
+    transition-duration: .25s;
+    transform: scale(110%);
+  }
+
+  .grid-item #vehicle4:hover{
+    transition-duration: .25s;
+    transform: scale(110%);
+
+  }
+
+  .grid-item #vehicle5:hover{
+    transition-duration: .25s;
+    transform: scale(110%);
+
+  }
+  .grid-item #vehicle6:hover{
+    transition-duration: .25s;
+    transform: scale(110%);
+
+  }
+  .grid-item #vehicle7:hover{
+    transition-duration: .25s;
+    transform: scale(110%);
+
+  }
+  .grid-item #vehicle8:hover{
+    transition-duration: .25s;
+    transform: scale(110%);
+
+  }
+
+  .grid-item #vehicle9:hover{
+    transition-duration: .25s;
+    transform: scale(110%);
+
   }
 
 #vehicle1 {
-  border-radius: 25%;
+  border-radius: 50%;
+  border: 5px;
+  padding: 0px;
+  border-style: groove;
+  cursor: pointer;
 }
 
+
 #vehicle2 {
-border-radius: 25%; 
+  border-radius: 80%;
+  border: 5px;
+  padding: 0px;
+  border-style: groove;
+  cursor: pointer; 
+
 }
 
 #vehicle3{
-  border-radius: 25%;
+  border-radius: 50%;
+  border: 5px;
+  padding: 0px;
+  border-style: groove;
+  cursor: pointer;
 }
 
 #vehicle4 {
-border-radius: 25%; 
+  border-radius: 50%;
+  border: 5px;
+  padding: 0px;
+  border-style: groove;
+  cursor: pointer;
 }
 
 #vehicle5 {
-border-radius: 25%; 
+  border-radius: 50%;
+  border: 5px;
+  padding: 0px;
+  border-style: groove;
+  cursor: pointer;
 }
 
 #vehicle6 {
-border-radius: 25%; 
+  border-radius: 50%;
+  border: 5px;
+  padding: 0px;
+  border-style: groove;
+  cursor: pointer;
 }
 
 #vehicle7 {
-border-radius: 25%; 
+  border-radius: 50%;
+  border: 5px;
+  padding: 0px;
+  border-style: groove;
+  cursor: pointer;
 }
 
 #vehicle8 {
-  border-radius: 25%; 
+  border-radius: 50%;
+  border: 5px;
+  padding: 0px;
+  border-style: groove;
+  cursor: pointer; 
  }
 
   #vehicle9 {
-    border-radius: 25%; 
-    }
+    border-radius: 50%;
+    border: 5px;
+    padding: 0px;
+    border-style: groove;
+    cursor: pointer; 
+  }
