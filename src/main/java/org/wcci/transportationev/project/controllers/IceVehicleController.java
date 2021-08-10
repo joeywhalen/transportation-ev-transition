@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.wcci.transportationev.project.resources.IceVehicle;
 import org.wcci.transportationev.project.resources.Make;
+import org.wcci.transportationev.project.resources.Model;
 import org.wcci.transportationev.project.resources.Year;
 import org.wcci.transportationev.project.storage.IceVehicleStorage;
 import org.wcci.transportationev.project.storage.MakeStorage;
@@ -47,7 +48,7 @@ public class IceVehicleController {
     // GET http://localhost:8080/api/ice/years/2012/ford
 
     @GetMapping("/api/ice/years/{year}/{make}")
-    public Make retrieveMakeByYear(@PathVariable int year, @PathVariable String make) {
+    public Iterable<Model> retrieveModelsByYearAndMake(@PathVariable int year, @PathVariable String make) {
 
         Year currentYear = yearStorage.retrieveMakesByYear(year);
         Collection<Make> currentMakes = currentYear.getMakes();
@@ -59,7 +60,10 @@ public class IceVehicleController {
                 makeToReturn = currentMake;
             }
         }
-        return makeToReturn;
+
+        Collection<Model> modelsToReturn = makeToReturn.getModels();
+
+        return modelsToReturn;
     }
 
 }
