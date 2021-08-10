@@ -146,7 +146,6 @@ header ul{
 .website-title{
     display: inline-block;
     margin-left: 4%;
- 
 }
 
 
@@ -197,7 +196,7 @@ form{
     font-size:15px;
 }
 
-.login-box {
+.form-box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -210,7 +209,7 @@ form{
     border-radius: 10px;
   }
   
-  .login-box h1 {
+  .form-box h1 {
     margin: 0 0 30px;
     padding: 0;
     color: #fff;
@@ -218,18 +217,18 @@ form{
     font-size: 40px;
   }
 
-  .login-box h3 {
+  .form-box h3 {
     margin: 0 0 30px;
     padding: 0;
     color: #fff;
     text-align: center;
   }
   
-  .login-box .user-box {
+  .form-box .user-box {
     position: relative;
   }
   
-  .login-box .user-box input {
+  .form-box .user-box input {
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
@@ -240,7 +239,7 @@ form{
     outline: none;
     background: transparent;
   }
-  .login-box .user-box label {
+  .form-box .user-box label {
     position: absolute;
     top:0;
     left: 0;
@@ -251,15 +250,15 @@ form{
     transition: .5s;
   }
   
-  .login-box .user-box input:focus ~ label,
-  .login-box .user-box input:valid ~ label {
+  .form-box .user-box input:focus ~ label,
+  .form-box .user-box input:valid ~ label {
     top: -20px;
     left: 0;
     color: rgb(128,176,85);
     font-size: 12px;
   }
   
-  .login-box form a {
+  .form-box form a {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
@@ -274,7 +273,7 @@ form{
     letter-spacing: 4px
   }
   
-  .login-box a:hover {
+  .form-box a:hover {
     background: rgb(128,176,85);
     color: #fff;
     border-radius: 5px;
@@ -284,12 +283,12 @@ form{
                 0 0 100px rgb(128,176,85);
   }
   
-  .login-box a span {
+  .form-box a span {
     position: absolute;
     display: block;
   }
   
-  .login-box a span:nth-child(1) {
+  .form-box a span:nth-child(1) {
     top: 0;
     left: -100%;
     width: 100%;
@@ -307,7 +306,7 @@ form{
     }
   }
   
-  .login-box a span:nth-child(2) {
+  .form-box a span:nth-child(2) {
     top: -100%;
     right: 0;
     width: 2px;
@@ -326,7 +325,7 @@ form{
     }
   }
   
-  .login-box a span:nth-child(3) {
+  .form-box a span:nth-child(3) {
     bottom: 0;
     right: -100%;
     width: 100%;
@@ -345,7 +344,7 @@ form{
     }
   }
   
-  .login-box a span:nth-child(4) {
+  .form-box a span:nth-child(4) {
     bottom: -100%;
     left: 0;
     width: 2px;
@@ -365,6 +364,13 @@ form{
   }
 
   /* -------------------about EV section--------------------- */
+
+  .about-section{
+    height:275px;
+    background-color:rgb(0, 0, 0);
+    font-size:36px
+  }
+
 .about-ev{
     color: white;
     text-align: center;
@@ -376,6 +382,12 @@ form{
 }
 
 /* ------------------------grid of articles------------------- */
+.article-section{
+  height:600px;
+  background-color:rgb(0, 0, 0);
+  font-size:36px
+}
+
 .rectangle{
     background-image: linear-gradient(to right, rgb(250, 116, 26), rgb(128,176,85), black);
     color: black;
