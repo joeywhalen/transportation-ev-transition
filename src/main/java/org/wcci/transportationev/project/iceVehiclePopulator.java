@@ -30,8 +30,17 @@ public class iceVehiclePopulator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        Year twoTen = new Year(2010);
+        yearStorage.saveYear(twoTen);
+
+        Year twoEleven = new Year(2011);
+        yearStorage.saveYear(twoEleven);
+
         Year twoTwelve = new Year(2012);
         yearStorage.saveYear(twoTwelve);
+
+        Year twoThirteen = new Year(2013);
+        yearStorage.saveYear(twoThirteen);
 
         //FORD MAKE
         Make ford = new Make("Ford",twoTwelve);
