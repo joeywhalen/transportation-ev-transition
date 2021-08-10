@@ -6,17 +6,14 @@ fetch("http://localhost:8080/api/ice/years")
 
 const genYears = function (years) {
 
-    //clear year options
     const yearSelectElement = document.querySelector("#years")
     clearChildren(yearSelectElement)
 
-    //add default blank line option
     const defaultOption = document.createElement("option")
-    defaultOption.setAttribute("value", "----")
-    defaultOption.innerText = '----'
+    defaultOption.setAttribute("value", "choose-year")
+    defaultOption.innerText = 'Year'
     yearSelectElement.appendChild(defaultOption)
 
-    //loop to generate options for all years
     years.forEach((year) => {
         const newOptionElement = document.createElement("option")
         newOptionElement.setAttribute("value", year.year)
@@ -25,42 +22,65 @@ const genYears = function (years) {
     })
 
     yearSelectElement.addEventListener("change", () => {
-
-        //fetch makes based on year
+        const userYear = yearSelectElement.value
         //http://localhost:8080/api/ice/years/{year}
-
-        fetch("http://localhost:8080/api/ice/years/" + yearSelectElement.value, {
+        fetch("http://localhost:8080/api/ice/years/" + userYear, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
                 }
             })
             .then(response => response.json())
-            .then(makes => genMakes(makes))
+            .then(makes => genMakes(makes,userYear))
             .catch(error => console.log(error))
 
-        const testChangeElement = document.querySelector("#makes")
-        const testOption = document.createElement("option")
-        testOption.setAttribute("value", "Test Value")
-        testOption.innerText = 'Test Value'
-        testChangeElement.appendChild(testOption)
-
-        const textUpdate = document.querySelector(".test-pop")
-        textUpdate.innerText = "UPDATED! " + yearSelectElement.value
+        const textUpdate = document.querySelector(".test-year")
+        textUpdate.innerText = "User selected year: " + yearSelectElement.value
 
     })
 }
 
-const genMakes = function (makes) {
+const genMakes = function (makes,year) {
+    const makeSelectElement = document.querySelector("#makes")
+    clearChildren(makeSelectElement)
+    //add default blank line option
+    const defaultOption = document.createElement("option")
+    defaultOption.setAttribute("value", "choose-make")
+    defaultOption.innerText = 'Make'
+    makeSelectElement.appendChild(defaultOption)
+
+    makes.forEach((make) => {
+        const newOptionElement = document.createElement("option")
+        newOptionElement.setAttribute("value", make.makeName)
+        newOptionElement.innerText = make.makeName
+        makeSelectElement.appendChild(newOptionElement)
+    })
+
+    makeSelectElement.addEventListener("change", () => {
+        const textUpdate = document.querySelector(".test-make")
+        textUpdate.innerText = "User selected make: " + makeSelectElement.value
+        
+        // http://localhost:8080/api/ice/years/2012/ford
+        fetch("http://localhost:8080/api/ice/years/" + year + "/" + makeSelectElement.value.toLowerCase(), {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(models => genModels(models))
+            .catch(error => console.log(error))
+
+        
+
+    })
+
 
 }
 
-// not needed yet
-// const setAttributes = function (el, attrs) {
-//     for (var key in attrs) {
-//         el.setAttribute(key, attrs[key]);
-//     }
-// }
+const genModels = function(models) {
+
+}
 
 const clearChildren = function (element) {
     while (element.firstChild) {
