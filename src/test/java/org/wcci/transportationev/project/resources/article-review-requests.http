@@ -1,0 +1,39 @@
+### Get all Article Topics.
+GET http://localhost:8080/api/articleTopics
+Accept: application/json
+
+### Get an Article Topic with the given id.
+GET http://localhost:8080/api/articleTopics/1
+
+### Get all Articles for a Topic.
+GET http://localhost:8080/api/articleTopics/1/articles
+Content-Type: application/json
+
+### Get a single Article for a Topic.
+GET http://localhost:8080/api/articleTopics/4/articles/5
+
+### Add a comment to an Article.
+PATCH http://localhost:8080/api/articleTopics/7/articles/9/comments
+Content-Type: application/json
+
+Test comment for article
+
+### Get all Review Topics.
+GET http://localhost:8080/api/reviewTopics
+Accept: application/json
+
+### Get a Review Topic with the given id.
+GET http://localhost:8080/api/reviewTopics/10
+
+### Get all Reviews for a Topic.
+GET http://localhost:8080/api/reviewTopics/10/reviews
+Content-Type: application/json
+
+### Get a single Review for a Topic.
+GET http://localhost:8080/api/reviewTopics/10/reviews/24
+
+### Add a comment to a Review.
+PATCH http://localhost:8080/api/reviewTopics/29/reviews/35/comments
+Content-Type: application/json
+
+Test comment for review

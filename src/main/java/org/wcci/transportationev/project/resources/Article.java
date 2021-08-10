@@ -1,5 +1,7 @@
 package org.wcci.transportationev.project.resources;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Set;
@@ -15,6 +17,7 @@ public class Article {
     private String imageUrl;
 
     @ManyToOne
+    @JsonIgnore
     private ArticleTopic articleTopic;
 
     @Lob
