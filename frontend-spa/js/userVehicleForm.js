@@ -1,3 +1,9 @@
+fetch("http://localhost:8080/api/ice/years")
+    .then(response => response.json())
+    .then(years => genYears(years))
+    .catch(error => console.log(error))
+
+
 const genYears = function (years) {
 
     //clear year options
@@ -6,7 +12,7 @@ const genYears = function (years) {
 
     //add default blank line option
     const defaultOption = document.createElement("option")
-    defaultOption.setAttribute("value","----")
+    defaultOption.setAttribute("value", "----")
     defaultOption.innerText = '----'
     yearSelectElement.appendChild(defaultOption)
 
@@ -18,24 +24,24 @@ const genYears = function (years) {
         yearSelectElement.appendChild(newOptionElement)
     })
 
-    yearSelectElement.addEventListener("change", ()=>{
-
-        
+    yearSelectElement.addEventListener("change", () => {
 
         //fetch makes based on year
         //http://localhost:8080/api/ice/years/{year}
 
         fetch("http://localhost:8080/api/ice/years/" + yearSelectElement.value, {
-            method: 'GET',
-            headers: {'Content-Type' : 'application/json'}
-        })
-        .then(response => response.json())
-        .then(makes => genMakes(makes))
-        .catch(error => console.log(error))
-        
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(makes => genMakes(makes))
+            .catch(error => console.log(error))
+
         const testChangeElement = document.querySelector("#makes")
         const testOption = document.createElement("option")
-        testOption.setAttribute("value","Test Value")
+        testOption.setAttribute("value", "Test Value")
         testOption.innerText = 'Test Value'
         testChangeElement.appendChild(testOption)
 
@@ -45,23 +51,19 @@ const genYears = function (years) {
     })
 }
 
-const genMakes = function(makes) {
+const genMakes = function (makes) {
 
 }
 
-const setAttributes = function (el, attrs) {
-    for (var key in attrs) {
-        el.setAttribute(key, attrs[key]);
-    }
-}
+// not needed yet
+// const setAttributes = function (el, attrs) {
+//     for (var key in attrs) {
+//         el.setAttribute(key, attrs[key]);
+//     }
+// }
 
 const clearChildren = function (element) {
     while (element.firstChild) {
         element.removeChild(element.lastChild);
     }
 };
-
-export {
-    genYears,
-    clearChildren
-}
