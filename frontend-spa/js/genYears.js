@@ -20,14 +20,27 @@ const genYears = function (years) {
 
     yearSelectElement.addEventListener("change", ()=>{
 
-        // const textUpdate = document.querySelector(".test-pop")
-        // textUpdate.innerText = "UPDATED!"
+        
 
+        //fetch makes based on year
+        //http://localhost:8080/api/ice/years/{year}
+
+        fetch("http://localhost:8080/api/ice/years/" + yearSelectElement.value, {
+            method: 'GET',
+            headers: {'Content-Type' : 'application/json'}
+        })
+        .then(response => response.json())
+        .then(makes => genMakes(makes))
+        .catch(error => console.log(error))
+        
         const testChangeElement = document.querySelector("#makes")
         const testOption = document.createElement("option")
         testOption.setAttribute("value","Test Value")
         testOption.innerText = 'Test Value'
         testChangeElement.appendChild(testOption)
+
+        const textUpdate = document.querySelector(".test-pop")
+        textUpdate.innerText = "UPDATED! " + yearSelectElement.value
 
     })
 }
