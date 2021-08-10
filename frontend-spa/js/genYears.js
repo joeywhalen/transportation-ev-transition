@@ -17,10 +17,23 @@ const genYears = function (years) {
         newOptionElement.innerText = year.year
         yearSelectElement.appendChild(newOptionElement)
     })
+
+    yearSelectElement.addEventListener("change", ()=>{
+
+        // const textUpdate = document.querySelector(".test-pop")
+        // textUpdate.innerText = "UPDATED!"
+
+        const testChangeElement = document.querySelector("#makes")
+        const testOption = document.createElement("option")
+        testOption.setAttribute("value","Test Value")
+        testOption.innerText = 'Test Value'
+        testChangeElement.appendChild(testOption)
+
+    })
 }
 
 const genMakes = function(makes) {
-    
+
 }
 
 const setAttributes = function (el, attrs) {
