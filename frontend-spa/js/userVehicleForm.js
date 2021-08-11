@@ -1,11 +1,11 @@
-fetch("http://localhost:8080/api/ice/years")
-    .then(response => response.json())
-    .then(years => genYears(years))
-    .catch(error => console.log(error))
-
 fetch("http://localhost:8080/api/ice/states")
     .then(response => response.json())
     .then(states => genStates(states))
+    .catch(error => console.log(error))
+    
+fetch("http://localhost:8080/api/ice/years")
+    .then(response => response.json())
+    .then(years => genYears(years))
     .catch(error => console.log(error))
 
 const clearChildren = function (element) {
