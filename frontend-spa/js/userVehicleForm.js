@@ -131,3 +131,5 @@ const genModels = function (models) {
 
 
 }
+
+export {userVehicleForm}
