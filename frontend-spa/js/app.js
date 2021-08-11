@@ -3,12 +3,12 @@ import {
 } from "./Header.js"
 
 import {
-    displayHomePage
+    displayHomeBody
 } from "./body.js"
 
-// import {
-//     displayFooter
-// } from "./footer.js"
+import {
+    displayFooter
+} from "./footer.js"
 
 
 
@@ -17,6 +17,7 @@ import {
 const wrapper = document.querySelector(".wrapper")
 wrapper.append(displayHeader());
 
-wrapper.append(displayHomePage());
+wrapper.append(displayHomeBody());
 
-// wrapper.append(displayFooter());
+wrapper.append(displayFooter());
+
