@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
-import java.math.BigDecimal;
 
 @Entity
 public class ElectricVehicle {
@@ -16,6 +15,7 @@ public class ElectricVehicle {
     private String modelName;
     private double msrp;
     private boolean taxCredit;
+    private double yearlyMaintenanceCost;
     private int range;
     private int mpgE;
     private double zeroToSixty;
@@ -38,7 +38,7 @@ public class ElectricVehicle {
 
     }
 
-    public ElectricVehicle(String makeName, String modelName, double msrp, boolean taxCredit,
+    public ElectricVehicle(String makeName, String modelName, double msrp, boolean taxCredit, double yearlyMaintenanceCost,
                            int range, int mpgE, double zeroToSixty, int topSpeed, String wheelDrive,
                            double homeCharge, int travelCharge, int seating, boolean autonomous,
                            boolean driverAssist, boolean freeOtaUpdate, double rearCargoSpace,
@@ -46,6 +46,7 @@ public class ElectricVehicle {
         this.makeName = makeName;
         this.modelName = modelName;
         this.msrp = msrp;
+        this.yearlyMaintenanceCost = yearlyMaintenanceCost;
         this.taxCredit = taxCredit;
         this.range = range;
         this.mpgE = mpgE;
@@ -83,6 +84,10 @@ public class ElectricVehicle {
 
     public boolean isTaxCredit() {
         return taxCredit;
+    }
+
+    public double getYearlyMaintenanceCost() {
+        return yearlyMaintenanceCost;
     }
 
     public int getRange() {
