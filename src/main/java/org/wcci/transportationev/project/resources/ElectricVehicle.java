@@ -15,7 +15,7 @@ public class ElectricVehicle {
     private String modelName;
     private double msrp;
     private boolean taxCredit;
-    private double yearlyMaintenanceCost = 725;
+    private double yearlyMaintenanceCost;
     private int range;
     private int mpgE;
     private double zeroToSixty;
