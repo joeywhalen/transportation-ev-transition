@@ -1,3 +1,8 @@
+fetch("http://localhost:8080/api/ice/states")
+    .then(response => response.json())
+    .then(states => genStates(states))
+    .catch(error => console.log(error))
+    
 fetch("http://localhost:8080/api/ice/years")
     .then(response => response.json())
     .then(years => genYears(years))
@@ -9,9 +14,25 @@ const clearChildren = function (element) {
     }
 }
 
+const stateSelectElement = document.querySelector("#states")
 const yearSelectElement = document.querySelector("#years")
 const makeSelectElement = document.querySelector("#makes")
 const modelSelectElement = document.querySelector("#models")
+
+const genStates = function (states) {
+    clearChildren(stateSelectElement);
+    const stateOption = document.createElement("option");
+    stateOption.setAttribute("value", "choose-state");
+    stateOption.innerText = 'State';
+    stateSelectElement.appendChild(stateOption);
+
+    states.forEach((state) => {
+        const newOptionElement = document.createElement("option");
+        newOptionElement.setAttribute("value", state.state);
+        newOptionElement.innerText = state.state
+        stateSelectElement.appendChild(newOptionElement)
+    })
+}
 
 const genYears = function (years) {
 
