@@ -15,14 +15,14 @@ public class GasPricePopulator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        GasPrice alaska = new GasPrice("Alaska",3.67f);
-        gasPriceRepository.save(alaska);
-        GasPrice alabama = new GasPrice("Alabama",2.84f);
+        GasPrice alabama = new GasPrice("Alabama", 2.84f, 1060);
         gasPriceRepository.save(alabama);
-        GasPrice arkansas = new GasPrice("Arkansas",2.87f);
-        gasPriceRepository.save(arkansas);
-        GasPrice arizona = new GasPrice("Arizona",3.12f);
+        GasPrice alaska = new GasPrice("Alaska",3.67f, 824);
+        gasPriceRepository.save(alaska);
+        GasPrice arizona = new GasPrice("Arizona", 3.12f, 961);
         gasPriceRepository.save(arizona);
+        GasPrice arkansas = new GasPrice("Arkansas",2.87f, 1052);
+        gasPriceRepository.save(arkansas);
         GasPrice california = new GasPrice("California",4.39f);
         gasPriceRepository.save(california);
         GasPrice colorado = new GasPrice("Colorado",3.63f);
