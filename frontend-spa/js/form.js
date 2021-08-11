@@ -1,4 +1,4 @@
-import { userVehicleForm } from "./userVehicleForm.js";
+// import { userVehicleForm } from "./userVehicleForm.js";
 
 const displayForm = function () {
 
@@ -20,10 +20,6 @@ const displayForm = function () {
   formQuestion2.classList.add("example");
   const h3 = document.querySelector(".example");
   h3.textContent = "What do you currently drive?";
-
-
-
-
 
   const carForm = document.createElement("form");
   carForm.appendChild.add("form");
@@ -120,3 +116,5 @@ const setAttributes = function (el, attrs) {
           </div>
       </div> */
 }
+
+export {displayForm}

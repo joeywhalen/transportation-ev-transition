@@ -13,7 +13,7 @@
 
     <div class="wrapper"></div>
 
-    <!-- <header class="header-container">
+     <header class="header-container">
 
     <div class="header">
         <ul>
@@ -40,24 +40,22 @@
 </header> -->
 
 
-    
+     
     <div class="parallax">
 
         <div class="top-section">
+
             <div class="form-box">
                 <h1>Is switching to electric right for you? Let's find out.</h1>
                 <h3>What do you currently drive?</h3>
                 
                 <form>
-                    <div class="user-box">
-
-                        <input type="text" name="" required="">
-                        
-                        <label>Enter Your Zipcode</label>
-
-                    </div>
-                    
+                
                     <div class="year-make-model">
+
+                        <select class ="drop-down" id="states" name="states">
+                            <option value="----">----</option>
+                        </select>
                         
                         <select class="drop-down" id="years" name="years">
                             <option value="1999">1999</option>
@@ -96,9 +94,9 @@
 
             </div>
         </div>
-    </div>
+    </div> 
     
-    <div class="about-section">
+     <div class="about-section">
 
         <div class="about-ev">
             <p>
@@ -145,16 +143,17 @@
                 <img src="./images/article11.jpg" style="width:100%">
             </a>
           </div>
-        </div> 
+        </div>  
         
+        
+ <footer class="footer-section">
+    <small class="copyright-text">ComparEv &copy;2021</small>
+</footer> 
     
     </body>
 
 
-<!-- <footer class="footer-section">
-    <small class="copyright-text">ComparEv &copy;2021</small>
-</footer> -->
 
-<script src="./js/app.js" type="module"></script>
+<script src="./js/userVehicleForm.js" type="module"></script>
 
 </html>
