@@ -128,30 +128,47 @@ public class GasPricePopulator implements CommandLineRunner {
 
         GasPrice oregon = new GasPrice("Oregon", 3.76f, 899);
         gasPriceRepository.save(oregon);
-        
-        GasPrice penn = new GasPrice("Pennsylvania",3.28f);
+
+        GasPrice penn = new GasPrice("Pennsylvania", 3.28f, 922);
         gasPriceRepository.save(penn);
-        GasPrice rhode = new GasPrice("Rhode Island",3.06f);
+
+        GasPrice rhode = new GasPrice("Rhode Island", 3.06f, 989);
         gasPriceRepository.save(rhode);
-        GasPrice scar = new GasPrice("South Carolina",2.88f);
+
+        GasPrice scar = new GasPrice("South Carolina", 2.88f, 1038);
         gasPriceRepository.save(scar);
-        GasPrice sdak = new GasPrice("South Dakota",3.18f);
+
+        GasPrice sdak = new GasPrice("South Dakota", 3.18f, 966);
         gasPriceRepository.save(sdak);
-        GasPrice tenn = new GasPrice("Tennessee",2.88f);
+
+        GasPrice tenn = new GasPrice("Tennessee", 2.88f, 1045);
         gasPriceRepository.save(tenn);
-        GasPrice texas = new GasPrice("Texas",2.83f);
+
+        GasPrice texas = new GasPrice("Texas", 2.83f, 1063);
         gasPriceRepository.save(texas);
-        GasPrice utah = new GasPrice("Utah",3.87f);
+
+        GasPrice utah = new GasPrice("Utah", 3.87f, 775);
         gasPriceRepository.save(utah);
-        GasPrice virginia = new GasPrice("Virginia",2.97f);
+
+        GasPrice vermont = new GasPrice("Vermont", 3.07f, 977);
+        gasPriceRepository.save(vermont);
+
+        GasPrice virginia = new GasPrice("Virginia", 2.97f, 1008);
         gasPriceRepository.save(virginia);
-        GasPrice wash = new GasPrice("Washington",3.87f);
+
+        GasPrice wash = new GasPrice("Washington", 3.87f, 782);
         gasPriceRepository.save(wash);
-        GasPrice wisc = new GasPrice("Wisconsin",3.03f);
-        gasPriceRepository.save(wisc);
-        GasPrice wv = new GasPrice("West Virginia",3.03f);
+
+        GasPrice wv = new GasPrice("West Virginia", 3.03f, 988);
         gasPriceRepository.save(wv);
-        GasPrice wyoming = new GasPrice("Wyoming",3.58f);
+
+        GasPrice wisc = new GasPrice("Wisconsin", 3.03f, 995);
+        gasPriceRepository.save(wisc);
+        
+        GasPrice wyoming = new GasPrice("Wyoming", 3.58f, 857);
         gasPriceRepository.save(wyoming);
+
+        GasPrice nationalAverage = new GasPrice("National Average", 3.16f, 950);
+        gasPriceRepository.save(nationalAverage);
     }
 }
