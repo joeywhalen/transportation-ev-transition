@@ -164,6 +164,14 @@ public class ChargeCostPopulator implements CommandLineRunner {
         ChargeCost westVirginia = new ChargeCost("West Virginia", 7.41, 3571, 10.42, 2500);
         chargeCostRepository.save(westVirginia);
 
+        ChargeCost wisconsin = new ChargeCost("Wisconsin", 9.00, 2941, 11.05, 2381);
+        chargeCostRepository.save(wisconsin);
+
+        ChargeCost wyoming = new ChargeCost("Wyoming", 6.71, 3846, 10.42, 2500);
+        chargeCostRepository.save(wyoming);
+
+        ChargeCost nationalAverage = new ChargeCost("National Average", 8.06, 3226, 11.47, 2273);
+        chargeCostRepository.save(nationalAverage);
         
     }
     
