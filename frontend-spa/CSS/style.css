@@ -7,7 +7,7 @@
 
 .parallax {
     background-image: url("/frontend-spa/images/tesla.webp");
-    min-height: 700px; 
+    min-height: 800px; 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,6 +16,7 @@
 
 body{
     background-color: rgb(0, 0, 0);
+    margin: 0;
 }
 
 /* ---------------------nav bar----------------------- */
@@ -23,16 +24,38 @@ body{
 
 .header-container {
   display: block;
+  background-color: #000000;
   width: 100%;
   max-width: 100%;
   box-shadow: none;
-  background-color: #000000;
-  /* position: fixed; */
-  height: 80px!important;
-  overflow: hidden;
+  height: 90px!important;
+  overflow:hidden;
   z-index: 10;
-  
+  position: fixed;
+
 }
+
+header ul{
+  margin: 0;
+  padding: 0;
+  padding-top: 5px;
+  list-style: none; 
+} 
+
+.website-title{
+  display: inline-block;
+  margin-left: 5%;
+}
+
+
+header h1{
+color:rgb(128,176,85);
+
+}
+
+header span{
+color: rgb(250, 116, 26);
+}  
 
 #sidebarMenu {
   height: 100%;
@@ -137,39 +160,6 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   transform: rotate(-135deg);
   margin-top: -9px;
 }
-header ul{
-    margin: 0;
-    padding: 0;
-    list-style: none; 
-} 
-
-.website-title{
-    display: inline-block;
-    margin-left: 4%;
-}
-
-
-header h1{
-  color:rgb(128,176,85);
-  
-}
-
-header span{
-  color: rgb(250, 116, 26);
-} 
-
-/*
-nav a{
-    color: rgb(255, 255, 255);
-    text-decoration: none; 
-    text-transform: uppercase;
-    font-size: 16px;
-}
-
-nav a:hover{ 
-    color: rgb(128,176,85);
-} */
-
 
 
 
@@ -401,9 +391,6 @@ form{
     margin-left: 5%;
 }
 
-
-
-
  .row {
   display: -ms-flexbox; 
   display: flex;
@@ -413,7 +400,7 @@ form{
   margin-top: 5%;
 } 
 
-/* Create four equal columns that sits next to each other */
+
  .column {
   -ms-flex: 25%; 
   flex: 25%;
@@ -431,7 +418,6 @@ form{
   transform: scale(1.1);
 } 
 
-/* Responsive layout - makes a two column-layout instead of four columns */
  @media screen and (max-width: 800px) {
   .column {
     -ms-flex: 50%;
@@ -440,7 +426,6 @@ form{
   }
 } 
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
  @media screen and (max-width: 600px) {
   .column {
     -ms-flex: 100%;
