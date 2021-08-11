@@ -3,12 +3,15 @@ fetch("http://localhost:8080/api/ice/years")
     .then(years => genYears(years))
     .catch(error => console.log(error))
 
+fetch()
+
 const clearChildren = function (element) {
     while (element.firstChild) {
         element.removeChild(element.lastChild);
     }
 }
 
+const stateSelectElement = document.querySelector("#states")
 const yearSelectElement = document.querySelector("#years")
 const makeSelectElement = document.querySelector("#makes")
 const modelSelectElement = document.querySelector("#models")
