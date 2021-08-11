@@ -86,35 +86,49 @@ public class GasPricePopulator implements CommandLineRunner {
 
         GasPrice minn = new GasPrice("Minnesota", 3.03f, 1001);
         gasPriceRepository.save(minn);
-        
-        GasPrice missouri = new GasPrice("Missouri",2.87f);
-        gasPriceRepository.save(missouri);
-        GasPrice mississippi = new GasPrice("Mississippi",2.79f);
+
+        GasPrice mississippi = new GasPrice("Mississippi", 2.79f, 1080);
         gasPriceRepository.save(mississippi);
-        GasPrice mont = new GasPrice("Montana",3.29f);
+
+        GasPrice missouri = new GasPrice("Missouri", 2.87f, 1062);
+        gasPriceRepository.save(missouri);
+        
+        GasPrice mont = new GasPrice("Montana", 3.29f, 934);
         gasPriceRepository.save(mont);
-        GasPrice ncar = new GasPrice("North Carolina",2.93f);
-        gasPriceRepository.save(ncar);
-        GasPrice ndak = new GasPrice("North Dakota",3.12f);
-        gasPriceRepository.save(ndak);
-        GasPrice neb = new GasPrice("Nebraska",3.02f);
+
+        GasPrice neb = new GasPrice("Nebraska", 3.02f, 1002);
         gasPriceRepository.save(neb);
-        GasPrice newhamp = new GasPrice("New Hampshire",3.00f);
-        gasPriceRepository.save(newhamp);
-        GasPrice jersey = new GasPrice("New Jersey",3.20f);
-        gasPriceRepository.save(jersey);
-        GasPrice newmex = new GasPrice("New Mexico",3.09f);
-        gasPriceRepository.save(newmex);
-        GasPrice nev = new GasPrice("Nevada",4.04f);
+
+        GasPrice nev = new GasPrice("Nevada", 4.04f, 758);
         gasPriceRepository.save(nev);
-        GasPrice york = new GasPrice("New York",3.22f);
+
+        GasPrice newhamp = new GasPrice("New Hampshire", 3.00f, 1006);
+        gasPriceRepository.save(newhamp);
+
+        GasPrice jersey = new GasPrice("New Jersey", 3.20f, 944);
+        gasPriceRepository.save(jersey);
+
+        GasPrice newmex = new GasPrice("New Mexico", 3.09f, 973);
+        gasPriceRepository.save(newmex);
+
+        GasPrice york = new GasPrice("New York", 3.22f, 939);
         gasPriceRepository.save(york);
-        GasPrice ohio = new GasPrice("Ohio",3.05f);
+
+        GasPrice ncar = new GasPrice("North Carolina", 2.93f, 1037);
+        gasPriceRepository.save(ncar);
+
+        GasPrice ndak = new GasPrice("North Dakota", 3.12f, 975);
+        gasPriceRepository.save(ndak);
+        
+        GasPrice ohio = new GasPrice("Ohio", 3.05f, 957);
         gasPriceRepository.save(ohio);
-        GasPrice ok = new GasPrice("Oklahoma",2.89f);
+
+        GasPrice ok = new GasPrice("Oklahoma", 2.89f, 1051);
         gasPriceRepository.save(ok);
-        GasPrice oregon = new GasPrice("Oregon",3.76f);
+
+        GasPrice oregon = new GasPrice("Oregon", 3.76f, 899);
         gasPriceRepository.save(oregon);
+        
         GasPrice penn = new GasPrice("Pennsylvania",3.28f);
         gasPriceRepository.save(penn);
         GasPrice rhode = new GasPrice("Rhode Island",3.06f);
