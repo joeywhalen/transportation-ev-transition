@@ -2,13 +2,13 @@
 
 const displayHomePage = function (){
 
-    const mainElement = document.createElement("div");
-    mainElement.classList.add("about-section");
+    // const mainElement = document.createElement("div");
+    // mainElement.classList.add("about-section");
 
-    const aboutSection = document.createElement("div");
-    aboutSection.classList.add("about-ev");
+    // const aboutSection = document.createElement("div");
+    // aboutSection.classList.add("about-ev");
     
-    aboutSection.innerHTML = '<p>Electric Vehicles (EVs) have a battery instead of a tank, an electric motor instead of a gasoline tank, and an electric motor instead of an internal combustion engine. Plug-in hybrid electric vehicle (PHEVs) are a combination of gasoline and electric vehicles, so they have a battery, an electric motor, a gasoline tank, and an internal combustion engine. PHEVs use both gasoline and electricity as fuel sources.</p><hr>'
+    // aboutSection.innerHTML = '<p>Electric Vehicles (EVs) have a battery instead of a tank, an electric motor instead of a gasoline tank, and an electric motor instead of an internal combustion engine. Plug-in hybrid electric vehicle (PHEVs) are a combination of gasoline and electric vehicles, so they have a battery, an electric motor, a gasoline tank, and an internal combustion engine. PHEVs use both gasoline and electricity as fuel sources.</p><hr>'
     
     // mainElement.appendChild(aboutSection);
     // aboutSection.appendChild(aboutText);
