@@ -104,6 +104,12 @@ public class ChargeCostPopulator implements CommandLineRunner {
         ChargeCost nevada = new ChargeCost("Nevada", 6.53, 4000, 8.95, 2941);
         chargeCostRepository.save(nevada);
 
+        ChargeCost newHampshire = new ChargeCost("New Hampshire", 10.94, 2381, 13.63, 1923);
+        chargeCostRepository.save(newHampshire);
+
+        ChargeCost newJersey = new ChargeCost("New Jersey", 9.12, 2857, 11.79, 2222);
+        chargeCostRepository.save(newJersey);
+
         
     }
     
