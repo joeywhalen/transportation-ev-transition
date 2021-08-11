@@ -1,161 +1,152 @@
 body{
-  background-image: url("/frontend-spa/images/vehicle-background.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    /* background-color: white; */
-}
-.vehicle-page-title{
-    color: rgb(0, 0, 0);
-    text-shadow: 2px 2px white;
-    text-align: center;
-   padding-top: 100px;
-   padding-bottom: 50px;
-    font-size: 20px;
-}
-
-.grid-container{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: 500px 500px 500px;
-    background-color: transparent;
-    padding: 10px;
-    grid-row-gap: 80px; 
-    grid-column-gap: 80px; 
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-bottom: 2%;
+    background-image: url("/frontend-spa/images/vehicle-background.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      /* background-color: white; */
   }
-  .grid-item{
-    color: rgb(255, 255, 255);
-    background-color: rgb(255, 255, 255);
-    padding: 10px;
-    font-size: 15px;
-    font-weight: bold;
-    text-align: center;
-    background: rgba(0,0,0,.5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
-    border-radius: 10px;
+  .vehicle-page-title{
+      color: rgb(0, 0, 0);
+      text-shadow: 2px 2px white;
+      text-align: center;
+     padding-top: 100px;
+     padding-bottom: 50px;
+      font-size: 20px;
+  }
+  
+  .grid-container{
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: 500px 500px 500px;
+      background-color: transparent;
+      padding: 10px;
+      grid-row-gap: 80px; 
+      grid-column-gap: 80px; 
+      margin-left: 2%;
+      margin-right: 2%;
+      margin-bottom: 2%;
+    }
+    .grid-item{
+      color: rgb(255, 255, 255);
+      background-color: rgb(255, 255, 255);
+      padding: 10px;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: center;
+      background: rgba(0,0,0,.5);
+      box-sizing: border-box;
+      box-shadow: 0 15px 25px rgba(0,0,0,.6);
+      border-radius: 10px;
+      
+    }
+    /* .grid-item button:hover{
+      cursor: pointer;
+      transition-duration: .25s;
+      color:rgba(0, 0, 0, 0.8);
+      font-size: 20px;
+    }
     
-  }
-  /* .grid-item button:hover{
-    cursor: pointer;
-    transition-duration: .25s;
-    color:rgba(0, 0, 0, 0.8);
-    font-size: 20px;
-  }
+    .grid-item #vehicle1:hover{
+      transition-duration: .25s;
+      transform: scale(110%);
+      font-size: 1rem;
+    }
+    
+    .grid-item #vehicle2:hover{
+      transition-duration: .25s;
+      transform: scale(110%);
+    }
+    .grid-item #vehicle3:hover{
+      transition-duration: .25s;
+      transform: scale(110%);
+    }
+    .grid-item #vehicle4:hover{
+      transition-duration: .25s;
+      transform: scale(110%);
+    }
+    .grid-item #vehicle5:hover{
+      transition-duration: .25s;
+      transform: scale(110%);
+    }
+    .grid-item #vehicle6:hover{
+      transition-duration: .25s;
+      transform: scale(110%);
+    }
+    .grid-item #vehicle7:hover{
+      transition-duration: .25s;
+      transform: scale(110%);
+    }
+    .grid-item #vehicle8:hover{
+      transition-duration: .25s;
+      transform: scale(110%);
+    }
+    .grid-item #vehicle9:hover{
+      transition-duration: .25s;
+      transform: scale(110%);
+    } */
   
-  .grid-item #vehicle1:hover{
-    transition-duration: .25s;
-    transform: scale(110%);
-    font-size: 1rem;
-  }
-  
-  .grid-item #vehicle2:hover{
-    transition-duration: .25s;
-    transform: scale(110%);
-  }
-  .grid-item #vehicle3:hover{
-    transition-duration: .25s;
-    transform: scale(110%);
-  }
-
-  .grid-item #vehicle4:hover{
-    transition-duration: .25s;
-    transform: scale(110%);
-
-  }
-
-  .grid-item #vehicle5:hover{
-    transition-duration: .25s;
-    transform: scale(110%);
-
-  }
-  .grid-item #vehicle6:hover{
-    transition-duration: .25s;
-    transform: scale(110%);
-
-  }
-  .grid-item #vehicle7:hover{
-    transition-duration: .25s;
-    transform: scale(110%);
-
-  }
-  .grid-item #vehicle8:hover{
-    transition-duration: .25s;
-    transform: scale(110%);
-
-  }
-
-  .grid-item #vehicle9:hover{
-    transition-duration: .25s;
-    transform: scale(110%);
-
-  } */
-
-#vehicle1 {
-  border-radius: 50%;
-  border: 5px;
-  padding: 0px;
-  border-style: groove;
-}
-
-
-#vehicle2 {
-  border-radius: 80%;
-  border: 5px;
-  padding: 0px;
-  border-style: groove;
-
-}
-
-#vehicle3{
-  border-radius: 50%;
-  border: 5px;
-  padding: 0px;
-  border-style: groove;
-}
-
-#vehicle4 {
-  border-radius: 50%;
-  border: 5px;
-  padding: 0px;
-  border-style: groove;
-}
-
-#vehicle5 {
-  border-radius: 50%;
-  border: 5px;
-  padding: 0px;
-  border-style: groove;
-}
-
-#vehicle6 {
-  border-radius: 50%;
-  border: 5px;
-  padding: 0px;
-  border-style: groove;
-}
-
-#vehicle7 {
-  border-radius: 50%;
-  border: 5px;
-  padding: 0px;
-  border-style: groove;
-}
-
-#vehicle8 {
-  border-radius: 50%;
-  border: 5px;
-  padding: 0px;
-  border-style: groove;
- }
-
-  #vehicle9 {
+  #vehicle1 {
     border-radius: 50%;
     border: 5px;
     padding: 0px;
     border-style: groove;
   }
+  
+  
+  #vehicle2 {
+    border-radius: 80%;
+    border: 5px;
+    padding: 0px;
+    border-style: groove;
+  
+  }
+  
+  #vehicle3{
+    border-radius: 50%;
+    border: 5px;
+    padding: 0px;
+    border-style: groove;
+  }
+  
+  #vehicle4 {
+    border-radius: 50%;
+    border: 5px;
+    padding: 0px;
+    border-style: groove;
+  }
+  
+  #vehicle5 {
+    border-radius: 50%;
+    border: 5px;
+    padding: 0px;
+    border-style: groove;
+  }
+  
+  #vehicle6 {
+    border-radius: 50%;
+    border: 5px;
+    padding: 0px;
+    border-style: groove;
+  }
+  
+  #vehicle7 {
+    border-radius: 50%;
+    border: 5px;
+    padding: 0px;
+    border-style: groove;
+  }
+  
+  #vehicle8 {
+    border-radius: 50%;
+    border: 5px;
+    padding: 0px;
+    border-style: groove;
+   }
+  
+    #vehicle9 {
+      border-radius: 50%;
+      border: 5px;
+      padding: 0px;
+      border-style: groove;
+    }
