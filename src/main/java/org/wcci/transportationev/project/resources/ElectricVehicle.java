@@ -52,16 +52,16 @@ public class ElectricVehicle {
 
     }
 
-    public ElectricVehicle(String authorName, String makeName, String modelName, String vehicleType,
+    public ElectricVehicle(String makeName, String modelName, String authorName, String vehicleType,
                             double msrp, boolean taxCredit, double yearlyMaintenanceCost,
                            int range, int mpgE, double zeroToSixty, int topSpeed, String wheelDrive,
                            double homeCharge, int travelCharge, int seating, boolean autonomous,
                            boolean driverAssist, boolean freeOtaUpdate, double rearCargoSpace,
                             double frunkSpace, double safetyRating, boolean phoneKey, String imageUrl,
                             String imageUrl2, String reviewContent, String... reviewComments) {
-        this.authorName = authorName;
         this.makeName = makeName;
         this.modelName = modelName;
+        this.authorName = authorName;
         this.vehicleType = vehicleType;
         this.msrp = msrp;
         this.yearlyMaintenanceCost = yearlyMaintenanceCost;
@@ -91,16 +91,16 @@ public class ElectricVehicle {
         return id;
     }
 
-    public String getAuthorName() {
-        return authorName;
-    }
-
     public String getMakeName() {
         return makeName;
     }
 
     public String getModelName() {
         return modelName;
+    }
+
+    public String getAuthorName() {
+        return authorName;
     }
 
     public String getVehicleType() {
@@ -191,5 +191,11 @@ public class ElectricVehicle {
         return reviewContent;
     }
 
-    
+    public Iterable<String> getReviewComments() {
+        return reviewComments;
+    }
+
+    public void addReviewComments(String newReviewComment) {
+        this.reviewComments.add(newReviewComment);
+    }
 }

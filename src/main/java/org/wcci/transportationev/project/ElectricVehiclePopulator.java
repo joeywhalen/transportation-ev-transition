@@ -18,10 +18,23 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         //Audi e-tron Sportback EV to test data
-        ElectricVehicle audiETronSB = new ElectricVehicle("Audi", "e-tron Sportback", 69100.00, true, 
+        ElectricVehicle audiETronSB = new ElectricVehicle("Audi", "e-tron Sportback", "Cliff Booth", "Sedan", 69100.00, true, 
                 725, 218, 77, 5.5, 118, "AWD", 10, 30, 5, false,
                 true, false, 27.2, 3, 4.5, false,
-                "https://www.motortrend.com/uploads/sites/5/2019/11/2020-Audi-E-Tron-Sportback-11.jpg?fit=around%7C875:492");
+                "https://www.motortrend.com/uploads/sites/5/2019/11/2020-Audi-E-Tron-Sportback-11.jpg?fit=around%7C875:492",
+                "https://www.cnet.com/a/img/jF9XjA7gNJLQQo9ivIG6zEno4Qo=/2019/11/19/efbb58b4-bc42-46c6-8142-16ff002fd12d/ogi-audi-e-tron-sportback-2020-ogi.jpg",
+                "Audi e-tron sportback electric vehicle. The new model features standard EPA and CE certification.\n" +
+                "\n" +
+                "The Model S Sportback features an all electric engine, while the smaller, sportier version replaces the 3.2-liter V-6 that would replace the smaller V-6 found in the S-Class. The rear seats (or lack thereof) are identical to the S-Class models, but there's no dual-slip differential. This means it's a more comfortable ride.\n" +
+                "\n" +
+                "Other new features include a 3.5-liter V-6 in both passenger and cargo space, electric skid roll, heated front seats, air bags and all-new rear wheels.\n" +
+                "\n" +
+                "The Model S Sportback, along with the all electric engine, also comes equipped with six-piston calipers along with three-way hydraulics. All interior dimensions are as follows:\n" +
+                "\n" +
+                "• S-Class: 2x6L, 19-inch alloy wheels, Michelin Pilot Pilot, SAE A14-T (2mm) in all valves.\n" +
+                "\n" +
+                "• New front fascia, 6-inch alloy hubs, aluminum-machined, two-piece frame.",
+                "I could not agree more.  Love Audi, and love this vehicle!");
         electricVehicleStorage.saveElectricVehicle(audiETronSB);
 
         ElectricVehicle chevyBolt = new ElectricVehicle("Chevrolet", "Bolt", 37500.00, false, 
