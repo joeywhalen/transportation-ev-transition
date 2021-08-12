@@ -309,7 +309,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The rest of the car carries a mix of modern and historical BMW styling cues, such as the swept-back covers over the standard LED headlights, the concave scoops along the doors, and the vent behind the front wheel that carries down and along the door sills. BMW’s traditional “Hofmeister kink” styling element, where the rear roof pillar has a forward bend as it meets the side-window glass, is present.");
         electricVehicleStorage.saveElectricVehicle(bmwIFour);
 
-        ElectricVehicle bmwIX = new ElectricVehicle("BMW", "IX", "Timothy Bryce", "Crossover" 84194.00, true,
+        ElectricVehicle bmwIX = new ElectricVehicle("BMW", "IX", "Timothy Bryce", "Crossover", 84194.00, true,
                 725, 300, 85, 4.6, 124, "AWD", 11, 35, 5, false,
                 true, true, 27.4, 0, 4.5, true,
                 "https://cdn.motor1.com/images/mgl/Kj0qM/s1/bmw-ix.jpg",
@@ -329,16 +329,24 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The all-electric 2022 Bollinger B2 looks primitive but puts traditional pickup trucks on notice thanks to its impressive capacities and incredible versatility.  Bollinger says the B2's dual electric motors combine for 614 horsepower and 688 lb-ft of torque, which help it tow up to 7500 pounds and carry a payload up to 5001 pounds. Its battery supports fast-charging capability and is estimated to provide a driving range of 200 miles.");
         electricVehicleStorage.saveElectricVehicle(bollingerBTwo);
 
-        ElectricVehicle caddyLyriq = new ElectricVehicle("Cadillac", "Lyriq", 59995.00, true,
+        ElectricVehicle caddyLyriq = new ElectricVehicle("Cadillac", "Lyriq", "Sean Bateman", "Crossover", 59995.00, true,
                 725, 300, 80, 4.3, 130, "RWD", 6, 35, 7, true,
                 true, true, 12.6, 0, 4.5, false,
-                "https://i0.wp.com/electrek.co/wp-content/uploads/sites/3/2021/04/Cadillac-Lyriq-2.jpg?ssl=1");
+                "https://i0.wp.com/electrek.co/wp-content/uploads/sites/3/2021/04/Cadillac-Lyriq-2.jpg?ssl=1",
+                "https://www.motortrend.com/uploads/sites/5/2020/08/2023-Cadillac-Lyriq-8.jpg?fit=around%7C875:492",
+                "Meet the Cadillac LYRIQ. An EV that inspires its driver to charge forward to a greater purpose—with every sublime detail.\n" +
+                "\n" +
+                "The Lyriq has been designed from the ground up and will ride on General Motors' new scalable battery architecture; the company claims a low center of gravity and a spacious cabin as benefits of the dedicated EV-architecture.");
         electricVehicleStorage.saveElectricVehicle(caddyLyriq);
 
-        ElectricVehicle fordLightning = new ElectricVehicle("Ford", "F-150 Lightning", 42000.00, true,
+        ElectricVehicle fordLightning = new ElectricVehicle("Ford", "F-150 Lightning", "Lauren Hynde", "Truck", 42000.00, true,
                 725, 230, 75, 4.5, 100, "AWD", 8, 44, 5, true,
                 true, true, 80, 14.1, 5.0, true,
-                "https://cdn.motor1.com/images/mgl/3yeZp/s1/2022-ford-f-150-lightning-side-view.webp");
+                "https://cdn.motor1.com/images/mgl/3yeZp/s1/2022-ford-f-150-lightning-side-view.webp",
+                "https://thumbor.forbes.com/thumbor/fit-in/960x720/https://www.forbes.com/wheels/wp-content/uploads/2021/05/Ford_F-150_Lightning_Gallery13.jpg",
+                "The all-electric F-150 Lightning has an EPA-estimated range of 230 miles, zero emissions and available Ford Intelligent Backup Power.\n" +
+                "\n" +
+                "The Lightning shares much of the regular F-150's body and cabin but swaps that truck's gasoline-powered V-6 and V-8 engine options for a pair of electric motors and one of two different battery packs.");
         electricVehicleStorage.saveElectricVehicle(fordLightning);
 
         ElectricVehicle genesisGEighty = new ElectricVehicle("Genesis", "G80", 50000.00, true,
