@@ -14,12 +14,12 @@
   } 
 
   .parallax-one{
-    background-image: url("/frontend-spa/images/tesla.jpg");
+    background-image: url("/frontend-spa/images/parallax1-homepage.jpg");
     position: relative;
   }
 
   .parallax-two{
-    background-image: url("/frontend-spa/images/hyundai.jpg");
+    background-image: url("/frontend-spa/images/parallax2-homepage.jpg");
 
   }
 

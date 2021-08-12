@@ -6,9 +6,9 @@ import {
     displayHomeBody
 } from "./body.js"
 
-import {
-    displayFooter
-} from "./footer.js"
+// import {
+//     displayFooter
+// } from "./footer.js"
 
 
 
@@ -19,5 +19,5 @@ wrapper.append(displayHeader());
 
 wrapper.append(displayHomeBody());
 
-wrapper.append(displayFooter());
+// wrapper.append(displayFooter());
 
