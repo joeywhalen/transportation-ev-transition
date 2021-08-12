@@ -17,6 +17,32 @@ const displayArticle = function (article) {
     const articleCommentsNotationElement = document.createElement("article-comments");
     articleCommentsNotationElement.classList.add("article-comments-notation");
     articleCommentsNotationElement.innerText = "Comments: ";
+
+    articleElement.appendChild(articleTopicElement);
+    articleElement.appendChild(articleTitleElement);
+    articleElement.appendChild(articleImageElement);
+    articleElement.appendChild(articleAuthorElement);
+    articleElement.appendChild(articleTextElement);
+    articleElement.appendChild(articleCommentsNotationElement);
+
+    if (article.articleComments !== null && article.articleComments.length !== 0) {
+        article.articleComments.forEach((articleComment) => {
+            let articleCommentsElement = document.createElement("section");
+            articleCommentsElement.classList.add("article-comments-section");
+            let singleArticleCommentElement = document.createElement("p");
+            singleArticleCommentElement.innerText = articleComment;
+            articleCommentsElement.appendChild(singleArticleCommentElement);
+            articleElement.appendChild(articleCommentsElement);
+        });
+    }
+
+    const form = document.createElement("form");
+    form.classList.add("new-article-comment-form");
+    const articleCommentInput = document.createElement("input");
+    articleCommentInput.setAttribute("type", "text");
+    articleCommentInput.setAttribute("placeholder", "Enter your comment...");
+    
+
 }
 
 
