@@ -265,16 +265,24 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "To put both the Tesla Model Y as a driver-free Tesla Model 3 into the equation, to be a Model 3, or to become an electric driving luxury, it will be Tesla (or not Tesla), and the Model Y will be one of their very own. And so far we've been able to build models that make the cars we love driving more comfortable for use in public or business areas, like in public transit. But, when we find ourselves stranded in a vehicle where there is no Tesla, or a Tesla Model and we need to turn off the car, like a passenger in a car for an entire trip — like with my current Tesla Model Y, the most likely scenario is that we will have to move. In that case, we'll be forced to pay to maintain our Tesla Model Y's ability to reach into its windshield or floor to power itself.");
         electricVehicleStorage.saveElectricVehicle(teslaY);
 
-        ElectricVehicle volksIdFour = new ElectricVehicle("Volkswagen", "ID.4", 44495.00, true,
+        ElectricVehicle volksIdFour = new ElectricVehicle("Volkswagen", "ID.4", "Chris Mannix", "Crossover", 44495.00, true,
                 725, 250, 99, 5.7, 112, "AWD", 7.5, 38, 5, false,
                 true, true, 30, 0, 4.5, false,
-                "https://techcrunch.com/wp-content/uploads/2021/03/vw-Large-12562-2021ID.4ProSwithGradientPackage.jpg?w=730&crop=1");
+                "https://techcrunch.com/wp-content/uploads/2021/03/vw-Large-12562-2021ID.4ProSwithGradientPackage.jpg?w=730&crop=1",
+                "https://cdn.vox-cdn.com/thumbor/xR4t-SjdEMKcIjFPcVQgBLOYVk0=/0x0:1080x809/1200x800/filters:focal(454x319:626x491)/cdn.vox-cdn.com/uploads/chorus_image/image/67274209/VW_ID4_Uncovered_2_copy.0.jpg",
+                "Superbly designed well balanced EV at a good price. Loving the white steering wheel, roomy interior, good acceleration (yes, not as good as a Tesla), and adequate handling.\n" +
+                "\n" +
+                "It has a roomy cabin, loads of clever storage spaces, good electric range for the price, and a smooth, silent driving experience.");
         electricVehicleStorage.saveElectricVehicle(volksIdFour);
 
-        ElectricVehicle volvoXcForty = new ElectricVehicle("Volvo", "XC40 Recharge", 53990.00, true,
+        ElectricVehicle volvoXcForty = new ElectricVehicle("Volvo", "XC40 Recharge", "Joe Gage", "Crossover", 53990.00, true,
                 725, 208, 80, 4.3, 112, "AWD", 11, 40, 5, false,
                 true, true, 20, 5, 5.0, true,
-                "https://cdn.motor1.com/images/mgl/A8zbL/s1/volvo-xc40-recharge-2020.webp");
+                "https://cdn.motor1.com/images/mgl/A8zbL/s1/volvo-xc40-recharge-2020.webp",
+                "https://assets.volvocars.com/au/~/media/australia/images/blog-i-roll/2020/july/xc40_recharge_plug-in_hybrid---main-image950x497.jpg?h=497&la=en-AU&mw=950&w=950",
+                "The First Fully Electric Compact Luxury SUV To Win A Top Safety Pick Plus Award. Pure Electric. Setting A New Industry Benchmark In Safety.\n" +
+                "\n" +
+                "With the favorable weight distribution, the XC40 Recharge feels well planted on the pavement when navigating sharp or fast turns.  This car has a huge 408hp and 660Nm of torque, delivered to all four wheels via a dual-motor system.");
         electricVehicleStorage.saveElectricVehicle(volvoXcForty);
 
         ElectricVehicle audiA6Etron = new ElectricVehicle("Audi", "A6 e-tron", 80000.00, true,
