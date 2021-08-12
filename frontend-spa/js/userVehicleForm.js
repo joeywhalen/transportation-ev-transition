@@ -29,10 +29,10 @@ submitButton.addEventListener("click", () => {
 
     clearChildren(mainContent)
 
-    const userStateIndex = yearStateElement.selectedIndex - 1
+    const userStateIndex = stateSelectElement.selectedIndex - 1
     const userYearIndex = yearSelectElement.selectedIndex - 1
-    const userMakeIndex = yearMakeElement.selectedIndex - 1
-    const userModelIndex = yearModelElement.selectedIndex - 1
+    const userMakeIndex = makeSelectElement.selectedIndex - 1
+    const userModelIndex = modelSelectElement.selectedIndex - 1
 
     const userStateId = stateSelectElement.getElementsByClassName("state-option")[userStateIndex].getAttribute("id")
     const userYearId = yearSelectElement.getElementsByClassName("year-option")[userYearIndex].getAttribute("id")
@@ -43,7 +43,7 @@ submitButton.addEventListener("click", () => {
     console.log(yearSelectElement.getElementsByClassName("year-option")[userYearIndex].getAttribute("id"))
 
     // http://localhost:8080/api/ice/userVehicle/{year}/{make}/{model}
-    fetch("http://localhost:8080/api/ice/userVehicle/" + userYearId, {
+    fetch("http://localhost:8080/api/ice/userVehicle/" + userYearId + "/" + userMakeId + "/" + userModelId, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
