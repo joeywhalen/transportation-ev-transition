@@ -39,6 +39,7 @@ public class ElectricVehicle {
     private boolean phoneKey;
     @Lob
     private String imageUrl;
+    @Lob
     private String imageUrl2;
 
     @Lob
