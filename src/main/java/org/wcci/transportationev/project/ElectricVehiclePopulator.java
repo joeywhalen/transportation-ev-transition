@@ -285,16 +285,28 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "With the favorable weight distribution, the XC40 Recharge feels well planted on the pavement when navigating sharp or fast turns.  This car has a huge 408hp and 660Nm of torque, delivered to all four wheels via a dual-motor system.");
         electricVehicleStorage.saveElectricVehicle(volvoXcForty);
 
-        ElectricVehicle audiA6Etron = new ElectricVehicle("Audi", "A6 e-tron", 80000.00, true,
+        ElectricVehicle audiA6Etron = new ElectricVehicle("Audi", "A6 e-tron", "Minnie Mink", "Sedan", 80000.00, true,
                 725, 400, 80, 5.1, 125, "AWD", 10, 30, 5, false,
                 true, false, 29.5, 3, 4.5, false,
-                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/audi-a6-e-tron-concept-113-1618585274.jpg?crop=0.739xw:0.494xh;0.0369xw,0.346xh&resize=1200:*");
+                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/audi-a6-e-tron-concept-113-1618585274.jpg?crop=0.739xw:0.494xh;0.0369xw,0.346xh&resize=1200:*",
+                "https://assets.newatlas.com/dims4/default/d8067d3/2147483647/strip/true/crop/974x649+37+105/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F82%2Fe9%2Fa4b5bf1141f29737e05d03ae7345%2Fscreen-shot-2021-04-19-at-7.39.34%20PM.png",
+                "The A6 e-tron is a sleek sedan with all of the brand's cutting-edge technology. Audi says it's targeting a driving range of more than 400 miles per charge.\n" +
+                "\n" +
+                "The A6 e-tron is powered by two electric motors with one driving each axle, which endows it with all-wheel drive. Also standard will be DC fast-charging capability that Audi claims will enable the car to charge its battery from five percent to 80 percent of capacity in just 25 minutes.\n" +
+                "\n" +
+                "Unlike the gasoline-powered A6 sedan, the A6 e-tron hides a hatchback in its sloped rear roofline, which should give buyers a large cargo area similar to that of the current A7.");
         electricVehicleStorage.saveElectricVehicle(audiA6Etron);
 
-        ElectricVehicle bmwIFour = new ElectricVehicle("BMW", "I4", 56395.00, true,
+        ElectricVehicle bmwIFour = new ElectricVehicle("BMW", "I4", "Patrick Bateman", "Sedan", 56395.00, true,
                 725, 300, 90, 5.7, 118, "RWD", 8.75, 30, 5, false,
                 true, true, 16.6, 0, 4.5, true,
-                "https://www.cnet.com/a/img/-fC9r7EA4SUrpAJVm211h2aGZ7I=/940x0/2020/02/28/4f5e69fe-2497-494c-b738-24f864561236/bmw-i4-concept-003.jpg");
+                "https://www.cnet.com/a/img/-fC9r7EA4SUrpAJVm211h2aGZ7I=/940x0/2020/02/28/4f5e69fe-2497-494c-b738-24f864561236/bmw-i4-concept-003.jpg",
+                "https://evglobe.com/wp-content/uploads/2020/09/bmw-i4-m-electric-1700x956.jpg",
+                "Silent acceleration, perfected engineering, and seating for five make this a sporty all-electric alternative.\n" +
+                "\n" +
+                "BMW’s new front-end styling, which debuted with the 4 Series coupe and convertible, is the dominant feature on the i4. Whether you think it harkens back to BMWs of yore like the 303, which was the first BMW to use the 'twin-kidney grille,' or looks more like walrus tusks, is up to you. But it makes a statement either way.\n" + 
+                "\n" +
+                "The rest of the car carries a mix of modern and historical BMW styling cues, such as the swept-back covers over the standard LED headlights, the concave scoops along the doors, and the vent behind the front wheel that carries down and along the door sills. BMW’s traditional “Hofmeister kink” styling element, where the rear roof pillar has a forward bend as it meets the side-window glass, is present.");
         electricVehicleStorage.saveElectricVehicle(bmwIFour);
 
         ElectricVehicle bmwIX = new ElectricVehicle("BMW", "IX", 84194.00, true,
