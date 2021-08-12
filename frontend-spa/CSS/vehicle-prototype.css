@@ -1,10 +1,6 @@
 body{
-    background-image: url("/frontend-spa/images/vehicle-background.jpg");
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-      /* background-color: white; */
+    background-color: rgb(255, 255, 255);
+     
   }
   .vehicle-page-title{
       color: rgb(0, 0, 0);
@@ -15,78 +11,54 @@ body{
       font-size: 20px;
   }
   
+  .title-text{
+    border: 1px solid rgb(255, 255, 255);
+    margin-left: 5%;
+    margin-right: 5%;
+    background-image: linear-gradient(to right, rgb(250, 116, 26), rgb(128,176,85), black);  
+  }
+
   .grid-container{
       display: grid;
-      grid-template-columns: auto auto auto;
-      grid-template-rows: 500px 500px 500px;
-      background-color: transparent;
-      padding: 10px;
-      grid-row-gap: 80px; 
-      grid-column-gap: 80px; 
+      justify-content: center;
+      grid-template-columns:300px 300px 300px 300px 300px;
+      grid-template-rows: 400px 400px 400px 400px 400px;
+      grid-row-gap: 50px; 
+      grid-column-gap: 50px; 
       margin-left: 2%;
       margin-right: 2%;
-      margin-bottom: 2%;
+      margin-bottom: 5%;
     }
     .grid-item{
-      color: rgb(255, 255, 255);
-      background-color: rgb(255, 255, 255);
-      padding: 10px;
-      font-size: 15px;
-      font-weight: bold;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .grid-item img{
+      height:50%;
+    }
+
+    .text-container{
       text-align: center;
-      background: rgba(0,0,0,.5);
-      box-sizing: border-box;
-      box-shadow: 0 15px 25px rgba(0,0,0,.6);
-      border-radius: 10px;
-      
+      padding: 10px 20px;
+      font-weight: bold;
     }
-    /* .grid-item button:hover{
+
+    button{
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+      padding: 5px;
+    }
+
+    button:hover{
+      transform: scale(1.1);
       cursor: pointer;
-      transition-duration: .25s;
-      color:rgba(0, 0, 0, 0.8);
-      font-size: 20px;
     }
-    
-    .grid-item #vehicle1:hover{
-      transition-duration: .25s;
-      transform: scale(110%);
-      font-size: 1rem;
-    }
-    
-    .grid-item #vehicle2:hover{
-      transition-duration: .25s;
-      transform: scale(110%);
-    }
-    .grid-item #vehicle3:hover{
-      transition-duration: .25s;
-      transform: scale(110%);
-    }
-    .grid-item #vehicle4:hover{
-      transition-duration: .25s;
-      transform: scale(110%);
-    }
-    .grid-item #vehicle5:hover{
-      transition-duration: .25s;
-      transform: scale(110%);
-    }
-    .grid-item #vehicle6:hover{
-      transition-duration: .25s;
-      transform: scale(110%);
-    }
-    .grid-item #vehicle7:hover{
-      transition-duration: .25s;
-      transform: scale(110%);
-    }
-    .grid-item #vehicle8:hover{
-      transition-duration: .25s;
-      transform: scale(110%);
-    }
-    .grid-item #vehicle9:hover{
-      transition-duration: .25s;
-      transform: scale(110%);
-    } */
+
   
-  #vehicle1 {
+  /* #vehicle1 {
     border-radius: 50%;
     border: 5px;
     padding: 0px;
@@ -149,4 +121,4 @@ body{
       border: 5px;
       padding: 0px;
       border-style: groove;
-    }
+    } */
