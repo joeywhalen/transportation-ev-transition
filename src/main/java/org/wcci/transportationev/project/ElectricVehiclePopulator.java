@@ -309,16 +309,24 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The rest of the car carries a mix of modern and historical BMW styling cues, such as the swept-back covers over the standard LED headlights, the concave scoops along the doors, and the vent behind the front wheel that carries down and along the door sills. BMW’s traditional “Hofmeister kink” styling element, where the rear roof pillar has a forward bend as it meets the side-window glass, is present.");
         electricVehicleStorage.saveElectricVehicle(bmwIFour);
 
-        ElectricVehicle bmwIX = new ElectricVehicle("BMW", "IX", 84194.00, true,
+        ElectricVehicle bmwIX = new ElectricVehicle("BMW", "IX", "Timothy Bryce", "Crossover" 84194.00, true,
                 725, 300, 85, 4.6, 124, "AWD", 11, 35, 5, false,
                 true, true, 27.4, 0, 4.5, true,
-                "https://cdn.motor1.com/images/mgl/Kj0qM/s1/bmw-ix.jpg");
+                "https://cdn.motor1.com/images/mgl/Kj0qM/s1/bmw-ix.jpg",
+                "https://cdn.vox-cdn.com/thumbor/VuSodeasyFU7eraSHHxeV7tYVE0=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22551750/P90422118_highRes.jpg",
+                "The BMW iX sets a new standard for sustainable luxury in electric SUVs.  The iX is a midsize luxury SUV that's about the same size as the 2021 BMW X5. It seats five in its roomy, airy, and tech-laden cabin. Special attention was used to create the interior with sustainable materials, including some that contain recycled materials.\n" +
+                "\n" +
+                "The iX not only debuts hardware, software, design elements, and manufacturing techniques that will influence all future BMWs—it also readies a brand once defined by its appeal to petrolhead driving enthusiasts for an autonomous, electric-powered world.");
         electricVehicleStorage.saveElectricVehicle(bmwIX);
 
-        ElectricVehicle bollingerBTwo = new ElectricVehicle("Bollinger", "B2", 125000.00, true,
+        ElectricVehicle bollingerBTwo = new ElectricVehicle("Bollinger", "B2", "Paul Allen", "Truck", 125000.00, true,
                 725, 200, 70, 4.5, 100, "AWD", 10, 75, 4, false,
                 false, false, 86, 8.0, 4.0, false,
-                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bollinger-b2-201-1607721643.jpg");
+                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bollinger-b2-201-1607721643.jpg",
+                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bollinger-b2-3-4-front-1569523201.jpg",
+                "Bollinger: Reinventing trucks not just electrifying them. The most durable, practical electric trucks on the planet. No screens. No plastic. Just truck.\n" +
+                "\n" +
+                "The all-electric 2022 Bollinger B2 looks primitive but puts traditional pickup trucks on notice thanks to its impressive capacities and incredible versatility.  Bollinger says the B2's dual electric motors combine for 614 horsepower and 688 lb-ft of torque, which help it tow up to 7500 pounds and carry a payload up to 5001 pounds. Its battery supports fast-charging capability and is estimated to provide a driving range of 200 miles.");
         electricVehicleStorage.saveElectricVehicle(bollingerBTwo);
 
         ElectricVehicle caddyLyriq = new ElectricVehicle("Cadillac", "Lyriq", 59995.00, true,
