@@ -205,7 +205,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The Polestar has a higher ride height than most sedans, and SUV-like body cladding, making it a bit of a pseudo-crossover. However you classify it, the Polestar 2 is an extremely handsome car, with minimal body surfacing and great proportions.");
         electricVehicleStorage.saveElectricVehicle(polestarTwo);
 
-        ElectricVehicle porscheTaycan = new ElectricVehicle("Porsche", "Taycan", "Elle Driver", "Sedan" 103800.00, true,
+        ElectricVehicle porscheTaycan = new ElectricVehicle("Porsche", "Taycan", "Elle Driver", "Sedan", 103800.00, true,
                 725, 200, 69, 3.4, 155, "RWD", 12, 15, 4, false,
                 true, true, 12.9, 2.8, 5.0, false,
                 "https://www.motortrend.com/uploads/sites/5/2021/01/2021_Porsche_Taycan_2.jpeg?fit=around%7C875:492.1875",
@@ -217,16 +217,30 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "Verdict: The Taycan takes everything good about electric performance cars and amplifies it.");
         electricVehicleStorage.saveElectricVehicle(porscheTaycan);
 
-        ElectricVehicle teslaThree = new ElectricVehicle("Tesla", "Model 3 SR+", 39900.00, false,
+        ElectricVehicle teslaThree = new ElectricVehicle("Tesla", "Model 3 SR+", "Aldo Raine", "Sedan", 39900.00, false,
                 725, 263, 133, 5.3, 140, "RWD", 5.5, 21, 5, true,
                 true, true, 18, 5, 5.0, true,
-                "https://upload.wikimedia.org/wikipedia/commons/9/91/2019_Tesla_Model_3_Performance_AWD_Front.jpg");
+                "https://upload.wikimedia.org/wikipedia/commons/9/91/2019_Tesla_Model_3_Performance_AWD_Front.jpg",
+                "https://cdn.mos.cms.futurecdn.net/yX7odtjFCfE9fZZpDtsda6.jpg",
+                "Tesla Model 3 Standard Range +  There are four main versions of the Model 3 -- the standard Model 3, the SR+, the Long Range, and the Model 3 Performance.\n" +
+                "\n" +
+                "So what are all of the possibilities for the Model 3? The two main options? Well, while it sounds like some companies have more to offer than others, the company behind the Model 3 and Model X are both clearly not making it very expensive. Musk told CNBC in February:\n" +
+                "\n" +
+                "Every new generation of the Model 3 is going to be a little smaller, a little faster, a little sharper and, perhaps most importantly, a little thinner. There's no question that our product line-up is coming along fine, and we're doing very well. It just doesn't seem like that many people are getting this right now. At some point, it's just getting to the point that the Model 3 is one of the most important aspects of our future product.\n" +
+                "\n" +
+                "He continued:\n" +
+                "\n" +
+                "The next one will probably be the new Model X, but it will be the first and will be even higher. The only thing we're really aware of is the fact that the Model X was just built as a box for the Model S, which is very different from the box we have now. That's kind of the way that things changed in the past. Now we're working very, very closely with OEMs and manufacturers to make sure that");
         electricVehicleStorage.saveElectricVehicle(teslaThree);
 
-        ElectricVehicle teslaSPlaid = new ElectricVehicle("Tesla", "Model S Plaid", 129990.00, false,
+        ElectricVehicle teslaSPlaid = new ElectricVehicle("Tesla", "Model S Plaid", "Bridget Von Hammersmark", "Sedan", 129990.00, false,
                 725, 396, 101, 1.99, 200, "AWD", 6.5, 27, 5, true,
                 true, true, 25, 3, 5.0, true,
-                "https://i.insider.com/605ce29e106eb50019d05a89?width=700");
+                "https://i.insider.com/605ce29e106eb50019d05a89?width=700",
+                "https://motoring.pxcrush.net/motoring/general/editorial/tesla-model-s-2021.jpg?width=1024",
+                "With the longest range and quickest acceleration of any electric vehicle in production, Model S Plaid is the highest performing sedan ever built.\n" +
+                "\n" +
+                "With up to 412-miles of estimated driving range—depending upon model—the S can easily be used for long drives, and the 1020-hp Plaid version can deliver supercar acceleration while seating four adults. The Model S is also practical, with a large rear cargo area and a secondary front-trunk for extra space.");
         electricVehicleStorage.saveElectricVehicle(teslaSPlaid);
 
         ElectricVehicle teslaX = new ElectricVehicle("Tesla", "Model X LR", 94990.00, false,
