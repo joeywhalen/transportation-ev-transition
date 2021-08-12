@@ -73,8 +73,8 @@ public class IceVehicle {
         return topSpeed;
     }
 
-    public Model getModel() {
-        return model;
+    public String getModelName() {
+        return model.getModelName();
     }
 
     public Long getModelId(){
@@ -89,11 +89,14 @@ public class IceVehicle {
         return make.getId();
     }
 
-    public Year getYear() {
-        return year;
+    public int getYear() {
+        return year.getYear();
     }
 
-    public Make getMake() {
-        return make;
+    public String getMakeName() {
+        return make.getMakeName();
+    }
+    public String getYearString(){
+        return year.getYearString();
     }
 }
