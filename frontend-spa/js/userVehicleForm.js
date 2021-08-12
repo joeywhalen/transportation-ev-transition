@@ -29,10 +29,16 @@ submitButton.addEventListener("click", () => {
 
     clearChildren(mainContent)
 
-    
-
+    const userStateIndex = yearStateElement.selectedIndex - 1
     const userYearIndex = yearSelectElement.selectedIndex - 1
+    const userMakeIndex = yearMakeElement.selectedIndex - 1
+    const userModelIndex = yearModelElement.selectedIndex - 1
+
+    const userStateId = stateSelectElement.getElementsByClassName("state-option")[userStateIndex].getAttribute("id")
     const userYearId = yearSelectElement.getElementsByClassName("year-option")[userYearIndex].getAttribute("id")
+    const userMakeId = makeSelectElement.getElementsByClassName("make-option")[userMakeIndex].getAttribute("id")
+    const userModelId = modelSelectElement.getElementsByClassName("model-option")[userModelIndex].getAttribute("id")
+    
 
     console.log(yearSelectElement.getElementsByClassName("year-option")[userYearIndex].getAttribute("id"))
 
@@ -58,6 +64,7 @@ const genStates = function (states) {
 
     states.forEach((state) => {
         const newOptionElement = document.createElement("option");
+        newOptionElement.classList.add("state-option")
         newOptionElement.setAttribute("value", state.state);
         newOptionElement.innerText = state.state
         stateSelectElement.appendChild(newOptionElement)
@@ -112,6 +119,7 @@ const genMakes = function (makes) {
 
     makes.forEach((make) => {
         const newOptionElement = document.createElement("option")
+        newOptionElement.classList.add("make-option")
         newOptionElement.setAttribute("value", make.makeName)
         newOptionElement.innerText = make.makeName
         makeSelectElement.appendChild(newOptionElement)
@@ -148,6 +156,7 @@ const genModels = function (models) {
 
     models.forEach((model) => {
         const newOptionElement = document.createElement("option")
+        newOptionElement.classList.add("model-option")
         newOptionElement.setAttribute("value", model.modelName)
         newOptionElement.innerText = model.modelName
         modelSelectElement.appendChild(newOptionElement)
