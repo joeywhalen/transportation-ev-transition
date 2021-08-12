@@ -23,7 +23,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 true, false, 27.2, 3, 4.5, false,
                 "https://www.motortrend.com/uploads/sites/5/2019/11/2020-Audi-E-Tron-Sportback-11.jpg?fit=around%7C875:492",
                 "https://www.cnet.com/a/img/jF9XjA7gNJLQQo9ivIG6zEno4Qo=/2019/11/19/efbb58b4-bc42-46c6-8142-16ff002fd12d/ogi-audi-e-tron-sportback-2020-ogi.jpg",
-                "Audi e-tron sportback electric vehicle. The new model features standard EPA and CE certification.\n" +
+                "2021 Audi e-tron sportback electric vehicle. The new model features standard EPA and CE certification.\n" +
                 "\n" +
                 "The Model S Sportback features an all electric engine, while the smaller, sportier version replaces the 3.2-liter V-6 that would replace the smaller V-6 found in the S-Class. The rear seats (or lack thereof) are identical to the S-Class models, but there's no dual-slip differential. This means it's a more comfortable ride.\n" +
                 "\n" +
@@ -42,7 +42,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 true, false, 16.6, 0, 5.0, false,
                 "https://media.chevrolet.com/dld/content/dam/Media/images/US/Vehicles/Concepts/Chevrolet/BoltEV/Product/2015-Chevrolet-BoltEV-Concept-exterior-001.jpg",
                 "https://media.chevrolet.com/content/Pages/news/us/en/2021/feb/0214-boltev-bolteuv/_jcr_content/top_parsys/image.img.jpg/1613335646777.jpg",
-                "Chevrolet Bolt – A new engine and new wheels are all the rage in the Chevrolet Bolt, bringing a new class of SUV for the next generation and the only place in the market where all that is new is the Chevrolet Bolt.\n" +
+                "2022 Chevrolet Bolt – A new engine and new wheels are all the rage in the Chevrolet Bolt, bringing a new class of SUV for the next generation and the only place in the market where all that is new is the Chevrolet Bolt.\n" +
                 "\n" +
                 "And it comes with a new, $39,000 msrp.\n" +
                 "\n" +
@@ -72,7 +72,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 true, false, 23, 0, 4.0, false,
                 "https://ev-database.org/img/auto/Hyundai_IONIQ_Electric_2020/Hyundai_IONIQ_Electric_2020-01.jpg",
                 "https://media.ed.edmunds-media.com/hyundai/ioniq-hybrid/2020/oem/2020_hyundai_ioniq-hybrid_4dr-hatchback_limited_fq_oem_1_1600.jpg",
-                "2021 Hyundai Ioniq electric vehicle review\n" +
+                "2021 Hyundai Ioniq electric vehicle\n" +
                 "\n" +
                 "I have been a Hyundai Ioniq owner since 2001. I work with a car of every type, including a Kia i8, i8 Premium model, and I have made one new car during the past 11 years or so. Here are some tips for your Toyota or Lowe's dealership that I know of, and would recommend to a Toyota owner:\n" +
                 "\n" +
@@ -115,7 +115,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 true, true, 23.2, 1.0, 5.0, false,
                 "https://electrek.co/wp-content/uploads/sites/3/2019/01/Jaguar-I-Pace-hero-e1547961480245.jpg?quality=82&strip=all",
                 "https://cdn.motor1.com/images/mgl/qvVZR/s1/jaguar-i-pace-lo-show-di-presentazione-dalle-19-del-1-marzo.jpg",
-                "Jaguar I-Pace electric vehicle review\n" +
+                "2021 Jaguar I-Pace electric vehicle\n" +
                 "\n" +
                 "The best of the best of the best\n" +
                 "\n" +
@@ -145,7 +145,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 true, false, 18.5, 0, 5.0, false,
                 "https://www.kia.com/us/en/vehicles/niro-plug-in-hybrid/2021/_jcr_content/root/responsivegrid/mediatext.coreimg.100.1400.jpeg/1616531623780.jpeg",
                 "https://electrek.co/wp-content/uploads/sites/3/2021/06/2021-Kia-Niro-EV.jpg?quality=82&strip=all",
-                "Kia Niro Electric vehicle. The Niro is a smart-chargable electric vehicle that combines electrical power, lithium ion batteries, and electrical surge storage with remote charging. It is powered by electric motor and is equipped with the latest generation of lithium-ion batteries. It's designed to be ready to walk in to anywhere in the United States within two years, and can then be transported on rail to its destination in less than a month. The Niro is available with a range of 300 kilometers from a factory in the Bay Area to Alaska.\n" +
+                "2021 Kia Niro Electric vehicle. The Niro is a smart-chargable electric vehicle that combines electrical power, lithium ion batteries, and electrical surge storage with remote charging. It is powered by electric motor and is equipped with the latest generation of lithium-ion batteries. It's designed to be ready to walk in to anywhere in the United States within two years, and can then be transported on rail to its destination in less than a month. The Niro is available with a range of 300 kilometers from a factory in the Bay Area to Alaska.\n" +
                 "\n" +
                 "About the Niro Motorsports\n" +
                 "\n" +
@@ -165,16 +165,32 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 );
         electricVehicleStorage.saveElectricVehicle(lucidAir);
 
-        ElectricVehicle miniCooperSE = new ElectricVehicle("Mini Cooper", "SE", 29900.00, true,
+        ElectricVehicle miniCooperSE = new ElectricVehicle("Mini Cooper", "SE", "Santanico Pandemonium", "Sedan", 29900.00, true,
                 725, 114, 108, 6.9, 93, "FWD", 4, 36, 4, false,
                 true, false, 8.7, 0, 4.0, false,
-                "https://cdn.motor1.com/images/mgl/0lp6V/s1/mini-cooper-se-2020-im-test.jpg");
+                "https://cdn.motor1.com/images/mgl/0lp6V/s1/mini-cooper-se-2020-im-test.jpg",
+                "https://cdn.motor1.com/images/mgl/kNN7x/s1/mini-cooper-se.jpg",
+                "2021 Mini Cooper SE Electric vehicle features a new, lower-powered electric propulsion system and comes with a redesigned steering wheel using less energy in direct sunlight.\n" +
+                "\n" +
+                "In terms of features, the EV is available with the S-Penetration Pro, which helps reduce the battery voltage by 15%, while the Paddle mode offers two more modes for increased stability and additional power levels.\n" +
+                "\n" +
+                "The EV version offers only one option for the user after the user activates the app for two minutes in the EV Comfort mode.\n" +
+                "\n" +
+                "The EV version also features additional LED lights available to help you take a look or just take a video.");
         electricVehicleStorage.saveElectricVehicle(miniCooperSE);
 
-        ElectricVehicle nissanLeaf = new ElectricVehicle("Nissan", "Leaf S Plus", 37400.00, true,
+        ElectricVehicle nissanLeaf = new ElectricVehicle("Nissan", "Leaf S Plus", "Max Cherry", "Crossover", 37400.00, true,
                 725, 226, 114, 7.4, 90, "FWD", 11, 60, 5, false,
                 true, false, 23.6, 0, 5.0, false,
-                "https://inv.assets.sincrod.com/ChromeColorMatch/us/TRANSPARENT_cc_2021NIC160018_01_1280_KH3.png");
+                "https://inv.assets.sincrod.com/ChromeColorMatch/us/TRANSPARENT_cc_2021NIC160018_01_1280_KH3.png",
+                "https://cdn.motor1.com/images/mgl/42lOZ/s1/2021-nissan-leaf.jpg",
+                "2021 Nissan Leaf Electric vehicle\n" +
+                "\n" +
+                "In June 2015, Nissan introduced the 'Polarizer' of the model year and went on to have this year's models from Nissan.\n" +
+                "\n" +
+                "The new electric version of the Leaf may still be a bit less powerful than the 2017 model and the update was supposed to last two months, meaning that the brand will still need to develop a good test-drive to compare it to the previous generation models. But the test-drive test was, frankly, not good.\n" +
+                "\n" +
+                "The Tesla Model S was more powerful than the Nissan Leaf as a real test road car. But, after some testing, the Model S took all three test-driving sessions off. This test was run by Tesla Motors, Hyundai Motors, and Mitsubishi Motors in Tokyo.");
         electricVehicleStorage.saveElectricVehicle(nissanLeaf);
 
         ElectricVehicle polestarTwo = new ElectricVehicle("Polestar", "Two", 59900.00, true,
