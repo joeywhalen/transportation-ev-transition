@@ -37,7 +37,7 @@ submitButton.addEventListener("click", ()=> {
                 }
             })
             .then(response => response.json())
-            .then(makes => genMakes(makes))
+            .then(userVehicle => genUserVehicleComp(userVehicle))
             .catch(error => console.log(error))
 
 
