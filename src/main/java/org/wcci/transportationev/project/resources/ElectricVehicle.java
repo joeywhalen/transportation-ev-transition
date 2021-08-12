@@ -1,5 +1,9 @@
 package org.wcci.transportationev.project.resources;
 
+import java.util.Collection;
+import java.util.Set;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,8 +15,10 @@ public class ElectricVehicle {
     @Id
     @GeneratedValue
     private Long id;
+    private String authorName;
     private String makeName;
     private String modelName;
+    private String vehicleType;
     private double msrp;
     private boolean taxCredit;
     private double yearlyMaintenanceCost;
@@ -33,18 +39,31 @@ public class ElectricVehicle {
     private boolean phoneKey;
     @Lob
     private String imageUrl;
+    @Lob
+    private String imageUrl2;
+
+    @Lob
+    private String reviewContent;
+
+    @Lob
+    @ElementCollection
+    private Collection<String> reviewComments;
 
     protected ElectricVehicle() {
 
     }
 
-    public ElectricVehicle(String makeName, String modelName, double msrp, boolean taxCredit, double yearlyMaintenanceCost,
+    public ElectricVehicle(String makeName, String modelName, String authorName, String vehicleType,
+                            double msrp, boolean taxCredit, double yearlyMaintenanceCost,
                            int range, int mpgE, double zeroToSixty, int topSpeed, String wheelDrive,
                            double homeCharge, int travelCharge, int seating, boolean autonomous,
                            boolean driverAssist, boolean freeOtaUpdate, double rearCargoSpace,
-                           double frunkSpace, double safetyRating, boolean phoneKey, String imageUrl) {
+                            double frunkSpace, double safetyRating, boolean phoneKey, String imageUrl,
+                            String imageUrl2, String reviewContent, String... reviewComments) {
         this.makeName = makeName;
         this.modelName = modelName;
+        this.authorName = authorName;
+        this.vehicleType = vehicleType;
         this.msrp = msrp;
         this.yearlyMaintenanceCost = yearlyMaintenanceCost;
         this.taxCredit = taxCredit;
@@ -64,6 +83,9 @@ public class ElectricVehicle {
         this.safetyRating = safetyRating;
         this.phoneKey = phoneKey;
         this.imageUrl = imageUrl;
+        this.imageUrl2 = imageUrl2;
+        this.reviewContent = reviewContent;
+        this.reviewComments = Set.of(reviewComments);
     }
 
     public Long getId() {
@@ -76,6 +98,14 @@ public class ElectricVehicle {
 
     public String getModelName() {
         return modelName;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public String getVehicleType() {
+        return vehicleType;
     }
 
     public double getMsrp() {
@@ -152,5 +182,21 @@ public class ElectricVehicle {
 
     public String getImageUrl() {
         return imageUrl;
+    }
+
+    public String getImageUrl2() {
+        return imageUrl2;
+    }
+
+    public String getReviewContent() {
+        return reviewContent;
+    }
+
+    public Iterable<String> getReviewComments() {
+        return reviewComments;
+    }
+
+    public void addElectricVehicleComment(String newReviewComment) {
+        this.reviewComments.add(newReviewComment);
     }
 }
