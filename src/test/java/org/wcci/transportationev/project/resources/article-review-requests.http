@@ -18,22 +18,15 @@ Content-Type: application/json
 
 Test comment for article
 
-### Get all Review Topics.
-GET http://localhost:8080/api/reviewTopics
-Accept: application/json
-
-### Get a Review Topic with the given id.
-GET http://localhost:8080/api/reviewTopics/10
-
-### Get all Reviews for a Topic.
-GET http://localhost:8080/api/reviewTopics/10/reviews
+### Get all Electric Vehicles.
+GET http://localhost:8080/api/electricVehicles
 Content-Type: application/json
 
-### Get a single Review for a Topic.
-GET http://localhost:8080/api/reviewTopics/10/reviews/24
+### Get a single Electric Vehicle.
+GET http://localhost:8080/api/electricVehicles/111
 
-### Add a comment to a Review.
-PATCH http://localhost:8080/api/reviewTopics/29/reviews/35/comments
+### Add a comment to an Electric Vehicle Review.
+PATCH http://localhost:8080/api/electricVehicles/121/comments
 Content-Type: application/json
 
 Test comment for review

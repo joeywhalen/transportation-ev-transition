@@ -196,7 +196,7 @@ public class ElectricVehicle {
         return reviewComments;
     }
 
-    public void addReviewComments(String newReviewComment) {
+    public void addElectricVehicleComment(String newReviewComment) {
         this.reviewComments.add(newReviewComment);
     }
 }

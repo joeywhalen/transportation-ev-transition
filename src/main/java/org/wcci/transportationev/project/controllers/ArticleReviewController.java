@@ -3,27 +3,23 @@ package org.wcci.transportationev.project.controllers;
 import org.springframework.web.bind.annotation.*;
 import org.wcci.transportationev.project.resources.Article;
 import org.wcci.transportationev.project.resources.ArticleTopic;
-import org.wcci.transportationev.project.resources.Review;
-import org.wcci.transportationev.project.resources.ReviewTopic;
+import org.wcci.transportationev.project.resources.ElectricVehicle;
 import org.wcci.transportationev.project.storage.ArticleStorage;
 import org.wcci.transportationev.project.storage.ArticleTopicStorage;
-import org.wcci.transportationev.project.storage.ReviewStorage;
-import org.wcci.transportationev.project.storage.ReviewTopicStorage;
+import org.wcci.transportationev.project.storage.ElectricVehicleStorage;
 
 @RestController
 public class ArticleReviewController {
 
     private ArticleTopicStorage articleTopicStorage;
     private ArticleStorage articleStorage;
-    private ReviewTopicStorage reviewTopicStorage;
-    private ReviewStorage reviewStorage;
+    private ElectricVehicleStorage electricVehicleStorage;
 
     public ArticleReviewController(ArticleTopicStorage articleTopicStorage, ArticleStorage articleStorage, 
-                        ReviewTopicStorage reviewTopicStorage, ReviewStorage reviewStorage) {
+                        ElectricVehicleStorage electricVehicleStorage) {
         this.articleTopicStorage = articleTopicStorage;
         this.articleStorage = articleStorage;
-        this.reviewTopicStorage = reviewTopicStorage;
-        this.reviewStorage = reviewStorage;
+        this.electricVehicleStorage = electricVehicleStorage;
     }
 
     //GET http://localhost:8080/api/articleTopics
@@ -32,10 +28,10 @@ public class ArticleReviewController {
         return articleTopicStorage.retrieveAllArticleTopics();
     }
 
-    //GET http://localhost:8080/api/reviewTopics
-    @GetMapping("/api/reviewTopics")
-    public Iterable<ReviewTopic> retrieveAllReviewTopics() {
-        return reviewTopicStorage.retrieveAllReviewTopics();
+    // GET http://localhost:8080/api/electricVehicles
+    @GetMapping("/api/electricVehicles")
+    public Iterable<ElectricVehicle> retrieveAllElectricVehicles() {
+        return electricVehicleStorage.retrieveAllElectricVehicles();
     }
     
     //GET http://localhost:8080/api/articleTopics/1
@@ -44,10 +40,10 @@ public class ArticleReviewController {
         return articleTopicStorage.retrieveArticleTopicById(id);
     }
 
-    //GET http://localhost:8080/api/reviewTopics/10
-    @GetMapping("/api/reviewTopics/{id}")
-    public ReviewTopic retrieveReviewTopicById(@PathVariable Long id) {
-        return reviewTopicStorage.retrieveReviewTopicById(id);
+    // GET http://localhost:8080/api/electricVehicles/111
+    @GetMapping("/api/electricVehicles/{id}")
+    public ElectricVehicle retrieveElectricVehicleById(@PathVariable Long id) {
+        return electricVehicleStorage.retrieveElectricVehicleById(id);
     }
 
     //GET http://localhost:8080/api/articleTopics/1/articles
@@ -56,22 +52,10 @@ public class ArticleReviewController {
         return articleTopicStorage.retrieveArticleTopicById(id).getArticles();
     }
 
-    //GET http://localhost:8080/api/reviewTopics/10/reviews
-    @GetMapping("/api/reviewTopics/{id}/reviews")
-    public Iterable<Review> retrieveAllReviewsInTopic(@PathVariable Long id) {
-        return reviewTopicStorage.retrieveReviewTopicById(id).getReviews();
-    }
-
     //GET http://localhost:8080/api/articleTopics/4/articles/5
     @GetMapping("/api/articleTopics/{id}/articles/{articleId}")
     public Article retrieveArticleById(@PathVariable Long id, @PathVariable Long articleId) {
         return articleStorage.retrieveArticleById(articleId);
-    }
-
-    //GET http://localhost:8080/api/reviewTopics/10/reviews/24
-    @GetMapping("/api/reviewTopics/{id}/reviews/{reviewId}")
-    public Review retrieveReviewById(@PathVariable Long id, @PathVariable Long reviewId) {
-        return reviewStorage.retrieveReviewById(reviewId);
     }
 
     //PATCH http://localhost:8080/api/articleTopics/7/articles/9/comments
@@ -83,13 +67,13 @@ public class ArticleReviewController {
         return articleToChange;
     }
 
-    //PATCH http://localhost:8080/api/reviewTopics/29/reviews/35/comments
-    @PatchMapping("/api/reviewTopics/{id}/reviews/{reviewId}/comments")
-    public Review addNewReviewComment(@PathVariable Long id, @PathVariable Long reviewId, @RequestBody String newReviewComment) {
-        Review reviewToChange = reviewStorage.retrieveReviewById(reviewId);
-        reviewToChange.addReviewComment(newReviewComment);
-        reviewStorage.saveReview(reviewToChange);
-        return reviewToChange;
+    //PATCH http://localhost:8080/api/electricVehicles/121/comments
+    @PatchMapping("/api/electricVehicles/{id}/comments")
+    public ElectricVehicle addNewElectricVehicleComment(@PathVariable Long id, @RequestBody String newReviewComment) {
+        ElectricVehicle electricVehicleToChange = electricVehicleStorage.retrieveElectricVehicleById(id);
+        electricVehicleToChange.addElectricVehicleComment(newReviewComment);
+        electricVehicleStorage.saveElectricVehicle(electricVehicleToChange);
+        return electricVehicleToChange;
     }
     
 }
