@@ -37,16 +37,34 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "I could not agree more.  Love Audi, and love this vehicle!");
         electricVehicleStorage.saveElectricVehicle(audiETronSB);
 
-        ElectricVehicle chevyBolt = new ElectricVehicle("Chevrolet", "Bolt", 37500.00, false, 
+        ElectricVehicle chevyBolt = new ElectricVehicle("Chevrolet", "Bolt", "Mia Wallace", "Crossover", 37500.00, false, 
                 725, 247, 120, 7.0, 93, "FWD", 7.5, 60, 5, true,
                 true, false, 16.6, 0, 5.0, false,
-                "https://media.chevrolet.com/dld/content/dam/Media/images/US/Vehicles/Concepts/Chevrolet/BoltEV/Product/2015-Chevrolet-BoltEV-Concept-exterior-001.jpg");
+                "https://media.chevrolet.com/dld/content/dam/Media/images/US/Vehicles/Concepts/Chevrolet/BoltEV/Product/2015-Chevrolet-BoltEV-Concept-exterior-001.jpg",
+                "https://media.chevrolet.com/content/Pages/news/us/en/2021/feb/0214-boltev-bolteuv/_jcr_content/top_parsys/image.img.jpg/1613335646777.jpg",
+                "Chevrolet Bolt – A new engine and new wheels are all the rage in the Chevrolet Bolt, bringing a new class of SUV for the next generation and the only place in the market where all that is new is the Chevrolet Bolt.\n" +
+                "\n" +
+                "And it comes with a new, $39,000 msrp.\n" +
+                "\n" +
+                "That's over $8,000 cheaper than what has been added to the Bolt for the U.S. market, but it's still just 4% more expensive than the U.S. market, which saw 16.4% more sales for the first time over last year.\n" +
+                "\n" +
+                "I was interested not once, not twice, but once and for all where the CTM and GM cars are coming from.\n" +
+                "\n" +
+                "When they came out, we thought they were not coming just for the U.S., but were going to be coming around the world.\n" +
+                "\n" +
+                "So we set about making sure Chevrolet got to where they were able to do that.");
         electricVehicleStorage.saveElectricVehicle(chevyBolt);
 
-        ElectricVehicle fordMustang = new ElectricVehicle("Ford", "Mustang Mach-E Select (eAWD)", 42895.00, true,
+        ElectricVehicle fordMustang = new ElectricVehicle("Ford", "Mustang Mach-E Select (eAWD)", "Vincent Vega", "Crossover", 42895.00, true,
                 725, 211, 90, 5.2, 130, "e-AWD", 14, 52, 5, false,
                 true, true, 29.7, 4.7, 5.0, true,
-                "https://www.ford.com/ntzlibs/content/dam/bev/us/november-2020-updates/21_FRD_MCH_50700_GTP.jpg.renditions.original.png");
+                "https://www.ford.com/ntzlibs/content/dam/bev/us/november-2020-updates/21_FRD_MCH_50700_GTP.jpg.renditions.original.png",
+                "https://media.ford.com/content/fordmedia/fna/us/en/products/evs/mustang-mach-e/mustang-mach-e/jcr:content/content/media-section-parsys/textimage_f597/image.img.951.535.jpg/1608221793793.jpg",
+                "2021 Ford Mustang Mach E, All electric vehicle with 9.7-inch display.\n" +
+                "\n" +
+                "These small and well equipped Ford Mustang Mach E are equipped with a unique design and all-new electric engine. Each Ford Mustang Mach E with the powertrain comes with the latest Ford Mustang technology including Ford-developed electric motors capable of producing a fully automatic transmission. In addition to the powerful torque at 100-to 20,000 RPM, Ford Mustang Mach E features automatic drive, electronically-configurable engine and more horsepower. Also, in addition to the powertrain, the Ford Mustang Mach E also comes equipped with automatic torque converter, which enhances smooth driving for those with different driving tastes.\n" +
+                "\n" +
+                "There is an optional 4x32 rear-wheel drive mode available for all four sizes. For more information, please visit Ford.com.");
         electricVehicleStorage.saveElectricVehicle(fordMustang);
 
         ElectricVehicle hyundaiIoniq = new ElectricVehicle("Hyundai", "Ioniq", 33245.00, true,
