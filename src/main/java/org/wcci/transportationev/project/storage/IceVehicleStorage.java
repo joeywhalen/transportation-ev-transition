@@ -19,4 +19,8 @@ public class IceVehicleStorage {
     public void saveIceVehicle(IceVehicle iceVehicleToSave){
         iceVehicleRepo.save(iceVehicleToSave);
     }
+
+    public Iterable<IceVehicle> retrieveIceVehiclesByModelId(Long modelId){
+        return iceVehicleRepo.findAllByModelId(modelId);
+    }
 }

@@ -97,7 +97,14 @@ public class IceVehicleController {
     @GetMapping("api/ice/userVehicle/{userYearId}/{userMakeId}/{userModelId}")
     public IceVehicle retrieveUserIceVehicleByYearIdMakeIdModelId(@PathVariable String userYearId,@PathVariable String userMakeId,@PathVariable String userModelId) {
         Long yearId = Long.parseLong(userYearId);
-        Long makeId = Long.parseLong(userMakeId);
+        // Long makeId = Long.parseLong(userMakeId);
         Long modelId = Long.parseLong(userModelId);
+        // Iterable<IceVehicle> allVehiclesofModel = iceVehicleStorage.retrieveIceVehiclesByModelId(modelId);
+        // for (IceVehicle iceVehicle : allVehiclesofModel) {
+        //     // if(iceVehicle.getModelId() == modelId && iceVehicle.getYearId() == yearId){
+        //     //     return iceVehicle;
+        //     // }
+        // }
+        return iceVehicleStorage.retrieveIceVehicleById(194L);
     }
 }

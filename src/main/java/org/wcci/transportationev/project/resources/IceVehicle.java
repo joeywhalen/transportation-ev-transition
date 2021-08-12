@@ -71,4 +71,12 @@ public class IceVehicle {
     public Model getModel() {
         return model;
     }
+
+    public Long getModelId(){
+        return model.getId();
+    }
+
+    public Long getYearId(){
+        return year.getId();
+    }
 }
