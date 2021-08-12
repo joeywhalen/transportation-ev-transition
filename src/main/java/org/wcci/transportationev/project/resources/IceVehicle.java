@@ -2,6 +2,8 @@ package org.wcci.transportationev.project.resources;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class IceVehicle {
     @Id
@@ -15,10 +17,15 @@ public class IceVehicle {
     private int topSpeed;
 
     @ManyToOne
+    @JsonIgnore
     private Model model;
+
     @ManyToOne
+    @JsonIgnore
     private Year year;
+    
     @ManyToOne
+    @JsonIgnore
     private Make make;
 
 
@@ -66,7 +73,30 @@ public class IceVehicle {
         return topSpeed;
     }
 
-    public Model getModel() {
-        return model;
+    public String getModelName() {
+        return model.getModelName();
+    }
+
+    public Long getModelId(){
+        return model.getId();
+    }
+
+    public Long getYearId(){
+        return year.getId();
+    }
+
+    public Long getMakeId(){
+        return make.getId();
+    }
+
+    public int getYear() {
+        return year.getYear();
+    }
+
+    public String getMakeName() {
+        return make.getMakeName();
+    }
+    public String getYearString(){
+        return year.getYearString();
     }
 }

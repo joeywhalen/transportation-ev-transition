@@ -34,4 +34,9 @@ public class Year {
     public Collection<Make> getMakes() {
         return makes;
     }
+
+    public String getYearString(){
+        Integer test = year;
+        return test.toString();
+    }
 }

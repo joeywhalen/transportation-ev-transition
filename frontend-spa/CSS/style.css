@@ -35,6 +35,11 @@ body{
 
 /* ---------------------nav bar----------------------- */
 
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
 
 .header-container {
   display: block;
@@ -270,6 +275,7 @@ form{
     overflow: hidden;
     transition: .5s;
     margin-top: 40px;
+    margin-left: 15px;
     letter-spacing: 4px
   }
   
