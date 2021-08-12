@@ -193,16 +193,28 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The Tesla Model S was more powerful than the Nissan Leaf as a real test road car. But, after some testing, the Model S took all three test-driving sessions off. This test was run by Tesla Motors, Hyundai Motors, and Mitsubishi Motors in Tokyo.");
         electricVehicleStorage.saveElectricVehicle(nissanLeaf);
 
-        ElectricVehicle polestarTwo = new ElectricVehicle("Polestar", "Two", 59900.00, true,
+        ElectricVehicle polestarTwo = new ElectricVehicle("Polestar", "Two", "Ray Nicolette", "Crossover", 59900.00, true,
                 725, 233, 92, 4.5, 127, "AWD", 8, 47, 5, false,
                 true, true, 14.3, 1.23, 5.0, true,
-                "https://www.gannett-cdn.com/presto/2020/08/20/PDTF/636d94b2-68d6-424b-ada2-21103a7057f7-IMG_3086.JPG?crop=3504,1971,x15,y0&width=3200&height=1800&format=pjpg&auto=webp");
+                "https://www.gannett-cdn.com/presto/2020/08/20/PDTF/636d94b2-68d6-424b-ada2-21103a7057f7-IMG_3086.JPG?crop=3504,1971,x15,y0&width=3200&height=1800&format=pjpg&auto=webp",
+                "https://i.insider.com/5f36af5fe89ebf001f04496b?width=1136&format=jpeg",
+                "One of the most complete electric cars money can buy. Superb build quality, and decent to drive.\n" +
+                "\n" +
+                "The 2021 Polestar 2 pairs handsome design with adequate performance.\n" +
+                "\n" +
+                "The Polestar has a higher ride height than most sedans, and SUV-like body cladding, making it a bit of a pseudo-crossover. However you classify it, the Polestar 2 is an extremely handsome car, with minimal body surfacing and great proportions.");
         electricVehicleStorage.saveElectricVehicle(polestarTwo);
 
-        ElectricVehicle porscheTaycan = new ElectricVehicle("Porsche", "Taycan", 103800.00, true,
+        ElectricVehicle porscheTaycan = new ElectricVehicle("Porsche", "Taycan", "Elle Driver", "Sedan" 103800.00, true,
                 725, 200, 69, 3.4, 155, "RWD", 12, 15, 4, false,
                 true, true, 12.9, 2.8, 5.0, false,
-                "https://www.motortrend.com/uploads/sites/5/2021/01/2021_Porsche_Taycan_2.jpeg?fit=around%7C875:492.1875");
+                "https://www.motortrend.com/uploads/sites/5/2021/01/2021_Porsche_Taycan_2.jpeg?fit=around%7C875:492.1875",
+                "https://i.insider.com/5f36af5fe89ebf001f04496b?width=1136&format=jpeg",
+                "Highs: Incredible and repeatable acceleration, drives a lot like a Porsche sports car, can charge quickly.\n" +
+                "\n" +
+                "Lows: A pain to get in and out of, missing some traditional EV traits, exorbitant price.\n" +
+                "\n" +
+                "Verdict: The Taycan takes everything good about electric performance cars and amplifies it.");
         electricVehicleStorage.saveElectricVehicle(porscheTaycan);
 
         ElectricVehicle teslaThree = new ElectricVehicle("Tesla", "Model 3 SR+", 39900.00, false,
