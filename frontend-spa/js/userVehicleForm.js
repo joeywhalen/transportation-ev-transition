@@ -66,6 +66,7 @@ const genStates = function (states) {
         const newOptionElement = document.createElement("option");
         newOptionElement.classList.add("state-option")
         newOptionElement.setAttribute("value", state.state);
+        newOptionElement.setAttribute("id", state.id)
         newOptionElement.innerText = state.state
         stateSelectElement.appendChild(newOptionElement)
     })
@@ -121,6 +122,7 @@ const genMakes = function (makes) {
         const newOptionElement = document.createElement("option")
         newOptionElement.classList.add("make-option")
         newOptionElement.setAttribute("value", make.makeName)
+        newOptionElement.setAttribute("id", make.id)
         newOptionElement.innerText = make.makeName
         makeSelectElement.appendChild(newOptionElement)
     })
@@ -158,6 +160,7 @@ const genModels = function (models) {
         const newOptionElement = document.createElement("option")
         newOptionElement.classList.add("model-option")
         newOptionElement.setAttribute("value", model.modelName)
+        newOptionElement.setAttribute("id", model.id)
         newOptionElement.innerText = model.modelName
         modelSelectElement.appendChild(newOptionElement)
     })
