@@ -110,10 +110,34 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The Kona is an excellent choice if you're looking for a smaller SUV with carlike driving manners.");
         electricVehicleStorage.saveElectricVehicle(hyundaiKona);
 
-        ElectricVehicle jaguarIpace = new ElectricVehicle("Jaguar", "I-Pace", 69900.00, true,
+        ElectricVehicle jaguarIpace = new ElectricVehicle("Jaguar", "I-Pace", "Mallory Knox", "Crossover", 69900.00, true,
                 725, 234, 76, 4.5, 124, "AWD", 10.2, 90, 5, false,
                 true, true, 23.2, 1.0, 5.0, false,
-                "https://electrek.co/wp-content/uploads/sites/3/2019/01/Jaguar-I-Pace-hero-e1547961480245.jpg?quality=82&strip=all");
+                "https://electrek.co/wp-content/uploads/sites/3/2019/01/Jaguar-I-Pace-hero-e1547961480245.jpg?quality=82&strip=all",
+                "https://cdn.motor1.com/images/mgl/qvVZR/s1/jaguar-i-pace-lo-show-di-presentazione-dalle-19-del-1-marzo.jpg",
+                "Jaguar I-Pace electric vehicle review\n" +
+                "\n" +
+                "The best of the best of the best\n" +
+                "\n" +
+                "The biggest problem I'm trying to solve\n" +
+                "\n" +
+                "The car I want to purchase\n" +
+                "\n" +
+                "The guy who thinks I'm crazy\n" +
+                "\n" +
+                "This article is about, for example, the car I bought. The car I wanted could not meet the 'rules' for a successful sale. This car, though I'd consider it, might well be an exception.\n" +
+                "\n" +
+                "At the least, this doesn't mean that the car I wanted didn't come with a few different reasons. I'm just as likely to be a customer for a certain thing as someone who buys a vehicle at the local auto dealer.\n" +
+                "\n" +
+                "At the risk of sounding a bit paranoid here, car buyers and dealers love to put car prices on the table. That's why we often overlook or minimize high interest purchases. The most often overlooked item is the interest they pay to buy a car.\n" +
+                "\n" +
+                "It's possible for a buyer to make an investment of money by buying a car, for example, at a discount. However, such investments tend not to result in high rates of interest.\n" +
+                "\n" +
+                "It is important to note two general points:\n" +
+                "\n" +
+                "- If the car being offered at the dealership makes a purchase, that item will be accepted by some buyer as something that they'd purchase at their local car retailer.\n" +
+                "\n" +
+                "- A 'price on the street' comparison isn't a very efficient way to measure the...");
         electricVehicleStorage.saveElectricVehicle(jaguarIpace);
 
         ElectricVehicle kiaNiro = new ElectricVehicle("Kia", "Niro", 39090.00, true,
