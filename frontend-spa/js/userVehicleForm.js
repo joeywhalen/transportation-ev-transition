@@ -14,10 +14,19 @@ const clearChildren = function (element) {
     }
 }
 
+const mainContent = document.querySelector(".main-content")
 const stateSelectElement = document.querySelector("#states")
 const yearSelectElement = document.querySelector("#years")
 const makeSelectElement = document.querySelector("#makes")
 const modelSelectElement = document.querySelector("#models")
+const submitButton = document.querySelector(".user-form-submit-button")
+
+submitButton.addEventListener("click", ()=> {
+
+ clearChildren(mainContent)
+
+
+})
 
 const genStates = function (states) {
     clearChildren(stateSelectElement);

@@ -16,8 +16,10 @@ public class IceVehicle {
 
     @ManyToOne
     private Model model;
+
     @ManyToOne
     private Year year;
+    
     @ManyToOne
     private Make make;
 
