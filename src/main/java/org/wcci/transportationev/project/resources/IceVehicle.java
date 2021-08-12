@@ -79,4 +79,12 @@ public class IceVehicle {
     public Long getYearId(){
         return year.getId();
     }
+
+    public Year getYear() {
+        return year;
+    }
+
+    public Make getMake() {
+        return make;
+    }
 }
