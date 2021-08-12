@@ -349,22 +349,32 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The Lightning shares much of the regular F-150's body and cabin but swaps that truck's gasoline-powered V-6 and V-8 engine options for a pair of electric motors and one of two different battery packs.");
         electricVehicleStorage.saveElectricVehicle(fordLightning);
 
-        ElectricVehicle genesisGEighty = new ElectricVehicle("Genesis", "G80", 50000.00, true,
+        ElectricVehicle genesisGEighty = new ElectricVehicle("Genesis", "G80", "Paul Denton", "Sedan", 50000.00, true,
                 725, 310, 90, 4.8, 100, "e-AWD", 9, 22, 5, false,
                 true, false, 13.1, 0, 4.5, true,
-                "https://www.motortrend.com/uploads/sites/5/2020/03/2021-Genesis-G80-4.jpg");
+                "https://www.motortrend.com/uploads/sites/5/2020/03/2021-Genesis-G80-4.jpg",
+                "https://cdn.motor1.com/images/mgl/rMMlP/s3/2022-genesis-g80-sport.jpg",
+                "Luxury upstart Genesis is dipping its toe in the EV waters with an electric version of its G80 sedan for the 2022 model year, which will be called Electrified G80. The Electrified G80 is nearly indistinguishable from the gasoline-powered model inside and out, which is fine by us as we find the car's styling handsome and its cabin lovely. Genesis has not announced many details about the car's powertrain except that all-wheel drive will be standard, and that range should come in around 265 miles per charge.");
         electricVehicleStorage.saveElectricVehicle(genesisGEighty);
 
-        ElectricVehicle gmcHummer = new ElectricVehicle("GMC", "Hummer EV", 79995.00, true,
+        ElectricVehicle gmcHummer = new ElectricVehicle("GMC", "Hummer EV", "Jimmy McNulty", "Truck", 79995.00, true,
                 725, 350, 75, 3.0, 100, "AWD", 12, 30, 5, true,
                 true, false, 80, 11.3, 4.5, true,
-                "https://www.motortrend.com/uploads/sites/5/2020/10/2022-GMC-Hummer-EV-03.jpg");
+                "https://www.motortrend.com/uploads/sites/5/2020/10/2022-GMC-Hummer-EV-03.jpg",
+                "https://media.assets.sincrod.com/websites/content/gmps-cadbuick-fl//ef684d2057a04f438dd4d02210f22a9f_1920x750.jpg",
+                "Feel the power of silence with the first of its breed HUMMER EV electric truck. With 1000 HP and 0-60 in 3 seconds, a quiet revolution is coming.\n" +
+                "\n" +
+                "The new pickup is shaping up to be quite the beast, with up to 1000 horsepower from its top powertrain option, which uses three electric motors, offers an estimated range of 350 miles per charge, and a leaps to 60 mph in a claimed 3.0 seconds. The Hummer also features removable roof panels, an optional adjustable air suspension, and a cool four-wheel steering feature that allows it to 'crab' sideways—drive diagonally—all of which should make it fun to take off-road.");
         electricVehicleStorage.saveElectricVehicle(gmcHummer);
 
-        ElectricVehicle hyundaiIoniqFive = new ElectricVehicle("Hyundai", "Ioniq 5", 45000.00, true,
+        ElectricVehicle hyundaiIoniqFive = new ElectricVehicle("Hyundai", "Ioniq 5", "William “Bunk” Moreland", "Crossover", 45000.00, true,
                 725, 225, 125, 5.2, 115, "AWD", 7.75, 18, 5, false,
                 true, false, 18.8, 0.85, 4.5, true,
-                "https://www.topgear.com/sites/default/files/images/news-article/2021/02/fa6aac51e8f8f99b67802fbec8432e04/ioniq5kvs_4.jpg");
+                "https://www.topgear.com/sites/default/files/images/news-article/2021/02/fa6aac51e8f8f99b67802fbec8432e04/ioniq5kvs_4.jpg",
+                "https://www.hyundai.com/content/dam/hyundai/ww/en/images/find-a-car/pip/eco/ioniq5/worldpremiere/ioniq5-ne-world-premiere-stg-m.jpg",
+                "Based on Hyundai's '45' EV concept, IONIQ 5 will be the first car mated with the recently revealed Electric-Global Modular Platform (E-GMP).\n" +
+                "\n" +
+                "More than just another EV, the Ioniq 5 brings several clever features—such as a solar roof, an augmented reality head-up display, and 800-volt electric architecture that enables relatively quick charging in places where DC fast charging is available—that will help it to stand out.");
         electricVehicleStorage.saveElectricVehicle(hyundaiIoniqFive);
 
         ElectricVehicle jeepMagneto = new ElectricVehicle("Jeep", "Wrangler Magneto", 52500.00, true,
