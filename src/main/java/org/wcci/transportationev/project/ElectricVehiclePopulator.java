@@ -67,16 +67,47 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "There is an optional 4x32 rear-wheel drive mode available for all four sizes. For more information, please visit Ford.com.");
         electricVehicleStorage.saveElectricVehicle(fordMustang);
 
-        ElectricVehicle hyundaiIoniq = new ElectricVehicle("Hyundai", "Ioniq", 33245.00, true,
+        ElectricVehicle hyundaiIoniq = new ElectricVehicle("Hyundai", "Ioniq", "Joe Cabot", "Sedan", 33245.00, true,
                 725, 170, 133, 10, 102, "FWD", 5.8, 60, 5, false,
                 true, false, 23, 0, 4.0, false,
-                "https://ev-database.org/img/auto/Hyundai_IONIQ_Electric_2020/Hyundai_IONIQ_Electric_2020-01.jpg");
+                "https://ev-database.org/img/auto/Hyundai_IONIQ_Electric_2020/Hyundai_IONIQ_Electric_2020-01.jpg",
+                "https://media.ed.edmunds-media.com/hyundai/ioniq-hybrid/2020/oem/2020_hyundai_ioniq-hybrid_4dr-hatchback_limited_fq_oem_1_1600.jpg",
+                "2021 Hyundai Ioniq electric vehicle review\n" +
+                "\n" +
+                "I have been a Hyundai Ioniq owner since 2001. I work with a car of every type, including a Kia i8, i8 Premium model, and I have made one new car during the past 11 years or so. Here are some tips for your Toyota or Lowe's dealership that I know of, and would recommend to a Toyota owner:\n" +
+                "\n" +
+                "1. Keep your vehicle well ventilated.\n" +
+                "\n" +
+                "2. Use a large open window to bring one foot level below the vehicle to help protect it from moisture.\n" +
+                "\n" +
+                "3. Check your window to make sure the windows are sealed and keep those windows open and dry.\n" +
+                "\n" +
+                "4. Keep your car clean with an odor-free paint application.\n" +
+                "\n" +
+                "5. If possible, cover your vehicle with plastic that is a little harder to get out of the car - make sure that the plastic and paint work together to eliminate air and fog.\n" +
+                "\n" +
+                "6. If you are not in the Toyota or Lowe's area, take the car outside for a few hours and check outside for anything that may be contaminated with debris and dirt on the curb.\n" +
+                "\n" +
+                "7. The car door is secure.\n" +
+                "\n" +
+                "8. Use a metal plate that does not interfere with your window.\n" +
+                "\n" +
+                "If it is a large flat-panel TV or TV stand, make sure it is completely sealed in the clear plastic bag.\n" +
+                "\n" +
+                "9. Cover your car",
+                "I was planning on purchasing a 2021 Hyundai Ioniq EV, but after reading this review I am definitely going with Tesla!");
         electricVehicleStorage.saveElectricVehicle(hyundaiIoniq);
 
-        ElectricVehicle hyundaiKona = new ElectricVehicle("Hyundai", "Kona", 37900.00, true,
+        ElectricVehicle hyundaiKona = new ElectricVehicle("Hyundai", "Kona", "Alabama Whitman", "Crossover", 37900.00, true,
                 725, 258, 120, 6.4, 96, "FWD", 9, 54, 5, false,
                 true, false, 19.2, 0, 5.0, false,
-                "https://cdn.jdpower.com/JDPA_2020%20Hyundai%20Kona%20Ultimate%20White%20Front%20View.jpg");
+                "https://cdn.jdpower.com/JDPA_2020%20Hyundai%20Kona%20Ultimate%20White%20Front%20View.jpg",
+                "https://cdn.motor1.com/images/mgl/qz7Eg/s1/hyundai-kona-electric-restyling-2021.webp",
+                "Among hybrid and electric SUVs, the Hyundai Kona Electric offers great driving range and swift acceleration.  It provides punchy performance from its 201-horsepower electric motor and can go more than 250 miles before recharging.\n" +
+                "\n" +
+                "Like the regular Kona, the Electric version drives well and has decently zippy acceleration. Being electric, it doesn't suffer the regular Kona's turbo lag.\n" +
+                "\n" +
+                "The Kona is an excellent choice if you're looking for a smaller SUV with carlike driving manners.");
         electricVehicleStorage.saveElectricVehicle(hyundaiKona);
 
         ElectricVehicle jaguarIpace = new ElectricVehicle("Jaguar", "I-Pace", 69900.00, true,
