@@ -243,16 +243,26 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "With up to 412-miles of estimated driving range—depending upon model—the S can easily be used for long drives, and the 1020-hp Plaid version can deliver supercar acceleration while seating four adults. The Model S is also practical, with a large rear cargo area and a secondary front-trunk for extra space.");
         electricVehicleStorage.saveElectricVehicle(teslaSPlaid);
 
-        ElectricVehicle teslaX = new ElectricVehicle("Tesla", "Model X LR", 94990.00, false,
+        ElectricVehicle teslaX = new ElectricVehicle("Tesla", "Model X LR", "Calvin Candie", "Crossover", 94990.00, false,
                 725, 360, 96, 3.8, 155, "AWD", 12, 22, 7, true,
                 true, true, 83, 5, 5.0, true,
-                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2021-01-27-at-6-16-08-pm-1611789398.png?crop=0.534xw:0.691xh;0.234xw,0.110xh&resize=640:*");
+                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2021-01-27-at-6-16-08-pm-1611789398.png?crop=0.534xw:0.691xh;0.234xw,0.110xh&resize=640:*",
+                "https://i.guim.co.uk/img/media/202f28f9d64bcbf12340369c1dfc91c306bc3d49/122_245_1666_999/master/1666.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=c80bca7e348e480a531673976412f90c",
+                "Tesla Model X – The Tesla Model X is a 'premium' electric vehicle delivered at a premium price. Tesla's low profit margin, lower fuel cost, greater comfort, low cost vehicle manufacturing facilities and low mass production prices have propelled it to the top of US electric vehicle sales in 2021. Its low cost to ownership (LEOV) system has resulted in its high end, affordable Model X being considered the single most affordable luxury electric vehicle crossover under construction for the electric vehicles market.\n" +
+                "\n" +
+                "The Model X is powered by an NV Energy Model X (formerly dubbed the EV2) and boasts a powerful, battery operated, and battery operated technology that delivers greater reliability and efficiency.");
         electricVehicleStorage.saveElectricVehicle((teslaX));
 
-        ElectricVehicle teslaY = new ElectricVehicle("Tesla", "Model Y LR", 53990.00, false,
+        ElectricVehicle teslaY = new ElectricVehicle("Tesla", "Model Y LR", "Marquis Warren", "Crossover", 53990.00, false,
                 725, 326, 121, 4.8, 135, "AWD", 10, 40, 5, true,
                 true, true, 71, 5, 5.0, true,
-                "https://www.tesla.com/assets/img/my_fb_s.jpg");
+                "https://www.tesla.com/assets/img/my_fb_s.jpg",
+                "https://cdn.motor1.com/images/mgl/Bjw4A/s1/tesla-model-y.jpg",
+                "Tesla Model Y: 'To Buy, or Not to Buy?\n" +
+                "\n" +
+                "But there's way more than just a simple answer to the question of whether to buy or not to buy a Tesla Model Y, and to do that, you need to consider what is already possible here. It's easy to see why this is: Tesla has a much more sophisticated and ambitious plan to drive the market. But what's less obvious is just when — because if the Model Y, like most things, is priced so high, that is, until Tesla is forced to sell you a new Model 3, it'll be just fine.\n" +
+                "\n" +
+                "To put both the Tesla Model Y as a driver-free Tesla Model 3 into the equation, to be a Model 3, or to become an electric driving luxury, it will be Tesla (or not Tesla), and the Model Y will be one of their very own. And so far we've been able to build models that make the cars we love driving more comfortable for use in public or business areas, like in public transit. But, when we find ourselves stranded in a vehicle where there is no Tesla, or a Tesla Model and we need to turn off the car, like a passenger in a car for an entire trip — like with my current Tesla Model Y, the most likely scenario is that we will have to move. In that case, we'll be forced to pay to maintain our Tesla Model Y's ability to reach into its windshield or floor to power itself.");
         electricVehicleStorage.saveElectricVehicle(teslaY);
 
         ElectricVehicle volksIdFour = new ElectricVehicle("Volkswagen", "ID.4", 44495.00, true,
