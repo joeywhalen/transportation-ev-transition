@@ -24,6 +24,21 @@ const submitButton = document.querySelector(".user-form-submit-button")
 submitButton.addEventListener("click", ()=> {
 
  clearChildren(mainContent)
+ let userYear = yearSelectElement.id
+ let userMake = makeSelectElement.id
+ let userModel = makeSelectElement.id
+
+ // http://localhost:8080/api/ice/userVehicle/{year}/{make}/{model}
+
+ fetch("http://localhost:8080/api/ice/userVehicle/" + userYear + "/" + userMake + "/" + userModel, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(makes => genMakes(makes))
+            .catch(error => console.log(error))
 
 
 })
@@ -64,6 +79,8 @@ const genYears = function (years) {
         clearChildren(makeSelectElement)
         clearChildren(modelSelectElement)
         console.log("Test ran!")
+
+        
         
         fetch("http://localhost:8080/api/ice/years/" + yearSelectElement.value, {
                 method: 'GET',
@@ -75,8 +92,8 @@ const genYears = function (years) {
             .then(makes => genMakes(makes))
             .catch(error => console.log(error))
 
-        const textUpdate = document.querySelector(".test-year")
-        textUpdate.innerText = "User selected year: " + yearSelectElement.value
+        // const textUpdate = document.querySelector(".test-year")
+        // textUpdate.innerText = "User selected year: " + yearSelectElement.value
 
     })
 }
@@ -110,8 +127,8 @@ const genMakes = function (makes) {
             .then(models => genModels(models))
             .catch(error => console.log(error))
 
-        const textUpdate = document.querySelector(".test-make")
-        textUpdate.innerText = "User selected make: " + makeSelectElement.value
+        // const textUpdate = document.querySelector(".test-make")
+        // textUpdate.innerText = "User selected make: " + makeSelectElement.value
 
     })
 }
@@ -134,8 +151,8 @@ const genModels = function (models) {
 
     modelSelectElement.addEventListener("change", () => {
 
-        const textUpdate = document.querySelector(".test-model")
-        textUpdate.innerText = "User selected model: " + modelSelectElement.value
+        // const textUpdate = document.querySelector(".test-model")
+        // textUpdate.innerText = "User selected model: " + modelSelectElement.value
     })
 
 
