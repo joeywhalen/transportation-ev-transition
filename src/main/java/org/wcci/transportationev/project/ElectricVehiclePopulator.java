@@ -140,16 +140,29 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "- A 'price on the street' comparison isn't a very efficient way to measure the...");
         electricVehicleStorage.saveElectricVehicle(jaguarIpace);
 
-        ElectricVehicle kiaNiro = new ElectricVehicle("Kia", "Niro", 39090.00, true,
+        ElectricVehicle kiaNiro = new ElectricVehicle("Kia", "Niro", "Seth Gecko", "Crossover", 39090.00, true,
                 725, 239, 112, 6.5, 103, "FWD", 9.5, 60, 5, false,
                 true, false, 18.5, 0, 5.0, false,
-                "https://www.kia.com/us/en/vehicles/niro-plug-in-hybrid/2021/_jcr_content/root/responsivegrid/mediatext.coreimg.100.1400.jpeg/1616531623780.jpeg");
+                "https://www.kia.com/us/en/vehicles/niro-plug-in-hybrid/2021/_jcr_content/root/responsivegrid/mediatext.coreimg.100.1400.jpeg/1616531623780.jpeg",
+                "https://electrek.co/wp-content/uploads/sites/3/2021/06/2021-Kia-Niro-EV.jpg?quality=82&strip=all",
+                "Kia Niro Electric vehicle. The Niro is a smart-chargable electric vehicle that combines electrical power, lithium ion batteries, and electrical surge storage with remote charging. It is powered by electric motor and is equipped with the latest generation of lithium-ion batteries. It's designed to be ready to walk in to anywhere in the United States within two years, and can then be transported on rail to its destination in less than a month. The Niro is available with a range of 300 kilometers from a factory in the Bay Area to Alaska.\n" +
+                "\n" +
+                "About the Niro Motorsports\n" +
+                "\n" +
+                "The Niro is the latest generation of the most innovative electric vehicle, developed and produced by Niro, a maker of electric cars. In October 2016, Niro Motorsports began developing the Niro, known for providing an alternative vision to Tesla, the electric car company. Niro Motorsports is the company that developed the latest generation of electric vehicle, the Niro 4.4. That means Niro Motorsports provides a top-of-the-line electric vehicle, with high performance and safety features, with a range of 6,000 kilometers and a range of 6,400 kilometers. In October, 2016, the company announced a partnership between Tesla Motorsports and Niro to develop Niro for the future of the electric mobility market.");
         electricVehicleStorage.saveElectricVehicle(kiaNiro);
 
-        ElectricVehicle lucidAir = new ElectricVehicle("Lucid", "Air Touring", 87500.00, true,
+        ElectricVehicle lucidAir = new ElectricVehicle("Lucid", "Air Touring", "Kate Fuller", "Sedan", 87500.00, true,
                 725, 406, 100, 3.2, 168, "AWD", 6, 20, 5, false,
                 true, true, 26.1, 9.9, 4.5, true,
-                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/lucid-air-103-1599688020.jpg?crop=0.652xw:0.733xh;0.104xw,0.0769xh&resize=640:*");
+                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/lucid-air-103-1599688020.jpg?crop=0.652xw:0.733xh;0.104xw,0.0769xh&resize=640:*",
+                "https://i.ytimg.com/vi/X0f0LuA6Qvk/maxresdefault.jpg",
+                "Overheating Earth, meet the 2021 Lucid Air, the newest electric vehicle to join Tesla in the green fleet of luxury sedans.\n" +
+                "\n" +
+                "The 2021 Lucid Air electric sedan has the Tesla Model S in its crosshairs.\n" +
+                "\n" +
+                "EV Power Meets Ultimate Luxury."
+                );
         electricVehicleStorage.saveElectricVehicle(lucidAir);
 
         ElectricVehicle miniCooperSE = new ElectricVehicle("Mini Cooper", "SE", 29900.00, true,
