@@ -2,7 +2,7 @@ fetch("http://localhost:8080/api/ice/states")
     .then(response => response.json())
     .then(states => genStates(states))
     .catch(error => console.log(error))
-    
+
 fetch("http://localhost:8080/api/ice/years")
     .then(response => response.json())
     .then(years => genYears(years))
@@ -16,30 +16,38 @@ const clearChildren = function (element) {
 
 const mainContent = document.querySelector(".main-content")
 const stateSelectElement = document.querySelector("#states")
+
 const yearSelectElement = document.querySelector("#years")
+// yearSelectElement.value = 2012
+
+
 const makeSelectElement = document.querySelector("#makes")
 const modelSelectElement = document.querySelector("#models")
 const submitButton = document.querySelector(".user-form-submit-button")
 
-submitButton.addEventListener("click", ()=> {
+submitButton.addEventListener("click", () => {
 
- clearChildren(mainContent)
- let userYear = yearSelectElement.id
- let userMake = makeSelectElement.id
- let userModel = makeSelectElement.id
+    const temp = document.querySelector("#testId")
 
- // http://localhost:8080/api/ice/userVehicle/{year}/{make}/{model}
+    const userYearIndex = yearSelectElement.selectedIndex - 1
 
- fetch("http://localhost:8080/api/ice/userVehicle/" + userYear + "/" + userMake + "/" + userModel, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => response.json())
-            .then(userVehicle => genUserVehicleComp(userVehicle))
-            .catch(error => console.log(error))
+    console.log(yearSelectElement.getElementsByClassName("year-option")[userYearIndex].getAttribute("testId"))
 
+    clearChildren(mainContent)
+
+    // http://localhost:8080/api/ice/userVehicle/{year}/{make}/{model}
+
+    const userYearId = yearSelectElement.getElementsByClassName("year-option")[1].id
+
+    fetch("http://localhost:8080/api/ice/userVehicle/" + userYearId, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(userVehicle => genUserVehicleComp(userVehicle))
+        .catch(error => console.log(error))
 
 })
 
@@ -60,7 +68,6 @@ const genStates = function (states) {
 
 const genYears = function (years) {
 
-
     clearChildren(yearSelectElement)
     const defaultOption = document.createElement("option")
     defaultOption.setAttribute("value", "choose-year")
@@ -69,7 +76,9 @@ const genYears = function (years) {
 
     years.forEach((year) => {
         const newOptionElement = document.createElement("option")
+        newOptionElement.classList.add("year-option")
         newOptionElement.setAttribute("value", year.year)
+        newOptionElement.setAttribute("testId", year.id)
         newOptionElement.innerText = year.year
         yearSelectElement.appendChild(newOptionElement)
     })
@@ -78,10 +87,7 @@ const genYears = function (years) {
 
         clearChildren(makeSelectElement)
         clearChildren(modelSelectElement)
-        console.log("Test ran!")
 
-        
-        
         fetch("http://localhost:8080/api/ice/years/" + yearSelectElement.value, {
                 method: 'GET',
                 headers: {
@@ -99,7 +105,7 @@ const genYears = function (years) {
 }
 
 const genMakes = function (makes) {
-    
+
     clearChildren(modelSelectElement)
     const makeDefault = document.createElement("option")
     makeDefault.setAttribute("value", "choose-make")
@@ -114,7 +120,7 @@ const genMakes = function (makes) {
     })
 
     makeSelectElement.addEventListener("change", () => {
-        
+
         let userMake = makeSelectElement.value
         // http://localhost:8080/api/ice/years/2012/ford
         fetch("http://localhost:8080/api/ice/years/" + yearSelectElement.value + "/" + userMake.toLowerCase(), {
