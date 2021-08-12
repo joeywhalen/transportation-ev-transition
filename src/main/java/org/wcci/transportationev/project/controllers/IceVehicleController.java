@@ -88,4 +88,16 @@ public class IceVehicleController {
         Long id = Long.parseLong(stateId);
         return gasPriceRepository.findById(id).get();
     }
+
+    // http://localhost:8080/api/ice/userVehicle/" + userYearId + "/" + userMakeId + "/" + userModelId
+    // ### Get the user's vehicle from the submit button (2012 Ford F-150)
+    // GET http://localhost:8080/api/ice/userVehicle/186/188/190
+    // Accept: application/json
+
+    @GetMapping("api/ice/userVehicle/{userYearId}/{userMakeId}/{userModelId}")
+    public IceVehicle retrieveUserIceVehicleByYearIdMakeIdModelId(@PathVariable String userYearId,@PathVariable String userMakeId,@PathVariable String userModelId) {
+        Long yearId = Long.parseLong(userYearId);
+        Long makeId = Long.parseLong(userMakeId);
+        Long modelId = Long.parseLong(userModelId);
+    }
 }
