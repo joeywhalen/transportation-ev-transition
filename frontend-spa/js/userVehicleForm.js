@@ -41,6 +41,8 @@ submitButton.addEventListener("click", () => {
     
 
     console.log(yearSelectElement.getElementsByClassName("year-option")[userYearIndex].getAttribute("id"))
+    console.log(makeSelectElement.getElementsByClassName("make-option")[userMakeIndex].getAttribute("id"))
+    console.log(modelSelectElement.getElementsByClassName("model-option")[userModelIndex].getAttribute("id"))
     console.log(stateSelectElement.getElementsByClassName("state-option")[userStateIndex].getAttribute("id"))
 
     // http://localhost:8080/api/ice/userVehicle/{year}/{make}/{model}
