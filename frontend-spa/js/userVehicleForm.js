@@ -41,6 +41,7 @@ submitButton.addEventListener("click", () => {
     
 
     console.log(yearSelectElement.getElementsByClassName("year-option")[userYearIndex].getAttribute("id"))
+    console.log(stateSelectElement.getElementsByClassName("state-option")[userStateIndex].getAttribute("id"))
 
     // http://localhost:8080/api/ice/userVehicle/{year}/{make}/{model}
     fetch("http://localhost:8080/api/ice/userVehicle/" + userYearId + "/" + userMakeId + "/" + userModelId, {
@@ -51,6 +52,16 @@ submitButton.addEventListener("click", () => {
         })
         .then(response => response.json())
         .then(userVehicle => genUserVehicleComp(userVehicle))
+        .catch(error => console.log(error))
+
+    fetch("http://localhost:8080/api/ice/userVehicle/" + userStateId, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(userState => genUserStateComp(userState))
         .catch(error => console.log(error))
 
 })

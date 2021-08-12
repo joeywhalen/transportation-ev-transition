@@ -78,4 +78,14 @@ public class IceVehicleController {
     public Iterable<GasPrice> retrieveAllStates(){
         return gasPriceRepository.findAll();
     }
+
+    // ### Get the user's state info on the comparison page
+    // GET http://localhost:8080/api/ice/userVehicle/Alaska
+    // Accept: application/json
+
+    @GetMapping("/api/ice/userVehicle/{stateId}")
+    public GasPrice retrieveUserStateById(@PathVariable String stateId) {
+        Long id = Long.parseLong(stateId);
+        return gasPriceRepository.findById(id).get();
+    }
 }
