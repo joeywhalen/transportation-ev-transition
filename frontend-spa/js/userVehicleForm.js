@@ -27,18 +27,16 @@ const submitButton = document.querySelector(".user-form-submit-button")
 
 submitButton.addEventListener("click", () => {
 
-    const temp = document.querySelector("#testId")
-
-    const userYearIndex = yearSelectElement.selectedIndex - 1
-
-    console.log(yearSelectElement.getElementsByClassName("year-option")[userYearIndex].getAttribute("testId"))
-
     clearChildren(mainContent)
 
+    
+
+    const userYearIndex = yearSelectElement.selectedIndex - 1
+    const userYearId = yearSelectElement.getElementsByClassName("year-option")[userYearIndex].getAttribute("id")
+
+    console.log(yearSelectElement.getElementsByClassName("year-option")[userYearIndex].getAttribute("id"))
+
     // http://localhost:8080/api/ice/userVehicle/{year}/{make}/{model}
-
-    const userYearId = yearSelectElement.getElementsByClassName("year-option")[1].id
-
     fetch("http://localhost:8080/api/ice/userVehicle/" + userYearId, {
             method: 'GET',
             headers: {
@@ -78,7 +76,7 @@ const genYears = function (years) {
         const newOptionElement = document.createElement("option")
         newOptionElement.classList.add("year-option")
         newOptionElement.setAttribute("value", year.year)
-        newOptionElement.setAttribute("testId", year.id)
+        newOptionElement.setAttribute("id", year.id)
         newOptionElement.innerText = year.year
         yearSelectElement.appendChild(newOptionElement)
     })
