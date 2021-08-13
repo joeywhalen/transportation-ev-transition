@@ -61,6 +61,10 @@ public class Article {
         return articleTopic;
     }
 
+    public long getArticleTopicId() {
+        return articleTopic.getId();
+    }
+
     public String getArticleContent() {
         return articleContent;
     }
