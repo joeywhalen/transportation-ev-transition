@@ -37,17 +37,45 @@ const displayArticle = function (article) {
     }
 
     const form = document.createElement("form");
-    form.classList.add("new-article-comment-form");
+    form.classList.add("new-comment-form");
     const articleCommentInput = document.createElement("input");
     articleCommentInput.setAttribute("type", "text");
     articleCommentInput.setAttribute("placeholder", "Enter your comment...");
-    
+    const submitArticleCommentButton = document.createElement("button");
+    submitArticleCommentButton.classList.add("comment-button");
+    submitArticleCommentButton.innerText = "Submit a comment";
 
+    form.appendChild(articleCommentInput);
+    form.appendChild(submitArticleCommentButton);
+    articleElement.appendChild(form);
+
+    submitArticleCommentButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        const articleElement = document.querySelector(".article-content");
+        clearChildren(articleElement);
+        if (articleCommentInput.value !== "") {
+            const json = JSON.stringify(articleCommentInput.value);
+            const unqoutedJson = json.replace(/\"/g, "");
+            fetch("http://localhost:8080/api/articleTopics/" + article.articleTopicId + "/articles/" + article.id + "/comments", {
+                method: "PATCH",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: unqoutedJson
+            })
+                .then(response => response.json())
+                .then(article => displayArticle(article))
+                .catch(error => console.log(error));
+        }
+    })
+
+    mainElement.appendChild(articleElement);
+
+    return mainElement;
 }
-
-
-
-
+export {
+    displayArticle
+}
 
 {/* <body>
     <h1 class="single-article-topic">Why We Should Transition To EVs</h1>
