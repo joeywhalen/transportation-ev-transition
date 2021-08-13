@@ -80,8 +80,8 @@ public class ArticleReviewController {
     }
 
     // GET http://localhost:8080/api/electricVehicles/price
-    @GetMapping("/api/electricVehicles/{price}")
-    public Iterable<ElectricVehicle> retrieveEVsBasedOnLifestyle(@PathVariable int price) {
+    @GetMapping("/api/electricVehicles/compare/{price}")
+    public Collection<ElectricVehicle> retrieveEVsBasedOnLifestyle(@PathVariable int price) {
         return electricVehicleStorage.retrieveEVsByPrice(price);
     }
 
