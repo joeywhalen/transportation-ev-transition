@@ -223,7 +223,6 @@ const genUserVehicleComp = function (userVehicle) {
 
         const comparisonContainer = document.createElement("div")
         comparisonContainer.classList.add("comparison-container")
-        // comparisonContainer.style.margin = "200px 0px 0px 0px"
         const userVehicleElement = document.createElement("ul")
         const userVehicleYear = document.createElement("li")
         userVehicleYear.innerText = "Year: "+userVehicle.yearString
@@ -249,5 +248,19 @@ const genUserVehicleComp = function (userVehicle) {
         userVehicleElement.appendChild(userVehicleMaint)
         comparisonContainer.appendChild(userVehicleElement)
         formContainer.appendChild(comparisonContainer)
+
+        genEVComparison(priceRangeInput.value)
     })
 }
+
+const genEVComparison = function (priceRange){
+    fetch("http://localhost:8080/api/ev/compare", {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(response => response.json())
+        .then(evResponse => displayEVs(evResponse))
+        .catch(error => console.log(error))
+} 
