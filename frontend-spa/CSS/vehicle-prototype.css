@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Georama:wght@100&display=swap');
+
+*{
+  font-family: 'Georama', sans-serif;
+  font-weight: bold;
+}
+
 body{
     background-color: rgb(255, 255, 255);
      
@@ -58,67 +65,4 @@ body{
     }
 
   
-  /* #vehicle1 {
-    border-radius: 50%;
-    border: 5px;
-    padding: 0px;
-    border-style: groove;
-  }
-  
-  
-  #vehicle2 {
-    border-radius: 80%;
-    border: 5px;
-    padding: 0px;
-    border-style: groove;
-  
-  }
-  
-  #vehicle3{
-    border-radius: 50%;
-    border: 5px;
-    padding: 0px;
-    border-style: groove;
-  }
-  
-  #vehicle4 {
-    border-radius: 50%;
-    border: 5px;
-    padding: 0px;
-    border-style: groove;
-  }
-  
-  #vehicle5 {
-    border-radius: 50%;
-    border: 5px;
-    padding: 0px;
-    border-style: groove;
-  }
-  
-  #vehicle6 {
-    border-radius: 50%;
-    border: 5px;
-    padding: 0px;
-    border-style: groove;
-  }
-  
-  #vehicle7 {
-    border-radius: 50%;
-    border: 5px;
-    padding: 0px;
-    border-style: groove;
-  }
-  
-  #vehicle8 {
-    border-radius: 50%;
-    border: 5px;
-    padding: 0px;
-    border-style: groove;
-   }
-  
-    #vehicle9 {
-      border-radius: 50%;
-      border: 5px;
-      padding: 0px;
-      border-style: groove;
-    } */
+ 

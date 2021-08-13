@@ -11,43 +11,24 @@
 <body>
     <div class="wrapper"></div>
 
-    <header class="header-container">
-
-        <div class="header">
-            <ul>
-                <li class="website-title">
-                    <h1>Compar<span>EV</span></h1>
-                </li>
-            </ul>
-        </div>
-        <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
-        <label for="openSidebarMenu" class="sidebarIconToggle">
-          <div class="spinner diagonal part-1"></div>
-          <div class="spinner horizontal"></div>
-          <div class="spinner diagonal part-2"></div>
-        </label>
-        <div id="sidebarMenu">
-          <ul class="sidebarMenuInner">
-            <li><a href="./index.html" target="_blank">Home</a></li>
-            <li><a href="https://vanila.io" target="_blank">Vehicles</a></li>
-            <li><a href="https://instagram.com/plavookac" target="_blank">Articles</a></li>
-            <li><a href="https://twitter.com/plavookac" target="_blank">Contacts</a></li>
-          </ul>
-        </div>
-        
-    </header> 
-
-    <center><div class="car-image">
+    
+    
+    <div class="car-image">
+        <div class="car-image-text">
 
         <div class="back-to-results">
-            <h5>Back to Results</h5>
+            <a href="/frontend-spa/vehicle-prototype.html"><h5 id="back"><i class="arrow"></i>Back to Results</h5></a>
         </div>
 
-        <div class="car-name">
+        <div class="car-make">
             <h1>2014 Ford Escape</h1>
         </div>
 
-        <div class="car price">
+        <div class="car-model">
+            <h1>Titanium Sport Utility 4D</h1>
+        </div>
+
+        <div class="car-price">
             <h3>$19,590</h3>
         </div>
 
@@ -55,55 +36,60 @@
             <h5>34,893 miles</h5>
         </div>
 
-    </div></center>
+    </div>
+</div>
 
     <div class="details-section">
 
-        <div class="vehicle-details-title">
-            <h2>Vehicle Details</h2>
+        <center><div id="colored-rectangle"></div></center>
+
+        <div><h1 class="vehicle-details-title">
+            Vehicle Details</h1>
+        </div>
+
+        <div class="basic-info-section">
+            <h5 class="basic-info-title">Basic Information</h5>
+                <ul class="basic-info-text">
+                    <li>makeName</li>
+                    <li>modelName</li>  
+                    <li>msrp</li>
+                    <li>range</li>
+                    <li>mpgE</li>
+                    <li>zeroToSixty</li>
+                    <li>topSpeed</li>
+                    <li>wheelDrive</li>
+                    <li>homeCharge</li>
+                    <li>travelCharge</li>
+                    <li>autonomous</li>
+                    <li>safetyRating</li>
+                    <li>phoneKey</li>
+                </ul>
+        </div>
+
+        <center><div id="colored-rectangle"></div></center>
+        
+
+        <div>
+            <h5 class="standard-equip-title">Standard Equipment</h5>
+                <ul class="standard-equip-text">
+                    <li>seating</li>
+                    <li>driverAssist</li>
+                    <li>freeOtaUpdate</li>
+                    <li>rearCargoSpace</li>
+                    <li>frunkSpace</li>
+                </ul>
             
         </div>
 
-        <div class="basic-info-title">
-            <h5>Basic Information</h5>
-            <p class="basic-info-text">
-                <ul>
-                    <li>makeName</li>
-                      <li></li>  modelName
-                        msrp
-                        range
-                        mpgE
-                        zeroToSixty
-                        topSpeed
-                        wheelDrive
-                        homeCharge
-                        travelCharge
-                        autonomous
-                        safetyRating
-                        phoneKey
-                    
-                </ul>
-            </p>
-        </div>
-        <hr>
+        <center><div id="colored-rectangle"></div></center>
 
-        <div class="standard-equip-title">
-            <h5>Standard Equipment</h5>
-            <p class="standard-equip-text">
-                seating
-                driverAssist
-                freeOtaUpdate
-                rearCargoSpace
-                frunkSpace
-            </p>
-        </div>
 
-        <div class="price-details-title">
-            <h5>Price Details</h5>
-            <p>
-                taxCredit
-                yearlyMaintenanceCost
-            </p>
+        <div>
+            <h5 class="price-details-title">Price Details</h5>
+            <ul class="price-details-text">
+                <li>taxCredit</li>
+                <li>yearlyMaintenanceCost</li>
+            </ul>
         </div>
 
     </div>

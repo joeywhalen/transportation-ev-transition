@@ -47,7 +47,7 @@ body{
   width: 100%;
   max-width: 100%;
   box-shadow: none;
-  height: 90px!important;
+  height: 86.5px!important;
   overflow:hidden;
   z-index: 10;
   position: fixed;
@@ -415,6 +415,11 @@ h3+p {
   margin-top: 0;
 }
 
+a{
+  text-decoration: none;
+  color: white;
+}
+
 
 
 /* .articles-wrapper {
@@ -447,7 +452,6 @@ h3+p {
 }
 
 .article1:hover{
-  transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -458,7 +462,6 @@ h3+p {
 }
 
 .article2:hover{
-  transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -469,7 +472,6 @@ h3+p {
 }
 
 .article3:hover{
-  transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -482,7 +484,6 @@ h3+p {
 }
 
 .article4:hover{
-  transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -500,7 +501,6 @@ h3+p {
 }
 
 .article5:hover{
-  transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -513,7 +513,6 @@ h3+p {
 }
 
 .article6:hover{
-  transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -568,48 +567,6 @@ h3+p {
   }
 }
 
- /* .row {
-  display: -ms-flexbox; 
-  display: flex;
-  -ms-flex-wrap: wrap; 
-  flex-wrap: wrap;
-  padding: 0 4px;
-  margin-top: 5%;
-} 
-
-
- .column {
-  -ms-flex: 25%; 
-  flex: 25%;
-  max-width: 25%;
-
-}
-
-.column img {
-  vertical-align: middle;
-  width: 100%;
-  height: auto;
-}
-
-.column img:hover{
-  transform: scale(1.1);
-} 
-
- @media screen and (max-width: 800px) {
-  .column {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
-} 
-
- @media screen and (max-width: 600px) {
-  .column {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-  }
-}  */
 
   /* ------------------footer------------------- */
   footer{
