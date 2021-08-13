@@ -1,12 +1,26 @@
 
 
+const indexArticles = function (article) {
+  const mainElement = document.querySelector(".articles-wrapper");
+  clearChildren(mainElement);
+  articles.forEach((article) => {
+    let articleElement = document.createElement("div");
+    articleElement.classList.add("btn-sectkion");
+    let articleTitleElement = document.createElement('h3');
+    articleTitleElement.innerText = article.articleTitle;
+    let articleLinkElement = document.createElement("a");
+    let articleImageElement = document.createElement("img");
+    articleImageElement.src = article.imageUrl;
 
-
-
-
-
-
-
+    articleLinkElement.addEventListener("click", (clickEvent) => {
+      displayArticle(article)
+    });
+    articleLinkElement.appendChild(articleImageElement);
+    articleElement.appendChild(articleTitleElement);
+    articleElement.appendChild(articleLinkElement);
+    mainElement.appendChild(articleElement);
+  });
+}
 
 {/* <div class="article-section">
         
