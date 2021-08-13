@@ -26,8 +26,14 @@
 }
 
 .article img{
-    height:300px;
+    height: 300px;
     width:500px;
+    border-radius: 20px;
+}
+
+.article img:hover{
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 .text-over-parallax{
@@ -41,20 +47,20 @@
 }
 
 .topic1{
-    height:500px;
+  height:500px;
   background-color:rgb(0, 0, 0);
   font-size:36px;
 
 }
 
 .topic2{
-    height:500px;
+  height:500px;
   background-color:rgb(0, 0, 0);
   font-size:36px;
 }
 
 .topic3{
-    height:500px;
+  height:500px;
   background-color:rgb(0, 0, 0);
   font-size:36px;
 }
@@ -69,6 +75,14 @@
 .article{
     margin: 2%;
     margin-top: 5%;
+    /* background-image: url("/frontend-spa/images/blog-article1.png"); */
+
+}
+p{
+  color: #fff;
+  margin: 0%;
+  text-decoration: none;
+  text-align: center;
 }
 
 /* header */
