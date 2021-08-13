@@ -6,6 +6,13 @@ const displayTopicOneArticles = function (article) {
     articleTopic.forEach((article) => {
         let articleElement = document.createElement("div");
         articleElement.classList.add("btn-section");
+        let articleTitleElement = document.createElement("p");
+        articleTitleElement.innerText = article.articleTitle;
+        let articleLinkElement = document.createElement("a");
+        let articleImageElement = document.createElement("img");
+        articleImageElement.src = article.imageUrl;
+
+        
         })
 }
 
