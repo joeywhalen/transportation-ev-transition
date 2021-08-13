@@ -1,4 +1,4 @@
-
+import { clearChildren } from "./userVehicleForm.js";
 
 const displayArticle = function (article) {
     const mainElement = document.querySelector(".main-content");
