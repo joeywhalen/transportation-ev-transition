@@ -1,33 +1,23 @@
 import { clearChildren } from "./userVehicleForm.js";
 import { displayArticle } from "./displayArticle.js";
 
-// const displayTopicOneArticles = function (articleTopic) {
-const displayAllTopics = function (articleTopic) {    
-    const mainElement = document.querySelector(".article-flex");
-    clearChildren(mainElement);
-    articleTopic.forEach((article) => {
-        let articleElement = document.createElement("div");
-        articleElement.classList.add("btn-section");
-        let articleTitleElement = document.createElement("p");
-        articleTitleElement.innerText = article.articleTitle;
-        let articleLinkElement = document.createElement("a");
-        let articleImageElement = document.createElement("img");
-        articleImageElement.src = article.imageUrl;
+const displayAllTopics = function (ArticleTopics) {
 
-        articleLinkElement.addEventListener("click", (clickEvent) => {
-            displayArticle(article)
-        });
-        articleLinkElement.appendChild(articleImageElement);
-        articleElement.appendChild(articleTitleElement);
-        articleElement.appendChild(articleLinkElement);
-        mainElement.appendChild(articleElement);
-    });
-    return mainElement;
-}
-export {
-    displayAllTopics
+    const body = document.querySelector(".body");
+
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("wrapper");
+    body.append(wrapper);
+
+    const parralaxOne = document.createElement("div");
+    parralaxOne.classList.add("parallax-one");
+    parralaxOne.innerHTML = '<h1 class="text-over-parallax">Why We Should Transition To EVs</h1>'
+    body.append(parralaxOne);
+
+    
 }
 
+//  <body>
 //  <div class="wrapper"></div>
 //     <!-- topic1 -->
 //    <div class="parallax-one">
@@ -85,3 +75,31 @@ export {
 //         </div>
 //     </div>
 //    </div>
+//  </body>
+
+// // const displayTopicOneArticles = function (articleTopic) {
+// const displayAllTopics = function (articleTopic) {    
+//     const mainElement = document.querySelector(".article-flex");
+//     clearChildren(mainElement);
+//     articleTopic.forEach((article) => {
+//         let articleElement = document.createElement("div");
+//         articleElement.classList.add("btn-section");
+//         let articleTitleElement = document.createElement("p");
+//         articleTitleElement.innerText = article.articleTitle;
+//         let articleLinkElement = document.createElement("a");
+//         let articleImageElement = document.createElement("img");
+//         articleImageElement.src = article.imageUrl;
+
+//         articleLinkElement.addEventListener("click", (clickEvent) => {
+//             displayArticle(article)
+//         });
+//         articleLinkElement.appendChild(articleImageElement);
+//         articleElement.appendChild(articleTitleElement);
+//         articleElement.appendChild(articleLinkElement);
+//         mainElement.appendChild(articleElement);
+//     });
+//     return mainElement;
+// }
+// export {
+//     displayAllTopics
+// }
