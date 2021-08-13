@@ -14,7 +14,18 @@ const displayAllTopics = function (ArticleTopics) {
     parralaxOne.innerHTML = '<h1 class="text-over-parallax">Why We Should Transition To EVs</h1>'
     body.append(parralaxOne);
 
-    
+    const topicOne = document.createElement("div");
+    topicOne.classList.add("topic1");
+    body.append(topicOne);
+
+    const articleFlex = document.createElement("div");
+    articleFlex.classList.add("articleFlex");
+    body.append(articleFlex);
+
+    ArticleTopics.forEach((Article) => {
+        
+        
+    })
 }
 
 //  <body>
