@@ -19,7 +19,7 @@ public class ElectricVehicle {
     private String makeName;
     private String modelName;
     private String vehicleType;
-    private double msrp;
+    private int msrp;
     private boolean taxCredit;
     private double yearlyMaintenanceCost;
     private int range;
@@ -54,7 +54,7 @@ public class ElectricVehicle {
     }
 
     public ElectricVehicle(String makeName, String modelName, String authorName, String vehicleType,
-                            double msrp, boolean taxCredit, double yearlyMaintenanceCost,
+                            int msrp, boolean taxCredit, double yearlyMaintenanceCost,
                            int range, int mpgE, double zeroToSixty, int topSpeed, String wheelDrive,
                            double homeCharge, int travelCharge, int seating, boolean autonomous,
                            boolean driverAssist, boolean freeOtaUpdate, double rearCargoSpace,
@@ -108,7 +108,7 @@ public class ElectricVehicle {
         return vehicleType;
     }
 
-    public double getMsrp() {
+    public int getMsrp() {
         return msrp;
     }
 

@@ -18,7 +18,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         //Audi e-tron Sportback EV to test data
-        ElectricVehicle audiETronSB = new ElectricVehicle("Audi", "e-tron Sportback", "Cliff Booth", "Sedan", 69100.00, true, 
+        ElectricVehicle audiETronSB = new ElectricVehicle("Audi", "e-tron Sportback", "Cliff Booth", "Sedan", 69100, true, 
                 725, 218, 77, 5.5, 118, "AWD", 10, 30, 5, false,
                 true, false, 27.2, 3, 4.5, false,
                 "https://www.motortrend.com/uploads/sites/5/2019/11/2020-Audi-E-Tron-Sportback-11.jpg?fit=around%7C875:492",
@@ -37,7 +37,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "I could not agree more.  Love Audi, and love this vehicle!");
         electricVehicleStorage.saveElectricVehicle(audiETronSB);
 
-        ElectricVehicle chevyBolt = new ElectricVehicle("Chevrolet", "Bolt", "Mia Wallace", "Crossover", 37500.00, false, 
+        ElectricVehicle chevyBolt = new ElectricVehicle("Chevrolet", "Bolt", "Mia Wallace", "Crossover", 37500, false, 
                 725, 247, 120, 7.0, 93, "FWD", 7.5, 60, 5, true,
                 true, false, 16.6, 0, 5.0, false,
                 "https://media.chevrolet.com/dld/content/dam/Media/images/US/Vehicles/Concepts/Chevrolet/BoltEV/Product/2015-Chevrolet-BoltEV-Concept-exterior-001.jpg",
@@ -55,7 +55,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "So we set about making sure Chevrolet got to where they were able to do that.");
         electricVehicleStorage.saveElectricVehicle(chevyBolt);
 
-        ElectricVehicle fordMustang = new ElectricVehicle("Ford", "Mustang Mach-E Select (eAWD)", "Vincent Vega", "Crossover", 42895.00, true,
+        ElectricVehicle fordMustang = new ElectricVehicle("Ford", "Mustang Mach-E Select (eAWD)", "Vincent Vega", "Crossover", 42895, true,
                 725, 211, 90, 5.2, 130, "e-AWD", 14, 52, 5, false,
                 true, true, 29.7, 4.7, 5.0, true,
                 "https://www.ford.com/ntzlibs/content/dam/bev/us/november-2020-updates/21_FRD_MCH_50700_GTP.jpg.renditions.original.png",
@@ -67,7 +67,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "There is an optional 4x32 rear-wheel drive mode available for all four sizes. For more information, please visit Ford.com.");
         electricVehicleStorage.saveElectricVehicle(fordMustang);
 
-        ElectricVehicle hyundaiIoniq = new ElectricVehicle("Hyundai", "Ioniq", "Joe Cabot", "Sedan", 33245.00, true,
+        ElectricVehicle hyundaiIoniq = new ElectricVehicle("Hyundai", "Ioniq", "Joe Cabot", "Sedan", 33245, true,
                 725, 170, 133, 10, 102, "FWD", 5.8, 60, 5, false,
                 true, false, 23, 0, 4.0, false,
                 "https://ev-database.org/img/auto/Hyundai_IONIQ_Electric_2020/Hyundai_IONIQ_Electric_2020-01.jpg",
@@ -98,7 +98,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "I was planning on purchasing a 2021 Hyundai Ioniq EV, but after reading this review I am definitely going with Tesla!");
         electricVehicleStorage.saveElectricVehicle(hyundaiIoniq);
 
-        ElectricVehicle hyundaiKona = new ElectricVehicle("Hyundai", "Kona", "Alabama Whitman", "Crossover", 37900.00, true,
+        ElectricVehicle hyundaiKona = new ElectricVehicle("Hyundai", "Kona", "Alabama Whitman", "Crossover", 37900, true,
                 725, 258, 120, 6.4, 96, "FWD", 9, 54, 5, false,
                 true, false, 19.2, 0, 5.0, false,
                 "https://cdn.jdpower.com/JDPA_2020%20Hyundai%20Kona%20Ultimate%20White%20Front%20View.jpg",
@@ -110,7 +110,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The Kona is an excellent choice if you're looking for a smaller SUV with carlike driving manners.");
         electricVehicleStorage.saveElectricVehicle(hyundaiKona);
 
-        ElectricVehicle jaguarIpace = new ElectricVehicle("Jaguar", "I-Pace", "Mallory Knox", "Crossover", 69900.00, true,
+        ElectricVehicle jaguarIpace = new ElectricVehicle("Jaguar", "I-Pace", "Mallory Knox", "Crossover", 69900, true,
                 725, 234, 76, 4.5, 124, "AWD", 10.2, 90, 5, false,
                 true, true, 23.2, 1.0, 5.0, false,
                 "https://electrek.co/wp-content/uploads/sites/3/2019/01/Jaguar-I-Pace-hero-e1547961480245.jpg?quality=82&strip=all",
@@ -140,7 +140,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "- A 'price on the street' comparison isn't a very efficient way to measure the...");
         electricVehicleStorage.saveElectricVehicle(jaguarIpace);
 
-        ElectricVehicle kiaNiro = new ElectricVehicle("Kia", "Niro", "Seth Gecko", "Crossover", 39090.00, true,
+        ElectricVehicle kiaNiro = new ElectricVehicle("Kia", "Niro", "Seth Gecko", "Crossover", 39090, true,
                 725, 239, 112, 6.5, 103, "FWD", 9.5, 60, 5, false,
                 true, false, 18.5, 0, 5.0, false,
                 "https://www.kia.com/us/en/vehicles/niro-plug-in-hybrid/2021/_jcr_content/root/responsivegrid/mediatext.coreimg.100.1400.jpeg/1616531623780.jpeg",
@@ -152,7 +152,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The Niro is the latest generation of the most innovative electric vehicle, developed and produced by Niro, a maker of electric cars. In October 2016, Niro Motorsports began developing the Niro, known for providing an alternative vision to Tesla, the electric car company. Niro Motorsports is the company that developed the latest generation of electric vehicle, the Niro 4.4. That means Niro Motorsports provides a top-of-the-line electric vehicle, with high performance and safety features, with a range of 6,000 kilometers and a range of 6,400 kilometers. In October, 2016, the company announced a partnership between Tesla Motorsports and Niro to develop Niro for the future of the electric mobility market.");
         electricVehicleStorage.saveElectricVehicle(kiaNiro);
 
-        ElectricVehicle lucidAir = new ElectricVehicle("Lucid", "Air Touring", "Kate Fuller", "Sedan", 87500.00, true,
+        ElectricVehicle lucidAir = new ElectricVehicle("Lucid", "Air Touring", "Kate Fuller", "Sedan", 87500, true,
                 725, 406, 100, 3.2, 168, "AWD", 6, 20, 5, false,
                 true, true, 26.1, 9.9, 4.5, true,
                 "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/lucid-air-103-1599688020.jpg?crop=0.652xw:0.733xh;0.104xw,0.0769xh&resize=640:*",
@@ -165,7 +165,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 );
         electricVehicleStorage.saveElectricVehicle(lucidAir);
 
-        ElectricVehicle miniCooperSE = new ElectricVehicle("Mini Cooper", "SE", "Santanico Pandemonium", "Sedan", 29900.00, true,
+        ElectricVehicle miniCooperSE = new ElectricVehicle("Mini Cooper", "SE", "Santanico Pandemonium", "Sedan", 29900, true,
                 725, 114, 108, 6.9, 93, "FWD", 4, 36, 4, false,
                 true, false, 8.7, 0, 4.0, false,
                 "https://cdn.motor1.com/images/mgl/0lp6V/s1/mini-cooper-se-2020-im-test.jpg",
@@ -179,7 +179,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The EV version also features additional LED lights available to help you take a look or just take a video.");
         electricVehicleStorage.saveElectricVehicle(miniCooperSE);
 
-        ElectricVehicle nissanLeaf = new ElectricVehicle("Nissan", "Leaf S Plus", "Max Cherry", "Crossover", 37400.00, true,
+        ElectricVehicle nissanLeaf = new ElectricVehicle("Nissan", "Leaf S Plus", "Max Cherry", "Crossover", 37400, true,
                 725, 226, 114, 7.4, 90, "FWD", 11, 60, 5, false,
                 true, false, 23.6, 0, 5.0, false,
                 "https://inv.assets.sincrod.com/ChromeColorMatch/us/TRANSPARENT_cc_2021NIC160018_01_1280_KH3.png",
@@ -193,7 +193,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The Tesla Model S was more powerful than the Nissan Leaf as a real test road car. But, after some testing, the Model S took all three test-driving sessions off. This test was run by Tesla Motors, Hyundai Motors, and Mitsubishi Motors in Tokyo.");
         electricVehicleStorage.saveElectricVehicle(nissanLeaf);
 
-        ElectricVehicle polestarTwo = new ElectricVehicle("Polestar", "Two", "Ray Nicolette", "Crossover", 59900.00, true,
+        ElectricVehicle polestarTwo = new ElectricVehicle("Polestar", "Two", "Ray Nicolette", "Crossover", 59900, true,
                 725, 233, 92, 4.5, 127, "AWD", 8, 47, 5, false,
                 true, true, 14.3, 1.23, 5.0, true,
                 "https://www.gannett-cdn.com/presto/2020/08/20/PDTF/636d94b2-68d6-424b-ada2-21103a7057f7-IMG_3086.JPG?crop=3504,1971,x15,y0&width=3200&height=1800&format=pjpg&auto=webp",
@@ -205,7 +205,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The Polestar has a higher ride height than most sedans, and SUV-like body cladding, making it a bit of a pseudo-crossover. However you classify it, the Polestar 2 is an extremely handsome car, with minimal body surfacing and great proportions.");
         electricVehicleStorage.saveElectricVehicle(polestarTwo);
 
-        ElectricVehicle porscheTaycan = new ElectricVehicle("Porsche", "Taycan", "Elle Driver", "Sedan", 103800.00, true,
+        ElectricVehicle porscheTaycan = new ElectricVehicle("Porsche", "Taycan", "Elle Driver", "Sedan", 103800, true,
                 725, 200, 69, 3.4, 155, "RWD", 12, 15, 4, false,
                 true, true, 12.9, 2.8, 5.0, false,
                 "https://www.motortrend.com/uploads/sites/5/2021/01/2021_Porsche_Taycan_2.jpeg?fit=around%7C875:492.1875",
@@ -217,7 +217,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "Verdict: The Taycan takes everything good about electric performance cars and amplifies it.");
         electricVehicleStorage.saveElectricVehicle(porscheTaycan);
 
-        ElectricVehicle teslaThree = new ElectricVehicle("Tesla", "Model 3 SR+", "Aldo Raine", "Sedan", 39900.00, false,
+        ElectricVehicle teslaThree = new ElectricVehicle("Tesla", "Model 3 SR+", "Aldo Raine", "Sedan", 39900, false,
                 725, 263, 133, 5.3, 140, "RWD", 5.5, 21, 5, true,
                 true, true, 18, 5, 5.0, true,
                 "https://upload.wikimedia.org/wikipedia/commons/9/91/2019_Tesla_Model_3_Performance_AWD_Front.jpg",
@@ -233,7 +233,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The next one will probably be the new Model X, but it will be the first and will be even higher. The only thing we're really aware of is the fact that the Model X was just built as a box for the Model S, which is very different from the box we have now. That's kind of the way that things changed in the past. Now we're working very, very closely with OEMs and manufacturers to make sure that");
         electricVehicleStorage.saveElectricVehicle(teslaThree);
 
-        ElectricVehicle teslaSPlaid = new ElectricVehicle("Tesla", "Model S Plaid", "Bridget Von Hammersmark", "Sedan", 129990.00, false,
+        ElectricVehicle teslaSPlaid = new ElectricVehicle("Tesla", "Model S Plaid", "Bridget Von Hammersmark", "Sedan", 129990, false,
                 725, 396, 101, 1.99, 200, "AWD", 6.5, 27, 5, true,
                 true, true, 25, 3, 5.0, true,
                 "https://i.insider.com/605ce29e106eb50019d05a89?width=700",
@@ -243,7 +243,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "With up to 412-miles of estimated driving range—depending upon model—the S can easily be used for long drives, and the 1020-hp Plaid version can deliver supercar acceleration while seating four adults. The Model S is also practical, with a large rear cargo area and a secondary front-trunk for extra space.");
         electricVehicleStorage.saveElectricVehicle(teslaSPlaid);
 
-        ElectricVehicle teslaX = new ElectricVehicle("Tesla", "Model X LR", "Calvin Candie", "Crossover", 94990.00, false,
+        ElectricVehicle teslaX = new ElectricVehicle("Tesla", "Model X LR", "Calvin Candie", "Crossover", 94990, false,
                 725, 360, 96, 3.8, 155, "AWD", 12, 22, 7, true,
                 true, true, 83, 5, 5.0, true,
                 "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2021-01-27-at-6-16-08-pm-1611789398.png?crop=0.534xw:0.691xh;0.234xw,0.110xh&resize=640:*",
@@ -253,7 +253,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The Model X is powered by an NV Energy Model X (formerly dubbed the EV2) and boasts a powerful, battery operated, and battery operated technology that delivers greater reliability and efficiency.");
         electricVehicleStorage.saveElectricVehicle((teslaX));
 
-        ElectricVehicle teslaY = new ElectricVehicle("Tesla", "Model Y LR", "Marquis Warren", "Crossover", 53990.00, false,
+        ElectricVehicle teslaY = new ElectricVehicle("Tesla", "Model Y LR", "Marquis Warren", "Crossover", 53990, false,
                 725, 326, 121, 4.8, 135, "AWD", 10, 40, 5, true,
                 true, true, 71, 5, 5.0, true,
                 "https://www.tesla.com/assets/img/my_fb_s.jpg",
@@ -265,7 +265,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "To put both the Tesla Model Y as a driver-free Tesla Model 3 into the equation, to be a Model 3, or to become an electric driving luxury, it will be Tesla (or not Tesla), and the Model Y will be one of their very own. And so far we've been able to build models that make the cars we love driving more comfortable for use in public or business areas, like in public transit. But, when we find ourselves stranded in a vehicle where there is no Tesla, or a Tesla Model and we need to turn off the car, like a passenger in a car for an entire trip — like with my current Tesla Model Y, the most likely scenario is that we will have to move. In that case, we'll be forced to pay to maintain our Tesla Model Y's ability to reach into its windshield or floor to power itself.");
         electricVehicleStorage.saveElectricVehicle(teslaY);
 
-        ElectricVehicle volksIdFour = new ElectricVehicle("Volkswagen", "ID.4", "Chris Mannix", "Crossover", 44495.00, true,
+        ElectricVehicle volksIdFour = new ElectricVehicle("Volkswagen", "ID.4", "Chris Mannix", "Crossover", 44495, true,
                 725, 250, 99, 5.7, 112, "AWD", 7.5, 38, 5, false,
                 true, true, 30, 0, 4.5, false,
                 "https://techcrunch.com/wp-content/uploads/2021/03/vw-Large-12562-2021ID.4ProSwithGradientPackage.jpg?w=730&crop=1",
@@ -275,7 +275,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "It has a roomy cabin, loads of clever storage spaces, good electric range for the price, and a smooth, silent driving experience.");
         electricVehicleStorage.saveElectricVehicle(volksIdFour);
 
-        ElectricVehicle volvoXcForty = new ElectricVehicle("Volvo", "XC40 Recharge", "Joe Gage", "Crossover", 53990.00, true,
+        ElectricVehicle volvoXcForty = new ElectricVehicle("Volvo", "XC40 Recharge", "Joe Gage", "Crossover", 53990, true,
                 725, 208, 80, 4.3, 112, "AWD", 11, 40, 5, false,
                 true, true, 20, 5, 5.0, true,
                 "https://cdn.motor1.com/images/mgl/A8zbL/s1/volvo-xc40-recharge-2020.webp",
@@ -285,7 +285,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "With the favorable weight distribution, the XC40 Recharge feels well planted on the pavement when navigating sharp or fast turns.  This car has a huge 408hp and 660Nm of torque, delivered to all four wheels via a dual-motor system.");
         electricVehicleStorage.saveElectricVehicle(volvoXcForty);
 
-        ElectricVehicle audiA6Etron = new ElectricVehicle("Audi", "A6 e-tron", "Minnie Mink", "Sedan", 80000.00, true,
+        ElectricVehicle audiA6Etron = new ElectricVehicle("Audi", "A6 e-tron", "Minnie Mink", "Sedan", 80000, true,
                 725, 400, 80, 5.1, 125, "AWD", 10, 30, 5, false,
                 true, false, 29.5, 3, 4.5, false,
                 "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/audi-a6-e-tron-concept-113-1618585274.jpg?crop=0.739xw:0.494xh;0.0369xw,0.346xh&resize=1200:*",
@@ -297,7 +297,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "Unlike the gasoline-powered A6 sedan, the A6 e-tron hides a hatchback in its sloped rear roofline, which should give buyers a large cargo area similar to that of the current A7.");
         electricVehicleStorage.saveElectricVehicle(audiA6Etron);
 
-        ElectricVehicle bmwIFour = new ElectricVehicle("BMW", "I4", "Patrick Bateman", "Sedan", 56395.00, true,
+        ElectricVehicle bmwIFour = new ElectricVehicle("BMW", "I4", "Patrick Bateman", "Sedan", 56395, true,
                 725, 300, 90, 5.7, 118, "RWD", 8.75, 30, 5, false,
                 true, true, 16.6, 0, 4.5, true,
                 "https://www.cnet.com/a/img/-fC9r7EA4SUrpAJVm211h2aGZ7I=/940x0/2020/02/28/4f5e69fe-2497-494c-b738-24f864561236/bmw-i4-concept-003.jpg",
@@ -309,7 +309,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The rest of the car carries a mix of modern and historical BMW styling cues, such as the swept-back covers over the standard LED headlights, the concave scoops along the doors, and the vent behind the front wheel that carries down and along the door sills. BMW’s traditional “Hofmeister kink” styling element, where the rear roof pillar has a forward bend as it meets the side-window glass, is present.");
         electricVehicleStorage.saveElectricVehicle(bmwIFour);
 
-        ElectricVehicle bmwIX = new ElectricVehicle("BMW", "IX", "Timothy Bryce", "Crossover", 84194.00, true,
+        ElectricVehicle bmwIX = new ElectricVehicle("BMW", "IX", "Timothy Bryce", "Crossover", 84194, true,
                 725, 300, 85, 4.6, 124, "AWD", 11, 35, 5, false,
                 true, true, 27.4, 0, 4.5, true,
                 "https://cdn.motor1.com/images/mgl/Kj0qM/s1/bmw-ix.jpg",
@@ -319,7 +319,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The iX not only debuts hardware, software, design elements, and manufacturing techniques that will influence all future BMWs—it also readies a brand once defined by its appeal to petrolhead driving enthusiasts for an autonomous, electric-powered world.");
         electricVehicleStorage.saveElectricVehicle(bmwIX);
 
-        ElectricVehicle bollingerBTwo = new ElectricVehicle("Bollinger", "B2", "Paul Allen", "Truck", 125000.00, true,
+        ElectricVehicle bollingerBTwo = new ElectricVehicle("Bollinger", "B2", "Paul Allen", "Truck", 125000, true,
                 725, 200, 70, 4.5, 100, "AWD", 10, 75, 4, false,
                 false, false, 86, 8.0, 4.0, false,
                 "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bollinger-b2-201-1607721643.jpg",
@@ -329,7 +329,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The all-electric 2022 Bollinger B2 looks primitive but puts traditional pickup trucks on notice thanks to its impressive capacities and incredible versatility.  Bollinger says the B2's dual electric motors combine for 614 horsepower and 688 lb-ft of torque, which help it tow up to 7500 pounds and carry a payload up to 5001 pounds. Its battery supports fast-charging capability and is estimated to provide a driving range of 200 miles.");
         electricVehicleStorage.saveElectricVehicle(bollingerBTwo);
 
-        ElectricVehicle caddyLyriq = new ElectricVehicle("Cadillac", "Lyriq", "Sean Bateman", "Crossover", 59995.00, true,
+        ElectricVehicle caddyLyriq = new ElectricVehicle("Cadillac", "Lyriq", "Sean Bateman", "Crossover", 59995, true,
                 725, 300, 80, 4.3, 130, "RWD", 6, 35, 7, true,
                 true, true, 12.6, 0, 4.5, false,
                 "https://i0.wp.com/electrek.co/wp-content/uploads/sites/3/2021/04/Cadillac-Lyriq-2.jpg?ssl=1",
@@ -339,7 +339,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The Lyriq has been designed from the ground up and will ride on General Motors' new scalable battery architecture; the company claims a low center of gravity and a spacious cabin as benefits of the dedicated EV-architecture.");
         electricVehicleStorage.saveElectricVehicle(caddyLyriq);
 
-        ElectricVehicle fordLightning = new ElectricVehicle("Ford", "F-150 Lightning", "Lauren Hynde", "Truck", 42000.00, true,
+        ElectricVehicle fordLightning = new ElectricVehicle("Ford", "F-150 Lightning", "Lauren Hynde", "Truck", 42000, true,
                 725, 230, 75, 4.5, 100, "AWD", 8, 44, 5, true,
                 true, true, 80, 14.1, 5.0, true,
                 "https://cdn.motor1.com/images/mgl/3yeZp/s1/2022-ford-f-150-lightning-side-view.webp",
@@ -349,7 +349,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The Lightning shares much of the regular F-150's body and cabin but swaps that truck's gasoline-powered V-6 and V-8 engine options for a pair of electric motors and one of two different battery packs.");
         electricVehicleStorage.saveElectricVehicle(fordLightning);
 
-        ElectricVehicle genesisGEighty = new ElectricVehicle("Genesis", "G80", "Paul Denton", "Sedan", 50000.00, true,
+        ElectricVehicle genesisGEighty = new ElectricVehicle("Genesis", "G80", "Paul Denton", "Sedan", 50000, true,
                 725, 310, 90, 4.8, 100, "e-AWD", 9, 22, 5, false,
                 true, false, 13.1, 0, 4.5, true,
                 "https://www.motortrend.com/uploads/sites/5/2020/03/2021-Genesis-G80-4.jpg",
@@ -357,7 +357,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "Luxury upstart Genesis is dipping its toe in the EV waters with an electric version of its G80 sedan for the 2022 model year, which will be called Electrified G80. The Electrified G80 is nearly indistinguishable from the gasoline-powered model inside and out, which is fine by us as we find the car's styling handsome and its cabin lovely. Genesis has not announced many details about the car's powertrain except that all-wheel drive will be standard, and that range should come in around 265 miles per charge.");
         electricVehicleStorage.saveElectricVehicle(genesisGEighty);
 
-        ElectricVehicle gmcHummer = new ElectricVehicle("GMC", "Hummer EV", "Jimmy McNulty", "Truck", 79995.00, true,
+        ElectricVehicle gmcHummer = new ElectricVehicle("GMC", "Hummer EV", "Jimmy McNulty", "Truck", 79995, true,
                 725, 350, 75, 3.0, 100, "AWD", 12, 30, 5, true,
                 true, false, 80, 11.3, 4.5, true,
                 "https://www.motortrend.com/uploads/sites/5/2020/10/2022-GMC-Hummer-EV-03.jpg",
@@ -367,7 +367,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The new pickup is shaping up to be quite the beast, with up to 1000 horsepower from its top powertrain option, which uses three electric motors, offers an estimated range of 350 miles per charge, and a leaps to 60 mph in a claimed 3.0 seconds. The Hummer also features removable roof panels, an optional adjustable air suspension, and a cool four-wheel steering feature that allows it to 'crab' sideways—drive diagonally—all of which should make it fun to take off-road.");
         electricVehicleStorage.saveElectricVehicle(gmcHummer);
 
-        ElectricVehicle hyundaiIoniqFive = new ElectricVehicle("Hyundai", "Ioniq 5", "William 'Bunk' Moreland", "Crossover", 45000.00, true,
+        ElectricVehicle hyundaiIoniqFive = new ElectricVehicle("Hyundai", "Ioniq 5", "William 'Bunk' Moreland", "Crossover", 45000, true,
                 725, 225, 125, 5.2, 115, "AWD", 7.75, 18, 5, false,
                 true, false, 18.8, 0.85, 4.5, true,
                 "https://www.topgear.com/sites/default/files/images/news-article/2021/02/fa6aac51e8f8f99b67802fbec8432e04/ioniq5kvs_4.jpg",
@@ -377,7 +377,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "More than just another EV, the Ioniq 5 brings several clever features—such as a solar roof, an augmented reality head-up display, and 800-volt electric architecture that enables relatively quick charging in places where DC fast charging is available—that will help it to stand out.");
         electricVehicleStorage.saveElectricVehicle(hyundaiIoniqFive);
 
-        ElectricVehicle jeepMagneto = new ElectricVehicle("Jeep", "Wrangler Magneto", "Shakima Greggs", "Crossover", 52500.00, true,
+        ElectricVehicle jeepMagneto = new ElectricVehicle("Jeep", "Wrangler Magneto", "Shakima Greggs", "Crossover", 52500, true,
                 725, 200, 95, 6.8, 120, "AWD", 9, 45, 4, false,
                 true, false, 17, 0, 4.0, false,
                 "https://www.motortrend.com/uploads/sites/5/2021/03/Jeep-Magneto-1.jpg?fit=around%7C875:492",
@@ -387,7 +387,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "Even though most of the current crop of electric cars have their motors geared directly to the drive axle via single-speed drive, we're already starting to see some EVs with multi-speed transmissions, including the Porsche Taycan and Audi E-Tron GT. A second forward speed (or more) allows these EVs to operate over a broader speed range, minimizing needless motor spinning at higher speeds and adding extra gut-punch to low-end torque electrics are known for.");
         electricVehicleStorage.saveElectricVehicle(jeepMagneto);
 
-        ElectricVehicle kiaEvSix = new ElectricVehicle("Kia", "EV6", "Lester Freamon", "Crossover", 45000.00, true,
+        ElectricVehicle kiaEvSix = new ElectricVehicle("Kia", "EV6", "Lester Freamon", "Crossover", 45000, true,
                 725, 270, 110, 5.2, 115, "RWD", 7, 18, 5, false,
                 true, false, 28, 0, 4.5, true,
                 "https://cimg0.ibsrv.net/ibimg/hgm/1920x1080-1/100/786/2022-kia-ev6_100786824.jpg",
@@ -395,7 +395,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "It is clear that Kia is quite serious about EVs, with the EV6 boasting impressive capabilities from fast-charging to rapid acceleration that could position it among the more elite models. Kia promises that the EV6 can sprint 0-60 mph in a scant 7 seconds. The company targets 250 miles of range and claims to have the world’s first 800V multi-charging architecture that enables up to 210 miles of range to be charged in under 18 minutes.");
         electricVehicleStorage.saveElectricVehicle(kiaEvSix);
 
-        ElectricVehicle mercedesEqa = new ElectricVehicle("Mercedes-Benz", "EQA", "Reginald 'Bubbles' Cousins", "Crossover", 57000.00, true,
+        ElectricVehicle mercedesEqa = new ElectricVehicle("Mercedes-Benz", "EQA", "Reginald 'Bubbles' Cousins", "Crossover", 57000, true,
                 725, 250, 100, 7.0, 99, "AWD", 7.25, 35, 5, false,
                 true, false, 12, 0, 4.5, true,
                 "https://s.yimg.com/os/creatr-uploaded-images/2021-01/99601910-5b08-11eb-abff-1193b560fe7f",
@@ -403,7 +403,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The 2022 Mercedes-Benz EQA is a new all-electric crossover SUV that's based on the regular subcompact GLA-class.  Power comes from an all-electric powertrain that generates 188 horsepower on front-drive models and 268 horses on all-wheel-drive versions, which both source their juice from a battery pack mounted under the floor of the vehicle.");
         electricVehicleStorage.saveElectricVehicle(mercedesEqa);
 
-        ElectricVehicle nissaAriya = new ElectricVehicle("Nissan", "Ariya", "Russell 'Stringer' Bell", "Crossover", 40000.00, true,
+        ElectricVehicle nissaAriya = new ElectricVehicle("Nissan", "Ariya", "Russell 'Stringer' Bell", "Crossover", 40000, true,
                 725, 300, 105, 7.5, 99, "FWD", 10, 31, 5, true,
                 true, false, 16.5, 0, 4.5, false,
                 "https://www.cnet.com/a/img/u8T28wvt1gBqp47Rm_6jxBeia08=/1200x675/2021/03/19/0bb10fed-d925-47c0-ba90-a4b42837b7a3/ogi-nissan.jpg",
@@ -411,7 +411,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "Nissan is expanding its line of electric vehicles with the 2022 Ariya SUV, which is on sale in the U.S. in 2021. The Ariya will join the Leaf hatchback in the Nissan showroom and will offer up to 300 miles of driving range, which beats the Leaf's maximum of 226. The Ariya's design represents a shift from the current sharp, angular lines seen on many of Nissan's vehicles. The low, wide stance of the Ariya differentiates it from the Rogue and gives it a sportier look. Two different battery sizes will be offered—a 63.0-kWh battery is standard, and a larger 87.0-kWh pack is optional—as well as either front- or all-wheel drive. A host of driver-assistance features, infotainment tech, and convenience items will be included here, helping the 2022 Ariya compete with similarly sized EV crossovers, such as the Tesla Model Y and Hyundai Kona Electric.");
         electricVehicleStorage.saveElectricVehicle(nissaAriya);
 
-        ElectricVehicle rivianROneT = new ElectricVehicle("Rivian", "R1T", "Omar Little", "Truck", 73000.00, true,
+        ElectricVehicle rivianROneT = new ElectricVehicle("Rivian", "R1T", "Omar Little", "Truck", 73000, true,
                 725, 300, 80, 3.0, 100, "AWD", 10, 35, 5, true,
                 true, true, 57, 11.0, 4.5, false,
                 "https://cdn.motor1.com/images/mgl/B37xA/s3/rivian-r1t-c-2020-jeff-johnson.jpg",
@@ -419,7 +419,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The futuristic R1T is an all-electric pickup truck from new American startup brand Rivian, and it promises 300 miles of driving range and lightning-quick acceleration. The company says that the revealed truck is no concept vehicle—what you see here is what will enter production as the 2021 R1T. At 215.6 inches long, the crew-cab-only R1T splits the difference in size between mid-size pickups such as the Ford Ranger and full-size trucks such as the Ram 1500. The R1T will be one of the first electric pickup trucks in what seems to be a burgeoning market, soon to include the Tesla Cybertruck and the GMC Hummer EV SUT.");
         electricVehicleStorage.saveElectricVehicle(rivianROneT);
 
-        ElectricVehicle teslaCybertruck = new ElectricVehicle("Tesla", "Cybertruck", "James ‘Sawyer’ Ford", "Truck", 70000.00, false,
+        ElectricVehicle teslaCybertruck = new ElectricVehicle("Tesla", "Cybertruck", "James ‘Sawyer’ Ford", "Truck", 70000, false,
                 725, 500, 90, 3.0, 130, "AWD", 10, 44, 6, true,
                 true, true, 90, 10.0, 5.0, true,
                 "https://i.gaw.to/content/photos/45/28/452817-le-tesla-cybertruck-ne-sera-finalement-pas-pret-avant-2022.jpeg?460x287",
@@ -429,7 +429,7 @@ public class ElectricVehiclePopulator  implements CommandLineRunner {
                 "The Tesla Cybertruck looks like it was dropped off by an alien race, but it has the capabilities to challenge all of the top-selling pickup trucks. With a sharp-edged exterior that is made of scratch- and dent-resistant stainless steel, Tesla's all-electric truck is seriously tough. Along with available all-wheel drive, the Cybertruck can tow up to 14,000 pounds and has an estimated driving range of 500-plus miles. While that applies only to the most expensive model, the cheapest one starts at $39,900.");
         electricVehicleStorage.saveElectricVehicle(teslaCybertruck);
 
-        ElectricVehicle teslaRoadsterTwo = new ElectricVehicle("Tesla", "Roadster 2", "Dr. Jack Shephard", "Sedan", 200000.00, false,
+        ElectricVehicle teslaRoadsterTwo = new ElectricVehicle("Tesla", "Roadster 2", "Dr. Jack Shephard", "Sedan", 200000, false,
                 725, 620, 90, 1.9, 250, "AWD", 8, 44, 4, true,
                 true, true, 15, 4.0, 5.0, true,
                 "https://cdn.vox-cdn.com/thumbor/HTcou-2jE-vt33LaXJN_tmmN4pY=/0x0:3840x2160/1400x933/filters:focal(1562x816:2176x1430):no_upscale()/cdn.vox-cdn.com/uploads/chorus_image/image/57642853/Roadster_Front_58.0.jpg",
