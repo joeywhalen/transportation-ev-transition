@@ -15,6 +15,7 @@ const clearChildren = function (element) {
 }
 
 const mainContent = document.querySelector(".main-content")
+const formContainer = document.querySelector(".form-container")
 const stateSelectElement = document.querySelector("#states")
 
 const yearSelectElement = document.querySelector("#years")
@@ -27,7 +28,7 @@ const submitButton = document.querySelector(".user-form-submit-button")
 
 submitButton.addEventListener("click", () => {
 
-    clearChildren(mainContent)
+    clearChildren(formContainer)
 
     const userStateIndex = stateSelectElement.selectedIndex - 1
     const userYearIndex = yearSelectElement.selectedIndex - 1
@@ -185,4 +186,29 @@ const genModels = function (models) {
     })
 
 
+}
+
+const genUserVehicleComp = function (userVehicle) {
+    const lifestyleForm = document.createElement("form")
+    const lifestyleDiv = document.createElement("div")
+    lifestyleDiv.classList.add("lifestyle-form")
+    const priceRangeInput = document.createElement("input")
+    priceRangeInput.setAttribute("type", "text")
+    priceRangeInput.setAttribute("id", "user-price-range")
+    priceRangeInput.setAttribute("name", "user-price-range")
+    priceRangeInput.setAttribute("placeholder", "Price Range")
+
+    const lifestyleSubmit = document.createElement("a")
+    lifestyleSubmit.classList.add("lifestyle-submit-button")
+    for(let i = 0; i <5; i++){
+        let spanElement = document.createElement("span")
+        lifestyleSubmit.appendChild(spanElement)
+    }
+    lifestyleSubmit.innerText ="Submit"
+
+    lifestyleDiv.appendChild(priceRangeInput)
+    lifestyleDiv.appendChild(document.createElement("br"))
+    lifestyleDiv.appendChild(lifestyleSubmit)
+    lifestyleForm.appendChild(lifestyleDiv)
+    formContainer.appendChild(lifestyleForm)
 }
