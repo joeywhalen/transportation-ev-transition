@@ -1,18 +1,31 @@
-import { clearChildren } from "./userVehicleForm.js";
+// import { clearChildren } from "./userVehicleForm.js";
+fetch("http://localhost:8080/api/articles")
+    .then(response => response.json())
+    .then(article => displayArticle(article))
+    .catch(error => console.log(error))
+
+const clearChildren = function (element) {
+    while (element.firstChild) {
+        element.removeChild(element.lastChild);
+    }
+}
 
 const displayArticle = function (article) {
     const mainElement = document.querySelector(".main-content");
+    // clearChildren(mainElement);
     const articleElement = document.createElement("div");
     articleElement.classList.add("article-content");
     const articleTopicElement = document.createElement("h1");
     articleTopicElement.innerText = article.articleTopic;
+    // const articleImageElement = document.createElement("img");
+    const articleImageElement = document.querySelector(".single-article-img");
+    articleImageElement.src = article.imageUrl;
     const articleTitleElement = document.createElement("h2");
     articleTitleElement.innerText = article.articleTitle;
-    const articleImageElement = document.createElement("img");
-    articleImageElement.src = article.imageUrl;
     const articleAuthorElement = document.createElement("h3");
     articleAuthorElement.innerText = article.authorName;
-    const articleTextElement = document.createElement("p");
+    // const articleTextElement = document.createElement("p");
+    const articleTextElement = document.querySelector(".single-article-content");
     articleTextElement.innerText = article.articleContent;
     const articleCommentsNotationElement = document.createElement("article-comments");
     articleCommentsNotationElement.classList.add("article-comments-notation");
@@ -77,7 +90,45 @@ export {
     displayArticle
 }
 
-{/* <body>
+{/* <div class="main-content">
+        <img class="single-article-img"
+            src="https://www.zerohedge.com/s3/files/inline-images/2019-07-21_13-21-38.png?itok=NQxqZjHQ">
+        <h1 class="single-article-title">
+            <font color="green">Electric Vehicle Benefits and</font>
+            <font color="orange">Considerations</font>
+        </h1>
+        <h3 class="single-article-author"> By Jackie Brown</h3>
+        <hr class="single-article-line" width="900px" size="5px" color="black">
+        <p class="single-article-content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Officia laborum amet quia excepturi et totam ex suscipit alias?
+            Tempore exercitationem necessitatibus quam quae error repellat quisquam totam ratione
+            reprehenderit odit illo fugiat expedita,
+            ducimus ab amet tenetur perspiciatis ut voluptas aperiam, deserunt sunt nemo accusantium
+            nihil consequuntur? Dignissimos,
+            porro rem! Ducimus temporibus iure, odio officiis reiciendis id vero rem aliquid? Vitae
+            quaerat ipsum blanditiis aliquid adipisci nobis,
+            accusamus necessitatibus illum commodi. Voluptate odio, provident labore neque tenetur at
+            molestiae ut voluptates adipisci nam est, deleniti harum,
+            unde vel illo beatae quidem accusantium magnam reiciendis numquam autem! Repellat quis
+            delectus quas.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Officia laborum amet quia excepturi et totam ex suscipit alias?
+            Tempore exercitationem necessitatibus quam quae error repellat quisquam totam ratione
+            reprehenderit odit illo fugiat expedita,
+            ducimus ab amet tenetur perspiciatis ut voluptas aperiam, deserunt sunt nemo accusantium
+            nihil consequuntur? Dignissimos,
+            porro rem! Ducimus temporibus iure, odio officiis reiciendis id vero rem aliquid? Vitae
+            quaerat ipsum blanditiis aliquid adipisci nobis,
+            accusamus necessitatibus illum commodi. Voluptate odio, provident labore neque tenetur at
+            molestiae ut voluptates adipisci nam est, deleniti harum,
+            unde vel illo beatae quidem accusantium magnam reiciendis numquam autem! Repellat quis
+            delectus quas.
+        </p>
+        <hr class="single-article-line" width="900px" size="5px" color="black">
+    </div>
+    
+    <body>
     <h1 class="single-article-topic">Why We Should Transition To EVs</h1>
     <h2 class="single-article-title"> Electric Vehicle Benefits and Considerations</h2>
     <img class="single-article-img"
