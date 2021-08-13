@@ -40,7 +40,7 @@ submitButton.addEventListener("click", () => {
     const userYearId = yearSelectElement.getElementsByClassName("year-option")[userYearIndex].getAttribute("id")
     const userMakeId = makeSelectElement.getElementsByClassName("make-option")[userMakeIndex].getAttribute("id")
     const userModelId = modelSelectElement.getElementsByClassName("model-option")[userModelIndex].getAttribute("id")
-    
+
 
     console.log(yearSelectElement.getElementsByClassName("year-option")[userYearIndex].getAttribute("id"))
     console.log(makeSelectElement.getElementsByClassName("make-option")[userMakeIndex].getAttribute("id"))
@@ -190,8 +190,10 @@ const genModels = function (models) {
 }
 
 const genUserVehicleComp = function (userVehicle) {
+    
     const formH1 = document.querySelector(".form-h1")
     formH1.innerText = "What is your current vehicle lifestyle?"
+    
     const formH3 = document.querySelector(".form-h3")
     formH3.innerText = "What is important in your next vehicle?"
 
@@ -206,11 +208,11 @@ const genUserVehicleComp = function (userVehicle) {
 
     const lifestyleSubmit = document.createElement("a")
     lifestyleSubmit.classList.add("lifestyle-submit-button")
-    for(let i = 0; i <5; i++){
+    for (let i = 0; i < 5; i++) {
         let spanElement = document.createElement("span")
         lifestyleSubmit.appendChild(spanElement)
     }
-    lifestyleSubmit.innerText ="Submit"
+    lifestyleSubmit.innerText = "Submit"
 
     lifestyleDiv.appendChild(priceRangeInput)
     lifestyleDiv.appendChild(document.createElement("br"))
@@ -218,26 +220,26 @@ const genUserVehicleComp = function (userVehicle) {
     lifestyleForm.appendChild(lifestyleDiv)
     formContainer.appendChild(lifestyleForm)
 
-    lifestyleSubmit.addEventListener("click", ()=> {
+    lifestyleSubmit.addEventListener("click", () => {
         clearChildren(formContainer)
 
         const comparisonContainer = document.createElement("div")
         comparisonContainer.classList.add("comparison-container")
         const userVehicleElement = document.createElement("ul")
         const userVehicleYear = document.createElement("li")
-        userVehicleYear.innerText = "Year: "+userVehicle.yearString
+        userVehicleYear.innerText = "Year: " + userVehicle.yearString
         const userVehicleMake = document.createElement("li")
-        userVehicleMake.innerText = "Make: "+userVehicle.makeName
+        userVehicleMake.innerText = "Make: " + userVehicle.makeName
         const userVehicleModel = document.createElement("li")
-        userVehicleModel.innerText = "Model: "+userVehicle.modelName
+        userVehicleModel.innerText = "Model: " + userVehicle.modelName
         const userVehiclePrice = document.createElement("li")
-        userVehiclePrice.innerText = "MSRP: $"+userVehicle.msrp
+        userVehiclePrice.innerText = "MSRP: $" + userVehicle.msrp
         const userVehicleMPG = document.createElement("li")
-        userVehicleMPG.innerText = "MPG: "+userVehicle.mpg
+        userVehicleMPG.innerText = "MPG: " + userVehicle.mpg
         const userVehicleRange = document.createElement("li")
-        userVehicleRange.innerText = "Range: "+userVehicle.range+" miles"
+        userVehicleRange.innerText = "Range: " + userVehicle.range + " miles"
         const userVehicleMaint = document.createElement("li")
-        userVehicleMaint.innerText = "Yearly Maintenance Cost: $"+userVehicle.yearlyMaintCost
+        userVehicleMaint.innerText = "Yearly Maintenance Cost: $" + userVehicle.yearlyMaintCost
 
         userVehicleElement.appendChild(userVehicleYear)
         userVehicleElement.appendChild(userVehicleMake)
@@ -253,25 +255,60 @@ const genUserVehicleComp = function (userVehicle) {
     })
 }
 
-const genEVComparison = function (priceRange){
-    fetch("http://localhost:8080/api/electricVehicles", {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
+const genEVComparison = function (priceRange) {
+    fetch("http://localhost:8080/api/electricVehicles/compare/" + priceRange, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
         .then(response => response.json())
         .then(evResponse => displayEVs(evResponse))
         .catch(error => console.log(error))
-} 
+}
 
 
-
-
-
-const displayEVs = function(allEVs) {
+const displayEVs = function (allEVs) {
 
     
+
+    allEVs.forEach((evVehicle) => {
+
+
+        const comparisonContainer = document.querySelector(".comparison-container")
+        const evVehicleElement = document.createElement("ul")
+
+        //const evVehicleYear = document.createElement("li")
+        //evVehicleYear.innerText = "Year: " + evVehicle.yearString
+
+        const evVehicleMake = document.createElement("li")
+        evVehicleMake.innerText = "Make: " + evVehicle.makeName
+        evVehicleElement.appendChild(evVehicleMake)
+
+        const evVehicleModel = document.createElement("li")
+        evVehicleModel.innerText = "Model: " + evVehicle.modelName
+        evVehicleElement.appendChild(evVehicleModel)
+
+        const evVehiclePrice = document.createElement("li")
+        evVehiclePrice.innerText = "MSRP: $" + evVehicle.msrp
+        evVehicleElement.appendChild(evVehiclePrice)
+
+        const evVehicleMPGe = document.createElement("li")
+        evVehicleMPGe.innerText = "MPGe: " + evVehicle.mpgE
+        evVehicleElement.appendChild(evVehicleMPGe)
+
+        const evVehicleRange = document.createElement("li")
+        evVehicleRange.innerText = "Range: " + evVehicle.range + " miles"
+        evVehicleElement.appendChild(evVehicleRange)
+
+        const evVehicleMaint = document.createElement("li")
+        evVehicleMaint.innerText = "Yearly Maintenance Cost: $" + evVehicle.yearlyMaintenanceCost
+        evVehicleElement.appendChild(evVehicleMaint)
+
+        evVehicleElement.appendChild(document.createElement("br"))
+
+        comparisonContainer.appendChild(evVehicleElement)
+    })
 
 
 
