@@ -254,7 +254,7 @@ const genUserVehicleComp = function (userVehicle) {
 }
 
 const genEVComparison = function (priceRange){
-    fetch("http://localhost:8080/api/ev/compare", {
+    fetch("http://localhost:8080/api/electricVehicles", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -264,3 +264,15 @@ const genEVComparison = function (priceRange){
         .then(evResponse => displayEVs(evResponse))
         .catch(error => console.log(error))
 } 
+
+
+
+
+
+const displayEVs = function(allEVs) {
+
+    
+
+
+
+}

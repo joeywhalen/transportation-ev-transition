@@ -30,3 +30,7 @@ PATCH http://localhost:8080/api/electricVehicles/121/comments
 Content-Type: application/json
 
 Test comment for review
+
+### Retrieve list of EVs based on price
+GET http://localhost:8080/api/electricVehicles/55000
+Content-Type: application/json

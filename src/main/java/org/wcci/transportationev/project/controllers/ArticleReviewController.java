@@ -1,5 +1,7 @@
 package org.wcci.transportationev.project.controllers;
 
+import java.util.Collection;
+
 import org.springframework.web.bind.annotation.*;
 import org.wcci.transportationev.project.resources.Article;
 import org.wcci.transportationev.project.resources.ArticleTopic;
@@ -15,14 +17,14 @@ public class ArticleReviewController {
     private ArticleStorage articleStorage;
     private ElectricVehicleStorage electricVehicleStorage;
 
-    public ArticleReviewController(ArticleTopicStorage articleTopicStorage, ArticleStorage articleStorage, 
-                        ElectricVehicleStorage electricVehicleStorage) {
+    public ArticleReviewController(ArticleTopicStorage articleTopicStorage, ArticleStorage articleStorage,
+            ElectricVehicleStorage electricVehicleStorage) {
         this.articleTopicStorage = articleTopicStorage;
         this.articleStorage = articleStorage;
         this.electricVehicleStorage = electricVehicleStorage;
     }
 
-    //GET http://localhost:8080/api/articleTopics
+    // GET http://localhost:8080/api/articleTopics
     @GetMapping("/api/articleTopics")
     public Iterable<ArticleTopic> retrieveAllArticleTopics() {
         return articleTopicStorage.retrieveAllArticleTopics();
@@ -33,8 +35,8 @@ public class ArticleReviewController {
     public Iterable<ElectricVehicle> retrieveAllElectricVehicles() {
         return electricVehicleStorage.retrieveAllElectricVehicles();
     }
-    
-    //GET http://localhost:8080/api/articleTopics/1
+
+    // GET http://localhost:8080/api/articleTopics/1
     @GetMapping("/api/articleTopics/{id}")
     public ArticleTopic retrieveArticleTopicById(@PathVariable Long id) {
         return articleTopicStorage.retrieveArticleTopicById(id);
@@ -46,28 +48,29 @@ public class ArticleReviewController {
         return electricVehicleStorage.retrieveElectricVehicleById(id);
     }
 
-    //GET http://localhost:8080/api/articleTopics/1/articles
+    // GET http://localhost:8080/api/articleTopics/1/articles
     @GetMapping("/api/articleTopics/{id}/articles")
     public Iterable<Article> retrieveAllArticlesInTopic(@PathVariable Long id) {
         return articleTopicStorage.retrieveArticleTopicById(id).getArticles();
     }
 
-    //GET http://localhost:8080/api/articleTopics/4/articles/5
+    // GET http://localhost:8080/api/articleTopics/4/articles/5
     @GetMapping("/api/articleTopics/{id}/articles/{articleId}")
     public Article retrieveArticleById(@PathVariable Long id, @PathVariable Long articleId) {
         return articleStorage.retrieveArticleById(articleId);
     }
 
-    //PATCH http://localhost:8080/api/articleTopics/7/articles/9/comments
+    // PATCH http://localhost:8080/api/articleTopics/7/articles/9/comments
     @PatchMapping("/api/articleTopics/{id}/articles/{articleId}/{comments}")
-    public Article addNewArticleComment(@PathVariable Long id, @PathVariable Long articleId, @RequestBody String newArticleComment) {
+    public Article addNewArticleComment(@PathVariable Long id, @PathVariable Long articleId,
+            @RequestBody String newArticleComment) {
         Article articleToChange = articleStorage.retrieveArticleById(articleId);
         articleToChange.addArticleComment(newArticleComment);
         articleStorage.saveArticle(articleToChange);
         return articleToChange;
     }
 
-    //PATCH http://localhost:8080/api/electricVehicles/121/comments
+    // PATCH http://localhost:8080/api/electricVehicles/121/comments
     @PatchMapping("/api/electricVehicles/{id}/comments")
     public ElectricVehicle addNewElectricVehicleComment(@PathVariable Long id, @RequestBody String newReviewComment) {
         ElectricVehicle electricVehicleToChange = electricVehicleStorage.retrieveElectricVehicleById(id);
@@ -75,5 +78,11 @@ public class ArticleReviewController {
         electricVehicleStorage.saveElectricVehicle(electricVehicleToChange);
         return electricVehicleToChange;
     }
-    
+
+    // GET http://localhost:8080/api/electricVehicles/price
+    @GetMapping("/api/electricVehicles/{price}")
+    public Iterable<ElectricVehicle> retrieveEVsBasedOnLifestyle(@PathVariable int price) {
+        return electricVehicleStorage.retrieveEVsByPrice(price);
+    }
+
 }

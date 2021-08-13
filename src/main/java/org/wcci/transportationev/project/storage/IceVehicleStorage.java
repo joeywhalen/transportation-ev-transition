@@ -23,6 +23,8 @@ public class IceVehicleStorage {
         iceVehicleRepo.save(iceVehicleToSave);
     }
 
+    
+    
     public Collection<IceVehicle> retrieveIceVehiclesByModelId(String modelId) {
 
         Iterable<IceVehicle> vehicles = iceVehicleRepo.findAll();
@@ -34,8 +36,6 @@ public class IceVehicleStorage {
         for (IceVehicle vehicle : vehicles) {
 
 
-
-            Long testValue = vehicle.getModelId();
 
             if (vehicle.getModelId().toString().equals(modelId)) {
 
