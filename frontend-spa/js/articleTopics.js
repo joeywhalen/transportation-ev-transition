@@ -1,7 +1,8 @@
 import { clearChildren } from "./userVehicleForm.js";
 import { displayArticle } from "./displayArticle.js";
 
-const displayTopicOneArticles = function (articleTopic) {
+// const displayTopicOneArticles = function (articleTopic) {
+const displayAllTopics = function (articleTopic) {    
     const mainElement = document.querySelector(".article-flex");
     clearChildren(mainElement);
     articleTopic.forEach((article) => {
@@ -24,36 +25,24 @@ const displayTopicOneArticles = function (articleTopic) {
     return mainElement;
 }
 export {
-    displayTopicOneArticles
+    displayAllTopics
 }
 
-
-
 //  <div class="wrapper"></div>
-
 //     <!-- topic1 -->
-
 //    <div class="parallax-one">
 //        <h1 class="text-over-parallax">Why We Should Transition To EVs</h1>
-       
 //    </div>
-   
 //    <div class="topic1">
 //     <div class="article-flex">
-
 //         <div class="article">
-
 //             <a href="single-article-prototype.html"><img src="images/blog-article1.gif"></a>
-//             <p>No More Road Accidents </p> 
-            
+//             <p>No More Road Accidents </p>      
 //         </div>
-
 //         <div class="article">
 //             <a href="single-article-prototype.html"><img src="images/blog-article2.png"></a>
 //             <p>Consider Switching Now...</p>
-
 //         </div>
-
 //     </div>
 //    </div>
 
