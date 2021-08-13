@@ -51,4 +51,11 @@ public class Make {
         return models;
     }
 
+    public Collection<Year> getYears() {
+        return years;
+    }
+
+    public Collection<IceVehicle> getIceVehicles() {
+        return iceVehicles;
+    }
 }

@@ -99,4 +99,12 @@ public class IceVehicle {
     public String getYearString(){
         return year.getYearString();
     }
+
+    public Model getModel() {
+        return model;
+    }
+
+    public Make getMake() {
+        return make;
+    }
 }

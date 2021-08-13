@@ -38,4 +38,10 @@ public class Model {
     public Long getId() {return id;}
     public String getModelName() {return modelName;}
     public Make getMake() {return make;}
+
+    public Collection<IceVehicle> getIceVehicles() {
+        return iceVehicles;
+    }
+
+
 }
