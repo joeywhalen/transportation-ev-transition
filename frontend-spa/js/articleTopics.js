@@ -1,6 +1,7 @@
+import { clearChildren } from "./userVehicleForm.js";
+import { displayArticle } from "./displayArticle.js";
 
-
-const displayTopicOneArticles = function (article) {
+const displayTopicOneArticles = function (articleTopic) {
     const mainElement = document.querySelector(".article-flex");
     clearChildren(mainElement);
     articleTopic.forEach((article) => {
@@ -12,8 +13,18 @@ const displayTopicOneArticles = function (article) {
         let articleImageElement = document.createElement("img");
         articleImageElement.src = article.imageUrl;
 
-        
-        })
+        articleLinkElement.addEventListener("click", (clickEvent) => {
+            displayArticle(article)
+        });
+        articleLinkElement.appendChild(articleImageElement);
+        articleElement.appendChild(articleTitleElement);
+        articleElement.appendChild(articleLinkElement);
+        mainElement.appendChild(articleElement);
+    });
+    return mainElement;
+}
+export {
+    displayTopicOneArticles
 }
 
 
