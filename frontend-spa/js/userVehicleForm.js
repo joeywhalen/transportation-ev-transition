@@ -16,6 +16,7 @@ const clearChildren = function (element) {
 
 const mainContent = document.querySelector(".main-content")
 const formContainer = document.querySelector(".form-container")
+const topSection = document.querySelector(".top-section")
 const stateSelectElement = document.querySelector("#states")
 
 const yearSelectElement = document.querySelector("#years")
@@ -218,6 +219,35 @@ const genUserVehicleComp = function (userVehicle) {
     formContainer.appendChild(lifestyleForm)
 
     lifestyleSubmit.addEventListener("click", ()=> {
-        clearChildren(mainContent)
+        clearChildren(formContainer)
+
+        const comparisonContainer = document.createElement("div")
+        comparisonContainer.classList.add("comparison-container")
+        // comparisonContainer.style.margin = "200px 0px 0px 0px"
+        const userVehicleElement = document.createElement("ul")
+        const userVehicleYear = document.createElement("li")
+        userVehicleYear.innerText = "Year: "+userVehicle.yearString
+        const userVehicleMake = document.createElement("li")
+        userVehicleMake.innerText = "Make: "+userVehicle.makeName
+        const userVehicleModel = document.createElement("li")
+        userVehicleModel.innerText = "Model: "+userVehicle.modelName
+        const userVehiclePrice = document.createElement("li")
+        userVehiclePrice.innerText = "MSRP: $"+userVehicle.msrp
+        const userVehicleMPG = document.createElement("li")
+        userVehicleMPG.innerText = "MPG: "+userVehicle.mpg
+        const userVehicleRange = document.createElement("li")
+        userVehicleRange.innerText = "Range: "+userVehicle.range+" miles"
+        const userVehicleMaint = document.createElement("li")
+        userVehicleMaint.innerText = "Yearly Maintenance Cost: $"+userVehicle.yearlyMaintCost
+
+        userVehicleElement.appendChild(userVehicleYear)
+        userVehicleElement.appendChild(userVehicleMake)
+        userVehicleElement.appendChild(userVehicleModel)
+        userVehicleElement.appendChild(userVehiclePrice)
+        userVehicleElement.appendChild(userVehicleMPG)
+        userVehicleElement.appendChild(userVehicleRange)
+        userVehicleElement.appendChild(userVehicleMaint)
+        comparisonContainer.appendChild(userVehicleElement)
+        formContainer.appendChild(comparisonContainer)
     })
 }
