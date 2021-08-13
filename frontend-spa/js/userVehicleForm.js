@@ -189,6 +189,11 @@ const genModels = function (models) {
 }
 
 const genUserVehicleComp = function (userVehicle) {
+    const formH1 = document.querySelector(".form-h1")
+    formH1.innerText = "What is your current vehicle lifestyle?"
+    const formH3 = document.querySelector(".form-h3")
+    formH3.innerText = "What is important in your next vehicle?"
+
     const lifestyleForm = document.createElement("form")
     const lifestyleDiv = document.createElement("div")
     lifestyleDiv.classList.add("lifestyle-form")
@@ -211,4 +216,8 @@ const genUserVehicleComp = function (userVehicle) {
     lifestyleDiv.appendChild(lifestyleSubmit)
     lifestyleForm.appendChild(lifestyleDiv)
     formContainer.appendChild(lifestyleForm)
+
+    lifestyleSubmit.addEventListener("click", ()=> {
+        clearChildren(mainContent)
+    })
 }
