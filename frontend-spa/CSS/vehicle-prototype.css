@@ -44,6 +44,8 @@ body{
 
     .grid-item img{
       height:50%;
+      max-width: 300px;
+      min-width: 300px;
     }
 
     .text-container{

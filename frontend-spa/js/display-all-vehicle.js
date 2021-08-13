@@ -24,8 +24,8 @@ const displayAllVehicles = function (ElectricVehicles) {
         gridContainer.appendChild(gridItem);
 
         const vehicle1 = document.createElement("img");
-        vehicle1.setAttribute("src", "images/2015-Chevrolet-BoltEV-Concept-exterior-001.jpg");
-        vehicle1.setAttribute("id", "vehicle1");
+        vehicle1.setAttribute("src", ElectricVehicle.imageUrl);
+        vehicle1.setAttribute("id", ElectricVehicle.id);
         gridItem.appendChild(vehicle1);
 
         const textContainer = document.createElement("div");
@@ -33,15 +33,15 @@ const displayAllVehicles = function (ElectricVehicles) {
         gridItem.appendChild(textContainer);
 
         const vehicleName = document.createElement("p");
-        vehicleName.innerText = "Vehicle Name";
+        vehicleName.innerText = ElectricVehicle.modelName;
         textContainer.appendChild(vehicleName);
 
         const vehiclePrice = document.createElement("p");
-        vehiclePrice.innerText = "$18,000";
+        vehiclePrice.innerText = "$" + ElectricVehicle.msrp;
         textContainer.appendChild(vehiclePrice);
 
         const mPG = document.createElement("p");
-        mPG.innerText = "60mpg";
+        mPG.innerText = "MPGe " + ElectricVehicle.mpgE;
         textContainer.appendChild(mPG);
 
         const exploreButton = document.createElement("button");
