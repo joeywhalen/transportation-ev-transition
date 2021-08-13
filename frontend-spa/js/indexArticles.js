@@ -1,4 +1,5 @@
-
+import { clearChildren } from "./userVehicleForm.js";
+import { displayArticle } from "./displayArticle.js";
 
 const indexArticles = function (article) {
   const mainElement = document.querySelector(".articles-wrapper");
@@ -20,6 +21,11 @@ const indexArticles = function (article) {
     articleElement.appendChild(articleLinkElement);
     mainElement.appendChild(articleElement);
   });
+
+  return mainElement;
+}
+export {
+  indexArticles
 }
 
 {/* <div class="article-section">
