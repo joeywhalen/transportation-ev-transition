@@ -3,29 +3,43 @@ import { displayArticle } from "./displayArticle.js";
 
 const displayAllTopics = function (ArticleTopics) {
 
-    const body = document.querySelector(".body");
+    const bodyElement = document.querySelector(".body");
 
-    const wrapper = document.createElement("div");
-    wrapper.classList.add("wrapper");
-    body.append(wrapper);
+    const wrapperElement = document.createElement("div");
+    wrapperElement.classList.add("wrapper");
+    bodyElement.append(wrapperElement);
 
-    const parralaxOne = document.createElement("div");
-    parralaxOne.classList.add("parallax-one");
-    parralaxOne.innerHTML = '<h1 class="text-over-parallax">Why We Should Transition To EVs</h1>'
-    body.append(parralaxOne);
+    const parralaxOneElement = document.createElement("div");
+    parralaxOneElement.classList.add("parallax-one");
+    parralaxOneElement.innerHTML = '<h1 class="text-over-parallax">Why We Should Transition To EVs</h1>'
+    bodyElement.append(parralaxOneElement);
 
-    const topicOne = document.createElement("div");
-    topicOne.classList.add("topic1");
-    body.append(topicOne);
+    const topicOneElement = document.createElement("div");
+    topicOneElement.classList.add("topic1");
+    bodyElement.append(topicOneElement);
 
-    const articleFlex = document.createElement("div");
-    articleFlex.classList.add("articleFlex");
-    body.append(articleFlex);
+    const articleFlexElement = document.createElement("div");
+    articleFlexElement.classList.add("articleFlex");
+    bodyElement.append(articleFlexElement);
 
     ArticleTopics.forEach((Article) => {
-        
+        const articleElement = document.createElement("div");
+        articleElement.classList.add("article");
+        articleFlexElement.appendChild(articleElement);
+
+        const articleLinkElement = document.createElement("img");
+        articleLinkElement.setAttribute("src", Article.imageUrl);
+        articleLinkElement.setAttribute("id", Article.id);
+        articleFlexElement.appendChild(articleLinkElement);
+
+        const articleTitleElement = document.createElement("p");
+        articleTitleElement.innerText = Article.articleTitle;
+        articleFlexElement.appendChild(articleTitleElement);
         
     })
+}
+export {
+    displayAllTopics
 }
 
 //  <body>
