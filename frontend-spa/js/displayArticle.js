@@ -1,4 +1,5 @@
-// import { clearChildren } from "./userVehicleForm.js";
+import { displayAllTopics } from "./articleTopics.js";
+
 fetch("http://localhost:8080/api/articles")
     .then(response => response.json())
     .then(article => displayArticle(article))

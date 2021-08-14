@@ -1,5 +1,5 @@
 // import { clearChildren } from "./userVehicleForm.js";
-// import { displayArticle } from "./displayArticle.js";
+import { displayArticle } from "./displayArticle.js";
 
 const displayAllTopics = function (ArticleTopics) {
 
@@ -13,8 +13,8 @@ const displayAllTopics = function (ArticleTopics) {
         const parallaxElement = document.createElement("div");
         parallaxElement.classList.add("parallax");
         // parallaxElement.src = ArticleTopic.ArticleTopicParallaxUrl;
-        // parallaxElement.setAttribute("src", ArticleTopic.ArticleTopicParallaxUrl);
-        // parallaxElement.setAttribute("id", ArticleTopic.id);
+        parallaxElement.setAttribute("src", ArticleTopic.ArticleTopicParallaxUrl);
+        parallaxElement.setAttribute("id", ArticleTopic.id);
         bodyElement.append(parallaxElement);
 
         const parallaxTextElement = document.createElement("h1");
@@ -43,6 +43,10 @@ const displayAllTopics = function (ArticleTopics) {
             const articleTitleElement = document.createElement("p");
             articleTitleElement.innerText = Article.articleTitle;
             articleElement.appendChild(articleTitleElement);
+
+            articleLinkElement.addEventListener("click", (clickEvent) => {
+                displayArticle(Article)
+            });
         
         })
     })
