@@ -6,9 +6,18 @@ import {
      displayAllVehicles
  } from "./display-all-vehicle.js"
 
+import {
+    displaySingleEV
+} from "./single-vehicle.js"
+
  import {
      displayFooter
  } from "./footer.js"
+
+
+
+
+// All EVs -----------------------------------------------
 
 const body = document.querySelector(".body")
 
@@ -20,6 +29,21 @@ await fetch("http://localhost:8080/api/electricVehicles")
 .catch(error => console.log(error))
 
 body.append(displayFooter());
+
+
+
+
+// single EV -----------------------------------------------
+
+const body = document.querySelector(".svBody");
+
+body.append(displayHeader());
+
+body.append(displayFooter());
+
+
+
+
 
 
 
