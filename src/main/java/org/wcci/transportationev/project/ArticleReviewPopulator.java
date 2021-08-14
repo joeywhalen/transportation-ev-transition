@@ -20,7 +20,8 @@ public class ArticleReviewPopulator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        ArticleTopic whyTransition = new ArticleTopic("Why We Should Transition To EVs");
+        ArticleTopic whyTransition = new ArticleTopic("Why We Should Transition To EVs", 
+                        "/frontend-spa/images/topic1-parallax.png");
         articleTopicStorage.saveArticleTopic(whyTransition);
 
         Article evBenefiits = new Article(whyTransition, "Electric Vehicle Benefits and Considerations", "Jackie Brown",
@@ -46,7 +47,8 @@ public class ArticleReviewPopulator implements CommandLineRunner {
                 "5. One of the major obstacles facing EV manufacturers is producing a functional, lightweight vehicle. Lighter EVs have a greater range and smaller carbon footprint, but traditional materials make it difficult to achieve this. However, recycled and organic materials are now comparable to traditional materials. They’re lightweight, eco-friendly, strong, and durable.");
         articleStorage.saveArticle(checkYourFacts);
 
-        ArticleTopic howToCharge = new ArticleTopic("How To Charge At Home And On The Road");
+        ArticleTopic howToCharge = new ArticleTopic("How To Charge At Home And On The Road", 
+                        "/frontend-spa/images/topic2-parallax.jpg");
         articleTopicStorage.saveArticleTopic(howToCharge);
 
         Article chargeAtHome = new Article(howToCharge, "What you need to charge at home.", "Rick Dalton",
@@ -69,7 +71,8 @@ public class ArticleReviewPopulator implements CommandLineRunner {
                 "Not all EV chargers are the same. In fact, there are three different tiers. Level one is the slowest. If your battery is nearing empty, it will take a full 24 hours to power it all the way up, and overnight, you'll only get a charge of approximately 50 miles.  Level two is the most common and delivers a charge of up to 28 miles per hour. As for cost, it could range from $1 to $5 an hour, which is still significantly cheaper than paying for gas. Shopping centers are popular places for EV charging stations — some even offer preferred parking spots, You can have a meal and/or run errands while the car is charging, and some stores offer free charging to shoppers");
         articleStorage.saveArticle(chargeOnTheRoad);
 
-        ArticleTopic factFromFiction = new ArticleTopic ("Electric Vehicles - Separating Fact From Fiction");
+        ArticleTopic factFromFiction = new ArticleTopic ("Electric Vehicles - Separating Fact From Fiction", 
+                        "/frontend-spa/images/topic3-parallax.jpg");
         articleTopicStorage.saveArticleTopic(factFromFiction);
 
         Article commonMyths = new Article(factFromFiction, "5 common Electric Vehicle myths", "Billy Crash",

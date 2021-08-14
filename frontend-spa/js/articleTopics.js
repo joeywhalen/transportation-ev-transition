@@ -10,14 +10,14 @@ const displayAllTopics = function (ArticleTopics) {
     bodyElement.append(wrapperElement);
 
     ArticleTopics.forEach((ArticleTopic) => {
-        const paralaxElement = document.createElement("div");
-        paralaxElement.classList.add("parallax-one");
-        bodyElement.append(paralaxElement);
+        const parallaxElement = document.createElement("div");
+        parallaxElement.classList.add("parallax-one");
+        bodyElement.append(parallaxElement);
 
-        const paralaxTextElement = document.createElement("h1");
-        paralaxTextElement.classList.add("text-over-parallax");
-        paralaxTextElement.innerText = ArticleTopic.articleTopicTitle;
-        bodyElement.append(paralaxTextElement);
+        const parallaxTextElement = document.createElement("h1");
+        parallaxTextElement.classList.add("text-over-parallax");
+        parallaxTextElement.innerText = ArticleTopic.articleTopicTitle;
+        bodyElement.append(parallaxTextElement);
 
         const topicElement = document.createElement("div");
         topicElement.classList.add("topic1");

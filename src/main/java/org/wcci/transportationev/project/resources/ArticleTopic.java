@@ -13,6 +13,7 @@ public class ArticleTopic {
     @GeneratedValue
     private Long id;
     private String articleTopicTitle;
+    private String articleTopicParallaxUrl;
 
     @OneToMany(mappedBy = "articleTopic")
     private Collection<Article> articles;
@@ -21,8 +22,9 @@ public class ArticleTopic {
 
     }
 
-    public ArticleTopic(String articleTopicTitle) {
+    public ArticleTopic(String articleTopicTitle, String articleTopicParallaxUrl) {
         this.articleTopicTitle = articleTopicTitle;
+        this.articleTopicParallaxUrl = articleTopicParallaxUrl;
     }
 
     public Long getId() {
@@ -31,6 +33,10 @@ public class ArticleTopic {
 
     public String getArticleTopicTitle() {
         return articleTopicTitle;
+    }
+
+    public String getArticleTopicParallaxUrl() {
+        return articleTopicParallaxUrl;
     }
 
     public Collection<Article> getArticles() {
