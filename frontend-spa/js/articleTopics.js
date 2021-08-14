@@ -12,7 +12,6 @@ const displayAllTopics = function (ArticleTopics) {
     ArticleTopics.forEach((ArticleTopic) => {
         const paralaxElement = document.createElement("div");
         paralaxElement.classList.add("parallax-one");
-        // paralaxElement.innerText = ArticleTopic.articleTopicTitle;
         bodyElement.append(paralaxElement);
 
         const paralaxTextElement = document.createElement("h1");
