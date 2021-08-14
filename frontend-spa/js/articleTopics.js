@@ -9,34 +9,65 @@ const displayAllTopics = function (ArticleTopics) {
     wrapperElement.classList.add("wrapper");
     bodyElement.append(wrapperElement);
 
-    const parralaxOneElement = document.createElement("div");
-    parralaxOneElement.classList.add("parallax-one");
-    parralaxOneElement.innerHTML = '<h1 class="text-over-parallax">Why We Should Transition To EVs</h1>'
-    bodyElement.append(parralaxOneElement);
+    ArticleTopics.forEach((ArticleTopic) => {
+        const parralaxElement = document.createElement("div");
+        parralaxElement.classList.add("parallax-one");
+        parralaxElement.innerText = ArticleTopic.articleTopicTitle;
+        bodyElement.append(parralaxElement);
 
-    const topicOneElement = document.createElement("div");
-    topicOneElement.classList.add("topic1");
-    bodyElement.append(topicOneElement);
+        const topicElement = document.createElement("div");
+        topicElement.classList.add("topic1");
+        bodyElement.append(topicElement);
 
-    const articleFlexElement = document.createElement("div");
-    articleFlexElement.classList.add("articleFlex");
-    bodyElement.append(articleFlexElement);
+        const articleFlexElement = document.createElement("div");
+        articleFlexElement.classList.add("articleFlex");
+        bodyElement.append(articleFlexElement);
 
-    ArticleTopics.forEach((Article) => {
-        const articleElement = document.createElement("div");
-        articleElement.classList.add("article");
-        articleFlexElement.appendChild(articleElement);
+        ArticleTopics.forEach((Article) => {
+            const articleElement = document.createElement("div");
+            articleElement.classList.add("article");
+            articleFlexElement.appendChild(articleElement);
 
-        const articleLinkElement = document.createElement("img");
-        articleLinkElement.setAttribute("src", Article.imageUrl);
-        articleLinkElement.setAttribute("id", Article.id);
-        articleFlexElement.appendChild(articleLinkElement);
+            const articleLinkElement = document.createElement("img");
+            articleLinkElement.setAttribute("src", Article.imageUrl);
+            articleLinkElement.setAttribute("id", Article.id);
+            articleFlexElement.appendChild(articleLinkElement);
 
-        const articleTitleElement = document.createElement("p");
-        articleTitleElement.innerText = Article.articleTitle;
-        articleFlexElement.appendChild(articleTitleElement);
+            const articleTitleElement = document.createElement("p");
+            articleTitleElement.innerText = Article.articleTitle;
+            articleFlexElement.appendChild(articleTitleElement);
         
+        })
     })
+
+    // const parralaxOneElement = document.createElement("div");
+    // parralaxOneElement.classList.add("parallax-one");
+    // parralaxOneElement.innerHTML = '<h1 class="text-over-parallax">Why We Should Transition To EVs</h1>'
+    // bodyElement.append(parralaxOneElement);
+
+    // const topicOneElement = document.createElement("div");
+    // topicOneElement.classList.add("topic1");
+    // bodyElement.append(topicOneElement);
+
+    // const articleFlexElement = document.createElement("div");
+    // articleFlexElement.classList.add("articleFlex");
+    // bodyElement.append(articleFlexElement);
+
+    // ArticleTopics.forEach((Article) => {
+    //     const articleElement = document.createElement("div");
+    //     articleElement.classList.add("article");
+    //     articleFlexElement.appendChild(articleElement);
+
+    //     const articleLinkElement = document.createElement("img");
+    //     articleLinkElement.setAttribute("src", Article.imageUrl);
+    //     articleLinkElement.setAttribute("id", Article.id);
+    //     articleFlexElement.appendChild(articleLinkElement);
+
+    //     const articleTitleElement = document.createElement("p");
+    //     articleTitleElement.innerText = Article.articleTitle;
+    //     articleFlexElement.appendChild(articleTitleElement);
+        
+    // })
 }
 export {
     displayAllTopics
