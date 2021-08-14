@@ -21,9 +21,9 @@ const displayAllTopics = function (ArticleTopics) {
 
         const articleFlexElement = document.createElement("div");
         articleFlexElement.classList.add("article-flex");
-        bodyElement.append(articleFlexElement);
+        topicElement.append(articleFlexElement);
 
-        ArticleTopics.forEach((Article) => {
+        ArticleTopic.articles.forEach((Article) => {
             const articleElement = document.createElement("div");
             articleElement.classList.add("article");
             articleFlexElement.appendChild(articleElement);
