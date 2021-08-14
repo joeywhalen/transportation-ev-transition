@@ -11,7 +11,10 @@ const displayAllTopics = function (ArticleTopics) {
 
     ArticleTopics.forEach((ArticleTopic) => {
         const parallaxElement = document.createElement("div");
-        parallaxElement.classList.add("parallax-one");
+        parallaxElement.classList.add("parallax");
+        // parallaxElement.src = ArticleTopic.ArticleTopicParallaxUrl;
+        // parallaxElement.setAttribute("src", ArticleTopic.ArticleTopicParallaxUrl);
+        // parallaxElement.setAttribute("id", ArticleTopic.id);
         bodyElement.append(parallaxElement);
 
         const parallaxTextElement = document.createElement("h1");
