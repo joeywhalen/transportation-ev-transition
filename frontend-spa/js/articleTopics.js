@@ -1,5 +1,5 @@
-import { clearChildren } from "./userVehicleForm.js";
-import { displayArticle } from "./displayArticle.js";
+// import { clearChildren } from "./userVehicleForm.js";
+// import { displayArticle } from "./displayArticle.js";
 
 const displayAllTopics = function (ArticleTopics) {
 
