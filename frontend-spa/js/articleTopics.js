@@ -3,7 +3,7 @@
 
 const displayAllTopics = function (ArticleTopics) {
 
-    const bodyElement = document.querySelector(".body");
+    const bodyElement = document.querySelector("body");
 
     const wrapperElement = document.createElement("div");
     wrapperElement.classList.add("wrapper");
