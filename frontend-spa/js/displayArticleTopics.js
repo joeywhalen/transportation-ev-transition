@@ -42,7 +42,7 @@ const displayAllTopics = function (ArticleTopics) {
         
         })
     }
-    return ArticleTopicsOne;
+        return ArticleTopicsOne;
     
 }
 export {

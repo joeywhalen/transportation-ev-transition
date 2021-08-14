@@ -1,6 +1,6 @@
 import { displayHeader } from "./Header.js";
-// import { displayAllTopics } from "./articleTopics.js";
-import { displayAllTopics } from "./displayArticleTopics";
+import { displayAllTopics } from "./articleTopics.js";
+// import { displayAllTopics } from "./displayArticleTopics.js";
 import { displayFooter } from "./footer.js";
 
 const bodyElement = document.querySelector("body");
