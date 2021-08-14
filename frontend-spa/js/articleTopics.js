@@ -20,7 +20,7 @@ const displayAllTopics = function (ArticleTopics) {
         bodyElement.append(topicElement);
 
         const articleFlexElement = document.createElement("div");
-        articleFlexElement.classList.add("articleFlex");
+        articleFlexElement.classList.add("article-flex");
         bodyElement.append(articleFlexElement);
 
         ArticleTopics.forEach((Article) => {
@@ -31,11 +31,11 @@ const displayAllTopics = function (ArticleTopics) {
             const articleLinkElement = document.createElement("img");
             articleLinkElement.setAttribute("src", Article.imageUrl);
             articleLinkElement.setAttribute("id", Article.id);
-            articleFlexElement.appendChild(articleLinkElement);
+            articleElement.appendChild(articleLinkElement);
 
             const articleTitleElement = document.createElement("p");
             articleTitleElement.innerText = Article.articleTitle;
-            articleFlexElement.appendChild(articleTitleElement);
+            articleElement.appendChild(articleTitleElement);
         
         })
     })
