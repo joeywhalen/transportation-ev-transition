@@ -9,7 +9,7 @@ const displaySingleEV = function (ElectricVehicle) {
 
 ElectricVehicle.forEach((ElectricVehicle) => {
 
-    // ----------------------car image section--------------------------
+    // ----------------------car image section-------------------------
 
     const carImage = document.createElement("div");
     carImage.classList.add("car-image");
@@ -45,7 +45,7 @@ ElectricVehicle.forEach((ElectricVehicle) => {
     carMileage.innerText = ElectricVehicle.mpgE;
     imageText.append(carMileage);
 
-    // ---------------------white details section--------------------------
+    // ---------------------white details section-------------------------
 
     const detailsSection = document.createElement("div");
     detailsSection.classList.add("details-section");
