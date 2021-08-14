@@ -21,7 +21,7 @@ public class ArticleReviewPopulator implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         ArticleTopic whyTransition = new ArticleTopic("Why We Should Transition To EVs", 
-                        "/frontend-spa/images/topic1-parallax.png");
+                        "https://sites.google.com/site/electriccars123/_/rsrc/1307628026988/environmental-benefits/gas-electric-v6.gif");
         articleTopicStorage.saveArticleTopic(whyTransition);
 
         Article evBenefiits = new Article(whyTransition, "Electric Vehicle Benefits and Considerations", "Jackie Brown",

@@ -13,9 +13,15 @@ const displayAllTopics = function (ArticleTopics) {
         const parallaxElement = document.createElement("div");
         parallaxElement.classList.add("parallax");
         // parallaxElement.src = ArticleTopic.ArticleTopicParallaxUrl;
-        parallaxElement.setAttribute("src", ArticleTopic.ArticleTopicParallaxUrl);
-        parallaxElement.setAttribute("id", ArticleTopic.id);
+        // parallaxElement.setAttribute("src", ArticleTopic.ArticleTopicParallaxUrl);
+        // parallaxElement.setAttribute("id", ArticleTopic.id);
         bodyElement.append(parallaxElement);
+        const parallaxImageElement = document.createElement("img");
+        parallaxImageElement.classList.add("parallax");
+        // parallaxImageElement.src = ArticleTopic.ArticleTopicParallaxUrl;
+        parallaxImageElement.setAttribute("src", ArticleTopic.ArticleTopicParallaxUrl);
+        parallaxImageElement.setAttribute("id", ArticleTopic.id);
+        parallaxElement.append(parallaxImageElement);
 
         const parallaxTextElement = document.createElement("h1");
         parallaxTextElement.classList.add("text-over-parallax");

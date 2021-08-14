@@ -1,18 +1,23 @@
 import { displayAllTopics } from "./articleTopics.js";
 
-fetch("http://localhost:8080/api/articles")
-    .then(response => response.json())
-    .then(article => displayArticle(article))
-    .catch(error => console.log(error))
+// fetch("http://localhost:8080/api/articles")
+//     .then(response => response.json())
+//     .then(article => displayArticle(article))
+//     .catch(error => console.log(error))
 
-const clearChildren = function (element) {
-    while (element.firstChild) {
-        element.removeChild(element.lastChild);
-    }
-}
+// const clearChildren = function (element) {
+//     while (element.firstChild) {
+//         element.removeChild(element.lastChild);
+//     }
+// }
 
 const displayArticle = function (article) {
-    const mainElement = document.querySelector(".main-content");
+
+    const bodyElement = document.querySelector("body");
+
+    const mainElement = document.createElement("div");
+    mainElement.classList.add("main-content");
+    bodyElement.append(mainElement);
     // clearChildren(mainElement);
     const articleElement = document.createElement("div");
     articleElement.classList.add("article-content");
