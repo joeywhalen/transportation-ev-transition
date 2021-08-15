@@ -6,8 +6,8 @@ const indexArticles = function (article) {
   clearChildren(mainElement);
   articles.forEach((article) => {
     let articleElement = document.createElement("div");
-    articleElement.classList.add("btn-sectkion");
-    let articleTitleElement = document.createElement('h3');
+    articleElement.classList.add("btn-section");
+    let articleTitleElement = document.createElement("h3");
     articleTitleElement.innerText = article.articleTitle;
     let articleLinkElement = document.createElement("a");
     let articleImageElement = document.createElement("img");

@@ -27,10 +27,10 @@ GET http://localhost:8080/api/electricVehicles
 Content-Type: application/json
 
 ### Get a single Electric Vehicle.
-GET http://localhost:8080/api/electricVehicles/111
+GET http://localhost:8080/api/electricVehicles/75
 
 ### Add a comment to an Electric Vehicle Review.
-PATCH http://localhost:8080/api/electricVehicles/121/comments
+PATCH http://localhost:8080/api/electricVehicles/85/comments
 Content-Type: application/json
 
 Test comment for review
