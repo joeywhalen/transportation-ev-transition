@@ -90,7 +90,7 @@ const displaySingleEV = function (ElectricVehicle) {
     basicInfoText.append(modelElement);
 
     const rangeElement4 = document.createElement("li");
-    rangeElement4.innerText = "Range: " + ElectricVehicle.range;
+    rangeElement4.innerText = "Range: " + ElectricVehicle.range + " miles";
     basicInfoText.append(rangeElement4);
 
     const mpgEElement = document.createElement("li");
@@ -158,19 +158,19 @@ const displaySingleEV = function (ElectricVehicle) {
     standardEquipText.append(freeOtaItem);
 
     const rearCargoItem = document.createElement("li");
-    rearCargoItem.innerText = "Rear Cargo Area: " + ElectricVehicle.rearCargoSpace + "cu. in.";
+    rearCargoItem.innerText = "Rear Cargo Area: " + ElectricVehicle.rearCargoSpace + " cu. in.";
     standardEquipText.append(rearCargoItem);
 
-    const listItem5 = document.createElement("li");
-    listItem5.innerText = ElectricVehicle.frunkSpace;
-    standardEquipText.append(listItem5);
+    const frunkItem = document.createElement("li");
+    frunkItem.innerText = "Frunk Cargo Area: " + ElectricVehicle.frunkSpace + " cu. in.";
+    standardEquipText.append(frunkItem);
 
     // price details section -------------
 
-    // const center = document.createElement("center");
-    // const coloredRectangle = document.createElement("div");
-    // coloredRectangle.setAttribute("id", "colored-rectangle");
-    // detailsSection.append(center);
+    const centerThree = document.createElement("center");
+    const coloredRectangleThree = document.createElement("div");
+    coloredRectangleThree.setAttribute("id", "colored-rectangle");
+    detailsSection.append(centerThree);
 
     const priceDetailsSection = document.createElement("div");
     priceDetailsSection.classList.add("price-details-section");
@@ -181,17 +181,17 @@ const displaySingleEV = function (ElectricVehicle) {
     priceDetailsText.classList.add("price-details-text");
     priceDetailsSection.append(priceDetailsText);
 
-    const listOne = document.createElement("li");
-    listOne.innerText = ElectricVehicle.msrp;
-    priceDetailsText.append(listOne);
+    const msrpElement = document.createElement("li");
+    msrpElement.innerText = "MSRP: $" + ElectricVehicle.msrp;
+    priceDetailsText.append(msrpElement);
 
-    const listTwo = document.createElement("li");
-    listTwo.innerText = ElectricVehicle.taxCredit;
-    priceDetailsText.append(listTwo);
+    const taxCreditElement = document.createElement("li");
+    taxCreditElement.innerText = "Eligible for $7500 Federal Tax Credit?: " + ElectricVehicle.taxCredit;
+    priceDetailsText.append(taxCreditElement);
 
-    const listThree = document.createElement("li");
-    listThree.innerText = ElectricVehicle.yearlyMaintenanceCost;
-    priceDetailsText.append(listThree);
+    const maintCostElement = document.createElement("li");
+    maintCostElement.innerText = "Average Annual Maintenance Cost: $" + ElectricVehicle.yearlyMaintenanceCost;
+    priceDetailsText.append(maintCostElement);
 
 }
 
