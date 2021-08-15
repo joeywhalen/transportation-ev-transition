@@ -1,11 +1,19 @@
-const displaySingleEV = function (ElectricVehicle) {    
+import { displayHeader } from "./Header.js";
 
-    const body = document.querySelector(".svBody");
+const clearChildren = function (element) {
+    while (element.firstChild) {
+        element.removeChild(element.lastChild);
+    }
+}
 
+const displaySingleEV = function (ElectricVehicle) {
+
+    const body = document.querySelector(".body");
+    clearChildren(body);
     const wrapper = document.createElement("div");
     wrapper.classList.add("wrapper");
     body.append(wrapper);
-
+    body.append(displayHeader());
 
 ElectricVehicle.forEach((ElectricVehicle) => {
 

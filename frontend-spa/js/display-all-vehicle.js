@@ -1,5 +1,6 @@
-const displayAllVehicles = function (ElectricVehicles) {
+import { displaySingleEV } from "./single-vehicle.js";
 
+const displayAllVehicles = function (ElectricVehicles) {
 
     const body = document.querySelector(".body")
 
@@ -9,9 +10,8 @@ const displayAllVehicles = function (ElectricVehicles) {
 
     const pageTitle = document.createElement("div");
     pageTitle.classList.add("vehicle-page-title");
-    pageTitle.innerHTML = '<h1 class="title-text">Check Out Our Wide Selection of EVs</h1>'
+    pageTitle.innerHTML = '<h1 class="title-text">Check Out The Wide Selection of EVs</h1>'
     body.append(pageTitle);
-
 
     const gridContainer = document.createElement("div");
     gridContainer.classList.add("grid-container");
@@ -53,12 +53,10 @@ const displayAllVehicles = function (ElectricVehicles) {
         exploreButton.innerText = "Explore"
         textContainer.appendChild(exploreButton);
 
-
-        // gridItem.addEventListener("click", () => {
-
-
-        //     displaySingleEV(ElectricVehicle)
-        // })
+        gridItem.addEventListener("click", (clickEvent) => {
+            clickEvent.preventDefault;
+            displaySingleEV(ElectricVehicle)
+        });
 
 
     })

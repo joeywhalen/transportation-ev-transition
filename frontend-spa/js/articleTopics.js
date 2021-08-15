@@ -1,4 +1,4 @@
-import { clearChildren, displayArticle } from "./displayArticle.js";
+import { displayArticle } from "./displayArticle.js";
 
 
 const displayAllTopics = function (ArticleTopics) {
