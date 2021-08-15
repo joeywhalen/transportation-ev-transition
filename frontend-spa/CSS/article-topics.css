@@ -226,3 +226,14 @@ p{
     transform: rotate(-135deg);
     margin-top: -9px;
   }
+
+  .single-article-content {
+    display: block;
+    margin-left: 15em;
+    margin-right: 15em;
+    font-family: 'Georama', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    line-height: 35px;
+    color: black;
+  }
