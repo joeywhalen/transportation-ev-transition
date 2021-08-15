@@ -1,4 +1,5 @@
 import { displayAllTopics } from "./articleTopics.js";
+import { displayHeader } from "./Header.js";
 
 // fetch("http://localhost:8080/api/articles")
 //     .then(response => response.json())
@@ -18,6 +19,7 @@ const displayArticle = function (article) {
     const mainElement = document.createElement("div");
     mainElement.classList.add("main-content");
     bodyElement.append(mainElement);
+    bodyElement.append(displayHeader());
     // clearChildren(mainElement);
     const articleElement = document.createElement("div");
     articleElement.classList.add("article-content");
