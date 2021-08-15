@@ -193,6 +193,31 @@ const displaySingleEV = function (ElectricVehicle) {
     maintCostElement.innerText = "Average Annual Maintenance Cost: $" + ElectricVehicle.yearlyMaintenanceCost;
     priceDetailsText.append(maintCostElement);
 
+    if (ElectricVehicle.reviewComments !== null && ElectricVehicle.reviewComments.length !== 0) {
+        ElectricVehicle.reviewComments.forEach((reviewComment) => {
+            let reviewCommentsElement = document.createElement("section");
+            reviewCommentsElement.classList.add("review-comments-section");
+            let singleReviewCommentElement = document.createElement("p");
+            singleReviewCommentElement.innerText = reviewComment;
+            reviewCommentsElement.appendChild(singleReviewCommentElement);
+            priceDetailsText.appendChild(reviewCommentElement);
+        });
+    }
+
+    const form = document.createElement("form");
+    form.classList.add("new-comment-form");
+    const reviewCommentInput = document.createElement("input");
+    reviewCommentInput.setAttribute("type", "text");
+    reviewCommentInput.setAttribute("placeholder", "Enter your comment...");
+    const submitReviewCommentButton = document.createElement("button");
+    submitReviewCommentButton.classList.add("comment-button");
+    submitReviewCommentButton.innerText = "Submit a comment";
+
+    form.appendChild(reviewCommentInput);
+    form.appendChild(submitReviewCommentButton);
+    priceDetailsText.appendChild(form);
+    
+
 }
 
 export {
