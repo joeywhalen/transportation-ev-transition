@@ -121,10 +121,10 @@ ElectricVehicle.forEach((ElectricVehicle) => {
 
     // standard equipment section -----------
 
-    const center = document.createElement("center");
-    const coloredRectangle = document.createElement("div");
-    coloredRectangle.setAttribute("id", "colored-rectangle");
-    detailsSection.append(center);
+    // const center = document.createElement("center");
+    // const coloredRectangle = document.createElement("div");
+    // coloredRectangle.setAttribute("id", "colored-rectangle");
+    // detailsSection.append(center);
 
     const standardEquipSection = document.createElement("div");
     standardEquipSection.classList.add("standard-equip-section");
@@ -157,10 +157,10 @@ ElectricVehicle.forEach((ElectricVehicle) => {
 
     // price details section -------------
 
-    const center = document.createElement("center");
-    const coloredRectangle = document.createElement("div");
-    coloredRectangle.setAttribute("id", "colored-rectangle");
-    detailsSection.append(center);
+    // const center = document.createElement("center");
+    // const coloredRectangle = document.createElement("div");
+    // coloredRectangle.setAttribute("id", "colored-rectangle");
+    // detailsSection.append(center);
 
     const priceDetailsSection = document.createElement("div");
     priceDetailsSection.classList.add("price-details-section");
