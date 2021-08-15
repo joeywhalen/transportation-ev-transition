@@ -8,21 +8,19 @@ const clearChildren = function (element) {
 
 const displaySingleEV = function (ElectricVehicle) {
 
-    const body = document.querySelector(".body");
+    const body = document.querySelector("body");
     clearChildren(body);
+    body.append(displayHeader());
     const wrapper = document.createElement("div");
     wrapper.classList.add("wrapper");
     body.append(wrapper);
-    body.append(displayHeader());
-
-ElectricVehicle.forEach((ElectricVehicle) => {
 
     // ----------------------car image section-------------------------
 
     const carImage = document.createElement("div");
     carImage.classList.add("car-image");
-    carImage.setAttribute("url", ElectricVehicle.imageUrl);
-    body.append(carImage);
+    carImage.setAttribute("src", ElectricVehicle.imageUrl);
+    wrapper.append(carImage);
 
     const imageText = document.createElement("div");
     imageText.classList.add("car-image-text");
@@ -190,12 +188,6 @@ ElectricVehicle.forEach((ElectricVehicle) => {
     const listThree = document.createElement("li");
     listThree.innerText = ElectricVehicle.yearlyMaintenanceCost;
     priceDetailsText.append(listThree);
-
-
-    
-})
-    
-
 
 }
 
