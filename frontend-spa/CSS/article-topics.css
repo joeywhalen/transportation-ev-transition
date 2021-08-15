@@ -226,6 +226,44 @@ p{
     transform: rotate(-135deg);
     margin-top: -9px;
   }
+/* Single Article Content */
+
+  .main-content {
+    background-color: #E0E4CC;
+  }
+
+  .single-article-title {
+    display: block;
+    font-family: 'Georama', sans-serif;
+    font-size: 40px;
+    margin-left: 400px;
+    margin-right: 400px;
+    text-align: center;
+  }
+
+  .single-article-author {
+    font-family: 'Georama', sans-serif;
+    font-size: 17px;
+    margin-left: 700px;
+    margin-right: 700px;
+    text-align: center;
+  }
+
+  .single-article-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-style: solid;
+    border-radius: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+  }
+
+  .single-article-line {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 
   .single-article-content {
     display: block;
@@ -235,5 +273,9 @@ p{
     font-size: 20px;
     text-align: center;
     line-height: 35px;
+    color: black;
+  }
+
+  .article-comments-section p {
     color: black;
   }

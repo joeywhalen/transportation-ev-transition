@@ -1,9 +1,9 @@
 import { displayAllTopics } from "./articleTopics.js";
 
-fetch("http://localhost:8080/api/articles")
-    .then(response => response.json())
-    .then(article => displayArticle(article))
-    .catch(error => console.log(error))
+// fetch("http://localhost:8080/api/articles")
+//     .then(response => response.json())
+//     .then(article => displayArticle(article))
+//     .catch(error => console.log(error))
 
 const clearChildren = function (element) {
     while (element.firstChild) {
@@ -21,8 +21,10 @@ const displayArticle = function (article) {
     // clearChildren(mainElement);
     const articleElement = document.createElement("div");
     articleElement.classList.add("article-content");
+    // const articleTopicElement = document.getElementById(article.articleTopic.getId());
     const articleTopicElement = document.createElement("h1");
-    articleTopicElement.innerText = article.articleTopic;
+    articleTopicElement.classList.add('article-topic');
+    articleTopicElement.innerText = article.articleTopicId;
     const articleImageElement = document.createElement("img");
     articleImageElement.classList.add("single-article-img");
     // const articleImageElement = document.querySelector(".single-article-img");
@@ -32,7 +34,7 @@ const displayArticle = function (article) {
     articleTitleElement.innerText = article.articleTitle;
     const articleAuthorElement = document.createElement("h3");
     articleAuthorElement.classList.add("single-article-author");
-    articleAuthorElement.innerText = article.authorName;
+    articleAuthorElement.innerText = "By: " + article.authorName;
     const articleLineElementOne = document.createElement("hr");
     articleLineElementOne.classList.add("single-article-line");
     // const articleTextElement = document.createElement("p");
