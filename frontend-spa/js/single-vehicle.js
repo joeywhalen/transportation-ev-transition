@@ -193,6 +193,14 @@ const displaySingleEV = function (ElectricVehicle) {
     maintCostElement.innerText = "Average Annual Maintenance Cost: $" + ElectricVehicle.yearlyMaintenanceCost;
     priceDetailsText.append(maintCostElement);
 
+    const reviewCommentLineElement = document.createElement("hr");
+    reviewCommentLineElement.classList.add("single-vehicle-line");
+    priceDetailsText.append(reviewCommentLineElement);
+    const reviewCommentsNotationElement = document.createElement("review-comments");
+    reviewCommentsNotationElement.classList.add("review-comments-notation");
+    reviewCommentsNotationElement.innerText = "Comments: ";
+    reviewCommentLineElement.append(reviewCommentsNotationElement);
+
     if (ElectricVehicle.reviewComments !== null && ElectricVehicle.reviewComments.length !== 0) {
         ElectricVehicle.reviewComments.forEach((reviewComment) => {
             let reviewCommentsElement = document.createElement("section");
@@ -200,7 +208,7 @@ const displaySingleEV = function (ElectricVehicle) {
             let singleReviewCommentElement = document.createElement("p");
             singleReviewCommentElement.innerText = reviewComment;
             reviewCommentsElement.appendChild(singleReviewCommentElement);
-            priceDetailsText.appendChild(reviewCommentElement);
+            priceDetailsText.appendChild(reviewCommentsElement);
         });
     }
 
@@ -213,14 +221,15 @@ const displaySingleEV = function (ElectricVehicle) {
     submitReviewCommentButton.classList.add("comment-button");
     submitReviewCommentButton.innerText = "Submit a comment";
 
+   
     form.appendChild(reviewCommentInput);
     form.appendChild(submitReviewCommentButton);
     priceDetailsText.appendChild(form);
 
     submitReviewCommentButton.addEventListener("click", (clickEvent) => {
         clickEvent.preventDefault();
-        const wrapperElement = document.querySelector("wrapper");
-        clearChildren(wrapperElement);
+        // const wrapperElement = document.querySelector("wrapper");
+        clearChildren(body);
         if (reviewCommentInput.value !== "") {
             const json = JSON.stringify(reviewCommentInput.value);
             const unqoutedJson = json.replace(/\"/g, "");
@@ -236,9 +245,9 @@ const displaySingleEV = function (ElectricVehicle) {
                 .catch(error => console.log(error));
         }
     })
-    wrapper.appendChild(mainElement);
+    body.appendChild(mainElement);
 
-    return wrapper;
+    return body;
 
 }
 
