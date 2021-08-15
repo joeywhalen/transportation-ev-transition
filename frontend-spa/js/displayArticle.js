@@ -1,11 +1,6 @@
 import { displayAllTopics } from "./articleTopics.js";
 import { displayHeader } from "./Header.js";
 
-// fetch("http://localhost:8080/api/articles")
-//     .then(response => response.json())
-//     .then(article => displayArticle(article))
-//     .catch(error => console.log(error))
-
 const clearChildren = function (element) {
     while (element.firstChild) {
         element.removeChild(element.lastChild);
@@ -21,7 +16,6 @@ const displayArticle = function (article) {
     mainElement.classList.add("main-content");
     bodyElement.append(mainElement);
     bodyElement.append(displayHeader());
-    // clearChildren(mainElement);
     const articleElement = document.createElement("div");
     articleElement.classList.add("article-content");
     // const articleTopicElement = document.getElementById(article.articleTopic.getId());
@@ -30,7 +24,6 @@ const displayArticle = function (article) {
     articleTopicElement.innerText = article.articleTopicId;
     const articleImageElement = document.createElement("img");
     articleImageElement.classList.add("single-article-img");
-    // const articleImageElement = document.querySelector(".single-article-img");
     articleImageElement.src = article.imageUrl;
     const articleTitleElement = document.createElement("h2");
     articleTitleElement.classList.add("single-article-title");
