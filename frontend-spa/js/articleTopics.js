@@ -1,5 +1,5 @@
-// import { clearChildren } from "./userVehicleForm.js";
-import { displayArticle } from "./displayArticle.js";
+import { clearChildren, displayArticle } from "./displayArticle.js";
+
 
 const displayAllTopics = function (ArticleTopics) {
 
@@ -50,6 +50,7 @@ const displayAllTopics = function (ArticleTopics) {
             articleTitleElement.innerText = Article.articleTitle;
             articleElement.appendChild(articleTitleElement);
             articleLinkElement.addEventListener("click", (clickEvent) => {
+                clickEvent.preventDefault;
                 displayArticle(Article)
             });
         

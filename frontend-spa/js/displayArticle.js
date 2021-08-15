@@ -16,6 +16,7 @@ const displayArticle = function (article) {
 
     const bodyElement = document.querySelector("body");
     clearChildren(bodyElement);
+    window.scrollTo(0, 0);
     const mainElement = document.createElement("div");
     mainElement.classList.add("main-content");
     bodyElement.append(mainElement);
@@ -108,6 +109,10 @@ const displayArticle = function (article) {
 }
 export {
     displayArticle
+}
+
+export {
+    clearChildren
 }
 
 {/* <div class="main-content">
