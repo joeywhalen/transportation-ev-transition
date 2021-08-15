@@ -32,6 +32,10 @@ const displayAllVehicles = function (ElectricVehicles) {
         textContainer.classList.add("text-container");
         gridItem.appendChild(textContainer);
 
+        const vehicleModel = document.createElement("p");
+        vehicleModel.innerText = ElectricVehicle.makeName;
+        textContainer.appendChild(vehicleModel);
+
         const vehicleName = document.createElement("p");
         vehicleName.innerText = ElectricVehicle.modelName;
         textContainer.appendChild(vehicleName);
