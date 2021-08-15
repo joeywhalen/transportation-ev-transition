@@ -59,12 +59,12 @@ const displaySingleEV = function (ElectricVehicle) {
 
     const detailsSection = document.createElement("div");
     detailsSection.classList.add("details-section");
+    mainElement.append(detailsSection);
 
     const center = document.createElement("center");
     const coloredRectangle = document.createElement("div");
     coloredRectangle.setAttribute("id", "colored-rectangle");
     detailsSection.append(center);
-
 
     const detailsTitle = document.createElement("div");
     detailsSection.innerHTML = '<h1 class="vehicle-details-title">Vehicle Details</h1>';
