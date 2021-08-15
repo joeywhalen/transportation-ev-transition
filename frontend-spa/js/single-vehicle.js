@@ -81,21 +81,21 @@ const displaySingleEV = function (ElectricVehicle) {
     basicInfoText.classList.add("basic-info-text");
     basicInfoSection.append(basicInfoText);
 
-    const listElement1 = document.createElement("li");
-    listElement1.innerText = ElectricVehicle.makeName;
-    basicInfoText.append(listElement1);
+    const makeElement = document.createElement("li");
+    makeElement.innerText = ElectricVehicle.makeName;
+    basicInfoText.append(makeElement);
 
-    const listElement2 = document.createElement("li");
-    listElement2.innerText = ElectricVehicle.modelName;
-    basicInfoText.append(listElement2);
+    const modelElement = document.createElement("li");
+    modelElement.innerText = ElectricVehicle.modelName;
+    basicInfoText.append(modelElement);
 
     const listElement4 = document.createElement("li");
     listElement4.innerText = ElectricVehicle.range;
     basicInfoText.append(listElement4);
 
-    const listElement5 = document.createElement("li");
-    listElement5.innerText = ElectricVehicle.mpgE;
-    basicInfoText.append(listElement5);
+    const rangeElement = document.createElement("li");
+    rangeElement.innerText = "Range: " + ElectricVehicle.mpgE;
+    basicInfoText.append(rangeElement);
 
     const listElement6 = document.createElement("li");
     listElement6.innerText = ElectricVehicle.zeroToSixty;
