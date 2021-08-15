@@ -216,7 +216,29 @@ const displaySingleEV = function (ElectricVehicle) {
     form.appendChild(reviewCommentInput);
     form.appendChild(submitReviewCommentButton);
     priceDetailsText.appendChild(form);
-    
+
+    submitReviewCommentButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        const wrapperElement = document.querySelector("wrapper");
+        clearChildren(wrapperElement);
+        if (reviewCommentInput.value !== "") {
+            const json = JSON.stringify(reviewCommentInput.value);
+            const unqoutedJson = json.replace(/\"/g, "");
+            fetch("http://localhost:8080/api/electricVehicles/" + ElectricVehicle.id + "/comments", {
+                method: "PATCH",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: unqoutedJson
+            })
+                .then(response => response.json())
+                .then(ElectricVehicle => displaySingleEV(ElectricVehicle))
+                .catch(error => console.log(error));
+        }
+    })
+    wrapper.appendChild(mainElement);
+
+    return wrapper;
 
 }
 
