@@ -89,52 +89,52 @@ const displaySingleEV = function (ElectricVehicle) {
     modelElement.innerText = ElectricVehicle.modelName;
     basicInfoText.append(modelElement);
 
-    const listElement4 = document.createElement("li");
-    listElement4.innerText = ElectricVehicle.range;
-    basicInfoText.append(listElement4);
+    const rangeElement4 = document.createElement("li");
+    rangeElement4.innerText = "Range: " + ElectricVehicle.range;
+    basicInfoText.append(rangeElement4);
 
-    const rangeElement = document.createElement("li");
-    rangeElement.innerText = "Range: " + ElectricVehicle.mpgE;
-    basicInfoText.append(rangeElement);
+    const mpgEElement = document.createElement("li");
+    mpgEElement.innerText = "MPGe: " + ElectricVehicle.mpgE;
+    basicInfoText.append(mpgEElement);
 
-    const listElement6 = document.createElement("li");
-    listElement6.innerText = ElectricVehicle.zeroToSixty;
-    basicInfoText.append(listElement6);
+    const zeroElement = document.createElement("li");
+    zeroElement.innerText = "0 - 60: " + ElectricVehicle.zeroToSixty + " seconds";
+    basicInfoText.append(zeroElement);
 
-    const listElement7 = document.createElement("li");
-    listElement7.innerText = ElectricVehicle.topSpeed;
-    basicInfoText.append(listElement7);
+    const topSpeedElement = document.createElement("li");
+    topSpeedElement.innerText = "Top speed: " + ElectricVehicle.topSpeed + " mph";
+    basicInfoText.append(topSpeedElement);
 
-    const listElement8 = document.createElement("li");
-    listElement8.innerText = ElectricVehicle.wheelDrive;
-    basicInfoText.append(listElement8);
+    const driveElement = document.createElement("li");
+    driveElement.innerText = "Drive: " + ElectricVehicle.wheelDrive;
+    basicInfoText.append(driveElement);
 
-    const listElement9 = document.createElement("li");
-    listElement9.innerText = ElectricVehicle.homeCharge;
-    basicInfoText.append(listElement9);
+    const homeChargeElement = document.createElement("li");
+    homeChargeElement.innerText = "Home charging: " + ElectricVehicle.homeCharge + " hours";
+    basicInfoText.append(homeChargeElement);
 
-    const listElement10 = document.createElement("li");
-    listElement10.innerText = ElectricVehicle.travelCharge;
-    basicInfoText.append(listElement10);
+    const travelChargeElement = document.createElement("li");
+    travelChargeElement.innerText = "Travel charging (10% - 80%): " + ElectricVehicle.travelCharge + " minutes";
+    basicInfoText.append(travelChargeElement);
 
-    const listElement11 = document.createElement("li");
-    listElement11.innerText = ElectricVehicle.autonomous;
-    basicInfoText.append(listElement11);
+    const autonomousElement = document.createElement("li");
+    autonomousElement.innerText = "Autonomous?: " + ElectricVehicle.autonomous;
+    basicInfoText.append(autonomousElement);
 
-    const listElement12 = document.createElement("li");
-    listElement12.innerText = ElectricVehicle.safetyRating;
-    basicInfoText.append(listElement12);
+    const nhtsaElement = document.createElement("li");
+    nhtsaElement.innerText = "NHTSA Rating: " + ElectricVehicle.safetyRating + "/5";
+    basicInfoText.append(nhtsaElement);
 
-    const listElement13 = document.createElement("li");
-    listElement13.innerText = ElectricVehicle.phoneKey;
-    basicInfoText.append(listElement13);
+    const phoneKeyElement = document.createElement("li");
+    phoneKeyElement.innerText = "Phone as key?: " + ElectricVehicle.phoneKey;
+    basicInfoText.append(phoneKeyElement);
 
     // standard equipment section -----------
 
-    // const center = document.createElement("center");
-    // const coloredRectangle = document.createElement("div");
-    // coloredRectangle.setAttribute("id", "colored-rectangle");
-    // detailsSection.append(center);
+    const centerTwo = document.createElement("center");
+    const coloredRectangleTwo = document.createElement("div");
+    coloredRectangleTwo.setAttribute("id", "colored-rectangle");
+    detailsSection.append(centerTwo);
 
     const standardEquipSection = document.createElement("div");
     standardEquipSection.classList.add("standard-equip-section");
@@ -145,21 +145,21 @@ const displaySingleEV = function (ElectricVehicle) {
     standardEquipText.classList.add("standrd-equip-text");
     standardEquipSection.append(standardEquipText);
 
-    const listItem1 = document.createElement("li");
-    listItem1.innerText = ElectricVehicle.seating;
-    standardEquipText.append(listItem1);
+    const seatingItem = document.createElement("li");
+    seatingItem.innerText = "Seating: " + ElectricVehicle.seating + " adults";
+    standardEquipText.append(seatingItem);
 
-    const listItem2 = document.createElement("li");
-    listItem2.innerText = ElectricVehicle.driverAssist;
-    standardEquipText.append(listItem2);
+    const driverAssistItem = document.createElement("li");
+    driverAssistItem.innerText = "Driver assist?: " + ElectricVehicle.driverAssist;
+    standardEquipText.append(driverAssistItem);
 
-    const listItem3 = document.createElement("li");
-    listItem3.innerText = ElectricVehicle.freeOtaUpdate;
-    standardEquipText.append(listItem3);
+    const freeOtaItem = document.createElement("li");
+    freeOtaItem.innerText = "Free Over the Air Updates?: " + ElectricVehicle.freeOtaUpdate;
+    standardEquipText.append(freeOtaItem);
 
-    const listItem4 = document.createElement("li");
-    listItem4.innerText = ElectricVehicle.rearCargoSpace;
-    standardEquipText.append(listItem4);
+    const rearCargoItem = document.createElement("li");
+    rearCargoItem.innerText = "Rear Cargo Area: " + ElectricVehicle.rearCargoSpace + "cu. in.";
+    standardEquipText.append(rearCargoItem);
 
     const listItem5 = document.createElement("li");
     listItem5.innerText = ElectricVehicle.frunkSpace;
