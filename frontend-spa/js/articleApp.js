@@ -11,5 +11,6 @@ await fetch("http://localhost:8080/api/articleTopics")
     .then(response => response.json())
     .then(allArticleTopics => displayAllTopics(allArticleTopics))
     .catch(error => console.log(error))
+    
 
 bodyElement.append(displayFooter());

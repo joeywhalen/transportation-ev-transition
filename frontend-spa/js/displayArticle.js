@@ -1,20 +1,20 @@
 import { displayAllTopics } from "./articleTopics.js";
 
-// fetch("http://localhost:8080/api/articles")
-//     .then(response => response.json())
-//     .then(article => displayArticle(article))
-//     .catch(error => console.log(error))
+fetch("http://localhost:8080/api/articles")
+    .then(response => response.json())
+    .then(article => displayArticle(article))
+    .catch(error => console.log(error))
 
-// const clearChildren = function (element) {
-//     while (element.firstChild) {
-//         element.removeChild(element.lastChild);
-//     }
-// }
+const clearChildren = function (element) {
+    while (element.firstChild) {
+        element.removeChild(element.lastChild);
+    }
+}
 
 const displayArticle = function (article) {
 
     const bodyElement = document.querySelector("body");
-
+    // clearChildren(bodyElement);
     const mainElement = document.createElement("div");
     mainElement.classList.add("main-content");
     bodyElement.append(mainElement);
@@ -23,16 +23,24 @@ const displayArticle = function (article) {
     articleElement.classList.add("article-content");
     const articleTopicElement = document.createElement("h1");
     articleTopicElement.innerText = article.articleTopic;
-    // const articleImageElement = document.createElement("img");
-    const articleImageElement = document.querySelector(".single-article-img");
+    const articleImageElement = document.createElement("img");
+    articleImageElement.classList.add("single-article-img");
+    // const articleImageElement = document.querySelector(".single-article-img");
     articleImageElement.src = article.imageUrl;
     const articleTitleElement = document.createElement("h2");
+    articleTitleElement.classList.add("single-article-title");
     articleTitleElement.innerText = article.articleTitle;
     const articleAuthorElement = document.createElement("h3");
+    articleAuthorElement.classList.add("single-article-author");
     articleAuthorElement.innerText = article.authorName;
+    const articleLineElementOne = document.createElement("hr");
+    articleLineElementOne.classList.add("single-article-line");
     // const articleTextElement = document.createElement("p");
-    const articleTextElement = document.querySelector(".single-article-content");
+    const articleTextElement = document.createElement("p");
+    articleTextElement.classList.add("single-article-content");
     articleTextElement.innerText = article.articleContent;
+    const articleLineElementTwo = document.createElement("hr");
+    articleLineElementTwo.classList.add("single-article-line");
     const articleCommentsNotationElement = document.createElement("article-comments");
     articleCommentsNotationElement.classList.add("article-comments-notation");
     articleCommentsNotationElement.innerText = "Comments: ";
@@ -41,7 +49,9 @@ const displayArticle = function (article) {
     articleElement.appendChild(articleTitleElement);
     articleElement.appendChild(articleImageElement);
     articleElement.appendChild(articleAuthorElement);
+    articleElement.appendChild(articleLineElementOne);
     articleElement.appendChild(articleTextElement);
+    articleElement.appendChild(articleLineElementTwo);
     articleElement.appendChild(articleCommentsNotationElement);
 
     if (article.articleComments !== null && article.articleComments.length !== 0) {
@@ -107,29 +117,6 @@ export {
         <hr class="single-article-line" width="900px" size="5px" color="black">
         <p class="single-article-content">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Officia laborum amet quia excepturi et totam ex suscipit alias?
-            Tempore exercitationem necessitatibus quam quae error repellat quisquam totam ratione
-            reprehenderit odit illo fugiat expedita,
-            ducimus ab amet tenetur perspiciatis ut voluptas aperiam, deserunt sunt nemo accusantium
-            nihil consequuntur? Dignissimos,
-            porro rem! Ducimus temporibus iure, odio officiis reiciendis id vero rem aliquid? Vitae
-            quaerat ipsum blanditiis aliquid adipisci nobis,
-            accusamus necessitatibus illum commodi. Voluptate odio, provident labore neque tenetur at
-            molestiae ut voluptates adipisci nam est, deleniti harum,
-            unde vel illo beatae quidem accusantium magnam reiciendis numquam autem! Repellat quis
-            delectus quas.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Officia laborum amet quia excepturi et totam ex suscipit alias?
-            Tempore exercitationem necessitatibus quam quae error repellat quisquam totam ratione
-            reprehenderit odit illo fugiat expedita,
-            ducimus ab amet tenetur perspiciatis ut voluptas aperiam, deserunt sunt nemo accusantium
-            nihil consequuntur? Dignissimos,
-            porro rem! Ducimus temporibus iure, odio officiis reiciendis id vero rem aliquid? Vitae
-            quaerat ipsum blanditiis aliquid adipisci nobis,
-            accusamus necessitatibus illum commodi. Voluptate odio, provident labore neque tenetur at
-            molestiae ut voluptates adipisci nam est, deleniti harum,
-            unde vel illo beatae quidem accusantium magnam reiciendis numquam autem! Repellat quis
-            delectus quas.
         </p>
         <hr class="single-article-line" width="900px" size="5px" color="black">
     </div>
