@@ -29,7 +29,7 @@ body{
       display: grid;
       justify-content: center;
       grid-template-columns:300px 300px 300px 300px 300px;
-      grid-template-rows: 400px 400px 400px 400px 400px;
+      grid-template-rows: 400px 400px 400px 400px 400px 400px 400px;
       grid-row-gap: 50px; 
       grid-column-gap: 50px; 
       margin-left: 2%;
@@ -44,6 +44,8 @@ body{
 
     .grid-item img{
       height:50%;
+      max-width: 300px;
+      min-width: 300px;
     }
 
     .text-container{
