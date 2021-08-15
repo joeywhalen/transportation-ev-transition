@@ -17,10 +17,14 @@ const displaySingleEV = function (ElectricVehicle) {
 
     // ----------------------car image section-------------------------
 
+    const mainElement = document.createElement("div");
+    mainElement.classList.add("main-content");
+    body.append(mainElement);
+
     const carImage = document.createElement("div");
     carImage.classList.add("car-image");
     carImage.setAttribute("src", ElectricVehicle.imageUrl);
-    wrapper.append(carImage);
+    mainElement.append(carImage);
 
     const imageText = document.createElement("div");
     imageText.classList.add("car-image-text");
@@ -110,11 +114,11 @@ const displaySingleEV = function (ElectricVehicle) {
     basicInfoText.append(listElement9);
 
     const listElement10 = document.createElement("li");
-    listElement10.innerText = travelCharge;
+    listElement10.innerText = ElectricVehicle.travelCharge;
     basicInfoText.append(listElement10);
 
     const listElement11 = document.createElement("li");
-    listElement11.innerText = autonomous;
+    listElement11.innerText = ElectricVehicle.autonomous;
     basicInfoText.append(listElement11);
 
     const listElement12 = document.createElement("li");
