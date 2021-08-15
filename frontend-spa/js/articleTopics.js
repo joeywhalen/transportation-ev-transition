@@ -49,7 +49,6 @@ const displayAllTopics = function (ArticleTopics) {
             const articleTitleElement = document.createElement("p");
             articleTitleElement.innerText = Article.articleTitle;
             articleElement.appendChild(articleTitleElement);
-
             articleLinkElement.addEventListener("click", (clickEvent) => {
                 displayArticle(Article)
             });

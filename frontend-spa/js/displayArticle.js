@@ -14,7 +14,7 @@ const clearChildren = function (element) {
 const displayArticle = function (article) {
 
     const bodyElement = document.querySelector("body");
-    // clearChildren(bodyElement);
+    clearChildren(bodyElement);
     const mainElement = document.createElement("div");
     mainElement.classList.add("main-content");
     bodyElement.append(mainElement);
