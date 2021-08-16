@@ -20,10 +20,20 @@ const displaySingleEV = function (ElectricVehicle) {
     const mainElement = document.createElement("div");
     mainElement.classList.add("main-content");
     body.append(mainElement);
-
     const carImage = document.createElement("div");
     carImage.classList.add("car-image");
-    carImage.setAttribute("src", ElectricVehicle.imageUrl);
+    // carImage.style.backgroundImage = 'url("http://127.0.0.1:5500/frontend-spa/images/JDPA_2020%20Hyundai%20Kona%20Ultimate%20White%20Front%20View.webp")';
+    carImage.style.backgroundImage = 'url("'+ElectricVehicle.imageUrl+'")';
+    carImage.style.color = 'rgb(255,255,255)';
+    carImage.style.height = '100vh';
+    carImage.style.backgroundAttachment = 'fixed';
+    carImage.style.backgroundPosition = 'center center';
+    carImage.style.backgroundRepeat = 'no-repeat';
+    carImage.style.backgroundSize = 'cover';
+    carImage.style.position = 'relative';
+    carImage.style.marginTop = '-1%';
+
+    // carImage.setAttribute("background-image", ElectricVehicle.imageUrl);
     mainElement.append(carImage);
 
     const imageText = document.createElement("div");
@@ -61,14 +71,13 @@ const displaySingleEV = function (ElectricVehicle) {
     detailsSection.classList.add("details-section");
     mainElement.append(detailsSection);
 
-    const center = document.createElement("center");
-    const coloredRectangle = document.createElement("div");
-    coloredRectangle.setAttribute("id", "colored-rectangle");
-    detailsSection.append(center);
-
     const detailsTitle = document.createElement("div");
     detailsSection.innerHTML = '<h1 class="vehicle-details-title">Vehicle Details</h1>';
     detailsSection.append(detailsTitle);
+   
+    const centerOne = document.createElement("center");
+    centerOne.innerHTML = '<div id="colored-rectangle"></div>';
+    detailsSection.prepend(centerOne);
 
     // basic info section -----------
 
@@ -132,8 +141,7 @@ const displaySingleEV = function (ElectricVehicle) {
     // standard equipment section -----------
 
     const centerTwo = document.createElement("center");
-    const coloredRectangleTwo = document.createElement("div");
-    coloredRectangleTwo.setAttribute("id", "colored-rectangle");
+    centerTwo.innerHTML = '<div id="colored-rectangle"></div>';
     detailsSection.append(centerTwo);
 
     const standardEquipSection = document.createElement("div");
@@ -168,8 +176,7 @@ const displaySingleEV = function (ElectricVehicle) {
     // price details section -------------
 
     const centerThree = document.createElement("center");
-    const coloredRectangleThree = document.createElement("div");
-    coloredRectangleThree.setAttribute("id", "colored-rectangle");
+    centerThree.innerHTML = '<div id="colored-rectangle"></div>';
     detailsSection.append(centerThree);
 
     const priceDetailsSection = document.createElement("div");
@@ -192,6 +199,10 @@ const displaySingleEV = function (ElectricVehicle) {
     const maintCostElement = document.createElement("li");
     maintCostElement.innerText = "Average Annual Maintenance Cost: $" + ElectricVehicle.yearlyMaintenanceCost;
     priceDetailsText.append(maintCostElement);
+
+    const centerFour = document.createElement("center");
+    centerFour.innerHTML = '<div id="colored-rectangle"></div>';
+    maintCostElement.append(centerFour);
 
     const reviewCommentLineElement = document.createElement("hr");
     reviewCommentLineElement.classList.add("single-vehicle-line");
