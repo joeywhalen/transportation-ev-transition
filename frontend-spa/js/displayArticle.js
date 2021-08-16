@@ -21,7 +21,7 @@ const displayArticle = function (article) {
     // const articleTopicElement = document.getElementById(article.articleTopic.getId());
     const articleTopicElement = document.createElement("h1");
     articleTopicElement.classList.add('article-topic');
-    articleTopicElement.innerText = article.articleTopicId;
+    articleTopicElement.innerText = article.articleTopicTitle;
     const articleImageElement = document.createElement("img");
     articleImageElement.classList.add("single-article-img");
     articleImageElement.src = article.imageUrl;

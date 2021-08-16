@@ -35,11 +35,11 @@ body.append(displayFooter());
 
 // single EV -----------------------------------------------
 
-const body = document.querySelector(".svBody");
+// const body = document.querySelector(".svBody");
 
-body.append(displayHeader());
+// body.append(displayHeader());
 
-body.append(displayFooter());
+// body.append(displayFooter());
 
 
 
