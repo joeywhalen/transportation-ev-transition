@@ -19,7 +19,7 @@ const displayAllTopics = function (ArticleTopics) {
         const parallaxImageElement = document.createElement("img");
         parallaxImageElement.classList.add("parallax-image");
         // parallaxImageElement.src = ArticleTopic.ArticleTopicParallaxUrl;
-        parallaxImageElement.setAttribute("src", ArticleTopic.ArticleTopicParallaxUrl);
+        parallaxImageElement.setAttribute("src", ArticleTopic.articleTopicParallaxUrl);
         parallaxImageElement.setAttribute("id", ArticleTopic.id);
         parallaxElement.append(parallaxImageElement);
 
