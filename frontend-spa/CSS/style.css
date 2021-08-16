@@ -75,30 +75,41 @@ body {
   grid-area: 1 / 1 / 2 / 5;
   margin: auto;
   background-color: white;
+  width: 100%;
+  border-radius: 10px;
+  background-image: url("https://images.hgmsites.net/hug/2012-ford-f-150-2wd-supercab-163-xl-side-exterior-view_100373810_h.jpg");
+  /* background-attachment: fixed; */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .ev1 {
   grid-area: 2 / 1 / 3 / 2;
   margin: auto;
   background-color: white;
   margin-top: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .ev2 {
   grid-area: 2 / 2 / 3 / 3;
   margin: auto;
   background-color: white;
   margin-top: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .ev3 {
   grid-area: 2 / 3 / 3 / 4;
   margin: auto;
   background-color: white;
   margin-top: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .ev4 {
   grid-area: 2 / 4 / 3 / 5;
   margin: auto;
   background-color: white;
   margin-top: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .compare-stat-one {
@@ -113,6 +124,16 @@ body {
 .compare-stat-minus {
   color: red;
   font-weight: bolder;
+}
+
+.user-vehicle__list-stats {
+  background-color: rgba(255, 255, 255, 0.849);
+  display: inline-block;
+  padding: 0px 20px 0px 20px;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 /* ---------------------nav bar----------------------- */
