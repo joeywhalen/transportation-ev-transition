@@ -1,4 +1,4 @@
-import { clearChildren, displayArticle } from "./displayArticle.js";
+import { displayArticle } from "./displayArticle.js";
 
 
 const displayAllTopics = function (ArticleTopics) {
@@ -17,9 +17,9 @@ const displayAllTopics = function (ArticleTopics) {
         // parallaxElement.setAttribute("id", ArticleTopic.id);
         bodyElement.append(parallaxElement);
         const parallaxImageElement = document.createElement("img");
-        parallaxImageElement.classList.add("parallax-image");
+        parallaxImageElement.classList.add("parallax");
         // parallaxImageElement.src = ArticleTopic.ArticleTopicParallaxUrl;
-        parallaxImageElement.setAttribute("src", ArticleTopic.ArticleTopicParallaxUrl);
+        parallaxImageElement.setAttribute("src", ArticleTopic.articleTopicParallaxUrl);
         parallaxImageElement.setAttribute("id", ArticleTopic.id);
         parallaxElement.append(parallaxImageElement);
 

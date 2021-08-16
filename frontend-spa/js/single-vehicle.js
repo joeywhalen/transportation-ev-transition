@@ -1,29 +1,50 @@
-const displaySingleEV = function (ElectricVehicle) {    
+import { displayHeader } from "./Header.js";
 
-    const body = document.querySelector(".svBody");
+const clearChildren = function (element) {
+    while (element.firstChild) {
+        element.removeChild(element.lastChild);
+    }
+}
 
+const displaySingleEV = function (ElectricVehicle) {
+
+    const body = document.querySelector("body");
+    clearChildren(body);
+    body.classList.add("svBody");
+    body.append(displayHeader());
     const wrapper = document.createElement("div");
     wrapper.classList.add("wrapper");
     body.append(wrapper);
 
-
-ElectricVehicle.forEach((ElectricVehicle) => {
-
     // ----------------------car image section-------------------------
 
+    const mainElement = document.createElement("div");
+    mainElement.classList.add("main-content");
+    body.append(mainElement);
     const carImage = document.createElement("div");
     carImage.classList.add("car-image");
-    carImage.setAttribute("url", ElectricVehicle.imageUrl);
-    body.append(carImage);
+    // carImage.style.backgroundImage = 'url("http://127.0.0.1:5500/frontend-spa/images/JDPA_2020%20Hyundai%20Kona%20Ultimate%20White%20Front%20View.webp")';
+    carImage.style.backgroundImage = 'url("'+ElectricVehicle.imageUrl+'")';
+    carImage.style.color = 'rgb(255,255,255)';
+    carImage.style.height = '100vh';
+    carImage.style.backgroundAttachment = 'fixed';
+    carImage.style.backgroundPosition = 'center center';
+    carImage.style.backgroundRepeat = 'no-repeat';
+    carImage.style.backgroundSize = 'cover';
+    carImage.style.position = 'relative';
+    carImage.style.marginTop = '3.2%';
+
+    // carImage.setAttribute("background-image", ElectricVehicle.imageUrl);
+    mainElement.append(carImage);
 
     const imageText = document.createElement("div");
     imageText.classList.add("car-image-text");
     carImage.append(imageText);
 
-    const backToResults = document.createElement("div");
-    backToResults.classList.add("back-to-results");
-    backToResults.innerHTML = '<a href="/frontend-spa/vehicle-prototype.html"><h5 id="back"><i class="arrow"></i>Back to Results</h5></a>';
-    imageText.append(backToResults);
+    // const backToResults = document.createElement("div");
+    // backToResults.classList.add("back-to-results");
+    // backToResults.innerHTML = '<a href="/frontend-spa/all-evs.html"><h5 id="back"><i class="arrow"></i>Back to Results</h5></a>';
+    // imageText.append(backToResults);
 
     const carMake = document.createElement("div");
     carMake.classList.add("car-make");
@@ -49,16 +70,15 @@ ElectricVehicle.forEach((ElectricVehicle) => {
 
     const detailsSection = document.createElement("div");
     detailsSection.classList.add("details-section");
-
-    const center = document.createElement("center");
-    const coloredRectangle = document.createElement("div");
-    coloredRectangle.setAttribute("id", "colored-rectangle");
-    detailsSection.append(center);
-
+    mainElement.append(detailsSection);
 
     const detailsTitle = document.createElement("div");
     detailsSection.innerHTML = '<h1 class="vehicle-details-title">Vehicle Details</h1>';
     detailsSection.append(detailsTitle);
+   
+    const centerOne = document.createElement("center");
+    centerOne.innerHTML = '<div id="colored-rectangle"></div>';
+    detailsSection.prepend(centerOne);
 
     // basic info section -----------
 
@@ -71,60 +91,59 @@ ElectricVehicle.forEach((ElectricVehicle) => {
     basicInfoText.classList.add("basic-info-text");
     basicInfoSection.append(basicInfoText);
 
-    const listElement1 = document.createElement("li");
-    listElement1.innerText = ElectricVehicle.makeName;
-    basicInfoText.append(listElement1);
+    const makeElement = document.createElement("li");
+    makeElement.innerText = ElectricVehicle.makeName;
+    basicInfoText.append(makeElement);
 
-    const listElement2 = document.createElement("li");
-    listElement2.innerText = ElectricVehicle.modelName;
-    basicInfoText.append(listElement2);
+    const modelElement = document.createElement("li");
+    modelElement.innerText = ElectricVehicle.modelName;
+    basicInfoText.append(modelElement);
 
-    const listElement4 = document.createElement("li");
-    listElement4.innerText = ElectricVehicle.range;
-    basicInfoText.append(listElement4);
+    const rangeElement4 = document.createElement("li");
+    rangeElement4.innerText = "Range: " + ElectricVehicle.range + " miles";
+    basicInfoText.append(rangeElement4);
 
-    const listElement5 = document.createElement("li");
-    listElement5.innerText = ElectricVehicle.mpgE;
-    basicInfoText.append(listElement5);
+    const mpgEElement = document.createElement("li");
+    mpgEElement.innerText = "MPGe: " + ElectricVehicle.mpgE;
+    basicInfoText.append(mpgEElement);
 
-    const listElement6 = document.createElement("li");
-    listElement6.innerText = ElectricVehicle.zeroToSixty;
-    basicInfoText.append(listElement6);
+    const zeroElement = document.createElement("li");
+    zeroElement.innerText = "0 - 60: " + ElectricVehicle.zeroToSixty + " seconds";
+    basicInfoText.append(zeroElement);
 
-    const listElement7 = document.createElement("li");
-    listElement7.innerText = ElectricVehicle.topSpeed;
-    basicInfoText.append(listElement7);
+    const topSpeedElement = document.createElement("li");
+    topSpeedElement.innerText = "Top speed: " + ElectricVehicle.topSpeed + " mph";
+    basicInfoText.append(topSpeedElement);
 
-    const listElement8 = document.createElement("li");
-    listElement8.innerText = ElectricVehicle.wheelDrive;
-    basicInfoText.append(listElement8);
+    const driveElement = document.createElement("li");
+    driveElement.innerText = "Drive: " + ElectricVehicle.wheelDrive;
+    basicInfoText.append(driveElement);
 
-    const listElement9 = document.createElement("li");
-    listElement9.innerText = ElectricVehicle.homeCharge;
-    basicInfoText.append(listElement9);
+    const homeChargeElement = document.createElement("li");
+    homeChargeElement.innerText = "Home charging: " + ElectricVehicle.homeCharge + " hours";
+    basicInfoText.append(homeChargeElement);
 
-    const listElement10 = document.createElement("li");
-    listElement10.innerText = travelCharge;
-    basicInfoText.append(listElement10);
+    const travelChargeElement = document.createElement("li");
+    travelChargeElement.innerText = "Travel charging (10% - 80%): " + ElectricVehicle.travelCharge + " minutes";
+    basicInfoText.append(travelChargeElement);
 
-    const listElement11 = document.createElement("li");
-    listElement11.innerText = autonomous;
-    basicInfoText.append(listElement11);
+    const autonomousElement = document.createElement("li");
+    autonomousElement.innerText = "Autonomous?: " + ElectricVehicle.autonomous;
+    basicInfoText.append(autonomousElement);
 
-    const listElement12 = document.createElement("li");
-    listElement12.innerText = ElectricVehicle.safetyRating;
-    basicInfoText.append(listElement12);
+    const nhtsaElement = document.createElement("li");
+    nhtsaElement.innerText = "NHTSA Rating: " + ElectricVehicle.safetyRating + "/5";
+    basicInfoText.append(nhtsaElement);
 
-    const listElement13 = document.createElement("li");
-    listElement13.innerText = ElectricVehicle.phoneKey;
-    basicInfoText.append(listElement13);
+    const phoneKeyElement = document.createElement("li");
+    phoneKeyElement.innerText = "Phone as key?: " + ElectricVehicle.phoneKey;
+    basicInfoText.append(phoneKeyElement);
 
     // standard equipment section -----------
 
-    const center = document.createElement("center");
-    const coloredRectangle = document.createElement("div");
-    coloredRectangle.setAttribute("id", "colored-rectangle");
-    detailsSection.append(center);
+    const centerTwo = document.createElement("center");
+    centerTwo.innerHTML = '<div id="colored-rectangle"></div>';
+    detailsSection.append(centerTwo);
 
     const standardEquipSection = document.createElement("div");
     standardEquipSection.classList.add("standard-equip-section");
@@ -135,32 +154,31 @@ ElectricVehicle.forEach((ElectricVehicle) => {
     standardEquipText.classList.add("standrd-equip-text");
     standardEquipSection.append(standardEquipText);
 
-    const listItem1 = document.createElement("li");
-    listItem1.innerText = ElectricVehicle.seating;
-    standardEquipText.append(listItem1);
+    const seatingItem = document.createElement("li");
+    seatingItem.innerText = "Seating: " + ElectricVehicle.seating + " adults";
+    standardEquipText.append(seatingItem);
 
-    const listItem2 = document.createElement("li");
-    listItem2.innerText = ElectricVehicle.driverAssist;
-    standardEquipText.append(listItem2);
+    const driverAssistItem = document.createElement("li");
+    driverAssistItem.innerText = "Driver assist?: " + ElectricVehicle.driverAssist;
+    standardEquipText.append(driverAssistItem);
 
-    const listItem3 = document.createElement("li");
-    listItem3.innerText = ElectricVehicle.freeOtaUpdate;
-    standardEquipText.append(listItem3);
+    const freeOtaItem = document.createElement("li");
+    freeOtaItem.innerText = "Free Over the Air Updates?: " + ElectricVehicle.freeOtaUpdate;
+    standardEquipText.append(freeOtaItem);
 
-    const listItem4 = document.createElement("li");
-    listItem4.innerText = ElectricVehicle.rearCargoSpace;
-    standardEquipText.append(listItem4);
+    const rearCargoItem = document.createElement("li");
+    rearCargoItem.innerText = "Rear Cargo Area: " + ElectricVehicle.rearCargoSpace + " cu. in.";
+    standardEquipText.append(rearCargoItem);
 
-    const listItem5 = document.createElement("li");
-    listItem5.innerText = ElectricVehicle.frunkSpace;
-    standardEquipText.append(listItem5);
+    const frunkItem = document.createElement("li");
+    frunkItem.innerText = "Frunk Cargo Area: " + ElectricVehicle.frunkSpace + " cu. in.";
+    standardEquipText.append(frunkItem);
 
     // price details section -------------
 
-    const center = document.createElement("center");
-    const coloredRectangle = document.createElement("div");
-    coloredRectangle.setAttribute("id", "colored-rectangle");
-    detailsSection.append(center);
+    const centerThree = document.createElement("center");
+    centerThree.innerHTML = '<div id="colored-rectangle"></div>';
+    detailsSection.append(centerThree);
 
     const priceDetailsSection = document.createElement("div");
     priceDetailsSection.classList.add("price-details-section");
@@ -171,23 +189,77 @@ ElectricVehicle.forEach((ElectricVehicle) => {
     priceDetailsText.classList.add("price-details-text");
     priceDetailsSection.append(priceDetailsText);
 
-    const listOne = document.createElement("li");
-    listOne.innerText = ElectricVehicle.msrp;
-    priceDetailsText.append(listOne);
+    const msrpElement = document.createElement("li");
+    msrpElement.innerText = "MSRP: $" + ElectricVehicle.msrp;
+    priceDetailsText.append(msrpElement);
 
-    const listTwo = document.createElement("li");
-    listTwo.innerText = ElectricVehicle.taxCredit;
-    priceDetailsText.append(listTwo);
+    const taxCreditElement = document.createElement("li");
+    taxCreditElement.innerText = "Eligible for $7500 Federal Tax Credit?: " + ElectricVehicle.taxCredit;
+    priceDetailsText.append(taxCreditElement);
 
-    const listThree = document.createElement("li");
-    listThree.innerText = ElectricVehicle.yearlyMaintenanceCost;
-    priceDetailsText.append(listThree);
+    const maintCostElement = document.createElement("li");
+    maintCostElement.innerText = "Average Annual Maintenance Cost: $" + ElectricVehicle.yearlyMaintenanceCost;
+    priceDetailsText.append(maintCostElement);
 
+    const centerFour = document.createElement("center");
+    centerFour.innerHTML = '<div id="colored-rectangle"></div>';
+    maintCostElement.append(centerFour);
 
-    
-})
-    
+    const reviewCommentLineElement = document.createElement("hr");
+    reviewCommentLineElement.classList.add("single-vehicle-line");
+    priceDetailsText.append(reviewCommentLineElement);
+    const reviewCommentsNotationElement = document.createElement("review-comments");
+    reviewCommentsNotationElement.classList.add("review-comments-notation");
+    reviewCommentsNotationElement.innerText = "Comments: ";
+    reviewCommentLineElement.append(reviewCommentsNotationElement);
 
+    if (ElectricVehicle.reviewComments !== null && ElectricVehicle.reviewComments.length !== 0) {
+        ElectricVehicle.reviewComments.forEach((reviewComment) => {
+            let reviewCommentsElement = document.createElement("section");
+            reviewCommentsElement.classList.add("review-comments-section");
+            let singleReviewCommentElement = document.createElement("p");
+            singleReviewCommentElement.innerText = reviewComment;
+            reviewCommentsElement.appendChild(singleReviewCommentElement);
+            priceDetailsText.appendChild(reviewCommentsElement);
+        });
+    }
+
+    const form = document.createElement("form");
+    form.classList.add("new-comment-form");
+    const reviewCommentInput = document.createElement("input");
+    reviewCommentInput.setAttribute("type", "text");
+    reviewCommentInput.setAttribute("placeholder", "Enter your comment...");
+    const submitReviewCommentButton = document.createElement("button");
+    submitReviewCommentButton.classList.add("comment-button");
+    submitReviewCommentButton.innerText = "Submit a comment";
+
+   
+    form.appendChild(reviewCommentInput);
+    form.appendChild(submitReviewCommentButton);
+    priceDetailsText.appendChild(form);
+
+    submitReviewCommentButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        // const wrapperElement = document.querySelector("wrapper");
+        clearChildren(body);
+        if (reviewCommentInput.value !== "") {
+            const json = JSON.stringify(reviewCommentInput.value);
+            const unqoutedJson = json.replace(/\"/g, "");
+            fetch("http://localhost:8080/api/electricVehicles/" + ElectricVehicle.id + "/comments", {
+                method: "PATCH",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: unqoutedJson
+            })
+                .then(response => response.json())
+                .then(ElectricVehicle => displaySingleEV(ElectricVehicle))
+                .catch(error => console.log(error));
+        }
+    })
+    body.appendChild(mainElement);
+
+    return body;
 
 }
 

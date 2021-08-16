@@ -1,70 +1,198 @@
 @import url('https://fonts.googleapis.com/css2?family=Georama:wght@100&display=swap');
 
-*{
+* {
   font-family: 'Georama', sans-serif;
   font-weight: bold;
 }
 
-body{
-    background-color: rgb(255, 255, 255);
-     
-  }
-  .vehicle-page-title{
-      color: rgb(0, 0, 0);
-      text-shadow: 2px 2px white;
-      text-align: center;
-     padding-top: 100px;
-     padding-bottom: 50px;
-      font-size: 20px;
-  }
-  
-  .title-text{
-    border: 1px solid rgb(255, 255, 255);
-    margin-left: 5%;
-    margin-right: 5%;
-    background-image: linear-gradient(to right, rgb(250, 116, 26), rgb(128,176,85), black);  
-  }
+body {
+  background-color: rgb(255, 255, 255);
 
-  .grid-container{
-      display: grid;
-      justify-content: center;
-      grid-template-columns:300px 300px 300px 300px 300px;
-      grid-template-rows: 400px 400px 400px 400px 400px 400px 400px;
-      grid-row-gap: 50px; 
-      grid-column-gap: 50px; 
-      margin-left: 2%;
-      margin-right: 2%;
-      margin-bottom: 5%;
-    }
-    .grid-item{
-      width: 100%;
-      background-color: white;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
+}
 
-    .grid-item img{
-      height:50%;
-      max-width: 300px;
-      min-width: 300px;
-    }
+.vehicle-page-title {
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px white;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  font-size: 20px;
+}
 
-    .text-container{
-      text-align: center;
-      padding: 10px 20px;
-      font-weight: bold;
-    }
+.title-text {
+  border: 1px solid rgb(255, 255, 255);
+  margin-left: 5%;
+  margin-right: 5%;
+  background-image: linear-gradient(to right, rgb(250, 116, 26), rgb(128, 176, 85), black);
+}
 
-    button{
-      background-color: rgb(255, 255, 255);
-      color: rgb(0, 0, 0);
-      font-weight: bold;
-      padding: 5px;
-    }
+.grid-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 300px 300px 300px 300px 300px;
+  grid-template-rows: 400px 400px 400px 400px 400px 400px 400px;
+  grid-row-gap: 50px;
+  grid-column-gap: 50px;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 5%;
+}
 
-    button:hover{
-      transform: scale(1.1);
-      cursor: pointer;
-    }
+.grid-item {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
-  
- 
+.grid-item img {
+  height: 50%;
+  max-width: 300px;
+  min-width: 300px;
+}
+
+.text-container {
+  text-align: center;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+button {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  padding: 5px;
+}
+
+button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* Single Vehicle Styling */
+
+.main-content {
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+  color: rgb(0, 0, 0);
+}
+
+.car-image {
+  /* background-image: url("/frontend-spa/images/JDPA_2020\ Hyundai\ Kona\ Ultimate\ White\ Front\ View.webp"); */
+  color: rgb(255, 255, 255);
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-top: -1%;
+}
+
+.car-image-text {
+  padding: 20px;
+  letter-spacing: 4px;
+  background-color: rgba(0, 0, 0, 0.521);
+  height: 30vh;
+}
+
+/* .back-to-results {
+  position: absolute;
+  top: 30px;
+  left: 16px;
+  font-size: 18px;
+  margin-left: 1%;
+}
+
+.back-to-results a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.back-to-results a:hover {
+  color: rgba(255, 255, 255, 0.445);
+  cursor: pointer;
+}
+
+.arrow {
+  border: solid rgb(255, 255, 255);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+} */
+
+.car-make {
+  position: absolute;
+  top: 50px;
+  left: 16px;
+  font-size: 30px;
+  margin-left: 1%;
+}
+
+.car-model {
+  position: absolute;
+  top: 155px;
+  left: 16px;
+  font-size: 10px;
+  margin-left: 1%;
+}
+
+.car-price {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 40px;
+  margin-right: 1%;
+}
+
+.car-mileage {
+  position: absolute;
+  top: 90px;
+  right: 16px;
+  margin-right: 1%;
+  font-size: 20px;
+}
+
+/* --------------------white section----------------------- */
+#colored-rectangle {
+  margin: 2%;
+  height: 10px;
+  width: 500px;
+  background-image: linear-gradient(to right, rgb(250, 116, 26), rgb(128, 176, 85), black);
+}
+
+.details-section {
+  text-align: center;
+  margin: 2%;
+}
+
+.details-section h5 {
+  text-align: center;
+  font-size: 30px;
+}
+
+/* .basic-info-section ul{
+  font-size: 15px;
+  column-count: 2;
+  list-style-type: none;
+  text-align: center;
+  line-height: 25px;
+
+} */
+
+.standard-equip-text,
+.price-details-text,
+.basic-info-text {
+  text-align: center;
+  list-style-type: none;
+  line-height: 25px;
+  margin-right: 2%;
+}
+
+.vehicle-details-title {
+  text-align: none;
+  font-size: 55px;
+}
+

@@ -1,34 +1,129 @@
 import { clearChildren } from "./userVehicleForm.js";
-import { displayArticle } from "./displayArticle.js";
+import { displayHeader } from "./Header.js";
 
-const indexArticles = function (article) {
-  const mainElement = document.querySelector(".articles-wrapper");
-  clearChildren(mainElement);
+
+const indexArticles = function (articles) {
+  const articlesGridElement = document.querySelector(".articles-grid");
+  clearChildren(articlesGridElement);
+
+  let articleCount = 1;
   articles.forEach((article) => {
-    let articleElement = document.createElement("div");
-    articleElement.classList.add("btn-section");
-    let articleTitleElement = document.createElement("h3");
-    articleTitleElement.innerText = article.articleTitle;
-    let articleLinkElement = document.createElement("a");
-    let articleImageElement = document.createElement("img");
-    articleImageElement.src = article.imageUrl;
 
-    articleLinkElement.addEventListener("click", (clickEvent) => {
-      displayArticle(article)
+    let articleElement = document.createElement("div");
+    articleElement.classList.add("article"+articleCount);
+    let articleLinkElement = document.createElement("a");
+    articleElement.style.backgroundImage = 'url("'+article.imageUrl+'")'
+    let articleTitleElement = document.createElement("h3");
+    
+    articleTitleElement.innerText = article.articleTitle;
+    // let articleImageElement = document.createElement("img");
+    // articleImageElement.src = article.imageUrl;
+
+    articleElement.addEventListener("click", (clickEvent) => {
+      displaySingleArticle(article)
     });
-    articleLinkElement.appendChild(articleImageElement);
-    articleElement.appendChild(articleTitleElement);
+    // articleLinkElement.appendChild(articleImageElement);
+    articleLinkElement.appendChild(articleTitleElement);
     articleElement.appendChild(articleLinkElement);
-    mainElement.appendChild(articleElement);
+    articlesGridElement.appendChild(articleElement);
+    articleCount++;
   });
 
-  return mainElement;
-}
-export {
-  indexArticles
+  // return articlesGridElement;
 }
 
-{/* <div class="article-section">
+const displaySingleArticle = function (article) {
+    const bodyElement = document.querySelector("body");
+    clearChildren(bodyElement);
+    window.scrollTo(0, 0);
+    const mainElement = document.createElement("div");
+    mainElement.classList.add("main-content");
+    bodyElement.append(mainElement);
+    bodyElement.prepend(displayHeader());
+    const articleElement = document.createElement("div");
+    articleElement.classList.add("article-content");
+    articleElement.style.backgroundColor = "white"
+    const articleTopicElement = document.createElement("h1");
+    articleTopicElement.classList.add('article-topic');
+    articleTopicElement.innerText = article.articleTopicTitle;
+    const articleImageElement = document.createElement("img");
+    articleImageElement.classList.add("single-article-img");
+    articleImageElement.src = article.imageUrl;
+    const articleTitleElement = document.createElement("h2");
+    articleTitleElement.classList.add("single-article-title");
+    articleTitleElement.innerText = article.articleTitle;
+    const articleAuthorElement = document.createElement("h3");
+    articleAuthorElement.classList.add("single-article-author");
+    articleAuthorElement.innerText = "By: " + article.authorName;
+    const articleLineElementOne = document.createElement("hr");
+    articleLineElementOne.classList.add("single-article-line");
+    const articleTextElement = document.createElement("p");
+    articleTextElement.classList.add("single-article-content");
+    articleTextElement.innerText = article.articleContent;
+    const articleLineElementTwo = document.createElement("hr");
+    articleLineElementTwo.classList.add("single-article-line");
+    const articleCommentsNotationElement = document.createElement("article-comments");
+    articleCommentsNotationElement.classList.add("article-comments-notation");
+    articleCommentsNotationElement.innerText = "Comments: ";
+
+    articleElement.appendChild(articleTopicElement);
+    articleElement.appendChild(articleTitleElement);
+    articleElement.appendChild(articleImageElement);
+    articleElement.appendChild(articleAuthorElement);
+    articleElement.appendChild(articleLineElementOne);
+    articleElement.appendChild(articleTextElement);
+    articleElement.appendChild(articleLineElementTwo);
+    articleElement.appendChild(articleCommentsNotationElement);
+
+    if (article.articleComments !== null && article.articleComments.length !== 0) {
+        article.articleComments.forEach((articleComment) => {
+            let articleCommentsElement = document.createElement("section");
+            articleCommentsElement.classList.add("article-comments-section");
+            let singleArticleCommentElement = document.createElement("p");
+            singleArticleCommentElement.innerText = articleComment;
+            articleCommentsElement.appendChild(singleArticleCommentElement);
+            articleElement.appendChild(articleCommentsElement);
+        });
+    }
+
+    const form = document.createElement("form");
+    form.classList.add("new-comment-form");
+    const articleCommentInput = document.createElement("input");
+    articleCommentInput.setAttribute("type", "text");
+    articleCommentInput.setAttribute("placeholder", "Enter your comment...");
+    const submitArticleCommentButton = document.createElement("button");
+    submitArticleCommentButton.classList.add("comment-button");
+    submitArticleCommentButton.innerText = "Submit a comment";
+
+    form.appendChild(articleCommentInput);
+    form.appendChild(submitArticleCommentButton);
+    articleElement.appendChild(form);
+
+    submitArticleCommentButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        const articleElement = document.querySelector(".article-content");
+        clearChildren(articleElement);
+        if (articleCommentInput.value !== "") {
+            const json = JSON.stringify(articleCommentInput.value);
+            const unqoutedJson = json.replace(/\"/g, "");
+            fetch("http://localhost:8080/api/articleTopics/" + article.articleTopicId + "/articles/" + article.id + "/comments", {
+                method: "PATCH",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: unqoutedJson
+            })
+                .then(response => response.json())
+                .then(article => displayArticle(article))
+                .catch(error => console.log(error));
+        }
+    })
+
+    mainElement.appendChild(articleElement);
+}
+
+export {indexArticles}
+/* <div class="article-section">
         
         <div class="rectangle">
             <p class="articles-title">Articles</p>
@@ -72,4 +167,4 @@ export {
                 </div>
             </div>
             </div>
-        </div> */}
+        </div> */
