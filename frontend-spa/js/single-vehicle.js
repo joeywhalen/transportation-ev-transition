@@ -10,6 +10,7 @@ const displaySingleEV = function (ElectricVehicle) {
 
     const body = document.querySelector("body");
     clearChildren(body);
+    body.classList.add("svBody");
     body.append(displayHeader());
     const wrapper = document.createElement("div");
     wrapper.classList.add("wrapper");
@@ -31,7 +32,7 @@ const displaySingleEV = function (ElectricVehicle) {
     carImage.style.backgroundRepeat = 'no-repeat';
     carImage.style.backgroundSize = 'cover';
     carImage.style.position = 'relative';
-    carImage.style.marginTop = '-1%';
+    carImage.style.marginTop = '3.2%';
 
     // carImage.setAttribute("background-image", ElectricVehicle.imageUrl);
     mainElement.append(carImage);
@@ -40,10 +41,10 @@ const displaySingleEV = function (ElectricVehicle) {
     imageText.classList.add("car-image-text");
     carImage.append(imageText);
 
-    const backToResults = document.createElement("div");
-    backToResults.classList.add("back-to-results");
-    backToResults.innerHTML = '<a href="/frontend-spa/vehicle-prototype.html"><h5 id="back"><i class="arrow"></i>Back to Results</h5></a>';
-    imageText.append(backToResults);
+    // const backToResults = document.createElement("div");
+    // backToResults.classList.add("back-to-results");
+    // backToResults.innerHTML = '<a href="/frontend-spa/all-evs.html"><h5 id="back"><i class="arrow"></i>Back to Results</h5></a>';
+    // imageText.append(backToResults);
 
     const carMake = document.createElement("div");
     carMake.classList.add("car-make");
