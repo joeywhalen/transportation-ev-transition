@@ -1,3 +1,5 @@
+import{indexArticles} from "./indexArticles.js"
+
 fetch("http://localhost:8080/api/ice/states")
     .then(response => response.json())
     .then(states => genStates(states))
@@ -313,3 +315,9 @@ const displayEVs = function (allEVs) {
 
 
 }
+fetch("http://localhost:8080/api/articles")
+    .then(response => response.json())
+    .then(articles => indexArticles(articles))
+    .catch(error => console.log(error))
+
+export {clearChildren}

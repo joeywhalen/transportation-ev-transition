@@ -1,34 +1,36 @@
 import { clearChildren } from "./userVehicleForm.js";
-import { displayArticle } from "./displayArticle.js";
 
-const indexArticles = function (article) {
-  const mainElement = document.querySelector(".articles-wrapper");
-  clearChildren(mainElement);
+
+
+const indexArticles = function (articles) {
+  const articlesGridElement = document.querySelector(".articles-grid");
+  clearChildren(articlesGridElement);
+
+  let articleCount = 1;
   articles.forEach((article) => {
+
     let articleElement = document.createElement("div");
-    articleElement.classList.add("btn-section");
+    articleElement.classList.add("article"+articleCount);
+    let articleLinkElement = document.createElement("a");
     let articleTitleElement = document.createElement("h3");
     articleTitleElement.innerText = article.articleTitle;
-    let articleLinkElement = document.createElement("a");
     let articleImageElement = document.createElement("img");
     articleImageElement.src = article.imageUrl;
 
-    articleLinkElement.addEventListener("click", (clickEvent) => {
-      displayArticle(article)
-    });
+    // articleLinkElement.addEventListener("click", (clickEvent) => {
+    //   displayArticle(article)
+    // });
     articleLinkElement.appendChild(articleImageElement);
-    articleElement.appendChild(articleTitleElement);
+    articleLinkElement.appendChild(articleTitleElement);
     articleElement.appendChild(articleLinkElement);
-    mainElement.appendChild(articleElement);
+    articlesGridElement.appendChild(articleElement);
+    articleCount++;
   });
 
-  return mainElement;
+  // return articlesGridElement;
 }
-export {
-  indexArticles
-}
-
-{/* <div class="article-section">
+export {indexArticles}
+/* <div class="article-section">
         
         <div class="rectangle">
             <p class="articles-title">Articles</p>
@@ -72,4 +74,4 @@ export {
                 </div>
             </div>
             </div>
-        </div> */}
+        </div> */
