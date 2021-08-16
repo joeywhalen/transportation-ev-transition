@@ -1,5 +1,5 @@
 import { clearChildren } from "./userVehicleForm.js";
-
+import {displaySingleArticle} from "./userVehicleForm.js";
 
 
 const indexArticles = function (articles) {
@@ -17,9 +17,9 @@ const indexArticles = function (articles) {
     let articleImageElement = document.createElement("img");
     articleImageElement.src = article.imageUrl;
 
-    // articleLinkElement.addEventListener("click", (clickEvent) => {
-    //   displayArticle(article)
-    // });
+    articleLinkElement.addEventListener("click", (clickEvent) => {
+      displaySingleArticle(article)
+    });
     articleLinkElement.appendChild(articleImageElement);
     articleLinkElement.appendChild(articleTitleElement);
     articleElement.appendChild(articleLinkElement);
@@ -29,6 +29,7 @@ const indexArticles = function (articles) {
 
   // return articlesGridElement;
 }
+
 export {indexArticles}
 /* <div class="article-section">
         
