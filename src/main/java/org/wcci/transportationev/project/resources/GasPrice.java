@@ -37,4 +37,6 @@ public class GasPrice {
     public int getMilesPer100Ice() {
         return milesPer100Ice;
     }
+
+    
 }

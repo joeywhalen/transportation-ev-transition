@@ -46,7 +46,6 @@ submitButton.addEventListener("click", () => {
     const userMakeId = makeSelectElement.getElementsByClassName("make-option")[userMakeIndex].getAttribute("id")
     const userModelId = modelSelectElement.getElementsByClassName("model-option")[userModelIndex].getAttribute("id")
 
-
     //console.log(yearSelectElement.getElementsByClassName("year-option")[userYearIndex].getAttribute("id"))
     //console.log(makeSelectElement.getElementsByClassName("make-option")[userMakeIndex].getAttribute("id"))
     //console.log(modelSelectElement.getElementsByClassName("model-option")[userModelIndex].getAttribute("id"))
@@ -59,9 +58,11 @@ submitButton.addEventListener("click", () => {
         }
     })
     .then(response => response.json())
-    //.then(userState => genUserStateComp(userState))
     .then(userState => userStateObj = userState)
     .catch(error => console.log(error))
+
+    
+ 
 
 
     // http://localhost:8080/api/ice/userVehicle/{year}/{make}/{model}
@@ -247,6 +248,20 @@ const genUserVehicleComp = function (userVehicle,userStateObj) {
 
 
 const genEVComparison = function (priceRange, userVehicle, userStateObj, weeklyMiles) {
+    
+    console.log("http://localhost:8080/api/ev/charge/" + stateSelectElement.value)
+    
+    fetch("http://localhost:8080/api/ev/charge/" + stateSelectElement.value, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(returned => userChargeObj = returned)
+    .catch(error => console.log(error))
+    
+    
     fetch("http://localhost:8080/api/electricVehicles/compare/" + priceRange, {
             method: 'GET',
             headers: {
@@ -254,12 +269,12 @@ const genEVComparison = function (priceRange, userVehicle, userStateObj, weeklyM
             }
         })
         .then(response => response.json())
-        .then(evResponse => displayEVs(evResponse, userVehicle, userStateObj,weeklyMiles))
+        .then(evResponse => displayEVs(evResponse, userVehicle, userStateObj, weeklyMiles, userChargeObj))
         .catch(error => console.log(error))
 }
 
 
-const displayEVs = function (allEVs, userVehicle,userStateObj,weeklyMiles) {
+const displayEVs = function (allEVs, userVehicle,userStateObj,weeklyMiles,userChargeObj) {
 
     const mainContent = document.querySelector(".main-content")
     clearChildren(mainContent)
@@ -300,19 +315,18 @@ const displayEVs = function (allEVs, userVehicle,userStateObj,weeklyMiles) {
 
     const galPerMonth = (weeklyMiles / userVehicle.mpg) * 4
     const monthlyGasCost = parseInt(galPerMonth * userStateObj.pricePerGal)
+    const yearlyGasCost = monthlyGasCost * 12
     
     const userWeeklyMiles = document.createElement("h2")
-    userWeeklyMiles.innerText = 'Your Annual Gas Cost: $' + (monthlyGasCost * 12)
+    userWeeklyMiles.innerText = 'Your Annual Gas Cost: $' + yearlyGasCost
     userVehicleStatsDiv.appendChild(userWeeklyMiles)
     
-    console.log(userStateObj)
-    const userState = userStateObj.state
-    console.log(userState)
 
-    fetch("http://localhost:8080/api/ice/states")
-    .then(response => response.json())
-    .then(states => genStates(states))
-    .catch(error => console.log(error))
+
+    //console.log(userChargeObj)
+    //console.log(userStateObj)
+ 
+    
 
     //loop through EVs creating grid items
     for (let i = 1; i < 5; i++) {
@@ -363,19 +377,21 @@ const displayEVs = function (allEVs, userVehicle,userStateObj,weeklyMiles) {
                     
                     const evRange = parseInt(allEVs[i].range)
                     const userYearlyMiles = weeklyMiles * 52
-                    const numOfChargesPerYear = Math.round(userYearlyMiles / evRange)
+                    const numOfChargesPerYear = userYearlyMiles / evRange
+                    const chargeCost = numOfChargesPerYear * userChargeObj.costPerHomeCharge
             
             
                     const evMPG = document.createElement("span")
                     evMPG.classList.add("compare-stat-one")
-                    evMPG.innerText = 'Yearly Charges Required ' + numOfChargesPerYear
+                    evMPG.innerText = 'Yearly Charge Costs: $' + Math.round(chargeCost)
                     evMPGElement.appendChild(evMPG)
 
                     evMPGElement.appendChild(document.createElement("br"))
 
+                    const gasSavings = yearlyGasCost - chargeCost
                     const iceMPG = document.createElement("span")
                     iceMPG.classList.add("compare-stat-plus")
-                    iceMPG.innerText = 'Monthly Gas Cost: $' + monthlyGasCost
+                    iceMPG.innerText = 'You would save $' + Math.round(gasSavings) + ' per year'
                     evMPGElement.appendChild(iceMPG)
 
 
