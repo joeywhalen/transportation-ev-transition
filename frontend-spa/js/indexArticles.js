@@ -40,6 +40,7 @@ const displaySingleArticle = function (article) {
     bodyElement.prepend(displayHeader());
     const articleElement = document.createElement("div");
     articleElement.classList.add("article-content");
+    articleElement.style.backgroundColor = "white"
     const articleTopicElement = document.createElement("h1");
     articleTopicElement.classList.add('article-topic');
     articleTopicElement.innerText = article.articleTopicTitle;
