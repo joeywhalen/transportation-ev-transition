@@ -5,9 +5,11 @@ import java.util.Collection;
 import org.springframework.web.bind.annotation.*;
 import org.wcci.transportationev.project.resources.Article;
 import org.wcci.transportationev.project.resources.ArticleTopic;
+import org.wcci.transportationev.project.resources.ChargeCost;
 import org.wcci.transportationev.project.resources.ElectricVehicle;
 import org.wcci.transportationev.project.storage.ArticleStorage;
 import org.wcci.transportationev.project.storage.ArticleTopicStorage;
+import org.wcci.transportationev.project.storage.ChargeCostRepository;
 import org.wcci.transportationev.project.storage.ElectricVehicleStorage;
 
 @RestController
@@ -16,12 +18,14 @@ public class ArticleReviewController {
     private ArticleTopicStorage articleTopicStorage;
     private ArticleStorage articleStorage;
     private ElectricVehicleStorage electricVehicleStorage;
+    private ChargeCostRepository chargeCostRepo;
 
     public ArticleReviewController(ArticleTopicStorage articleTopicStorage, ArticleStorage articleStorage,
-            ElectricVehicleStorage electricVehicleStorage) {
+            ElectricVehicleStorage electricVehicleStorage, ChargeCostRepository chargeCostRepo) {
         this.articleTopicStorage = articleTopicStorage;
         this.articleStorage = articleStorage;
         this.electricVehicleStorage = electricVehicleStorage;
+        this.chargeCostRepo = chargeCostRepo;
     }
 
     // GET http://localhost:8080/api/articleTopics
@@ -60,7 +64,7 @@ public class ArticleReviewController {
         return articleStorage.retrieveAllArticles();
     }
 
-    //GET http://localhost:8080/api/articleTopics/4/articles/5
+    // GET http://localhost:8080/api/articleTopics/4/articles/5
     @GetMapping("/api/articleTopics/{id}/articles/{articleId}")
     public Article retrieveArticleById(@PathVariable Long id, @PathVariable Long articleId) {
         return articleStorage.retrieveArticleById(articleId);
@@ -89,6 +93,12 @@ public class ArticleReviewController {
     @GetMapping("/api/electricVehicles/compare/{price}")
     public Collection<ElectricVehicle> retrieveEVsBasedOnLifestyle(@PathVariable int price) {
         return electricVehicleStorage.retrieveEVsByPrice(price);
+    }
+
+    // GET http://localhost:8080/api/ev/charge/{stateName}
+    @GetMapping("/api/ev/charge/{stateName}")
+    public ChargeCost retrieveChargeCostByStateName(@PathVariable String stateName) {
+        return chargeCostRepo.findChargeCostByState(stateName);
     }
 
 }

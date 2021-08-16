@@ -29,6 +29,11 @@ const makeSelectElement = document.querySelector("#makes")
 const modelSelectElement = document.querySelector("#models")
 const submitButton = document.querySelector(".user-form-submit-button")
 
+let userStateObj = null;
+let userChargeObj = null;
+
+
+//SUBMIT BUTTON FOR USER VEHICLE DROP-DOWN FORM
 submitButton.addEventListener("click", () => {
 
     clearChildren(formContainer)
@@ -43,11 +48,24 @@ submitButton.addEventListener("click", () => {
     const userMakeId = makeSelectElement.getElementsByClassName("make-option")[userMakeIndex].getAttribute("id")
     const userModelId = modelSelectElement.getElementsByClassName("model-option")[userModelIndex].getAttribute("id")
 
+    //console.log(yearSelectElement.getElementsByClassName("year-option")[userYearIndex].getAttribute("id"))
+    //console.log(makeSelectElement.getElementsByClassName("make-option")[userMakeIndex].getAttribute("id"))
+    //console.log(modelSelectElement.getElementsByClassName("model-option")[userModelIndex].getAttribute("id"))
+    //console.log(stateSelectElement.getElementsByClassName("state-option")[userStateIndex].getAttribute("id"))
 
-    console.log(yearSelectElement.getElementsByClassName("year-option")[userYearIndex].getAttribute("id"))
-    console.log(makeSelectElement.getElementsByClassName("make-option")[userMakeIndex].getAttribute("id"))
-    console.log(modelSelectElement.getElementsByClassName("model-option")[userModelIndex].getAttribute("id"))
-    console.log(stateSelectElement.getElementsByClassName("state-option")[userStateIndex].getAttribute("id"))
+    fetch("http://localhost:8080/api/ice/userVehicle/" + userStateId, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(userState => userStateObj = userState)
+    .catch(error => console.log(error))
+
+    
+ 
+
 
     // http://localhost:8080/api/ice/userVehicle/{year}/{make}/{model}
     fetch("http://localhost:8080/api/ice/userVehicle/" + userYearId + "/" + userMakeId + "/" + userModelId, {
@@ -57,18 +75,10 @@ submitButton.addEventListener("click", () => {
             }
         })
         .then(response => response.json())
-        .then(userVehicle => genUserVehicleComp(userVehicle))
+        .then(userVehicle => genUserVehicleComp(userVehicle,userStateObj))
         .catch(error => console.log(error))
 
-    fetch("http://localhost:8080/api/ice/userVehicle/" + userStateId, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => response.json())
-        .then(userState => genUserStateComp(userState))
-        .catch(error => console.log(error))
+
 
 })
 
@@ -191,22 +201,29 @@ const genModels = function (models) {
 
 }
 
-const genUserVehicleComp = function (userVehicle) {
-    
+const genUserVehicleComp = function (userVehicle,userStateObj) {
+
     const formH1 = document.querySelector(".form-h1")
     formH1.innerText = "What is your current vehicle lifestyle?"
-    
+
     const formH3 = document.querySelector(".form-h3")
     formH3.innerText = "What is important in your next vehicle?"
 
     const lifestyleForm = document.createElement("form")
     const lifestyleDiv = document.createElement("div")
     lifestyleDiv.classList.add("lifestyle-form")
+
     const priceRangeInput = document.createElement("input")
     priceRangeInput.setAttribute("type", "text")
     priceRangeInput.setAttribute("id", "user-price-range")
     priceRangeInput.setAttribute("name", "user-price-range")
     priceRangeInput.setAttribute("placeholder", "Price Range")
+
+    const weeklyMilesInput = document.createElement("input")
+    weeklyMilesInput.setAttribute("type","text")
+    weeklyMilesInput.setAttribute("id", "user-weekly-miles")
+    weeklyMilesInput.setAttribute("name", "user-weekly-miles")
+    weeklyMilesInput.setAttribute("placeholder","Miles Driven Weekly")
 
     const lifestyleSubmit = document.createElement("a")
     lifestyleSubmit.classList.add("lifestyle-submit-button")
@@ -218,46 +235,35 @@ const genUserVehicleComp = function (userVehicle) {
 
     lifestyleDiv.appendChild(priceRangeInput)
     lifestyleDiv.appendChild(document.createElement("br"))
+    lifestyleDiv.appendChild(weeklyMilesInput)
+    lifestyleDiv.appendChild(document.createElement("br"))
     lifestyleDiv.appendChild(lifestyleSubmit)
     lifestyleForm.appendChild(lifestyleDiv)
     formContainer.appendChild(lifestyleForm)
 
     lifestyleSubmit.addEventListener("click", () => {
+        
         clearChildren(formContainer)
-
-        const comparisonContainer = document.createElement("div")
-        comparisonContainer.classList.add("comparison-container")
-        const userVehicleElement = document.createElement("ul")
-        const userVehicleYear = document.createElement("li")
-        userVehicleYear.innerText = "Year: " + userVehicle.yearString
-        const userVehicleMake = document.createElement("li")
-        userVehicleMake.innerText = "Make: " + userVehicle.makeName
-        const userVehicleModel = document.createElement("li")
-        userVehicleModel.innerText = "Model: " + userVehicle.modelName
-        const userVehiclePrice = document.createElement("li")
-        userVehiclePrice.innerText = "MSRP: $" + userVehicle.msrp
-        const userVehicleMPG = document.createElement("li")
-        userVehicleMPG.innerText = "MPG: " + userVehicle.mpg
-        const userVehicleRange = document.createElement("li")
-        userVehicleRange.innerText = "Range: " + userVehicle.range + " miles"
-        const userVehicleMaint = document.createElement("li")
-        userVehicleMaint.innerText = "Yearly Maintenance Cost: $" + userVehicle.yearlyMaintCost
-
-        userVehicleElement.appendChild(userVehicleYear)
-        userVehicleElement.appendChild(userVehicleMake)
-        userVehicleElement.appendChild(userVehicleModel)
-        userVehicleElement.appendChild(userVehiclePrice)
-        userVehicleElement.appendChild(userVehicleMPG)
-        userVehicleElement.appendChild(userVehicleRange)
-        userVehicleElement.appendChild(userVehicleMaint)
-        comparisonContainer.appendChild(userVehicleElement)
-        formContainer.appendChild(comparisonContainer)
-
-        genEVComparison(priceRangeInput.value)
+        genEVComparison(priceRangeInput.value, userVehicle, userStateObj, weeklyMilesInput.value)
     })
 }
 
-const genEVComparison = function (priceRange) {
+
+const genEVComparison = function (priceRange, userVehicle, userStateObj, weeklyMiles) {
+    
+    console.log("http://localhost:8080/api/ev/charge/" + stateSelectElement.value)
+    
+    fetch("http://localhost:8080/api/ev/charge/" + stateSelectElement.value, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(returned => userChargeObj = returned)
+    .catch(error => console.log(error))
+    
+    
     fetch("http://localhost:8080/api/electricVehicles/compare/" + priceRange, {
             method: 'GET',
             headers: {
@@ -265,59 +271,168 @@ const genEVComparison = function (priceRange) {
             }
         })
         .then(response => response.json())
-        .then(evResponse => displayEVs(evResponse))
+        .then(evResponse => displayEVs(evResponse, userVehicle, userStateObj, weeklyMiles, userChargeObj))
         .catch(error => console.log(error))
 }
 
 
-const displayEVs = function (allEVs) {
+const displayEVs = function (allEVs, userVehicle,userStateObj,weeklyMiles,userChargeObj) {
 
+    const mainContent = document.querySelector(".main-content")
+    clearChildren(mainContent)
+
+    //generate the user vehicle DIV
+    //this will be appended to main-content DIV
+    const userVehicleInfoDiv = document.createElement("div")
+    userVehicleInfoDiv.classList.add("user-vehicle-info")
+
+    const compareGridElement = document.createElement("div")
+    compareGridElement.classList.add("compare-grid")
+
+    userVehicleInfoDiv.appendChild(compareGridElement)
+
+    const userVehicleElement = document.createElement("div")
+    userVehicleElement.classList.add("user-vehicle")
+    compareGridElement.appendChild(userVehicleElement)
+
+    const userVehicleStatsDiv = document.createElement("div")
+    userVehicleStatsDiv.classList.add("user-vehicle__list-stats")
+    userVehicleElement.appendChild(userVehicleStatsDiv)
+
+    const userVehicleTitle = document.createElement("h1")
+    userVehicleTitle.innerHTML = 'Comparing:<br> 2012 Ford F-150'
+    userVehicleStatsDiv.appendChild(userVehicleTitle)
+
+    const userVehicleMsrp = document.createElement("h2")
+    userVehicleMsrp.innerText = 'MSRP: $' + userVehicle.msrp
+    userVehicleStatsDiv.appendChild(userVehicleMsrp)
+
+    const userVehicleMGP = document.createElement("h2")
+    userVehicleMGP.innerText = 'Avgerage MPG: ' + userVehicle.mpg
+    userVehicleStatsDiv.appendChild(userVehicleMGP)
+
+    const userStateGasPrice = document.createElement("h2")
+    userStateGasPrice.innerText = userStateObj.state + "'s Average Gas Price: $" + userStateObj.pricePerGal + ' per gallon'
+    userVehicleStatsDiv.appendChild(userStateGasPrice)
+
+    const galPerMonth = (weeklyMiles / userVehicle.mpg) * 4
+    const monthlyGasCost = parseInt(galPerMonth * userStateObj.pricePerGal)
+    const yearlyGasCost = monthlyGasCost * 12
     
-
-    allEVs.forEach((evVehicle) => {
-
-
-        const comparisonContainer = document.querySelector(".comparison-container")
-        const evVehicleElement = document.createElement("ul")
-
-        //const evVehicleYear = document.createElement("li")
-        //evVehicleYear.innerText = "Year: " + evVehicle.yearString
-
-        const evVehicleMake = document.createElement("li")
-        evVehicleMake.innerText = "Make: " + evVehicle.makeName
-        evVehicleElement.appendChild(evVehicleMake)
-
-        const evVehicleModel = document.createElement("li")
-        evVehicleModel.innerText = "Model: " + evVehicle.modelName
-        evVehicleElement.appendChild(evVehicleModel)
-
-        const evVehiclePrice = document.createElement("li")
-        evVehiclePrice.innerText = "MSRP: $" + evVehicle.msrp
-        evVehicleElement.appendChild(evVehiclePrice)
-
-        const evVehicleMPGe = document.createElement("li")
-        evVehicleMPGe.innerText = "MPGe: " + evVehicle.mpgE
-        evVehicleElement.appendChild(evVehicleMPGe)
-
-        const evVehicleRange = document.createElement("li")
-        evVehicleRange.innerText = "Range: " + evVehicle.range + " miles"
-        evVehicleElement.appendChild(evVehicleRange)
-
-        const evVehicleMaint = document.createElement("li")
-        evVehicleMaint.innerText = "Yearly Maintenance Cost: $" + evVehicle.yearlyMaintenanceCost
-        evVehicleElement.appendChild(evVehicleMaint)
-
-        evVehicleElement.appendChild(document.createElement("br"))
-
-        comparisonContainer.appendChild(evVehicleElement)
-    })
+    const userWeeklyMiles = document.createElement("h2")
+    userWeeklyMiles.innerText = 'Your Annual Gas Cost: $' + yearlyGasCost
+    userVehicleStatsDiv.appendChild(userWeeklyMiles)
+    
+    //loop through EVs creating grid items
+    for (let i = 1; i < 5; i++) {
 
 
+        const evDivElement = document.createElement("div")
+        evDivElement.classList.add('ev' + i)
+        compareGridElement.appendChild(evDivElement)
 
+
+            const evTitle = document.createElement("h2")
+            evTitle.innerText = allEVs[i].modelName
+            evDivElement.appendChild(evTitle)
+
+
+            const evImageElement = document.createElement("img")
+            evImageElement.setAttribute("id", "vehicle1")
+            evImageElement.setAttribute("src", allEVs[i].imageUrl)
+            evImageElement.setAttribute("width", "100%")
+            evDivElement.appendChild(evImageElement)
+
+            const paraMsrpElement = document.createElement("p")
+            evDivElement.appendChild(paraMsrpElement)
+
+                    const evMSRP = document.createElement("span")
+                    evMSRP.classList.add("compare-stat-one")
+                    evMSRP.innerText = 'MSRP: $' + allEVs[i].msrp
+                    paraMsrpElement.appendChild(evMSRP)
+
+                    paraMsrpElement.appendChild(document.createElement("br"))
+
+                    const iceMSRP = document.createElement("span")
+                    var msrpCostDiff = allEVs[i].msrp - userVehicle.msrp
+                    var isMsrpNeg = Boolean(msrpCostDiff > 0)
+                    if (isMsrpNeg) {
+                        iceMSRP.classList.add("compare-stat-minus")
+                        iceMSRP.innerText = '$' + msrpCostDiff + ' over your vehicle'
+
+                    } else {
+                        iceMSRP.classList.add("compare-stat-plus")
+                        iceMSRP.innerText = '$ ' + msrpCostDiff + ' under your vehicle'
+                    }
+
+                                    
+                    paraMsrpElement.appendChild(iceMSRP)
+                    let rebateAmount = 0;
+                    const rebate = document.createElement("span")
+                    if (allEVs[i].taxCredit) {
+                        
+                        rebate.innerHTML = '<br>$7,500 Tax Credit Eligible: <img src="./images/check.png" height="15" width="15">'
+                        rebateAmount += 7500
+                    } else {
+                        rebate.innerHTML = '<br>Tax Credit Eligible: <img src="./images/x.png" height="15" width="15">'
+                    }
+
+                    paraMsrpElement.appendChild(rebate)
+
+            const evMPGElement = document.createElement("p")
+            evDivElement.appendChild(evMPGElement)
+                    
+                    const evRange = parseInt(allEVs[i].range)
+                    const userYearlyMiles = weeklyMiles * 52
+                    const numOfChargesPerYear = userYearlyMiles / evRange
+                    const chargeCost = numOfChargesPerYear * userChargeObj.costPerHomeCharge
+            
+            
+                    const evMPG = document.createElement("span")
+                    evMPG.classList.add("compare-stat-one")
+                    evMPG.innerText = 'Yearly Charge Costs: $' + Math.round(chargeCost)
+                    evMPGElement.appendChild(evMPG)
+
+                    evMPGElement.appendChild(document.createElement("br"))
+
+                    const gasSavings = yearlyGasCost - chargeCost
+                    const iceMPG = document.createElement("span")
+                    iceMPG.classList.add("compare-stat-plus")
+                    iceMPG.innerText = 'You would save $' + Math.round(gasSavings) + ' per year'
+                    evMPGElement.appendChild(iceMPG)
+
+
+            
+            evDivElement.appendChild(document.createElement("hr"))
+
+            const paraTotalsElement = document.createElement("p")
+            evDivElement.appendChild(paraTotalsElement)
+            
+            //475 per year saved with electric vs gas on maint
+            const totalSavingsPerYear = parseInt(gasSavings + 475)
+            const msrpDiffElement = document.createElement("h2")
+            paraTotalsElement.appendChild(msrpDiffElement)
+            var totalToRound = (msrpCostDiff - rebateAmount) / totalSavingsPerYear
+            var yearsUntilPayOff = Math.round(totalToRound * 10) / 10
+            if (yearsUntilPayOff > 0) {
+                msrpDiffElement.innerText = 'Years Until Payoff: ' + yearsUntilPayOff
+            } else {
+                msrpDiffElement.innerText = 'Years Until Payoff: INSTANT'
+            }
+
+            console.log(totalSavingsPerYear)
+
+    }
+
+
+
+    mainContent.appendChild(userVehicleInfoDiv)
 }
+
 fetch("http://localhost:8080/api/articles")
     .then(response => response.json())
     .then(articles => indexArticles(articles))
     .catch(error => console.log(error))
 
 export {clearChildren}
+

@@ -190,11 +190,13 @@ header span {
     rgb(250, 116, 26) 100%
   );
 }
+
 .sidebarMenuInner {
   margin: 0;
   padding: 0;
   border-top: 1px solid rgba(201, 20, 20, 0.1);
 }
+
 .sidebarMenuInner li {
   list-style: none;
   color: rgb(255, 255, 255);
@@ -204,6 +206,7 @@ header span {
   cursor: pointer;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .sidebarMenuInner li span {
   display: block;
   font-size: 14px;
@@ -307,6 +310,10 @@ form {
 
 .year-make-model {
   padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .drop-down {
@@ -377,7 +384,7 @@ form {
   overflow: hidden;
   transition: 0.5s;
   margin-top: 40px;
-  margin-left: 15px;
+  margin-left: 10px;
   letter-spacing: 4px;
 }
 
@@ -471,6 +478,27 @@ form {
   100% {
     bottom: 100%;
   }
+}
+
+#states {
+  width: 200px;
+}
+
+#years {
+  width: 100px;
+  
+}
+
+#makes {
+  width: 100px;
+}
+
+#models {
+  width: 100px;
+}
+
+#user-price-range{
+  margin-bottom: 10px;
 }
 
 /* -------------------about EV section--------------------- */
