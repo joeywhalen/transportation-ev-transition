@@ -3,6 +3,7 @@
 * {
   box-sizing: border-box;
   font-family: "Georama", sans-serif;
+  font-weight: bold;
 }
 
 .parallax-one,
@@ -40,12 +41,10 @@ body {
 .main-content {
   display: block;
   width: 100%;
-  height: 100vh;
+  height:100%;
   background-color: white;
   background-image: url("/frontend-spa/images/parallax1-homepage.jpg");
   position: relative;
-  overflow: hidden;
-
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
@@ -54,9 +53,9 @@ body {
 
 .user-vehicle-info {
   width: 80%;
-  margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 120px;
 }
 
 /* ---------------------compare vehicles----------------------- */
@@ -64,7 +63,7 @@ body {
 .compare-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 0.25fr 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   text-align: center;
@@ -79,18 +78,40 @@ body {
 .ev1 {
   grid-area: 2 / 1 / 3 / 2;
   margin: auto;
+  background-color: white;
+  margin-top: 0px;
 }
 .ev2 {
   grid-area: 2 / 2 / 3 / 3;
   margin: auto;
+  background-color: white;
+  margin-top: 0px;
 }
 .ev3 {
   grid-area: 2 / 3 / 3 / 4;
   margin: auto;
+  background-color: white;
+  margin-top: 0px;
 }
 .ev4 {
   grid-area: 2 / 4 / 3 / 5;
   margin: auto;
+  background-color: white;
+  margin-top: 0px;
+}
+
+.compare-stat-one {
+  font-style: normal;
+}
+
+.compare-stat-plus {
+  color: green;
+  font-weight: bolder;
+}
+
+.compare-stat-minus {
+  color: red;
+  font-weight: bolder;
 }
 
 /* ---------------------nav bar----------------------- */
