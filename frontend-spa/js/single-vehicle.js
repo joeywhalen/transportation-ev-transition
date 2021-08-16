@@ -10,6 +10,7 @@ const displaySingleEV = function (ElectricVehicle) {
 
     const body = document.querySelector("body");
     clearChildren(body);
+    window.scrollTo(0, 0);
     body.classList.add("svBody");
     body.append(displayHeader());
     const wrapper = document.createElement("div");
