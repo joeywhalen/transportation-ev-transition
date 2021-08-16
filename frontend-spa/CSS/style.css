@@ -383,7 +383,7 @@ form {
   overflow: hidden;
   transition: 0.5s;
   margin-top: 40px;
-  margin-left: 15px;
+  margin-left: 10px;
   letter-spacing: 4px;
 }
 
@@ -494,6 +494,10 @@ form {
 
 #models {
   width: 100px;
+}
+
+#user-price-range{
+  margin-bottom: 10px;
 }
 
 /* -------------------about EV section--------------------- */
