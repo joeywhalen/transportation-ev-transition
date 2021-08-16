@@ -251,12 +251,12 @@ const genUserVehicleComp = function (userVehicle) {
         comparisonContainer.appendChild(userVehicleElement)
         formContainer.appendChild(comparisonContainer)
 
-        genEVComparison(priceRangeInput.value,userVehicle)
+        genEVComparison(priceRangeInput.value, userVehicle)
     })
 }
 
 
-const genEVComparison = function (priceRange,userVehicle) {
+const genEVComparison = function (priceRange, userVehicle) {
     fetch("http://localhost:8080/api/electricVehicles/compare/" + priceRange, {
             method: 'GET',
             headers: {
@@ -264,12 +264,12 @@ const genEVComparison = function (priceRange,userVehicle) {
             }
         })
         .then(response => response.json())
-        .then(evResponse => displayEVs(evResponse,userVehicle))
+        .then(evResponse => displayEVs(evResponse, userVehicle))
         .catch(error => console.log(error))
 }
 
 
-const displayEVs = function (allEVs,userVehicle) {
+const displayEVs = function (allEVs, userVehicle) {
 
     const mainContent = document.querySelector(".main-content")
     clearChildren(mainContent)
@@ -296,21 +296,25 @@ const displayEVs = function (allEVs,userVehicle) {
     userVehicleTitle.innerHTML = 'Comparing:<br> 2012 Ford F-150'
     userVehicleStatsDiv.appendChild(userVehicleTitle)
 
-    const userVehicleStat = document.createElement("h2")
-    userVehicleStat.innerText = 'MSRP: $' + userVehicle.msrp
-    userVehicleStatsDiv.appendChild(userVehicleStat)
+    const userVehicleMsrp = document.createElement("h2")
+    userVehicleMsrp.innerText = 'MSRP: $' + userVehicle.msrp
+    userVehicleStatsDiv.appendChild(userVehicleMsrp)
+
+    const userVehicleMGP = document.createElement("h2")
+    userVehicleMGP.innerText = 'Avgerage MPG: ' + userVehicle.mpg
+    userVehicleStatsDiv.appendChild(userVehicleMGP)
 
 
     //loop through EVs creating grid items
-    
-    
-    for(let i=1; i<5; i++) {
-    
-    
+
+
+    for (let i = 1; i < 5; i++) {
+
+
         const evDivElement = document.createElement("div")
         evDivElement.classList.add('ev' + i)
         compareGridElement.appendChild(evDivElement)
-        
+
 
         const evTitle = document.createElement("h2")
         evTitle.innerText = allEVs[i].modelName
@@ -318,9 +322,9 @@ const displayEVs = function (allEVs,userVehicle) {
 
 
         const evImageElement = document.createElement("img")
-        evImageElement.setAttribute("id","vehicle1")
+        evImageElement.setAttribute("id", "vehicle1")
         evImageElement.setAttribute("src", allEVs[i].imageUrl)
-        evImageElement.setAttribute("width","100%")
+        evImageElement.setAttribute("width", "100%")
         evDivElement.appendChild(evImageElement)
 
         const paraMsrpElement = document.createElement("p")
@@ -347,31 +351,19 @@ const displayEVs = function (allEVs,userVehicle) {
 
         evDivElement.appendChild(iceMSRP)
 
+        const evMPG = document.createElement("span")
+
+
         evDivElement.appendChild(document.createElement("hr"))
-        
+
         const paraTotalsElement = document.createElement("p")
         evDivElement.appendChild(paraTotalsElement)
-        
+
         const msrpDiffElement = document.createElement("h2")
         paraTotalsElement.appendChild(msrpDiffElement)
         msrpDiffElement.innerText = 'Cost Difference: $' + costDiff
 
-
-
-        
-        
-
     }
-
-
-
-
-
-
-
-
-
-
 
 
     mainContent.appendChild(userVehicleInfoDiv)

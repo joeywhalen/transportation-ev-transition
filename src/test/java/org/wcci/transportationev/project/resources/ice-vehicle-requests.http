@@ -23,5 +23,5 @@ Accept: application/json
 
 //http://localhost:8080/api/ice/userVehicle/" + userYearId + "/" + userMakeId + "/" + userModelId
 ### Get the user's vehicle from the submit button (2012 Ford F-150)
-GET http://localhost:8080/api/ice/userVehicle/150/152/154
+GET http://localhost:8080/api/ice/userVehicle/151/153/155
 Accept: application/json
