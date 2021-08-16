@@ -321,13 +321,6 @@ const displayEVs = function (allEVs, userVehicle,userStateObj,weeklyMiles,userCh
     userWeeklyMiles.innerText = 'Your Annual Gas Cost: $' + yearlyGasCost
     userVehicleStatsDiv.appendChild(userWeeklyMiles)
     
-
-
-    //console.log(userChargeObj)
-    //console.log(userStateObj)
- 
-    
-
     //loop through EVs creating grid items
     for (let i = 1; i < 5; i++) {
 
@@ -370,7 +363,19 @@ const displayEVs = function (allEVs, userVehicle,userStateObj,weeklyMiles,userCh
                         iceMSRP.innerText = '$ ' + msrpCostDiff + ' under your vehicle'
                     }
 
+                                    
                     paraMsrpElement.appendChild(iceMSRP)
+                    let rebateAmount = 0;
+                    const rebate = document.createElement("span")
+                    if (allEVs[i].taxCredit) {
+                        
+                        rebate.innerHTML = '<br>$7,500 Tax Credit Eligible: <img src="./images/check.png" height="15" width="15">'
+                        rebateAmount += 7500
+                    } else {
+                        rebate.innerHTML = '<br>Tax Credit Eligible: <img src="./images/x.png" height="15" width="15">'
+                    }
+
+                    paraMsrpElement.appendChild(rebate)
 
             const evMPGElement = document.createElement("p")
             evDivElement.appendChild(evMPGElement)
@@ -400,10 +405,20 @@ const displayEVs = function (allEVs, userVehicle,userStateObj,weeklyMiles,userCh
 
             const paraTotalsElement = document.createElement("p")
             evDivElement.appendChild(paraTotalsElement)
-
+            
+            //475 per year saved with electric vs gas on maint
+            const totalSavingsPerYear = parseInt(gasSavings + 475)
             const msrpDiffElement = document.createElement("h2")
             paraTotalsElement.appendChild(msrpDiffElement)
-            msrpDiffElement.innerText = 'Cost Difference: $' + msrpCostDiff
+            var totalToRound = (msrpCostDiff - rebateAmount) / totalSavingsPerYear
+            var yearsUntilPayOff = Math.round(totalToRound * 10) / 10
+            if (yearsUntilPayOff > 0) {
+                msrpDiffElement.innerText = 'Years Until Payoff: ' + yearsUntilPayOff
+            } else {
+                msrpDiffElement.innerText = 'Years Until Payoff: INSTANT'
+            }
+
+            console.log(totalSavingsPerYear)
 
     }
 

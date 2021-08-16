@@ -309,6 +309,10 @@ form {
 
 .year-make-model {
   padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .drop-down {
@@ -473,6 +477,23 @@ form {
   100% {
     bottom: 100%;
   }
+}
+
+#states {
+  width: 200px;
+}
+
+#years {
+  width: 100px;
+  
+}
+
+#makes {
+  width: 100px;
+}
+
+#models {
+  width: 100px;
 }
 
 /* -------------------about EV section--------------------- */
