@@ -190,10 +190,10 @@ const genModels = function (models) {
 }
 
 const genUserVehicleComp = function (userVehicle) {
-    
+
     const formH1 = document.querySelector(".form-h1")
     formH1.innerText = "What is your current vehicle lifestyle?"
-    
+
     const formH3 = document.querySelector(".form-h3")
     formH3.innerText = "What is important in your next vehicle?"
 
@@ -251,11 +251,12 @@ const genUserVehicleComp = function (userVehicle) {
         comparisonContainer.appendChild(userVehicleElement)
         formContainer.appendChild(comparisonContainer)
 
-        genEVComparison(priceRangeInput.value)
+        genEVComparison(priceRangeInput.value,userVehicle)
     })
 }
 
-const genEVComparison = function (priceRange) {
+
+const genEVComparison = function (priceRange,userVehicle) {
     fetch("http://localhost:8080/api/electricVehicles/compare/" + priceRange, {
             method: 'GET',
             headers: {
@@ -263,53 +264,115 @@ const genEVComparison = function (priceRange) {
             }
         })
         .then(response => response.json())
-        .then(evResponse => displayEVs(evResponse))
+        .then(evResponse => displayEVs(evResponse,userVehicle))
         .catch(error => console.log(error))
 }
 
 
-const displayEVs = function (allEVs) {
+const displayEVs = function (allEVs,userVehicle) {
 
+    const mainContent = document.querySelector(".main-content")
+    clearChildren(mainContent)
+
+    //generate the user vehicle DIV
+    //this will be appended to main-content DIV
+    const userVehicleInfoDiv = document.createElement("div")
+    userVehicleInfoDiv.classList.add("user-vehicle-info")
+
+    const compareGridElement = document.createElement("div")
+    compareGridElement.classList.add("compare-grid")
+
+    userVehicleInfoDiv.appendChild(compareGridElement)
+
+    const userVehicleElement = document.createElement("div")
+    userVehicleElement.classList.add("user-vehicle")
+    compareGridElement.appendChild(userVehicleElement)
+
+    const userVehicleStatsDiv = document.createElement("div")
+    userVehicleStatsDiv.classList.add("user-vehicle__list-stats")
+    userVehicleElement.appendChild(userVehicleStatsDiv)
+
+    const userVehicleTitle = document.createElement("h1")
+    userVehicleTitle.innerHTML = 'Comparing:<br> 2012 Ford F-150'
+    userVehicleStatsDiv.appendChild(userVehicleTitle)
+
+    const userVehicleStat = document.createElement("h2")
+    userVehicleStat.innerText = 'MSRP: $' + userVehicle.msrp
+    userVehicleStatsDiv.appendChild(userVehicleStat)
+
+
+    //loop through EVs creating grid items
     
+    
+    for(let i=1; i<5; i++) {
+    
+    
+        const evDivElement = document.createElement("div")
+        evDivElement.classList.add('ev' + i)
+        compareGridElement.appendChild(evDivElement)
+        
 
-    allEVs.forEach((evVehicle) => {
-
-
-        const comparisonContainer = document.querySelector(".comparison-container")
-        const evVehicleElement = document.createElement("ul")
-
-        //const evVehicleYear = document.createElement("li")
-        //evVehicleYear.innerText = "Year: " + evVehicle.yearString
-
-        const evVehicleMake = document.createElement("li")
-        evVehicleMake.innerText = "Make: " + evVehicle.makeName
-        evVehicleElement.appendChild(evVehicleMake)
-
-        const evVehicleModel = document.createElement("li")
-        evVehicleModel.innerText = "Model: " + evVehicle.modelName
-        evVehicleElement.appendChild(evVehicleModel)
-
-        const evVehiclePrice = document.createElement("li")
-        evVehiclePrice.innerText = "MSRP: $" + evVehicle.msrp
-        evVehicleElement.appendChild(evVehiclePrice)
-
-        const evVehicleMPGe = document.createElement("li")
-        evVehicleMPGe.innerText = "MPGe: " + evVehicle.mpgE
-        evVehicleElement.appendChild(evVehicleMPGe)
-
-        const evVehicleRange = document.createElement("li")
-        evVehicleRange.innerText = "Range: " + evVehicle.range + " miles"
-        evVehicleElement.appendChild(evVehicleRange)
-
-        const evVehicleMaint = document.createElement("li")
-        evVehicleMaint.innerText = "Yearly Maintenance Cost: $" + evVehicle.yearlyMaintenanceCost
-        evVehicleElement.appendChild(evVehicleMaint)
-
-        evVehicleElement.appendChild(document.createElement("br"))
-
-        comparisonContainer.appendChild(evVehicleElement)
-    })
+        const evTitle = document.createElement("h2")
+        evTitle.innerText = allEVs[i].modelName
+        evDivElement.appendChild(evTitle)
 
 
+        const evImageElement = document.createElement("img")
+        evImageElement.setAttribute("id","vehicle1")
+        evImageElement.setAttribute("src", allEVs[i].imageUrl)
+        evImageElement.setAttribute("width","100%")
+        evDivElement.appendChild(evImageElement)
 
+        const paraMsrpElement = document.createElement("p")
+        evDivElement.appendChild(paraMsrpElement)
+
+        const evMSRP = document.createElement("span")
+        evMSRP.classList.add("compare-stat-one")
+        evMSRP.innerText = 'MSRP: $' + allEVs[i].msrp
+        evDivElement.appendChild(evMSRP)
+
+        evDivElement.appendChild(document.createElement("br"))
+
+        const iceMSRP = document.createElement("span")
+        var costDiff = allEVs[i].msrp - userVehicle.msrp
+        var x = Boolean(costDiff > 0)
+        if (x) {
+            iceMSRP.classList.add("compare-stat-minus")
+            iceMSRP.innerText = '$' + costDiff + ' over your vehicle'
+
+        } else {
+            iceMSRP.classList.add("compare-stat-plus")
+            iceMSRP.innerText = '$ ' + costDiff + ' under your vehicle'
+        }
+
+        evDivElement.appendChild(iceMSRP)
+
+        evDivElement.appendChild(document.createElement("hr"))
+        
+        const paraTotalsElement = document.createElement("p")
+        evDivElement.appendChild(paraTotalsElement)
+        
+        const msrpDiffElement = document.createElement("h2")
+        paraTotalsElement.appendChild(msrpDiffElement)
+        msrpDiffElement.innerText = 'Cost Difference: $' + costDiff
+
+
+
+        
+        
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    mainContent.appendChild(userVehicleInfoDiv)
 }
