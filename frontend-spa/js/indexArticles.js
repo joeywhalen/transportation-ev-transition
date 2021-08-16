@@ -12,15 +12,17 @@ const indexArticles = function (articles) {
     let articleElement = document.createElement("div");
     articleElement.classList.add("article"+articleCount);
     let articleLinkElement = document.createElement("a");
+    articleElement.style.backgroundImage = 'url("'+article.imageUrl+'")'
     let articleTitleElement = document.createElement("h3");
+    
     articleTitleElement.innerText = article.articleTitle;
-    let articleImageElement = document.createElement("img");
-    articleImageElement.src = article.imageUrl;
+    // let articleImageElement = document.createElement("img");
+    // articleImageElement.src = article.imageUrl;
 
-    articleLinkElement.addEventListener("click", (clickEvent) => {
+    articleElement.addEventListener("click", (clickEvent) => {
       displaySingleArticle(article)
     });
-    articleLinkElement.appendChild(articleImageElement);
+    // articleLinkElement.appendChild(articleImageElement);
     articleLinkElement.appendChild(articleTitleElement);
     articleElement.appendChild(articleLinkElement);
     articlesGridElement.appendChild(articleElement);

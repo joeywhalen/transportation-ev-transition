@@ -593,10 +593,15 @@ a {
 .article4:hover {
   cursor: pointer;
 }
-
+.article1 h3,
+.article2 h3,
+.article3 h3,
 .article4 h3,
-.article5 h3 {
+.article5 h3,
+.article6 h3 {
   margin-top: auto;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .article5 {
