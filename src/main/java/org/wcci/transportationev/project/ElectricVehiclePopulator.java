@@ -305,7 +305,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                 ElectricVehicle fordLightning = new ElectricVehicle("Ford", "F-150 Lightning", "Lauren Hynde", "Truck",
                                 42000, true, 725, 230, 75, 4.5, 100, "AWD", 8, 44, 5, true, true, true, 80, 14.1, 5.0,
                                 true,
-                                "./images/24.jpg",
+                                "./images/ev24.jpg",
                                 "https://thumbor.forbes.com/thumbor/fit-in/960x720/https://www.forbes.com/wheels/wp-content/uploads/2021/05/Ford_F-150_Lightning_Gallery13.jpg",
                                 "The all-electric F-150 Lightning has an EPA-estimated range of 230 miles, zero emissions and available Ford Intelligent Backup Power.\n"
                                                 + "\n"
@@ -314,7 +314,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
 
                 ElectricVehicle genesisGEighty = new ElectricVehicle("Genesis", "G80", "Paul Denton", "Sedan", 50000,
                                 true, 725, 310, 90, 4.8, 100, "e-AWD", 9, 22, 5, false, true, false, 13.1, 0, 4.5, true,
-                                "./images/25.jpg",
+                                "./images/ev25.jpg",
                                 "https://cdn.motor1.com/images/mgl/rMMlP/s3/2022-genesis-g80-sport.jpg",
                                 "Luxury upstart Genesis is dipping its toe in the EV waters with an electric version of its G80 sedan for the 2022 model year, which will be called Electrified G80. The Electrified G80 is nearly indistinguishable from the gasoline-powered model inside and out, which is fine by us as we find the car's styling handsome and its cabin lovely. Genesis has not announced many details about the car's powertrain except that all-wheel drive will be standard, and that range should come in around 265 miles per charge.");
                 electricVehicleStorage.saveElectricVehicle(genesisGEighty);
