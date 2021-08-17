@@ -10,15 +10,8 @@ const displayAllTopics = function (ArticleTopics) {
     bodyElement.append(wrapperElement);
 
     ArticleTopics.forEach((ArticleTopic) => {
-        // const parallaxElement = document.createElement("div");
-        // parallaxElement.classList.add("parallax");
-        // parallaxElement.src = ArticleTopic.ArticleTopicParallaxUrl;
-        // parallaxElement.setAttribute("src", ArticleTopic.ArticleTopicParallaxUrl);
-        // parallaxElement.setAttribute("id", ArticleTopic.id);
-        // bodyElement.append(parallaxElement);
         const parallaxImageElement = document.createElement("div");
         parallaxImageElement.classList.add("parallax");
-        // parallaxImageElement.src = ArticleTopic.ArticleTopicParallaxUrl;
         parallaxImageElement.style.backgroundImage = 'url("' + ArticleTopic.articleTopicParallaxUrl + '")';
         parallaxImageElement.setAttribute("id", ArticleTopic.id);
         bodyElement.append(parallaxImageElement);
@@ -56,35 +49,6 @@ const displayAllTopics = function (ArticleTopics) {
         
         })
     })
-
-    // const parralaxOneElement = document.createElement("div");
-    // parralaxOneElement.classList.add("parallax-one");
-    // parralaxOneElement.innerHTML = '<h1 class="text-over-parallax">Why We Should Transition To EVs</h1>'
-    // bodyElement.append(parralaxOneElement);
-
-    // const topicOneElement = document.createElement("div");
-    // topicOneElement.classList.add("topic1");
-    // bodyElement.append(topicOneElement);
-
-    // const articleFlexElement = document.createElement("div");
-    // articleFlexElement.classList.add("articleFlex");
-    // bodyElement.append(articleFlexElement);
-
-    // ArticleTopics.forEach((Article) => {
-    //     const articleElement = document.createElement("div");
-    //     articleElement.classList.add("article");
-    //     articleFlexElement.appendChild(articleElement);
-
-    //     const articleLinkElement = document.createElement("img");
-    //     articleLinkElement.setAttribute("src", Article.imageUrl);
-    //     articleLinkElement.setAttribute("id", Article.id);
-    //     articleFlexElement.appendChild(articleLinkElement);
-
-    //     const articleTitleElement = document.createElement("p");
-    //     articleTitleElement.innerText = Article.articleTitle;
-    //     articleFlexElement.appendChild(articleTitleElement);
-        
-    // })
 }
 export {
     displayAllTopics
@@ -149,30 +113,3 @@ export {
 //     </div>
 //    </div>
 //  </body>
-
-// // const displayTopicOneArticles = function (articleTopic) {
-// const displayAllTopics = function (articleTopic) {    
-//     const mainElement = document.querySelector(".article-flex");
-//     clearChildren(mainElement);
-//     articleTopic.forEach((article) => {
-//         let articleElement = document.createElement("div");
-//         articleElement.classList.add("btn-section");
-//         let articleTitleElement = document.createElement("p");
-//         articleTitleElement.innerText = article.articleTitle;
-//         let articleLinkElement = document.createElement("a");
-//         let articleImageElement = document.createElement("img");
-//         articleImageElement.src = article.imageUrl;
-
-//         articleLinkElement.addEventListener("click", (clickEvent) => {
-//             displayArticle(article)
-//         });
-//         articleLinkElement.appendChild(articleImageElement);
-//         articleElement.appendChild(articleTitleElement);
-//         articleElement.appendChild(articleLinkElement);
-//         mainElement.appendChild(articleElement);
-//     });
-//     return mainElement;
-// }
-// export {
-//     displayAllTopics
-// }
