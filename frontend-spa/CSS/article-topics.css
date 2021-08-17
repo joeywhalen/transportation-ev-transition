@@ -5,7 +5,7 @@
     font-weight: bold;
 }
 
-.parallax, .parallax-two, .parallax-three{
+.parallax{
     height: 100vh; 
     background-attachment: fixed;
     background-position:center center;
