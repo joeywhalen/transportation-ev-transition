@@ -1,4 +1,5 @@
 import { displayArticle } from "./displayArticle.js";
+import { contactsModal } from "./modal.js";
 
 
 const displayAllTopics = function (ArticleTopics) {
@@ -56,6 +57,9 @@ const displayAllTopics = function (ArticleTopics) {
         
         })
     })
+
+
+    contactsModal();
 
     // const parralaxOneElement = document.createElement("div");
     // parralaxOneElement.classList.add("parallax-one");

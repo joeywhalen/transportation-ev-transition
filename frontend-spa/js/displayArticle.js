@@ -1,5 +1,6 @@
 import { displayAllTopics } from "./articleTopics.js";
 import { displayHeader } from "./Header.js";
+import { contactsModal } from "./modal.js";
 
 const clearChildren = function (element) {
     while (element.firstChild) {
@@ -97,7 +98,7 @@ const displayArticle = function (article) {
     })
 
     mainElement.appendChild(articleElement);
-
+    contactsModal();
     return mainElement;
 }
 export {
