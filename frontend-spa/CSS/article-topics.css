@@ -31,6 +31,7 @@
     border-radius: 20px;
     margin: auto;
     display: block;
+    padding-bottom: 10px;
 }
 
 .article img:hover{
