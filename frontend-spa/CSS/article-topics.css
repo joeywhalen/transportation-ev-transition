@@ -13,7 +13,7 @@
     background-size: cover;
 }
 
-/* .parallax{
+.parallax{
     background-image: url("/frontend-spa/images/topic1-parallax.png");
 }
 
@@ -23,7 +23,7 @@
 
 .parallax-three{
     background-image: url("/frontend-spa/images/topic3-parallax.jpg");
-} */
+}
 
 .article img{
     height: 300px;

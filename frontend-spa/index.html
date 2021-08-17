@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/frontend-spa/CSS/style.css" />
+    <link rel="stylesheet" href="/frontend-spa/CSS/single-article.css"/>
     <title>EV Transition</title>
 </head>
 
@@ -13,174 +14,187 @@
 
     <div class="wrapper">
 
-     <header class="header-container">
+        <header class="header-container">
 
-    <div class="header">
-        <ul>
-            <li class="website-title">
-                <h1>Compar<span>EV</span></h1>
-            </li>
-        </ul>
-    </div>
-    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
-    <label for="openSidebarMenu" class="sidebarIconToggle">
-      <div class="spinner diagonal part-1"></div>
-      <div class="spinner horizontal"></div>
-      <div class="spinner diagonal part-2"></div>
-    </label>
-    <div id="sidebarMenu">
-      <ul class="sidebarMenuInner">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./all-evs.html">Vehicles</a></li>
-        <li><a href="./all-article-topics.html">Articles</a></li>
-
-        <!-- trigger/open the modal -->
-        <li id="myBtn"><a>Contacts</a></li>
-
-            <!-- the modal -->
-            <div id="myModal" class="modal">
-                
-                <!-- modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <li><a href="https://adambundschuh.github.io/">Adam Bundschuh</a></li>
-                    <li><a href="http://georgefought.github.io/">George Fought</a></li>
-                    <li><a href="https://joeywhalen.github.io/ProfessionalPortfolio/">Joey Whalen</a></li>
-                    <li><a href="https://micaeladiloreto.github.io/index.html">Micaela DiLoreto</a></li>
-                    <li><a href="https://nyirenkyi17.github.io">Nana Yirenkyi</a></li>
-                    <li><a href="">Jorge Herrera</a></li>  
-                </div>
-
+            <div class="header">
+                <ul>
+                    <li class="website-title">
+                        <h1>Compar<span>EV</span></h1>
+                    </li>
+                </ul>
             </div>
+            <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+            <label for="openSidebarMenu" class="sidebarIconToggle">
+                <div class="spinner diagonal part-1"></div>
+                <div class="spinner horizontal"></div>
+                <div class="spinner diagonal part-2"></div>
+            </label>
+            <div id="sidebarMenu">
+                <ul class="sidebarMenuInner">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./all-evs.html">Vehicles</a></li>
+                    <li><a href="./all-article-topics.html">Articles</a></li>
 
-            
+                    <!-- trigger/open the modal -->
+                    <li id="myBtn"><a>Contacts</a></li>
 
-      </ul>
-    </div>
-    
-</header> 
+                    <!-- the modal -->
+                    <div id="myModal" class="modal">
 
-
-    <div class="main-content">
-    <div class="parallax-one">
-
-        <div class="top-section">
-
-            <div class="form-box">
-                <h1>Is switching to electric right for you? Let's find out.</h1>
-                <h3>What do you currently drive?</h3>
-                
-                <div class="form-container">
-                <form>
-                
-                    <div class="year-make-model">
-
-                        <select class ="drop-down" id="states" name="states">
-                            <option value="----">----</option>
-                        </select>
-                        <!-- <input type="hidden" id="userYear" name="userYear" value="187"> -->
-                        
-                        <br><br>
-                        
-                        <select class="drop-down" id="years" name="years">
-                            <option value="----">----</option>
-
-                        </select>
-
-                        <select class="drop-down" id="makes" name="makes">
-                            <option value="----">----</option>
-                            
-                        </select>
-
-                        <select class="drop-down" id="models" name="models">
-                            <option value="----">----</option>
-                        </select>
+                        <!-- modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <li><a href="https://adambundschuh.github.io/">Adam Bundschuh</a></li>
+                            <li><a href="http://georgefought.github.io/">George Fought</a></li>
+                            <li><a href="https://joeywhalen.github.io/ProfessionalPortfolio/">Joey Whalen</a></li>
+                            <li><a href="https://micaeladiloreto.github.io/index.html">Micaela DiLoreto</a></li>
+                            <li><a href="https://nyirenkyi17.github.io">Nana Yirenkyi</a></li>
+                            <li><a href="">Jorge Herrera</a></li>
+                        </div>
 
                     </div>
-                    
-                    <a class="user-form-submit-button">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        Submit
-                    </a>
-                    
-                </form>
+
+
+
+                </ul>
             </div>
 
-            </div>
-        </div>
-    </div> 
-    
-     <div class="about-section">
-
-        <div class="about-ev">
-            <p>
-                Electric vihicles(EVs) have a battery instead of a tank, an electric motor instead of a gasoline
-                tank, and an electric motor instead of an internal combustion engine. Plug-in hybrid electric vehicles
-                (PHEVs) are a combination of gasoline and electric vehicles, so they have a battery, an electric motor,
-                a gasoline tank, and an internal combustion engine. PHEVs use both gasoline and electricity as fuel
-                sources.
-            </p>
-            <hr>
-        </div>
-    </div>
-
-</div> 
-
-    <div class="parallax-two"></div>
-
-    <div class="article-section">
-        
-        <div class="rectangle">
-            <p class="articles-title">Articles</p>
-        </div> 
+        </header>
 
 
-        <div class="articles-wrapper">
-            <div class="articles-grid">
-              <div class="article1">
-                  <a href="/frontend-spa/single-article-prototype.html">
-                    <h3>This is an article</h3>
-                    <p>You can find all kinds of car related things here.</p>
-                 </a>
-              </div>
-              <div class="article2">
-                  <a href="/frontend-spa/single-article-prototype.html">
-                     <h3>This is also an article</h3>
-                     <p>blah blah blah blah</p>
-                 </a>
-              </div>
-              <div class="article3">
-                  <a href="/frontend-spa/single-article-prototype.html">
-                    <h3>Cars are really cool</h3>
-                    <p>blahhhhhhhhhhh</p>
-                 </a>
-              </div>
-              <div class="article4">
-                  <a href="/frontend-spa/single-article-prototype.html">
-                    <h3>i love cars</h3>
-                    <p>i really..... love cars </p>
-                </a>
-              </div>
-              <div class="article5">
-                  <a href="/frontend-spa/single-article-prototype.html">
-                    <h3>This is another article</h3>
-                    <p>car stuff</p>
-                 </a>
-            </div>
-              <div class="article6">
-                  <a href="/frontend-spa/single-article-prototype.html">
-                    <p>cars cars cars cars carrrrs </p>
-                 </a>
+        <div class="main-content">
+            <div class="parallax-one">
+
+                <div class="top-section">
+
+                    <div class="form-box">
+                        <h1 class="form-h1">Is switching to electric right for you? Let's find out.</h1>
+                        <h3 class="form-h3">What do you currently drive?</h3>
+
+                        <div class="form-container">
+
+
+                            <form>
+
+                                <div class="year-make-model">
+
+                                    <div class="year__dropdown">
+                                        <select class="drop-down" id="states" name="states">
+                                            <option value="----">----</option>
+                                        </select>
+
+                                        <br><br>
+                                    </div>
+
+                                    <div class="vehicle__dropdown">
+                                        <select class="drop-down" id="years" name="years">
+                                            <option value="----">----</option>
+
+                                        </select>
+
+                                        <select class="drop-down" id="makes" name="makes">
+                                            <option value="----">----</option>
+
+                                        </select>
+
+                                        <select class="drop-down" id="models" name="models">
+                                            <option value="----">----</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="vehicle__submit-button">
+                                        <a class="user-form-submit-button">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            Submit
+                                        </a>
+                                    </div>
+
+                                </div>
+
+
+
+                            </form>
+                            
+                        </div>
+
+                    </div>
                 </div>
             </div>
+
+            <div class="about-section">
+
+                <div class="about-ev">
+                    <p>
+                        Electric vihicles(EVs) have a battery instead of a tank, an electric motor instead of a gasoline
+                        tank, and an electric motor instead of an internal combustion engine. Plug-in hybrid electric
+                        vehicles
+                        (PHEVs) are a combination of gasoline and electric vehicles, so they have a battery, an electric
+                        motor,
+                        a gasoline tank, and an internal combustion engine. PHEVs use both gasoline and electricity as
+                        fuel
+                        sources.
+                    </p>
+                    <hr>
+                </div>
             </div>
 
         </div>
-    
-    </body>
+
+        <div class="parallax-two"></div>
+
+        <div class="article-section">
+
+            <div class="rectangle">
+                <p class="articles-title">Articles</p>
+            </div>
+
+
+            <div class="articles-wrapper">
+                <div class="articles-grid">
+                    <div class="article1">
+                        <a href="/frontend-spa/single-article-prototype.html">
+                            <h3>This is an article</h3>
+                            <p>You can find all kinds of car related things here.</p>
+                        </a>
+                    </div>
+                    <div class="article2">
+                        <a href="/frontend-spa/single-article-prototype.html">
+                            <h3>This is also an article</h3>
+                            <p>blah blah blah blah</p>
+                        </a>
+                    </div>
+                    <div class="article3">
+                        <a href="/frontend-spa/single-article-prototype.html">
+                            <h3>Cars are really cool</h3>
+                            <p>blahhhhhhhhhhh</p>
+                        </a>
+                    </div>
+                    <div class="article4">
+                        <a href="/frontend-spa/single-article-prototype.html">
+                            <h3>i love cars</h3>
+                            <p>i really..... love cars </p>
+                        </a>
+                    </div>
+                    <div class="article5">
+                        <a href="/frontend-spa/single-article-prototype.html">
+                            <h3>This is another article</h3>
+                            <p>car stuff</p>
+                        </a>
+                    </div>
+                    <div class="article6">
+                        <a href="/frontend-spa/single-article-prototype.html">
+                            <p>cars cars cars cars carrrrs </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+</body>
 
 
 
