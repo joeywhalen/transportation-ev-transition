@@ -170,7 +170,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                 ElectricVehicle polestarTwo = new ElectricVehicle("Polestar", "Two", "Ray Nicolette", "Crossover",
                                 59900, true, 725, 233, 92, 4.5, 127, "AWD", 8, 47, 5, false, true, true, 14.3, 1.23,
                                 5.0, true,
-                                "https://www.gannett-cdn.com/presto/2020/08/20/PDTF/636d94b2-68d6-424b-ada2-21103a7057f7-IMG_3086.JPG?crop=3504,1971,x15,y0&width=3200&height=1800&format=pjpg&auto=webp",
+                                "./images/ev11.jpg",
                                 "https://i.insider.com/5f36af5fe89ebf001f04496b?width=1136&format=jpeg",
                                 "One of the most complete electric cars money can buy. Superb build quality, and decent to drive.\n"
                                                 + "\n"
@@ -182,7 +182,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                 ElectricVehicle porscheTaycan = new ElectricVehicle("Porsche", "Taycan", "Elle Driver", "Sedan", 103800,
                                 true, 725, 200, 69, 3.4, 155, "RWD", 12, 15, 4, false, true, true, 12.9, 2.8, 5.0,
                                 false,
-                                "https://www.motortrend.com/uploads/sites/5/2021/01/2021_Porsche_Taycan_2.jpeg?fit=around%7C875:492.1875",
+                                "./images/ev12.jpg",
                                 "https://i.insider.com/5f36af5fe89ebf001f04496b?width=1136&format=jpeg",
                                 "Highs: Incredible and repeatable acceleration, drives a lot like a Porsche sports car, can charge quickly.\n"
                                                 + "\n"
@@ -193,7 +193,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
 
                 ElectricVehicle teslaThree = new ElectricVehicle("Tesla", "Model 3 SR+", "Aldo Raine", "Sedan", 39900,
                                 false, 725, 263, 133, 5.3, 140, "RWD", 5.5, 21, 5, true, true, true, 18, 5, 5.0, true,
-                                "https://upload.wikimedia.org/wikipedia/commons/9/91/2019_Tesla_Model_3_Performance_AWD_Front.jpg",
+                                "./images/ev13.jpg",
                                 "https://cdn.mos.cms.futurecdn.net/yX7odtjFCfE9fZZpDtsda6.jpg",
                                 "Tesla Model 3 Standard Range +  There are four main versions of the Model 3 -- the standard Model 3, the SR+, the Long Range, and the Model 3 Performance.\n"
                                                 + "\n"
@@ -207,7 +207,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                 ElectricVehicle teslaSPlaid = new ElectricVehicle("Tesla", "Model S Plaid", "Bridget Von Hammersmark",
                                 "Sedan", 129990, false, 725, 396, 101, 1.99, 200, "AWD", 6.5, 27, 5, true, true, true,
                                 25, 3, 5.0, true, "https://i.insider.com/605ce29e106eb50019d05a89?width=700",
-                                "https://motoring.pxcrush.net/motoring/general/editorial/tesla-model-s-2021.jpg?width=1024",
+                                "./images/ev14.jpg",
                                 "With the longest range and quickest acceleration of any electric vehicle in production, Model S Plaid is the highest performing sedan ever built.\n"
                                                 + "\n"
                                                 + "With up to 412-miles of estimated driving range—depending upon model—the S can easily be used for long drives, and the 1020-hp Plaid version can deliver supercar acceleration while seating four adults. The Model S is also practical, with a large rear cargo area and a secondary front-trunk for extra space.");
@@ -215,7 +215,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
 
                 ElectricVehicle teslaX = new ElectricVehicle("Tesla", "Model X LR", "Calvin Candie", "Crossover", 94990,
                                 false, 725, 360, 96, 3.8, 155, "AWD", 12, 22, 7, true, true, true, 83, 5, 5.0, true,
-                                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2021-01-27-at-6-16-08-pm-1611789398.png?crop=0.534xw:0.691xh;0.234xw,0.110xh&resize=640:*",
+                                "./images/ev15.jpg",
                                 "https://i.guim.co.uk/img/media/202f28f9d64bcbf12340369c1dfc91c306bc3d49/122_245_1666_999/master/1666.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=c80bca7e348e480a531673976412f90c",
                                 "Tesla Model X – The Tesla Model X is a 'premium' electric vehicle delivered at a premium price. Tesla's low profit margin, lower fuel cost, greater comfort, low cost vehicle manufacturing facilities and low mass production prices have propelled it to the top of US electric vehicle sales in 2021. Its low cost to ownership (LEOV) system has resulted in its high end, affordable Model X being considered the single most affordable luxury electric vehicle crossover under construction for the electric vehicles market.\n"
                                                 + "\n"
@@ -224,7 +224,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
 
                 ElectricVehicle teslaY = new ElectricVehicle("Tesla", "Model Y LR", "Marquis Warren", "Crossover",
                                 53990, false, 725, 326, 121, 4.8, 135, "AWD", 10, 40, 5, true, true, true, 71, 5, 5.0,
-                                true, "https://www.tesla.com/assets/img/my_fb_s.jpg",
+                                true, "./images/ev16.jpg",
                                 "https://cdn.motor1.com/images/mgl/Bjw4A/s1/tesla-model-y.jpg",
                                 "Tesla Model Y: 'To Buy, or Not to Buy?\n" + "\n"
                                                 + "But there's way more than just a simple answer to the question of whether to buy or not to buy a Tesla Model Y, and to do that, you need to consider what is already possible here. It's easy to see why this is: Tesla has a much more sophisticated and ambitious plan to drive the market. But what's less obvious is just when — because if the Model Y, like most things, is priced so high, that is, until Tesla is forced to sell you a new Model 3, it'll be just fine.\n"
@@ -235,7 +235,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                 ElectricVehicle volksIdFour = new ElectricVehicle("Volkswagen", "ID.4", "Chris Mannix", "Crossover",
                                 44495, true, 725, 250, 99, 5.7, 112, "AWD", 7.5, 38, 5, false, true, true, 30, 0, 4.5,
                                 false,
-                                "https://techcrunch.com/wp-content/uploads/2021/03/vw-Large-12562-2021ID.4ProSwithGradientPackage.jpg?w=730&crop=1",
+                                "./images/ev17.jpg",
                                 "https://cdn.vox-cdn.com/thumbor/xR4t-SjdEMKcIjFPcVQgBLOYVk0=/0x0:1080x809/1200x800/filters:focal(454x319:626x491)/cdn.vox-cdn.com/uploads/chorus_image/image/67274209/VW_ID4_Uncovered_2_copy.0.jpg",
                                 "Superbly designed well balanced EV at a good price. Loving the white steering wheel, roomy interior, good acceleration (yes, not as good as a Tesla), and adequate handling.\n"
                                                 + "\n"
@@ -244,7 +244,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
 
                 ElectricVehicle volvoXcForty = new ElectricVehicle("Volvo", "XC40 Recharge", "Joe Gage", "Crossover",
                                 53990, true, 725, 208, 80, 4.3, 112, "AWD", 11, 40, 5, false, true, true, 20, 5, 5.0,
-                                true, "https://cdn.motor1.com/images/mgl/A8zbL/s1/volvo-xc40-recharge-2020.webp",
+                                true, "./images/ev18.jpg",
                                 "https://assets.volvocars.com/au/~/media/australia/images/blog-i-roll/2020/july/xc40_recharge_plug-in_hybrid---main-image950x497.jpg?h=497&la=en-AU&mw=950&w=950",
                                 "The First Fully Electric Compact Luxury SUV To Win A Top Safety Pick Plus Award. Pure Electric. Setting A New Industry Benchmark In Safety.\n"
                                                 + "\n"
@@ -253,7 +253,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
 
                 ElectricVehicle audiA6Etron = new ElectricVehicle("Audi", "A6 e-tron", "Minnie Mink", "Sedan", 80000,
                                 true, 725, 400, 80, 5.1, 125, "AWD", 10, 30, 5, false, true, false, 29.5, 3, 4.5, false,
-                                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/audi-a6-e-tron-concept-113-1618585274.jpg?crop=0.739xw:0.494xh;0.0369xw,0.346xh&resize=1200:*",
+                                "./images/ev19.jpg",
                                 "https://assets.newatlas.com/dims4/default/d8067d3/2147483647/strip/true/crop/974x649+37+105/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F82%2Fe9%2Fa4b5bf1141f29737e05d03ae7345%2Fscreen-shot-2021-04-19-at-7.39.34%20PM.png",
                                 "The A6 e-tron is a sleek sedan with all of the brand's cutting-edge technology. Audi says it's targeting a driving range of more than 400 miles per charge.\n"
                                                 + "\n"
@@ -264,7 +264,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
 
                 ElectricVehicle bmwIFour = new ElectricVehicle("BMW", "I4", "Patrick Bateman", "Sedan", 56395, true,
                                 725, 300, 90, 5.7, 118, "RWD", 8.75, 30, 5, false, true, true, 16.6, 0, 4.5, true,
-                                "https://www.cnet.com/a/img/-fC9r7EA4SUrpAJVm211h2aGZ7I=/940x0/2020/02/28/4f5e69fe-2497-494c-b738-24f864561236/bmw-i4-concept-003.jpg",
+                                "./images/ev20.jpg",
                                 "https://evglobe.com/wp-content/uploads/2020/09/bmw-i4-m-electric-1700x956.jpg",
                                 "Silent acceleration, perfected engineering, and seating for five make this a sporty all-electric alternative.\n"
                                                 + "\n"
@@ -275,7 +275,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
 
                 ElectricVehicle bmwIX = new ElectricVehicle("BMW", "IX", "Timothy Bryce", "Crossover", 84194, true, 725,
                                 300, 85, 4.6, 124, "AWD", 11, 35, 5, false, true, true, 27.4, 0, 4.5, true,
-                                "https://cdn.motor1.com/images/mgl/Kj0qM/s1/bmw-ix.jpg",
+                                "./images/ev21.jpg",
                                 "https://cdn.vox-cdn.com/thumbor/VuSodeasyFU7eraSHHxeV7tYVE0=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22551750/P90422118_highRes.jpg",
                                 "The BMW iX sets a new standard for sustainable luxury in electric SUVs.  The iX is a midsize luxury SUV that's about the same size as the 2021 BMW X5. It seats five in its roomy, airy, and tech-laden cabin. Special attention was used to create the interior with sustainable materials, including some that contain recycled materials.\n"
                                                 + "\n"
@@ -285,7 +285,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                 ElectricVehicle bollingerBTwo = new ElectricVehicle("Bollinger", "B2", "Paul Allen", "Truck", 125000,
                                 true, 725, 200, 70, 4.5, 100, "AWD", 10, 75, 4, false, false, false, 86, 8.0, 4.0,
                                 false,
-                                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bollinger-b2-201-1607721643.jpg",
+                                "./images/ev22.jpg",
                                 "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bollinger-b2-3-4-front-1569523201.jpg",
                                 "Bollinger: Reinventing trucks not just electrifying them. The most durable, practical electric trucks on the planet. No screens. No plastic. Just truck.\n"
                                                 + "\n"
@@ -295,7 +295,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                 ElectricVehicle caddyLyriq = new ElectricVehicle("Cadillac", "Lyriq", "Sean Bateman", "Crossover",
                                 59995, true, 725, 300, 80, 4.3, 130, "RWD", 6, 35, 7, true, true, true, 12.6, 0, 4.5,
                                 false,
-                                "https://i0.wp.com/electrek.co/wp-content/uploads/sites/3/2021/04/Cadillac-Lyriq-2.jpg?ssl=1",
+                                "./images/ev23.jpg",
                                 "https://www.motortrend.com/uploads/sites/5/2020/08/2023-Cadillac-Lyriq-8.jpg?fit=around%7C875:492",
                                 "Meet the Cadillac LYRIQ. An EV that inspires its driver to charge forward to a greater purpose—with every sublime detail.\n"
                                                 + "\n"
@@ -305,7 +305,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                 ElectricVehicle fordLightning = new ElectricVehicle("Ford", "F-150 Lightning", "Lauren Hynde", "Truck",
                                 42000, true, 725, 230, 75, 4.5, 100, "AWD", 8, 44, 5, true, true, true, 80, 14.1, 5.0,
                                 true,
-                                "https://cdn.motor1.com/images/mgl/3yeZp/s1/2022-ford-f-150-lightning-side-view.webp",
+                                "./images/24.jpg",
                                 "https://thumbor.forbes.com/thumbor/fit-in/960x720/https://www.forbes.com/wheels/wp-content/uploads/2021/05/Ford_F-150_Lightning_Gallery13.jpg",
                                 "The all-electric F-150 Lightning has an EPA-estimated range of 230 miles, zero emissions and available Ford Intelligent Backup Power.\n"
                                                 + "\n"
@@ -314,7 +314,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
 
                 ElectricVehicle genesisGEighty = new ElectricVehicle("Genesis", "G80", "Paul Denton", "Sedan", 50000,
                                 true, 725, 310, 90, 4.8, 100, "e-AWD", 9, 22, 5, false, true, false, 13.1, 0, 4.5, true,
-                                "https://www.motortrend.com/uploads/sites/5/2020/03/2021-Genesis-G80-4.jpg",
+                                "./images/25.jpg",
                                 "https://cdn.motor1.com/images/mgl/rMMlP/s3/2022-genesis-g80-sport.jpg",
                                 "Luxury upstart Genesis is dipping its toe in the EV waters with an electric version of its G80 sedan for the 2022 model year, which will be called Electrified G80. The Electrified G80 is nearly indistinguishable from the gasoline-powered model inside and out, which is fine by us as we find the car's styling handsome and its cabin lovely. Genesis has not announced many details about the car's powertrain except that all-wheel drive will be standard, and that range should come in around 265 miles per charge.");
                 electricVehicleStorage.saveElectricVehicle(genesisGEighty);
