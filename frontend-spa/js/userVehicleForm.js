@@ -419,7 +419,7 @@ const displayEVs = function (allEVs, userVehicle, userStateObj, weeklyMiles, use
             console.log(allEVs[i])
             clickEvent.preventDefault;
             
-            displayComparedEV(allEVs[i])
+            displayComparedEV(allEVs[i],allEVs, userVehicle, userStateObj, weeklyMiles, userChargeObj)
 
         })
 
@@ -439,7 +439,7 @@ const displayEVs = function (allEVs, userVehicle, userStateObj, weeklyMiles, use
 }
 
 
-const displayComparedEV = function (ElectricVehicle) {
+const displayComparedEV = function (ElectricVehicle,allEVs, userVehicle, userStateObj, weeklyMiles, userChargeObj) {
 
     const body = document.querySelector("body");
     clearChildren(body);
