@@ -16,7 +16,6 @@ import {
 
 
 
-
 // All EVs -----------------------------------------------
 
 const body = document.querySelector(".body")
