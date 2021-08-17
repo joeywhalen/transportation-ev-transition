@@ -1,4 +1,11 @@
-import{indexArticles} from "./indexArticles.js"
+import {
+    indexArticles
+} from "./indexArticles.js"
+
+import {displayHeader} from "./Header.js"
+
+
+
 
 fetch("http://localhost:8080/api/ice/states")
     .then(response => response.json())
@@ -20,9 +27,8 @@ const mainContent = document.querySelector(".main-content")
 const formContainer = document.querySelector(".form-container")
 const topSection = document.querySelector(".top-section")
 const stateSelectElement = document.querySelector("#states")
-
 const yearSelectElement = document.querySelector("#years")
-// yearSelectElement.value = 2012
+
 
 
 const makeSelectElement = document.querySelector("#makes")
@@ -48,24 +54,15 @@ submitButton.addEventListener("click", () => {
     const userMakeId = makeSelectElement.getElementsByClassName("make-option")[userMakeIndex].getAttribute("id")
     const userModelId = modelSelectElement.getElementsByClassName("model-option")[userModelIndex].getAttribute("id")
 
-    //console.log(yearSelectElement.getElementsByClassName("year-option")[userYearIndex].getAttribute("id"))
-    //console.log(makeSelectElement.getElementsByClassName("make-option")[userMakeIndex].getAttribute("id"))
-    //console.log(modelSelectElement.getElementsByClassName("model-option")[userModelIndex].getAttribute("id"))
-    //console.log(stateSelectElement.getElementsByClassName("state-option")[userStateIndex].getAttribute("id"))
-
     fetch("http://localhost:8080/api/ice/userVehicle/" + userStateId, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(response => response.json())
-    .then(userState => userStateObj = userState)
-    .catch(error => console.log(error))
-
-    
- 
-
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(userState => userStateObj = userState)
+        .catch(error => console.log(error))
 
     // http://localhost:8080/api/ice/userVehicle/{year}/{make}/{model}
     fetch("http://localhost:8080/api/ice/userVehicle/" + userYearId + "/" + userMakeId + "/" + userModelId, {
@@ -75,10 +72,8 @@ submitButton.addEventListener("click", () => {
             }
         })
         .then(response => response.json())
-        .then(userVehicle => genUserVehicleComp(userVehicle,userStateObj))
+        .then(userVehicle => genUserVehicleComp(userVehicle, userStateObj))
         .catch(error => console.log(error))
-
-
 
 })
 
@@ -131,8 +126,6 @@ const genYears = function (years) {
             .then(makes => genMakes(makes))
             .catch(error => console.log(error))
 
-        // const textUpdate = document.querySelector(".test-year")
-        // textUpdate.innerText = "User selected year: " + yearSelectElement.value
 
     })
 }
@@ -168,9 +161,6 @@ const genMakes = function (makes) {
             .then(models => genModels(models))
             .catch(error => console.log(error))
 
-        // const textUpdate = document.querySelector(".test-make")
-        // textUpdate.innerText = "User selected make: " + makeSelectElement.value
-
     })
 }
 
@@ -194,12 +184,11 @@ const genModels = function (models) {
 
     modelSelectElement.addEventListener("change", () => {
 
-        // const textUpdate = document.querySelector(".test-model")
-        // textUpdate.innerText = "User selected model: " + modelSelectElement.value
+
     })
 }
 
-const genUserVehicleComp = function (userVehicle,userStateObj) {
+const genUserVehicleComp = function (userVehicle, userStateObj) {
 
     const formH1 = document.querySelector(".form-h1")
     formH1.innerText = "What is your current vehicle lifestyle?"
@@ -218,10 +207,10 @@ const genUserVehicleComp = function (userVehicle,userStateObj) {
     priceRangeInput.setAttribute("placeholder", "Price Range")
 
     const weeklyMilesInput = document.createElement("input")
-    weeklyMilesInput.setAttribute("type","text")
+    weeklyMilesInput.setAttribute("type", "text")
     weeklyMilesInput.setAttribute("id", "user-weekly-miles")
     weeklyMilesInput.setAttribute("name", "user-weekly-miles")
-    weeklyMilesInput.setAttribute("placeholder","Miles Driven Weekly")
+    weeklyMilesInput.setAttribute("placeholder", "Miles Driven Weekly")
 
     const lifestyleSubmit = document.createElement("a")
     lifestyleSubmit.classList.add("lifestyle-submit-button")
@@ -240,7 +229,7 @@ const genUserVehicleComp = function (userVehicle,userStateObj) {
     formContainer.appendChild(lifestyleForm)
 
     lifestyleSubmit.addEventListener("click", () => {
-        
+
         clearChildren(formContainer)
         genEVComparison(priceRangeInput.value, userVehicle, userStateObj, weeklyMilesInput.value)
     })
@@ -248,20 +237,20 @@ const genUserVehicleComp = function (userVehicle,userStateObj) {
 
 
 const genEVComparison = function (priceRange, userVehicle, userStateObj, weeklyMiles) {
-    
+
     console.log("http://localhost:8080/api/ev/charge/" + stateSelectElement.value)
-    
+
     fetch("http://localhost:8080/api/ev/charge/" + stateSelectElement.value, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(response => response.json())
-    .then(returned => userChargeObj = returned)
-    .catch(error => console.log(error))
-    
-    
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(returned => userChargeObj = returned)
+        .catch(error => console.log(error))
+
+
     fetch("http://localhost:8080/api/electricVehicles/compare/" + priceRange, {
             method: 'GET',
             headers: {
@@ -274,7 +263,7 @@ const genEVComparison = function (priceRange, userVehicle, userStateObj, weeklyM
 }
 
 
-const displayEVs = function (allEVs, userVehicle,userStateObj,weeklyMiles,userChargeObj) {
+const displayEVs = function (allEVs, userVehicle, userStateObj, weeklyMiles, userChargeObj) {
 
     const mainContent = document.querySelector(".main-content")
     clearChildren(mainContent)
@@ -316,11 +305,11 @@ const displayEVs = function (allEVs, userVehicle,userStateObj,weeklyMiles,userCh
     const galPerMonth = (weeklyMiles / userVehicle.mpg) * 4
     const monthlyGasCost = parseInt(galPerMonth * userStateObj.pricePerGal)
     const yearlyGasCost = monthlyGasCost * 12
-    
+
     const userWeeklyMiles = document.createElement("h2")
     userWeeklyMiles.innerText = 'Your Annual Gas Cost: $' + yearlyGasCost
     userVehicleStatsDiv.appendChild(userWeeklyMiles)
-    
+
     //loop through EVs creating grid items
     for (let i = 1; i < 5; i++) {
 
@@ -330,101 +319,391 @@ const displayEVs = function (allEVs, userVehicle,userStateObj,weeklyMiles,userCh
         compareGridElement.appendChild(evDivElement)
 
 
-            const evTitle = document.createElement("h2")
-            evTitle.innerText = allEVs[i].modelName
-            evDivElement.appendChild(evTitle)
+        const evTitle = document.createElement("h2")
+        evTitle.innerText = allEVs[i].modelName
+        evDivElement.appendChild(evTitle)
 
 
-            const evImageElement = document.createElement("img")
-            evImageElement.setAttribute("id", "vehicle1")
-            evImageElement.setAttribute("src", allEVs[i].imageUrl)
-            evImageElement.setAttribute("width", "100%")
-            evDivElement.appendChild(evImageElement)
+        const evImageElement = document.createElement("img")
+        evImageElement.setAttribute("id", "vehicle1")
+        evImageElement.setAttribute("src", allEVs[i].imageUrl)
+        evImageElement.setAttribute("width", "100%")
+        evDivElement.appendChild(evImageElement)
 
-            const paraMsrpElement = document.createElement("p")
-            evDivElement.appendChild(paraMsrpElement)
+        const paraMsrpElement = document.createElement("p")
+        evDivElement.appendChild(paraMsrpElement)
 
-                    const evMSRP = document.createElement("span")
-                    evMSRP.classList.add("compare-stat-one")
-                    evMSRP.innerText = 'MSRP: $' + allEVs[i].msrp
-                    paraMsrpElement.appendChild(evMSRP)
+        const evMSRP = document.createElement("span")
+        evMSRP.classList.add("compare-stat-one")
+        evMSRP.innerText = 'MSRP: $' + allEVs[i].msrp
+        paraMsrpElement.appendChild(evMSRP)
 
-                    paraMsrpElement.appendChild(document.createElement("br"))
+        paraMsrpElement.appendChild(document.createElement("br"))
 
-                    const iceMSRP = document.createElement("span")
-                    var msrpCostDiff = allEVs[i].msrp - userVehicle.msrp
-                    var isMsrpNeg = Boolean(msrpCostDiff > 0)
-                    if (isMsrpNeg) {
-                        iceMSRP.classList.add("compare-stat-minus")
-                        iceMSRP.innerText = '$' + msrpCostDiff + ' over your vehicle'
+        const iceMSRP = document.createElement("span")
+        var msrpCostDiff = allEVs[i].msrp - userVehicle.msrp
+        var isMsrpNeg = Boolean(msrpCostDiff > 0)
+        if (isMsrpNeg) {
+            iceMSRP.classList.add("compare-stat-minus")
+            iceMSRP.innerText = '$' + msrpCostDiff + ' over your vehicle'
 
-                    } else {
-                        iceMSRP.classList.add("compare-stat-plus")
-                        iceMSRP.innerText = '$ ' + msrpCostDiff + ' under your vehicle'
-                    }
+        } else {
+            iceMSRP.classList.add("compare-stat-plus")
+            iceMSRP.innerText = '$ ' + msrpCostDiff + ' under your vehicle'
+        }
 
-                                    
-                    paraMsrpElement.appendChild(iceMSRP)
-                    let rebateAmount = 0;
-                    const rebate = document.createElement("span")
-                    if (allEVs[i].taxCredit) {
-                        
-                        rebate.innerHTML = '<br>$7,500 Tax Credit Eligible: <img src="./images/check.png" height="15" width="15">'
-                        rebateAmount += 7500
-                    } else {
-                        rebate.innerHTML = '<br>Tax Credit Eligible: <img src="./images/x.png" height="15" width="15">'
-                    }
 
-                    paraMsrpElement.appendChild(rebate)
+        paraMsrpElement.appendChild(iceMSRP)
+        let rebateAmount = 0;
+        const rebate = document.createElement("span")
+        if (allEVs[i].taxCredit) {
 
-            const evMPGElement = document.createElement("p")
-            evDivElement.appendChild(evMPGElement)
-                    
-                    const evRange = parseInt(allEVs[i].range)
-                    const userYearlyMiles = weeklyMiles * 52
-                    const numOfChargesPerYear = userYearlyMiles / evRange
-                    const chargeCost = numOfChargesPerYear * userChargeObj.costPerHomeCharge
+            rebate.innerHTML = '<br>$7,500 Tax Credit Eligible: <img src="./images/check.png" height="15" width="15">'
+            rebateAmount += 7500
+        } else {
+            rebate.innerHTML = '<br>Tax Credit Eligible: <img src="./images/x.png" height="15" width="15">'
+        }
+
+        paraMsrpElement.appendChild(rebate)
+
+        const evMPGElement = document.createElement("p")
+        evDivElement.appendChild(evMPGElement)
+
+        const evRange = parseInt(allEVs[i].range)
+        const userYearlyMiles = weeklyMiles * 52
+        const numOfChargesPerYear = userYearlyMiles / evRange
+        const chargeCost = numOfChargesPerYear * userChargeObj.costPerHomeCharge
+
+
+        const evMPG = document.createElement("span")
+        evMPG.classList.add("compare-stat-one")
+        evMPG.innerText = 'Yearly Charge Costs: $' + Math.round(chargeCost)
+        evMPGElement.appendChild(evMPG)
+
+        evMPGElement.appendChild(document.createElement("br"))
+
+        const gasSavings = yearlyGasCost - chargeCost
+        const iceMPG = document.createElement("span")
+        iceMPG.classList.add("compare-stat-plus")
+        iceMPG.innerText = 'You would save $' + Math.round(gasSavings) + ' per year'
+        evMPGElement.appendChild(iceMPG)
+
+
+
+        evDivElement.appendChild(document.createElement("hr"))
+
+        const paraTotalsElement = document.createElement("p")
+        evDivElement.appendChild(paraTotalsElement)
+
+        //475 per year saved with electric vs gas on maint
+        const totalSavingsPerYear = parseInt(gasSavings + 475)
+        const msrpDiffElement = document.createElement("h2")
+        paraTotalsElement.appendChild(msrpDiffElement)
+        var totalToRound = (msrpCostDiff - rebateAmount) / totalSavingsPerYear
+        var yearsUntilPayOff = Math.round(totalToRound * 10) / 10
+        if (yearsUntilPayOff > 0) {
+            msrpDiffElement.innerText = 'Years Until Payoff: ' + yearsUntilPayOff
+        } else {
+            msrpDiffElement.innerText = 'Years Until Payoff: INSTANT'
+        }
+
+
+        const compareExploreButton = document.createElement("button");
+        compareExploreButton.classList.add("compare-explore-button");
+        compareExploreButton.innerText = "Explore"
+        evDivElement.appendChild(compareExploreButton);
+
+        compareExploreButton.addEventListener("click", (clickEvent) => {
             
+            console.log("EV being passed:")
+            console.log(allEVs[i])
+            clickEvent.preventDefault;
             
-                    const evMPG = document.createElement("span")
-                    evMPG.classList.add("compare-stat-one")
-                    evMPG.innerText = 'Yearly Charge Costs: $' + Math.round(chargeCost)
-                    evMPGElement.appendChild(evMPG)
+            displayComparedEV(allEVs[i],allEVs, userVehicle, userStateObj, weeklyMiles, userChargeObj)
 
-                    evMPGElement.appendChild(document.createElement("br"))
-
-                    const gasSavings = yearlyGasCost - chargeCost
-                    const iceMPG = document.createElement("span")
-                    iceMPG.classList.add("compare-stat-plus")
-                    iceMPG.innerText = 'You would save $' + Math.round(gasSavings) + ' per year'
-                    evMPGElement.appendChild(iceMPG)
-
-
-            
-            evDivElement.appendChild(document.createElement("hr"))
-
-            const paraTotalsElement = document.createElement("p")
-            evDivElement.appendChild(paraTotalsElement)
-            
-            //475 per year saved with electric vs gas on maint
-            const totalSavingsPerYear = parseInt(gasSavings + 475)
-            const msrpDiffElement = document.createElement("h2")
-            paraTotalsElement.appendChild(msrpDiffElement)
-            var totalToRound = (msrpCostDiff - rebateAmount) / totalSavingsPerYear
-            var yearsUntilPayOff = Math.round(totalToRound * 10) / 10
-            if (yearsUntilPayOff > 0) {
-                msrpDiffElement.innerText = 'Years Until Payoff: ' + yearsUntilPayOff
-            } else {
-                msrpDiffElement.innerText = 'Years Until Payoff: INSTANT'
-            }
-
-            console.log(totalSavingsPerYear)
+        })
 
     }
 
-
-
     mainContent.appendChild(userVehicleInfoDiv)
+
+    // const aboutReinsert = document.createElement("div")
+    // aboutReinsert.classList.add("about-section")
+    // aboutReinsert.style.height = "100px"
+    // mainContent.appendChild(aboutReinsert)
+
+    const toRemove = document.querySelector(".article-section")
+    toRemove.remove()
+    const toRemoveTwo = document.querySelector(".parallax-two")
+    toRemoveTwo.remove()
+}
+
+
+const displayComparedEV = function (ElectricVehicle,allEVs, userVehicle, userStateObj, weeklyMiles, userChargeObj) {
+
+    const body = document.querySelector("body");
+    clearChildren(body);
+    window.scrollTo(0, 0);
+
+    body.classList.add("svBody");
+    body.append(displayHeader());
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("wrapper");
+    body.append(wrapper);
+
+    // ----------------------car image section-------------------------
+
+    const mainElement = document.createElement("div");
+    mainElement.classList.add("main-content");
+    
+    body.append(mainElement);
+    const carImage = document.createElement("div");
+    carImage.classList.add("car-image");
+    // carImage.style.backgroundImage = 'url("http://127.0.0.1:5500/frontend-spa/images/JDPA_2020%20Hyundai%20Kona%20Ultimate%20White%20Front%20View.webp")';
+    carImage.style.backgroundImage = 'url("' + ElectricVehicle.imageUrl + '")';
+    carImage.style.color = 'rgb(255,255,255)';
+    carImage.style.height = '100vh';
+    carImage.style.backgroundAttachment = 'fixed';
+    carImage.style.backgroundPosition = 'center center';
+    carImage.style.backgroundRepeat = 'no-repeat';
+    carImage.style.backgroundSize = 'cover';
+    carImage.style.position = 'relative';
+    carImage.style.marginTop = '3.2%';
+
+    // carImage.setAttribute("background-image", ElectricVehicle.imageUrl);
+    mainElement.append(carImage);
+
+    const imageText = document.createElement("div");
+    imageText.classList.add("car-image-text");
+    carImage.append(imageText);
+
+    // const backToResults = document.createElement("div");
+    // backToResults.classList.add("back-to-results");
+    // backToResults.innerHTML = '<a href="/frontend-spa/all-evs.html"><h5 id="back"><i class="arrow"></i>Back to Results</h5></a>';
+    // imageText.append(backToResults);
+
+    const carMake = document.createElement("div");
+    carMake.classList.add("car-make");
+    carMake.innerText = ElectricVehicle.makeName;
+    imageText.append(carMake);
+
+    const carModel = document.createElement("div");
+    carModel.classList.add("car-model");
+    carModel.innerText = ElectricVehicle.modelName;
+    imageText.append(carModel);
+
+    const carPrice = document.createElement("div");
+    carPrice.classList.add("car-price");
+    carPrice.innerText = ElectricVehicle.msrp;
+    imageText.append(carPrice);
+
+    const carMileage = document.createElement("div");
+    carMileage.classList.add("car-mileage");
+    carMileage.innerText = ElectricVehicle.mpgE;
+    imageText.append(carMileage);
+
+    // ---------------------white details section-------------------------
+
+    const detailsSection = document.createElement("div");
+    detailsSection.classList.add("details-section");
+    detailsSection.style.backgroundColor = "white"
+    
+    detailsSection.style.margin = 0
+    mainElement.append(detailsSection);
+
+    const detailsTitle = document.createElement("div");
+    detailsSection.innerHTML = '<h1 class="vehicle-details-title">Vehicle Details</h1>';
+    detailsSection.append(detailsTitle);
+
+    const centerOne = document.createElement("center");
+    centerOne.innerHTML = '<div id="colored-rectangle"></div>';
+    detailsSection.prepend(centerOne);
+
+    // basic info section -----------
+
+    const basicInfoSection = document.createElement("div");
+    basicInfoSection.classList.add("basic-info-section");
+    basicInfoSection.innerHTML = '<h5 class="basic-info-title">Basic Information</h5>';
+    detailsSection.append(basicInfoSection);
+
+    const basicInfoText = document.createElement("ul");
+    basicInfoText.classList.add("basic-info-text");
+    basicInfoSection.append(basicInfoText);
+
+    const makeElement = document.createElement("li");
+    makeElement.innerText = ElectricVehicle.makeName;
+    basicInfoText.append(makeElement);
+
+    const modelElement = document.createElement("li");
+    modelElement.innerText = ElectricVehicle.modelName;
+    basicInfoText.append(modelElement);
+
+    const rangeElement4 = document.createElement("li");
+    rangeElement4.innerText = "Range: " + ElectricVehicle.range + " miles";
+    basicInfoText.append(rangeElement4);
+
+    const mpgEElement = document.createElement("li");
+    mpgEElement.innerText = "MPGe: " + ElectricVehicle.mpgE;
+    basicInfoText.append(mpgEElement);
+
+    const zeroElement = document.createElement("li");
+    zeroElement.innerText = "0 - 60: " + ElectricVehicle.zeroToSixty + " seconds";
+    basicInfoText.append(zeroElement);
+
+    const topSpeedElement = document.createElement("li");
+    topSpeedElement.innerText = "Top speed: " + ElectricVehicle.topSpeed + " mph";
+    basicInfoText.append(topSpeedElement);
+
+    const driveElement = document.createElement("li");
+    driveElement.innerText = "Drive: " + ElectricVehicle.wheelDrive;
+    basicInfoText.append(driveElement);
+
+    const homeChargeElement = document.createElement("li");
+    homeChargeElement.innerText = "Home charging: " + ElectricVehicle.homeCharge + " hours";
+    basicInfoText.append(homeChargeElement);
+
+    const travelChargeElement = document.createElement("li");
+    travelChargeElement.innerText = "Travel charging (10% - 80%): " + ElectricVehicle.travelCharge + " minutes";
+    basicInfoText.append(travelChargeElement);
+
+    const autonomousElement = document.createElement("li");
+    autonomousElement.innerText = "Autonomous?: " + ElectricVehicle.autonomous;
+    basicInfoText.append(autonomousElement);
+
+    const nhtsaElement = document.createElement("li");
+    nhtsaElement.innerText = "NHTSA Rating: " + ElectricVehicle.safetyRating + "/5";
+    basicInfoText.append(nhtsaElement);
+
+    const phoneKeyElement = document.createElement("li");
+    phoneKeyElement.innerText = "Phone as key?: " + ElectricVehicle.phoneKey;
+    basicInfoText.append(phoneKeyElement);
+
+    // standard equipment section -----------
+
+    const centerTwo = document.createElement("center");
+    centerTwo.innerHTML = '<div id="colored-rectangle"></div>';
+    detailsSection.append(centerTwo);
+
+    const standardEquipSection = document.createElement("div");
+    standardEquipSection.classList.add("standard-equip-section");
+    standardEquipSection.innerHTML = '<h5 class="standard-equip-title">Standard Equipment</h5>';
+    detailsSection.append(standardEquipSection);
+
+    const standardEquipText = document.createElement("ul");
+    standardEquipText.classList.add("standrd-equip-text");
+    standardEquipSection.append(standardEquipText);
+
+    const seatingItem = document.createElement("li");
+    seatingItem.innerText = "Seating: " + ElectricVehicle.seating + " adults";
+    standardEquipText.append(seatingItem);
+
+    const driverAssistItem = document.createElement("li");
+    driverAssistItem.innerText = "Driver assist?: " + ElectricVehicle.driverAssist;
+    standardEquipText.append(driverAssistItem);
+
+    const freeOtaItem = document.createElement("li");
+    freeOtaItem.innerText = "Free Over the Air Updates?: " + ElectricVehicle.freeOtaUpdate;
+    standardEquipText.append(freeOtaItem);
+
+    const rearCargoItem = document.createElement("li");
+    rearCargoItem.innerText = "Rear Cargo Area: " + ElectricVehicle.rearCargoSpace + " cu. in.";
+    standardEquipText.append(rearCargoItem);
+
+    const frunkItem = document.createElement("li");
+    frunkItem.innerText = "Frunk Cargo Area: " + ElectricVehicle.frunkSpace + " cu. in.";
+    standardEquipText.append(frunkItem);
+
+    // price details section -------------
+
+    const centerThree = document.createElement("center");
+    centerThree.innerHTML = '<div id="colored-rectangle"></div>';
+    detailsSection.append(centerThree);
+
+    const priceDetailsSection = document.createElement("div");
+    priceDetailsSection.classList.add("price-details-section");
+    priceDetailsSection.innerHTML = '<h5 class="price-details-title">Price Details</h5>';
+    detailsSection.append(priceDetailsSection);
+
+    const priceDetailsText = document.createElement("ul");
+    priceDetailsText.classList.add("price-details-text");
+    priceDetailsSection.append(priceDetailsText);
+
+    const msrpElement = document.createElement("li");
+    msrpElement.innerText = "MSRP: $" + ElectricVehicle.msrp;
+    priceDetailsText.append(msrpElement);
+
+    const taxCreditElement = document.createElement("li");
+    taxCreditElement.innerText = "Eligible for $7500 Federal Tax Credit?: " + ElectricVehicle.taxCredit;
+    priceDetailsText.append(taxCreditElement);
+
+    const maintCostElement = document.createElement("li");
+    maintCostElement.innerText = "Average Annual Maintenance Cost: $" + ElectricVehicle.yearlyMaintenanceCost;
+    priceDetailsText.append(maintCostElement);
+
+    const centerFour = document.createElement("center");
+    centerFour.innerHTML = '<div id="colored-rectangle"></div>';
+    maintCostElement.append(centerFour);
+
+    const reviewCommentLineElement = document.createElement("hr");
+    reviewCommentLineElement.classList.add("single-vehicle-line");
+    priceDetailsText.append(reviewCommentLineElement);
+    const reviewCommentsNotationElement = document.createElement("review-comments");
+    reviewCommentsNotationElement.classList.add("review-comments-notation");
+    reviewCommentsNotationElement.innerText = "Comments: ";
+    reviewCommentLineElement.append(reviewCommentsNotationElement);
+
+    if (ElectricVehicle.reviewComments !== null && ElectricVehicle.reviewComments.length !== 0) {
+        ElectricVehicle.reviewComments.forEach((reviewComment) => {
+            let reviewCommentsElement = document.createElement("section");
+            reviewCommentsElement.classList.add("review-comments-section");
+            let singleReviewCommentElement = document.createElement("p");
+            singleReviewCommentElement.innerText = reviewComment;
+            reviewCommentsElement.appendChild(singleReviewCommentElement);
+            priceDetailsText.appendChild(reviewCommentsElement);
+        });
+    }
+
+    const form = document.createElement("form");
+    form.classList.add("new-comment-form");
+    const reviewCommentInput = document.createElement("input");
+    reviewCommentInput.setAttribute("type", "text");
+    reviewCommentInput.setAttribute("placeholder", "Enter your comment...");
+    const submitReviewCommentButton = document.createElement("button");
+    submitReviewCommentButton.classList.add("comment-button");
+    submitReviewCommentButton.innerText = "Submit a comment";
+
+
+    form.appendChild(reviewCommentInput);
+    form.appendChild(submitReviewCommentButton);
+    priceDetailsText.appendChild(form);
+
+    submitReviewCommentButton.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        // const wrapperElement = document.querySelector("wrapper");
+        clearChildren(body);
+        if (reviewCommentInput.value !== "") {
+            const json = JSON.stringify(reviewCommentInput.value);
+            const unqoutedJson = json.replace(/\"/g, "");
+            fetch("http://localhost:8080/api/electricVehicles/" + ElectricVehicle.id + "/comments", {
+                    method: "PATCH",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: unqoutedJson
+                })
+                .then(response => response.json())
+                .then(ElectricVehicle => displaySingleEV(ElectricVehicle))
+                .catch(error => console.log(error));
+        }
+    })
+    
+    
+    body.appendChild(mainElement);
+
+
+
+    return body;
+
 }
 
 fetch("http://localhost:8080/api/articles")
@@ -432,5 +711,6 @@ fetch("http://localhost:8080/api/articles")
     .then(articles => indexArticles(articles))
     .catch(error => console.log(error))
 
-export {clearChildren}
-
+export {
+    clearChildren
+}

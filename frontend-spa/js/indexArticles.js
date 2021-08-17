@@ -1,5 +1,6 @@
 import { clearChildren } from "./userVehicleForm.js";
 import { displayHeader } from "./Header.js";
+import { contactsModal } from "./modal.js";
 
 
 const indexArticles = function (articles) {
@@ -29,10 +30,13 @@ const indexArticles = function (articles) {
     articleCount++;
   });
 
+  
+  contactsModal();
   // return articlesGridElement;
 }
 
 const displaySingleArticle = function (article) {
+    //contactsModal()
     const bodyElement = document.querySelector("body");
     clearChildren(bodyElement);
     window.scrollTo(0, 0);
@@ -120,6 +124,8 @@ const displaySingleArticle = function (article) {
     })
 
     mainElement.appendChild(articleElement);
+
+    contactsModal();
 }
 
 export {indexArticles}
