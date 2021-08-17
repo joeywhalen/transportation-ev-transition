@@ -197,8 +197,6 @@ const genModels = function (models) {
         // const textUpdate = document.querySelector(".test-model")
         // textUpdate.innerText = "User selected model: " + modelSelectElement.value
     })
-
-
 }
 
 const genUserVehicleComp = function (userVehicle,userStateObj) {

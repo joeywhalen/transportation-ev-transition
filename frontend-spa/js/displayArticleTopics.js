@@ -1,5 +1,3 @@
-// import { displayArticle } from "./displayArticle.js";
-
 const displayAllTopics = function (ArticleTopics) {
 
     const bodyElement = document.querySelector("body");
