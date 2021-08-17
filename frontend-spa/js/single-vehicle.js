@@ -153,6 +153,7 @@ const displaySingleEV = function (ElectricVehicle) {
 
     const standardEquipText = document.createElement("ul");
     standardEquipText.classList.add("standrd-equip-text");
+    standardEquipText.style.listStyleType = 'none';
     standardEquipSection.append(standardEquipText);
 
     const seatingItem = document.createElement("li");
