@@ -29,6 +29,8 @@
     height: 300px;
     width:500px;
     border-radius: 20px;
+    margin: auto;
+    display: block;
 }
 
 .article img:hover{
@@ -88,6 +90,10 @@ p{
   color: #fff;
   margin: 0%;
   text-decoration: none;
+  text-align: center;
+}
+.articleTitle{
+  max-width: 550px;
   text-align: center;
 }
 
@@ -285,3 +291,4 @@ p{
   .article-comments-section p {
     color: black;
   }
+  
