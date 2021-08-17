@@ -59,12 +59,12 @@ const displaySingleEV = function (ElectricVehicle) {
 
     const carPrice = document.createElement("div");
     carPrice.classList.add("car-price");
-    carPrice.innerText = ElectricVehicle.msrp;
+    carPrice.innerText = "$" + ElectricVehicle.msrp;
     imageText.append(carPrice);
 
     const carMileage = document.createElement("div");
     carMileage.classList.add("car-mileage");
-    carMileage.innerText = ElectricVehicle.mpgE;
+    carMileage.innerText = "MPGe: " + ElectricVehicle.mpgE;
     imageText.append(carMileage);
 
     // ---------------------white details section-------------------------
