@@ -61,12 +61,12 @@ const displaySingleEV = function (ElectricVehicle) {
 
     const carPrice = document.createElement("div");
     carPrice.classList.add("car-price");
-    carPrice.innerText = ElectricVehicle.msrp;
+    carPrice.innerText = "$" + ElectricVehicle.msrp;
     imageText.append(carPrice);
 
     const carMileage = document.createElement("div");
     carMileage.classList.add("car-mileage");
-    carMileage.innerText = ElectricVehicle.mpgE;
+    carMileage.innerText = "MPGe: " + ElectricVehicle.mpgE;
     imageText.append(carMileage);
 
     // ---------------------white details section-------------------------
@@ -155,6 +155,7 @@ const displaySingleEV = function (ElectricVehicle) {
 
     const standardEquipText = document.createElement("ul");
     standardEquipText.classList.add("standrd-equip-text");
+    standardEquipText.style.listStyleType = 'none';
     standardEquipSection.append(standardEquipText);
 
     const seatingItem = document.createElement("li");

@@ -5,7 +5,7 @@
     font-weight: bold;
 }
 
-.parallax, .parallax-two, .parallax-three{
+.parallax{
     height: 100vh; 
     background-attachment: fixed;
     background-position:center center;
@@ -13,7 +13,7 @@
     background-size: cover;
 }
 
-.parallax{
+/* .parallax-one{
     background-image: url("/frontend-spa/images/topic1-parallax.png");
 }
 
@@ -23,12 +23,15 @@
 
 .parallax-three{
     background-image: url("/frontend-spa/images/topic3-parallax.jpg");
-}
+} */
 
 .article img{
     height: 300px;
     width:500px;
     border-radius: 20px;
+    margin: auto;
+    display: block;
+    padding-bottom: 10px;
 }
 
 .article img:hover{
@@ -38,15 +41,21 @@
 
 .text-over-parallax{
     margin: 0;
-    padding: 40px;
+    padding: 10px;
     font-size: 60px;
     text-shadow: 2px 2px white;
+    text-align: center;
     /* border: 1px solid white; */
-    background-color: rgba(0, 0, 0, 0.61);
-
+    /* background-color: transparent; */
+    /* background-image: linear-gradient(to right, rgb(250, 116, 26), rgb(128,176,85), black);   */
+    background-color: black;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    
 }
 
-.topic1{
+
+
+.topic {
   height:500px;
   background-color:rgb(0, 0, 0);
   font-size:36px;
@@ -82,6 +91,10 @@ p{
   color: #fff;
   margin: 0%;
   text-decoration: none;
+  text-align: center;
+}
+.articleTitle{
+  max-width: 550px;
   text-align: center;
 }
 
@@ -279,3 +292,4 @@ p{
   .article-comments-section p {
     color: black;
   }
+  
