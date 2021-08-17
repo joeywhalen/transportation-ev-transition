@@ -1,4 +1,5 @@
 import { displaySingleEV } from "./single-vehicle.js";
+import { contactsModal } from "./modal.js";
 
 const displayAllVehicles = function (ElectricVehicles) {
 
@@ -60,6 +61,8 @@ const displayAllVehicles = function (ElectricVehicles) {
 
 
     })
+
+    contactsModal();
 
 }
 
