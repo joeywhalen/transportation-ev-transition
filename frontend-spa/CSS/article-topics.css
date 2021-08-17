@@ -5,7 +5,7 @@
     font-weight: bold;
 }
 
-.parallax-one, .parallax-two, .parallax-three{
+.parallax, .parallax-two, .parallax-three{
     height: 100vh; 
     background-attachment: fixed;
     background-position:center center;
@@ -13,7 +13,7 @@
     background-size: cover;
 }
 
-.parallax-one{
+/* .parallax-one{
     background-image: url("/frontend-spa/images/topic1-parallax.png");
 }
 
@@ -23,7 +23,7 @@
 
 .parallax-three{
     background-image: url("/frontend-spa/images/topic3-parallax.jpg");
-}
+} */
 
 .article img{
     height: 300px;

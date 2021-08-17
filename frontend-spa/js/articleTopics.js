@@ -10,18 +10,18 @@ const displayAllTopics = function (ArticleTopics) {
     bodyElement.append(wrapperElement);
 
     ArticleTopics.forEach((ArticleTopic) => {
-        const parallaxElement = document.createElement("div");
-        parallaxElement.classList.add("parallax");
+        // const parallaxElement = document.createElement("div");
+        // parallaxElement.classList.add("parallax");
         // parallaxElement.src = ArticleTopic.ArticleTopicParallaxUrl;
         // parallaxElement.setAttribute("src", ArticleTopic.ArticleTopicParallaxUrl);
         // parallaxElement.setAttribute("id", ArticleTopic.id);
-        bodyElement.append(parallaxElement);
-        const parallaxImageElement = document.createElement("img");
+        // bodyElement.append(parallaxElement);
+        const parallaxImageElement = document.createElement("div");
         parallaxImageElement.classList.add("parallax");
         // parallaxImageElement.src = ArticleTopic.ArticleTopicParallaxUrl;
-        parallaxImageElement.setAttribute("src", ArticleTopic.articleTopicParallaxUrl);
+        parallaxImageElement.style.backgroundImage = 'url("' + ArticleTopic.articleTopicParallaxUrl + '")';
         parallaxImageElement.setAttribute("id", ArticleTopic.id);
-        parallaxElement.append(parallaxImageElement);
+        bodyElement.append(parallaxImageElement);
 
         const parallaxTextElement = document.createElement("h1");
         parallaxTextElement.classList.add("text-over-parallax");
@@ -29,7 +29,7 @@ const displayAllTopics = function (ArticleTopics) {
         bodyElement.append(parallaxTextElement);
 
         const topicElement = document.createElement("div");
-        topicElement.classList.add("topic1");
+        topicElement.classList.add("topic");
         bodyElement.append(topicElement);
 
         const articleFlexElement = document.createElement("div");
