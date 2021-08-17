@@ -21,7 +21,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                 ElectricVehicle audiETronSB = new ElectricVehicle("Audi", "e-tron Sportback", "Cliff Booth", "Sedan",
                                 69100, true, 725, 218, 77, 5.5, 118, "AWD", 10, 30, 5, false, true, false, 27.2, 3, 4.5,
                                 false,
-                                "https://www.motortrend.com/uploads/sites/5/2019/11/2020-Audi-E-Tron-Sportback-11.jpg?fit=around%7C875:492",
+                                "./images/ev01.jpg",
                                 "https://www.cnet.com/a/img/jF9XjA7gNJLQQo9ivIG6zEno4Qo=/2019/11/19/efbb58b4-bc42-46c6-8142-16ff002fd12d/ogi-audi-e-tron-sportback-2020-ogi.jpg",
                                 "2021 Audi e-tron sportback electric vehicle. The new model features standard EPA and CE certification.\n"
                                                 + "\n"
@@ -40,7 +40,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                 ElectricVehicle chevyBolt = new ElectricVehicle("Chevrolet", "Bolt", "Mia Wallace", "Crossover", 37500,
                                 false, 725, 247, 120, 7.0, 93, "FWD", 7.5, 60, 5, true, true, false, 16.6, 0, 5.0,
                                 false,
-                                "https://media.chevrolet.com/dld/content/dam/Media/images/US/Vehicles/Concepts/Chevrolet/BoltEV/Product/2015-Chevrolet-BoltEV-Concept-exterior-001.jpg",
+                                "./images/ev02.jpg",
                                 "https://media.chevrolet.com/content/Pages/news/us/en/2021/feb/0214-boltev-bolteuv/_jcr_content/top_parsys/image.img.jpg/1613335646777.jpg",
                                 "2022 Chevrolet Bolt – A new engine and new wheels are all the rage in the Chevrolet Bolt, bringing a new class of SUV for the next generation and the only place in the market where all that is new is the Chevrolet Bolt.\n"
                                                 + "\n" + "And it comes with a new, $39,000 msrp.\n" + "\n"
@@ -56,7 +56,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                 ElectricVehicle fordMustang = new ElectricVehicle("Ford", "Mustang Mach-E Select (eAWD)",
                                 "Vincent Vega", "Crossover", 42895, true, 725, 211, 90, 5.2, 130, "e-AWD", 14, 52, 5,
                                 false, true, true, 29.7, 4.7, 5.0, true,
-                                "https://www.ford.com/ntzlibs/content/dam/bev/us/november-2020-updates/21_FRD_MCH_50700_GTP.jpg.renditions.original.png",
+                                "./images/ev03.jpg",
                                 "https://media.ford.com/content/fordmedia/fna/us/en/products/evs/mustang-mach-e/mustang-mach-e/jcr:content/content/media-section-parsys/textimage_f597/image.img.951.535.jpg/1608221793793.jpg",
                                 "2021 Ford Mustang Mach E, All electric vehicle with 9.7-inch display.\n" + "\n"
                                                 + "These small and well equipped Ford Mustang Mach E are equipped with a unique design and all-new electric engine. Each Ford Mustang Mach E with the powertrain comes with the latest Ford Mustang technology including Ford-developed electric motors capable of producing a fully automatic transmission. In addition to the powerful torque at 100-to 20,000 RPM, Ford Mustang Mach E features automatic drive, electronically-configurable engine and more horsepower. Also, in addition to the powertrain, the Ford Mustang Mach E also comes equipped with automatic torque converter, which enhances smooth driving for those with different driving tastes.\n"
@@ -66,7 +66,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
 
                 ElectricVehicle hyundaiIoniq = new ElectricVehicle("Hyundai", "Ioniq", "Joe Cabot", "Sedan", 33245,
                                 true, 725, 170, 133, 10, 102, "FWD", 5.8, 60, 5, false, true, false, 23, 0, 4.0, false,
-                                "https://ev-database.org/img/auto/Hyundai_IONIQ_Electric_2020/Hyundai_IONIQ_Electric_2020-01.jpg",
+                                "./images/ev04.jpg",
                                 "https://media.ed.edmunds-media.com/hyundai/ioniq-hybrid/2020/oem/2020_hyundai_ioniq-hybrid_4dr-hatchback_limited_fq_oem_1_1600.jpg",
                                 "2021 Hyundai Ioniq electric vehicle\n" + "\n"
                                                 + "I have been a Hyundai Ioniq owner since 2001. I work with a car of every type, including a Kia i8, i8 Premium model, and I have made one new car during the past 11 years or so. Here are some tips for your Toyota or Lowe's dealership that I know of, and would recommend to a Toyota owner:\n"
@@ -90,7 +90,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                 ElectricVehicle hyundaiKona = new ElectricVehicle("Hyundai", "Kona", "Alabama Whitman", "Crossover",
                                 37900, true, 725, 258, 120, 6.4, 96, "FWD", 9, 54, 5, false, true, false, 19.2, 0, 5.0,
                                 false,
-                                "https://cdn.jdpower.com/JDPA_2020%20Hyundai%20Kona%20Ultimate%20White%20Front%20View.jpg",
+                                "./images/ev05.jpg",
                                 "https://cdn.motor1.com/images/mgl/qz7Eg/s1/hyundai-kona-electric-restyling-2021.webp",
                                 "Among hybrid and electric SUVs, the Hyundai Kona Electric offers great driving range and swift acceleration.  It provides punchy performance from its 201-horsepower electric motor and can go more than 250 miles before recharging.\n"
                                                 + "\n"
@@ -102,7 +102,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                 ElectricVehicle jaguarIpace = new ElectricVehicle("Jaguar", "I-Pace", "Mallory Knox", "Crossover",
                                 69900, true, 725, 234, 76, 4.5, 124, "AWD", 10.2, 90, 5, false, true, true, 23.2, 1.0,
                                 5.0, false,
-                                "https://electrek.co/wp-content/uploads/sites/3/2019/01/Jaguar-I-Pace-hero-e1547961480245.jpg?quality=82&strip=all",
+                                "./images/ev06.jpg",
                                 "https://cdn.motor1.com/images/mgl/qvVZR/s1/jaguar-i-pace-lo-show-di-presentazione-dalle-19-del-1-marzo.jpg",
                                 "2021 Jaguar I-Pace electric vehicle\n" + "\n" + "The best of the best of the best\n"
                                                 + "\n" + "The biggest problem I'm trying to solve\n" + "\n"
@@ -123,7 +123,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
 
                 ElectricVehicle kiaNiro = new ElectricVehicle("Kia", "Niro", "Seth Gecko", "Crossover", 39090, true,
                                 725, 239, 112, 6.5, 103, "FWD", 9.5, 60, 5, false, true, false, 18.5, 0, 5.0, false,
-                                "https://www.kia.com/us/en/vehicles/niro-plug-in-hybrid/2021/_jcr_content/root/responsivegrid/mediatext.coreimg.100.1400.jpeg/1616531623780.jpeg",
+                                "./images/ev07.jpg",
                                 "https://electrek.co/wp-content/uploads/sites/3/2021/06/2021-Kia-Niro-EV.jpg?quality=82&strip=all",
                                 "2021 Kia Niro Electric vehicle. The Niro is a smart-chargable electric vehicle that combines electrical power, lithium ion batteries, and electrical surge storage with remote charging. It is powered by electric motor and is equipped with the latest generation of lithium-ion batteries. It's designed to be ready to walk in to anywhere in the United States within two years, and can then be transported on rail to its destination in less than a month. The Niro is available with a range of 300 kilometers from a factory in the Bay Area to Alaska.\n"
                                                 + "\n" + "About the Niro Motorsports\n" + "\n"
@@ -132,7 +132,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
 
                 ElectricVehicle lucidAir = new ElectricVehicle("Lucid", "Air Touring", "Kate Fuller", "Sedan", 87500,
                                 true, 725, 406, 100, 3.2, 168, "AWD", 6, 20, 5, false, true, true, 26.1, 9.9, 4.5, true,
-                                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/lucid-air-103-1599688020.jpg?crop=0.652xw:0.733xh;0.104xw,0.0769xh&resize=640:*",
+                                "./images/ev08.jpg",
                                 "https://i.ytimg.com/vi/X0f0LuA6Qvk/maxresdefault.jpg",
                                 "Overheating Earth, meet the 2021 Lucid Air, the newest electric vehicle to join Tesla in the green fleet of luxury sedans.\n"
                                                 + "\n"
@@ -143,7 +143,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                 ElectricVehicle miniCooperSE = new ElectricVehicle("Mini Cooper", "SE", "Santanico Pandemonium",
                                 "Sedan", 29900, true, 725, 114, 108, 6.9, 93, "FWD", 4, 36, 4, false, true, false, 8.7,
                                 0, 4.0, false,
-                                "https://cdn.motor1.com/images/mgl/0lp6V/s1/mini-cooper-se-2020-im-test.jpg",
+                                "./images/ev09.jpg",
                                 "https://cdn.motor1.com/images/mgl/kNN7x/s1/mini-cooper-se.jpg",
                                 "2021 Mini Cooper SE Electric vehicle features a new, lower-powered electric propulsion system and comes with a redesigned steering wheel using less energy in direct sunlight.\n"
                                                 + "\n"
@@ -157,7 +157,7 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                 ElectricVehicle nissanLeaf = new ElectricVehicle("Nissan", "Leaf S Plus", "Max Cherry", "Crossover",
                                 37400, true, 725, 226, 114, 7.4, 90, "FWD", 11, 60, 5, false, true, false, 23.6, 0, 5.0,
                                 false,
-                                "https://inv.assets.sincrod.com/ChromeColorMatch/us/TRANSPARENT_cc_2021NIC160018_01_1280_KH3.png",
+                                "./images/ev10.jpg",
                                 "https://cdn.motor1.com/images/mgl/42lOZ/s1/2021-nissan-leaf.jpg",
                                 "2021 Nissan Leaf Electric vehicle\n" + "\n"
                                                 + "In June 2015, Nissan introduced the 'Polarizer' of the model year and went on to have this year's models from Nissan.\n"
