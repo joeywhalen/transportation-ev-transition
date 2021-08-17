@@ -38,11 +38,13 @@
 
 .text-over-parallax{
     margin: 0;
-    padding: 40px;
+    padding: 10px;
     font-size: 60px;
     text-shadow: 2px 2px white;
     /* border: 1px solid white; */
+    /* background-color: transparent; */
     background-color: rgba(0, 0, 0, 0.61);
+    /* background-color: rgba(0, 0, 0, 0.5); */
     
 }
 
