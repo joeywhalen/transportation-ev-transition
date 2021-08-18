@@ -232,11 +232,12 @@ const displaySingleEV = function (ElectricVehicle) {
     const form = document.createElement("form");
     form.classList.add("new-comment-form");
     const reviewCommentInput = document.createElement("input");
+    reviewCommentInput.classList.add("input-form");
     reviewCommentInput.setAttribute("type", "text");
     reviewCommentInput.setAttribute("placeholder", "Enter your comment...");
     const submitReviewCommentButton = document.createElement("button");
-    submitReviewCommentButton.classList.add("comment-button");
-    submitReviewCommentButton.innerText = "Submit a comment";
+    submitReviewCommentButton.classList.add("comment-button-bouncy");
+    submitReviewCommentButton.innerText = "Submit";
 
    
     form.appendChild(reviewCommentInput);
