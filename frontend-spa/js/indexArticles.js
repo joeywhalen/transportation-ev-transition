@@ -93,11 +93,12 @@ const displaySingleArticle = function (article) {
     const form = document.createElement("form");
     form.classList.add("new-comment-form");
     const articleCommentInput = document.createElement("input");
+    articleCommentInput.classList.add("input-form");
     articleCommentInput.setAttribute("type", "text");
     articleCommentInput.setAttribute("placeholder", "Enter your comment...");
     const submitArticleCommentButton = document.createElement("button");
-    submitArticleCommentButton.classList.add("comment-button");
-    submitArticleCommentButton.innerText = "Submit a comment";
+    submitArticleCommentButton.classList.add("comment-button-bouncy");
+    submitArticleCommentButton.innerText = "Submit";
 
     form.appendChild(articleCommentInput);
     form.appendChild(submitArticleCommentButton);
@@ -118,7 +119,7 @@ const displaySingleArticle = function (article) {
                 body: unqoutedJson
             })
                 .then(response => response.json())
-                .then(article => displayArticle(article))
+                .then(article => displaySingleArticle(article))
                 .catch(error => console.log(error));
         }
     })
