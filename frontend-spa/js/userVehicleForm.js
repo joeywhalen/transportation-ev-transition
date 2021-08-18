@@ -3,7 +3,7 @@ import {
 } from "./indexArticles.js"
 
 import {displayHeader} from "./Header.js"
-
+import { displaySingleEV } from "./single-vehicle.js";
 
 
 
@@ -494,12 +494,12 @@ const displayComparedEV = function (ElectricVehicle,allEVs, userVehicle, userSta
 
     const carPrice = document.createElement("div");
     carPrice.classList.add("car-price");
-    carPrice.innerText = ElectricVehicle.msrp;
+    carPrice.innerText = "$" + ElectricVehicle.msrp;
     imageText.append(carPrice);
 
     const carMileage = document.createElement("div");
     carMileage.classList.add("car-mileage");
-    carMileage.innerText = ElectricVehicle.mpgE;
+    carMileage.innerText = "MPGe: " + ElectricVehicle.mpgE;
     imageText.append(carMileage);
 
     // ---------------------white details section-------------------------
@@ -590,7 +590,7 @@ const displayComparedEV = function (ElectricVehicle,allEVs, userVehicle, userSta
     detailsSection.append(standardEquipSection);
 
     const standardEquipText = document.createElement("ul");
-    standardEquipText.classList.add("standrd-equip-text");
+    standardEquipText.classList.add("standard-equip-text");
     standardEquipSection.append(standardEquipText);
 
     const seatingItem = document.createElement("li");
@@ -644,13 +644,18 @@ const displayComparedEV = function (ElectricVehicle,allEVs, userVehicle, userSta
     centerFour.innerHTML = '<div id="colored-rectangle"></div>';
     maintCostElement.append(centerFour);
 
-    const reviewCommentLineElement = document.createElement("hr");
-    reviewCommentLineElement.classList.add("single-vehicle-line");
-    priceDetailsText.append(reviewCommentLineElement);
+    // const reviewCommentLineElement = document.createElement("hr");
+    // reviewCommentLineElement.classList.add("single-vehicle-line");
+    // priceDetailsText.append(reviewCommentLineElement);
     const reviewCommentsNotationElement = document.createElement("review-comments");
     reviewCommentsNotationElement.classList.add("review-comments-notation");
     reviewCommentsNotationElement.innerText = "Comments: ";
-    reviewCommentLineElement.append(reviewCommentsNotationElement);
+    maintCostElement.append(reviewCommentsNotationElement);
+    // reviewCommentLineElement.append(reviewCommentsNotationElement);
+
+    const centerFive = document.createElement("center");
+    centerFive.innerHTML = '<div id="colored-rectangle"></div>';
+    maintCostElement.append(centerFive);
 
     if (ElectricVehicle.reviewComments !== null && ElectricVehicle.reviewComments.length !== 0) {
         ElectricVehicle.reviewComments.forEach((reviewComment) => {
@@ -666,11 +671,12 @@ const displayComparedEV = function (ElectricVehicle,allEVs, userVehicle, userSta
     const form = document.createElement("form");
     form.classList.add("new-comment-form");
     const reviewCommentInput = document.createElement("input");
+    reviewCommentInput.classList.add("input-form");
     reviewCommentInput.setAttribute("type", "text");
     reviewCommentInput.setAttribute("placeholder", "Enter your comment...");
     const submitReviewCommentButton = document.createElement("button");
-    submitReviewCommentButton.classList.add("comment-button");
-    submitReviewCommentButton.innerText = "Submit a comment";
+    submitReviewCommentButton.classList.add("comment-button-bouncy");
+    submitReviewCommentButton.innerText = "Submit";
 
 
     form.appendChild(reviewCommentInput);
