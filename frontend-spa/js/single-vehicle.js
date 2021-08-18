@@ -1,5 +1,6 @@
 import { displayHeader } from "./Header.js";
 import { contactsModal } from "./modal.js";
+import {displayFooter} from "./footer.js";
 
 const clearChildren = function (element) {
     while (element.firstChild) {
@@ -265,6 +266,7 @@ const displaySingleEV = function (ElectricVehicle) {
         }
     })
     body.appendChild(mainElement);
+    body.append(displayFooter());
 
     contactsModal();
 
