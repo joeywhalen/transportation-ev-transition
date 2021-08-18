@@ -590,7 +590,7 @@ const displayComparedEV = function (ElectricVehicle,allEVs, userVehicle, userSta
     detailsSection.append(standardEquipSection);
 
     const standardEquipText = document.createElement("ul");
-    standardEquipText.classList.add("standrd-equip-text");
+    standardEquipText.classList.add("standard-equip-text");
     standardEquipSection.append(standardEquipText);
 
     const seatingItem = document.createElement("li");
