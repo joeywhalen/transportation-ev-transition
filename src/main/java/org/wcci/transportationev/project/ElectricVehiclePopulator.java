@@ -18,6 +18,17 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
         public void run(String... args) throws Exception {
 
                 // Audi e-tron Sportback EV to test data
+                ElectricVehicle audiA6Etron = new ElectricVehicle("Audi", "A6 e-tron", "Minnie Mink", "Sedan", 80000,
+                                true, 725, 400, 80, 5.1, 125, "AWD", 10, 30, 5, false, true, false, 29.5, 3, 4.5, false,
+                                "./images/ev19.jpg",
+                                "https://assets.newatlas.com/dims4/default/d8067d3/2147483647/strip/true/crop/974x649+37+105/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F82%2Fe9%2Fa4b5bf1141f29737e05d03ae7345%2Fscreen-shot-2021-04-19-at-7.39.34%20PM.png",
+                                "The A6 e-tron is a sleek sedan with all of the brand's cutting-edge technology. Audi says it's targeting a driving range of more than 400 miles per charge.\n"
+                                                + "\n"
+                                                + "The A6 e-tron is powered by two electric motors with one driving each axle, which endows it with all-wheel drive. Also standard will be DC fast-charging capability that Audi claims will enable the car to charge its battery from five percent to 80 percent of capacity in just 25 minutes.\n"
+                                                + "\n"
+                                                + "Unlike the gasoline-powered A6 sedan, the A6 e-tron hides a hatchback in its sloped rear roofline, which should give buyers a large cargo area similar to that of the current A7.");
+                electricVehicleStorage.saveElectricVehicle(audiA6Etron);
+
                 ElectricVehicle audiETronSB = new ElectricVehicle("Audi", "e-tron Sportback", "Cliff Booth", "Sedan",
                                 69100, true, 725, 218, 77, 5.5, 118, "AWD", 10, 30, 5, false, true, false, 27.2, 3, 4.5,
                                 false,
@@ -37,6 +48,44 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                                 "I could not agree more.  Love Audi, and love this vehicle!");
                 electricVehicleStorage.saveElectricVehicle(audiETronSB);
 
+                ElectricVehicle bmwIFour = new ElectricVehicle("BMW", "I4", "Patrick Bateman", "Sedan", 56395, true,
+                                725, 300, 90, 5.7, 118, "RWD", 8.75, 30, 5, false, true, true, 16.6, 0, 4.5, true,
+                                "./images/ev20.jpg",
+                                "https://evglobe.com/wp-content/uploads/2020/09/bmw-i4-m-electric-1700x956.jpg",
+                                "Silent acceleration, perfected engineering, and seating for five make this a sporty all-electric alternative.\n"
+                                                + "\n"
+                                                + "BMW’s new front-end styling, which debuted with the 4 Series coupe and convertible, is the dominant feature on the i4. Whether you think it harkens back to BMWs of yore like the 303, which was the first BMW to use the 'twin-kidney grille,' or looks more like walrus tusks, is up to you. But it makes a statement either way.\n"
+                                                + "\n"
+                                                + "The rest of the car carries a mix of modern and historical BMW styling cues, such as the swept-back covers over the standard LED headlights, the concave scoops along the doors, and the vent behind the front wheel that carries down and along the door sills. BMW’s traditional “Hofmeister kink” styling element, where the rear roof pillar has a forward bend as it meets the side-window glass, is present.");
+                electricVehicleStorage.saveElectricVehicle(bmwIFour);
+
+                ElectricVehicle bmwIX = new ElectricVehicle("BMW", "IX", "Timothy Bryce", "Crossover", 84194, true, 725,
+                                300, 85, 4.6, 124, "AWD", 11, 35, 5, false, true, true, 27.4, 0, 4.5, true,
+                                "./images/ev21.jpg",
+                                "https://cdn.vox-cdn.com/thumbor/VuSodeasyFU7eraSHHxeV7tYVE0=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22551750/P90422118_highRes.jpg",
+                                "The BMW iX sets a new standard for sustainable luxury in electric SUVs.  The iX is a midsize luxury SUV that's about the same size as the 2021 BMW X5. It seats five in its roomy, airy, and tech-laden cabin. Special attention was used to create the interior with sustainable materials, including some that contain recycled materials.\n"
+                                                + "\n"
+                                                + "The iX not only debuts hardware, software, design elements, and manufacturing techniques that will influence all future BMWs—it also readies a brand once defined by its appeal to petrolhead driving enthusiasts for an autonomous, electric-powered world.");
+                electricVehicleStorage.saveElectricVehicle(bmwIX);
+
+                ElectricVehicle bollingerBTwo = new ElectricVehicle("Bollinger", "B2", "Paul Allen", "Truck", 125000,
+                                true, 725, 200, 70, 4.5, 100, "AWD", 10, 75, 4, false, false, false, 86, 8.0, 4.0,
+                                false, "./images/ev22.jpg",
+                                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bollinger-b2-3-4-front-1569523201.jpg",
+                                "Bollinger: Reinventing trucks not just electrifying them. The most durable, practical electric trucks on the planet. No screens. No plastic. Just truck.\n"
+                                                + "\n"
+                                                + "The all-electric 2022 Bollinger B2 looks primitive but puts traditional pickup trucks on notice thanks to its impressive capacities and incredible versatility.  Bollinger says the B2's dual electric motors combine for 614 horsepower and 688 lb-ft of torque, which help it tow up to 7500 pounds and carry a payload up to 5001 pounds. Its battery supports fast-charging capability and is estimated to provide a driving range of 200 miles.");
+                electricVehicleStorage.saveElectricVehicle(bollingerBTwo);
+
+                ElectricVehicle caddyLyriq = new ElectricVehicle("Cadillac", "Lyriq", "Sean Bateman", "Crossover",
+                                59995, true, 725, 300, 80, 4.3, 130, "RWD", 6, 35, 7, true, true, true, 12.6, 0, 4.5,
+                                false, "./images/ev23.jpg",
+                                "https://www.motortrend.com/uploads/sites/5/2020/08/2023-Cadillac-Lyriq-8.jpg?fit=around%7C875:492",
+                                "Meet the Cadillac LYRIQ. An EV that inspires its driver to charge forward to a greater purpose—with every sublime detail.\n"
+                                                + "\n"
+                                                + "The Lyriq has been designed from the ground up and will ride on General Motors' new scalable battery architecture; the company claims a low center of gravity and a spacious cabin as benefits of the dedicated EV-architecture.");
+                electricVehicleStorage.saveElectricVehicle(caddyLyriq);
+
                 ElectricVehicle chevyBolt = new ElectricVehicle("Chevrolet", "Bolt", "Mia Wallace", "Crossover", 37500,
                                 false, 725, 247, 120, 7.0, 93, "FWD", 7.5, 60, 5, true, true, false, 16.6, 0, 5.0,
                                 false,
@@ -53,6 +102,15 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                                                 + "So we set about making sure Chevrolet got to where they were able to do that.");
                 electricVehicleStorage.saveElectricVehicle(chevyBolt);
 
+                ElectricVehicle fordLightning = new ElectricVehicle("Ford", "F-150 Lightning", "Lauren Hynde", "Truck",
+                                42000, true, 725, 230, 75, 4.5, 100, "AWD", 8, 44, 5, true, true, true, 80, 14.1, 5.0,
+                                true, "./images/ev24.jpg",
+                                "https://thumbor.forbes.com/thumbor/fit-in/960x720/https://www.forbes.com/wheels/wp-content/uploads/2021/05/Ford_F-150_Lightning_Gallery13.jpg",
+                                "The all-electric F-150 Lightning has an EPA-estimated range of 230 miles, zero emissions and available Ford Intelligent Backup Power.\n"
+                                                + "\n"
+                                                + "The Lightning shares much of the regular F-150's body and cabin but swaps that truck's gasoline-powered V-6 and V-8 engine options for a pair of electric motors and one of two different battery packs.");
+                electricVehicleStorage.saveElectricVehicle(fordLightning);
+
                 ElectricVehicle fordMustang = new ElectricVehicle("Ford", "Mustang Mach-E Select (eAWD)",
                                 "Vincent Vega", "Crossover", 42895, true, 725, 211, 90, 5.2, 130, "e-AWD", 14, 52, 5,
                                 false, true, true, 29.7, 4.7, 5.0, true,
@@ -63,6 +121,22 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                                                 + "\n"
                                                 + "There is an optional 4x32 rear-wheel drive mode available for all four sizes. For more information, please visit Ford.com.");
                 electricVehicleStorage.saveElectricVehicle(fordMustang);
+
+                ElectricVehicle genesisGEighty = new ElectricVehicle("Genesis", "G80", "Paul Denton", "Sedan", 50000,
+                                true, 725, 310, 90, 4.8, 100, "e-AWD", 9, 22, 5, false, true, false, 13.1, 0, 4.5, true,
+                                "./images/ev25.jpg",
+                                "https://cdn.motor1.com/images/mgl/rMMlP/s3/2022-genesis-g80-sport.jpg",
+                                "Luxury upstart Genesis is dipping its toe in the EV waters with an electric version of its G80 sedan for the 2022 model year, which will be called Electrified G80. The Electrified G80 is nearly indistinguishable from the gasoline-powered model inside and out, which is fine by us as we find the car's styling handsome and its cabin lovely. Genesis has not announced many details about the car's powertrain except that all-wheel drive will be standard, and that range should come in around 265 miles per charge.");
+                electricVehicleStorage.saveElectricVehicle(genesisGEighty);
+
+                ElectricVehicle gmcHummer = new ElectricVehicle("GMC", "Hummer EV", "Jimmy McNulty", "Truck", 79995,
+                                true, 725, 350, 75, 3.0, 100, "AWD", 12, 30, 5, true, true, false, 80, 11.3, 4.5, true,
+                                "./images/ev26.jpg",
+                                "https://media.assets.sincrod.com/websites/content/gmps-cadbuick-fl//ef684d2057a04f438dd4d02210f22a9f_1920x750.jpg",
+                                "Feel the power of silence with the first of its breed HUMMER EV electric truck. With 1000 HP and 0-60 in 3 seconds, a quiet revolution is coming.\n"
+                                                + "\n"
+                                                + "The new pickup is shaping up to be quite the beast, with up to 1000 horsepower from its top powertrain option, which uses three electric motors, offers an estimated range of 350 miles per charge, and a leaps to 60 mph in a claimed 3.0 seconds. The Hummer also features removable roof panels, an optional adjustable air suspension, and a cool four-wheel steering feature that allows it to 'crab' sideways—drive diagonally—all of which should make it fun to take off-road.");
+                electricVehicleStorage.saveElectricVehicle(gmcHummer);
 
                 ElectricVehicle hyundaiIoniq = new ElectricVehicle("Hyundai", "Ioniq", "Joe Cabot", "Sedan", 33245,
                                 true, 725, 170, 133, 10, 102, "FWD", 5.8, 60, 5, false, true, false, 23, 0, 4.0, false,
@@ -86,6 +160,15 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                                                 + "\n" + "9. Cover your car",
                                 "I was planning on purchasing a 2021 Hyundai Ioniq EV, but after reading this review I am definitely going with Tesla!");
                 electricVehicleStorage.saveElectricVehicle(hyundaiIoniq);
+
+                ElectricVehicle hyundaiIoniqFive = new ElectricVehicle("Hyundai", "Ioniq 5", "William 'Bunk' Moreland",
+                                "Crossover", 45000, true, 725, 225, 125, 5.2, 115, "AWD", 7.75, 18, 5, false, true,
+                                false, 18.8, 0.85, 4.5, true, "./images/ev27.jpg",
+                                "https://www.hyundai.com/content/dam/hyundai/ww/en/images/find-a-car/pip/eco/ioniq5/worldpremiere/ioniq5-ne-world-premiere-stg-m.jpg",
+                                "Based on Hyundai's '45' EV concept, IONIQ 5 will be the first car mated with the recently revealed Electric-Global Modular Platform (E-GMP).\n"
+                                                + "\n"
+                                                + "More than just another EV, the Ioniq 5 brings several clever features—such as a solar roof, an augmented reality head-up display, and 800-volt electric architecture that enables relatively quick charging in places where DC fast charging is available—that will help it to stand out.");
+                electricVehicleStorage.saveElectricVehicle(hyundaiIoniqFive);
 
                 ElectricVehicle hyundaiKona = new ElectricVehicle("Hyundai", "Kona", "Alabama Whitman", "Crossover",
                                 37900, true, 725, 258, 120, 6.4, 96, "FWD", 9, 54, 5, false, true, false, 19.2, 0, 5.0,
@@ -121,6 +204,22 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                                                 + "- A 'price on the street' comparison isn't a very efficient way to measure the...");
                 electricVehicleStorage.saveElectricVehicle(jaguarIpace);
 
+                ElectricVehicle jeepMagneto = new ElectricVehicle("Jeep", "Wrangler Magneto", "Shakima Greggs",
+                                "Crossover", 52500, true, 725, 200, 95, 6.8, 120, "AWD", 9, 45, 4, false, true, false,
+                                17, 0, 4.0, false, "./images/ev28.jpg",
+                                "https://cdn.vox-cdn.com/uploads/chorus_asset/file/22389233/CN021_005JPphmt54ub7fcb67dcvs39kjmttl.jpg",
+                                "The Jeep Magneto is of particular interest—first because it's electric, and second because it has a manual transmission.\n"
+                                                + "\n"
+                                                + "Even though most of the current crop of electric cars have their motors geared directly to the drive axle via single-speed drive, we're already starting to see some EVs with multi-speed transmissions, including the Porsche Taycan and Audi E-Tron GT. A second forward speed (or more) allows these EVs to operate over a broader speed range, minimizing needless motor spinning at higher speeds and adding extra gut-punch to low-end torque electrics are known for.");
+                electricVehicleStorage.saveElectricVehicle(jeepMagneto);
+
+                ElectricVehicle kiaEvSix = new ElectricVehicle("Kia", "EV6", "Lester Freamon", "Crossover", 45000, true,
+                                725, 270, 110, 5.2, 115, "RWD", 7, 18, 5, false, true, false, 28, 0, 4.5, true,
+                                "./images/ev29.jpg",
+                                "https://www.electrive.com/wp-content/uploads/2021/03/kia-ev6-2021-002-min.png",
+                                "It is clear that Kia is quite serious about EVs, with the EV6 boasting impressive capabilities from fast-charging to rapid acceleration that could position it among the more elite models. Kia promises that the EV6 can sprint 0-60 mph in a scant 7 seconds. The company targets 250 miles of range and claims to have the world’s first 800V multi-charging architecture that enables up to 210 miles of range to be charged in under 18 minutes.");
+                electricVehicleStorage.saveElectricVehicle(kiaEvSix);
+
                 ElectricVehicle kiaNiro = new ElectricVehicle("Kia", "Niro", "Seth Gecko", "Crossover", 39090, true,
                                 725, 239, 112, 6.5, 103, "FWD", 9.5, 60, 5, false, true, false, 18.5, 0, 5.0, false,
                                 "./images/ev07.jpg",
@@ -140,6 +239,19 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                                                 + "\n" + "EV Power Meets Ultimate Luxury.");
                 electricVehicleStorage.saveElectricVehicle(lucidAir);
 
+                ElectricVehicle mazdaMx = new ElectricVehicle("Mazda", "MX-30", "Kate Austen", "Crossover", 38000, true,
+                                725, 130, 100, 9, 90, "RWD", 5, 30, 5, false, true, false, 28, 0, 4.5, false,
+                                "./images/ev30.jpg", "https://cdn.motor1.com/images/mgl/kJOyQ/s1/2020-mazda-mx-30.jpg",
+                                "The MX-30 is Mazda's most unconventional SUV yet. It's the brand's first EV, and it's Mazda's first SUV with RX-8-style doors. The crossover features a rather small 35.5kWh battery, which allows for range numbers to reside in the low 100s.  The MX-30's motor makes just over 140 horsepower, which permits a zero-to-sixty time of around nine seconds. To combat the lackluster range, the automaker will offer a range-extended variant featuring a rotary engine as a generator.");
+                electricVehicleStorage.saveElectricVehicle(mazdaMx);
+
+                ElectricVehicle mercedesEqa = new ElectricVehicle("Mercedes-Benz", "EQA", "Reginald 'Bubbles' Cousins",
+                                "Crossover", 57000, true, 725, 250, 100, 7.0, 99, "AWD", 7.25, 35, 5, false, true,
+                                false, 12, 0, 4.5, true, "./images/ev31.jpg",
+                                "https://cdn.motor1.com/images/mgl/6y7J7/s1/illustration-mercedes-benz-eqa.jpg",
+                                "The 2022 Mercedes-Benz EQA is a new all-electric crossover SUV that's based on the regular subcompact GLA-class.  Power comes from an all-electric powertrain that generates 188 horsepower on front-drive models and 268 horses on all-wheel-drive versions, which both source their juice from a battery pack mounted under the floor of the vehicle.");
+                electricVehicleStorage.saveElectricVehicle(mercedesEqa);
+
                 ElectricVehicle miniCooperSE = new ElectricVehicle("Mini Cooper", "SE", "Santanico Pandemonium",
                                 "Sedan", 29900, true, 725, 114, 108, 6.9, 93, "FWD", 4, 36, 4, false, true, false, 8.7,
                                 0, 4.0, false,
@@ -153,6 +265,13 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                                                 + "\n"
                                                 + "The EV version also features additional LED lights available to help you take a look or just take a video.");
                 electricVehicleStorage.saveElectricVehicle(miniCooperSE);
+
+                ElectricVehicle nissaAriya = new ElectricVehicle("Nissan", "Ariya", "Russell 'Stringer' Bell",
+                                "Crossover", 40000, true, 725, 300, 105, 7.5, 99, "FWD", 10, 31, 5, true, true, false,
+                                16.5, 0, 4.5, false, "./images/ev32.jpg",
+                                "https://cdn.mos.cms.futurecdn.net/ARwne5T6bP4KnybiqG59qc.jpg",
+                                "Nissan is expanding its line of electric vehicles with the 2022 Ariya SUV, which is on sale in the U.S. in 2021. The Ariya will join the Leaf hatchback in the Nissan showroom and will offer up to 300 miles of driving range, which beats the Leaf's maximum of 226. The Ariya's design represents a shift from the current sharp, angular lines seen on many of Nissan's vehicles. The low, wide stance of the Ariya differentiates it from the Rogue and gives it a sportier look. Two different battery sizes will be offered—a 63.0-kWh battery is standard, and a larger 87.0-kWh pack is optional—as well as either front- or all-wheel drive. A host of driver-assistance features, infotainment tech, and convenience items will be included here, helping the 2022 Ariya compete with similarly sized EV crossovers, such as the Tesla Model Y and Hyundai Kona Electric.");
+                electricVehicleStorage.saveElectricVehicle(nissaAriya);
 
                 ElectricVehicle nissanLeaf = new ElectricVehicle("Nissan", "Leaf S Plus", "Max Cherry", "Crossover",
                                 37400, true, 725, 226, 114, 7.4, 90, "FWD", 11, 60, 5, false, true, false, 23.6, 0, 5.0,
@@ -190,6 +309,22 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                                                 + "\n"
                                                 + "Verdict: The Taycan takes everything good about electric performance cars and amplifies it.");
                 electricVehicleStorage.saveElectricVehicle(porscheTaycan);
+
+                ElectricVehicle rivianROneT = new ElectricVehicle("Rivian", "R1T", "Omar Little", "Truck", 73000, true,
+                                725, 300, 80, 3.0, 100, "AWD", 10, 35, 5, true, true, true, 57, 11.0, 4.5, false,
+                                "./images/ev33.jpg",
+                                "https://cdn.motor1.com/images/mgl/vkP1b/s1/check-out-the-possible-rivian-r1t-production-colors-revealed-by-rivianforums.com.jpg",
+                                "The futuristic R1T is an all-electric pickup truck from new American startup brand Rivian, and it promises 300 miles of driving range and lightning-quick acceleration. The company says that the revealed truck is no concept vehicle—what you see here is what will enter production as the 2021 R1T. At 215.6 inches long, the crew-cab-only R1T splits the difference in size between mid-size pickups such as the Ford Ranger and full-size trucks such as the Ram 1500. The R1T will be one of the first electric pickup trucks in what seems to be a burgeoning market, soon to include the Tesla Cybertruck and the GMC Hummer EV SUT.");
+                electricVehicleStorage.saveElectricVehicle(rivianROneT);
+
+                ElectricVehicle teslaCybertruck = new ElectricVehicle("Tesla", "Cybertruck", "James ‘Sawyer’ Ford",
+                                "Truck", 70000, false, 725, 500, 90, 3.0, 130, "AWD", 10, 44, 6, true, true, true, 90,
+                                10.0, 5.0, true, "./images/ev34.jpg",
+                                "https://www.tesla.com/xNVh4yUEc3B9/10_Desktop.jpg",
+                                "Cybertruck is designed to have the utility of a truck with sports car performance. Built to be durable, versatile, capable and high-performance both on-road and off.\n"
+                                                + "\n"
+                                                + "The Tesla Cybertruck looks like it was dropped off by an alien race, but it has the capabilities to challenge all of the top-selling pickup trucks. With a sharp-edged exterior that is made of scratch- and dent-resistant stainless steel, Tesla's all-electric truck is seriously tough. Along with available all-wheel drive, the Cybertruck can tow up to 14,000 pounds and has an estimated driving range of 500-plus miles. While that applies only to the most expensive model, the cheapest one starts at $39,900.");
+                electricVehicleStorage.saveElectricVehicle(teslaCybertruck);
 
                 ElectricVehicle teslaThree = new ElectricVehicle("Tesla", "Model 3 SR+", "Aldo Raine", "Sedan", 39900,
                                 false, 725, 263, 133, 5.3, 140, "RWD", 5.5, 21, 5, true, true, true, 18, 5, 5.0, true,
@@ -232,6 +367,15 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                                                 + "To put both the Tesla Model Y as a driver-free Tesla Model 3 into the equation, to be a Model 3, or to become an electric driving luxury, it will be Tesla (or not Tesla), and the Model Y will be one of their very own. And so far we've been able to build models that make the cars we love driving more comfortable for use in public or business areas, like in public transit. But, when we find ourselves stranded in a vehicle where there is no Tesla, or a Tesla Model and we need to turn off the car, like a passenger in a car for an entire trip — like with my current Tesla Model Y, the most likely scenario is that we will have to move. In that case, we'll be forced to pay to maintain our Tesla Model Y's ability to reach into its windshield or floor to power itself.");
                 electricVehicleStorage.saveElectricVehicle(teslaY);
 
+                ElectricVehicle teslaRoadsterTwo = new ElectricVehicle("Tesla", "Roadster 2", "Dr. Jack Shephard",
+                                "Sedan", 200000, false, 725, 620, 90, 1.9, 250, "AWD", 8, 44, 4, true, true, true, 15,
+                                4.0, 5.0, true, "./images/ev35.jpg",
+                                "https://upload.wikimedia.org/wikipedia/commons/8/89/NextGenTeslaRoadster_%28cropped%29.jpg",
+                                "An all-electric vehicle, the Tesla Roadster is the quickest car in the world, with record-setting acceleration, range and performance.\n"
+                                                + "\n"
+                                                + "The original Tesla Roadster put the all-electric automaker on the map, even if most Model S and Model X buyers don't remember it.  The second-generation Roadster bests it predecessor by adding two small rear seats, significantly more driving range, and a much higher level of performance. Tesla CEO Elon Musk boasted about a 1.9-second 60-mph time and a 250-mph top speed when the Roadster 2 was unveiled.");
+                electricVehicleStorage.saveElectricVehicle(teslaRoadsterTwo);
+
                 ElectricVehicle volksIdFour = new ElectricVehicle("Volkswagen", "ID.4", "Chris Mannix", "Crossover",
                                 44495, true, 725, 250, 99, 5.7, 112, "AWD", 7.5, 38, 5, false, true, true, 30, 0, 4.5,
                                 false,
@@ -250,160 +394,6 @@ public class ElectricVehiclePopulator implements CommandLineRunner {
                                                 + "\n"
                                                 + "With the favorable weight distribution, the XC40 Recharge feels well planted on the pavement when navigating sharp or fast turns.  This car has a huge 408hp and 660Nm of torque, delivered to all four wheels via a dual-motor system.");
                 electricVehicleStorage.saveElectricVehicle(volvoXcForty);
-
-                ElectricVehicle audiA6Etron = new ElectricVehicle("Audi", "A6 e-tron", "Minnie Mink", "Sedan", 80000,
-                                true, 725, 400, 80, 5.1, 125, "AWD", 10, 30, 5, false, true, false, 29.5, 3, 4.5, false,
-                                "./images/ev19.jpg",
-                                "https://assets.newatlas.com/dims4/default/d8067d3/2147483647/strip/true/crop/974x649+37+105/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F82%2Fe9%2Fa4b5bf1141f29737e05d03ae7345%2Fscreen-shot-2021-04-19-at-7.39.34%20PM.png",
-                                "The A6 e-tron is a sleek sedan with all of the brand's cutting-edge technology. Audi says it's targeting a driving range of more than 400 miles per charge.\n"
-                                                + "\n"
-                                                + "The A6 e-tron is powered by two electric motors with one driving each axle, which endows it with all-wheel drive. Also standard will be DC fast-charging capability that Audi claims will enable the car to charge its battery from five percent to 80 percent of capacity in just 25 minutes.\n"
-                                                + "\n"
-                                                + "Unlike the gasoline-powered A6 sedan, the A6 e-tron hides a hatchback in its sloped rear roofline, which should give buyers a large cargo area similar to that of the current A7.");
-                electricVehicleStorage.saveElectricVehicle(audiA6Etron);
-
-                ElectricVehicle bmwIFour = new ElectricVehicle("BMW", "I4", "Patrick Bateman", "Sedan", 56395, true,
-                                725, 300, 90, 5.7, 118, "RWD", 8.75, 30, 5, false, true, true, 16.6, 0, 4.5, true,
-                                "./images/ev20.jpg",
-                                "https://evglobe.com/wp-content/uploads/2020/09/bmw-i4-m-electric-1700x956.jpg",
-                                "Silent acceleration, perfected engineering, and seating for five make this a sporty all-electric alternative.\n"
-                                                + "\n"
-                                                + "BMW’s new front-end styling, which debuted with the 4 Series coupe and convertible, is the dominant feature on the i4. Whether you think it harkens back to BMWs of yore like the 303, which was the first BMW to use the 'twin-kidney grille,' or looks more like walrus tusks, is up to you. But it makes a statement either way.\n"
-                                                + "\n"
-                                                + "The rest of the car carries a mix of modern and historical BMW styling cues, such as the swept-back covers over the standard LED headlights, the concave scoops along the doors, and the vent behind the front wheel that carries down and along the door sills. BMW’s traditional “Hofmeister kink” styling element, where the rear roof pillar has a forward bend as it meets the side-window glass, is present.");
-                electricVehicleStorage.saveElectricVehicle(bmwIFour);
-
-                ElectricVehicle bmwIX = new ElectricVehicle("BMW", "IX", "Timothy Bryce", "Crossover", 84194, true, 725,
-                                300, 85, 4.6, 124, "AWD", 11, 35, 5, false, true, true, 27.4, 0, 4.5, true,
-                                "./images/ev21.jpg",
-                                "https://cdn.vox-cdn.com/thumbor/VuSodeasyFU7eraSHHxeV7tYVE0=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22551750/P90422118_highRes.jpg",
-                                "The BMW iX sets a new standard for sustainable luxury in electric SUVs.  The iX is a midsize luxury SUV that's about the same size as the 2021 BMW X5. It seats five in its roomy, airy, and tech-laden cabin. Special attention was used to create the interior with sustainable materials, including some that contain recycled materials.\n"
-                                                + "\n"
-                                                + "The iX not only debuts hardware, software, design elements, and manufacturing techniques that will influence all future BMWs—it also readies a brand once defined by its appeal to petrolhead driving enthusiasts for an autonomous, electric-powered world.");
-                electricVehicleStorage.saveElectricVehicle(bmwIX);
-
-                ElectricVehicle bollingerBTwo = new ElectricVehicle("Bollinger", "B2", "Paul Allen", "Truck", 125000,
-                                true, 725, 200, 70, 4.5, 100, "AWD", 10, 75, 4, false, false, false, 86, 8.0, 4.0,
-                                false,
-                                "./images/ev22.jpg",
-                                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bollinger-b2-3-4-front-1569523201.jpg",
-                                "Bollinger: Reinventing trucks not just electrifying them. The most durable, practical electric trucks on the planet. No screens. No plastic. Just truck.\n"
-                                                + "\n"
-                                                + "The all-electric 2022 Bollinger B2 looks primitive but puts traditional pickup trucks on notice thanks to its impressive capacities and incredible versatility.  Bollinger says the B2's dual electric motors combine for 614 horsepower and 688 lb-ft of torque, which help it tow up to 7500 pounds and carry a payload up to 5001 pounds. Its battery supports fast-charging capability and is estimated to provide a driving range of 200 miles.");
-                electricVehicleStorage.saveElectricVehicle(bollingerBTwo);
-
-                ElectricVehicle caddyLyriq = new ElectricVehicle("Cadillac", "Lyriq", "Sean Bateman", "Crossover",
-                                59995, true, 725, 300, 80, 4.3, 130, "RWD", 6, 35, 7, true, true, true, 12.6, 0, 4.5,
-                                false,
-                                "./images/ev23.jpg",
-                                "https://www.motortrend.com/uploads/sites/5/2020/08/2023-Cadillac-Lyriq-8.jpg?fit=around%7C875:492",
-                                "Meet the Cadillac LYRIQ. An EV that inspires its driver to charge forward to a greater purpose—with every sublime detail.\n"
-                                                + "\n"
-                                                + "The Lyriq has been designed from the ground up and will ride on General Motors' new scalable battery architecture; the company claims a low center of gravity and a spacious cabin as benefits of the dedicated EV-architecture.");
-                electricVehicleStorage.saveElectricVehicle(caddyLyriq);
-
-                ElectricVehicle fordLightning = new ElectricVehicle("Ford", "F-150 Lightning", "Lauren Hynde", "Truck",
-                                42000, true, 725, 230, 75, 4.5, 100, "AWD", 8, 44, 5, true, true, true, 80, 14.1, 5.0,
-                                true,
-                                "./images/ev24.jpg",
-                                "https://thumbor.forbes.com/thumbor/fit-in/960x720/https://www.forbes.com/wheels/wp-content/uploads/2021/05/Ford_F-150_Lightning_Gallery13.jpg",
-                                "The all-electric F-150 Lightning has an EPA-estimated range of 230 miles, zero emissions and available Ford Intelligent Backup Power.\n"
-                                                + "\n"
-                                                + "The Lightning shares much of the regular F-150's body and cabin but swaps that truck's gasoline-powered V-6 and V-8 engine options for a pair of electric motors and one of two different battery packs.");
-                electricVehicleStorage.saveElectricVehicle(fordLightning);
-
-                ElectricVehicle genesisGEighty = new ElectricVehicle("Genesis", "G80", "Paul Denton", "Sedan", 50000,
-                                true, 725, 310, 90, 4.8, 100, "e-AWD", 9, 22, 5, false, true, false, 13.1, 0, 4.5, true,
-                                "./images/ev25.jpg",
-                                "https://cdn.motor1.com/images/mgl/rMMlP/s3/2022-genesis-g80-sport.jpg",
-                                "Luxury upstart Genesis is dipping its toe in the EV waters with an electric version of its G80 sedan for the 2022 model year, which will be called Electrified G80. The Electrified G80 is nearly indistinguishable from the gasoline-powered model inside and out, which is fine by us as we find the car's styling handsome and its cabin lovely. Genesis has not announced many details about the car's powertrain except that all-wheel drive will be standard, and that range should come in around 265 miles per charge.");
-                electricVehicleStorage.saveElectricVehicle(genesisGEighty);
-
-                ElectricVehicle gmcHummer = new ElectricVehicle("GMC", "Hummer EV", "Jimmy McNulty", "Truck", 79995,
-                                true, 725, 350, 75, 3.0, 100, "AWD", 12, 30, 5, true, true, false, 80, 11.3, 4.5, true,
-                                "./images/ev26.jpg",
-                                "https://media.assets.sincrod.com/websites/content/gmps-cadbuick-fl//ef684d2057a04f438dd4d02210f22a9f_1920x750.jpg",
-                                "Feel the power of silence with the first of its breed HUMMER EV electric truck. With 1000 HP and 0-60 in 3 seconds, a quiet revolution is coming.\n"
-                                                + "\n"
-                                                + "The new pickup is shaping up to be quite the beast, with up to 1000 horsepower from its top powertrain option, which uses three electric motors, offers an estimated range of 350 miles per charge, and a leaps to 60 mph in a claimed 3.0 seconds. The Hummer also features removable roof panels, an optional adjustable air suspension, and a cool four-wheel steering feature that allows it to 'crab' sideways—drive diagonally—all of which should make it fun to take off-road.");
-                electricVehicleStorage.saveElectricVehicle(gmcHummer);
-
-                ElectricVehicle hyundaiIoniqFive = new ElectricVehicle("Hyundai", "Ioniq 5", "William 'Bunk' Moreland",
-                                "Crossover", 45000, true, 725, 225, 125, 5.2, 115, "AWD", 7.75, 18, 5, false, true,
-                                false, 18.8, 0.85, 4.5, true,
-                                "./images/ev27.jpg",
-                                "https://www.hyundai.com/content/dam/hyundai/ww/en/images/find-a-car/pip/eco/ioniq5/worldpremiere/ioniq5-ne-world-premiere-stg-m.jpg",
-                                "Based on Hyundai's '45' EV concept, IONIQ 5 will be the first car mated with the recently revealed Electric-Global Modular Platform (E-GMP).\n"
-                                                + "\n"
-                                                + "More than just another EV, the Ioniq 5 brings several clever features—such as a solar roof, an augmented reality head-up display, and 800-volt electric architecture that enables relatively quick charging in places where DC fast charging is available—that will help it to stand out.");
-                electricVehicleStorage.saveElectricVehicle(hyundaiIoniqFive);
-
-                ElectricVehicle jeepMagneto = new ElectricVehicle("Jeep", "Wrangler Magneto", "Shakima Greggs",
-                                "Crossover", 52500, true, 725, 200, 95, 6.8, 120, "AWD", 9, 45, 4, false, true, false,
-                                17, 0, 4.0, false,
-                                "./images/ev28.jpg",
-                                "https://cdn.vox-cdn.com/uploads/chorus_asset/file/22389233/CN021_005JPphmt54ub7fcb67dcvs39kjmttl.jpg",
-                                "The Jeep Magneto is of particular interest—first because it's electric, and second because it has a manual transmission.\n"
-                                                + "\n"
-                                                + "Even though most of the current crop of electric cars have their motors geared directly to the drive axle via single-speed drive, we're already starting to see some EVs with multi-speed transmissions, including the Porsche Taycan and Audi E-Tron GT. A second forward speed (or more) allows these EVs to operate over a broader speed range, minimizing needless motor spinning at higher speeds and adding extra gut-punch to low-end torque electrics are known for.");
-                electricVehicleStorage.saveElectricVehicle(jeepMagneto);
-
-                ElectricVehicle kiaEvSix = new ElectricVehicle("Kia", "EV6", "Lester Freamon", "Crossover", 45000, true,
-                                725, 270, 110, 5.2, 115, "RWD", 7, 18, 5, false, true, false, 28, 0, 4.5, true,
-                                "./images/ev29.jpg",
-                                "https://www.electrive.com/wp-content/uploads/2021/03/kia-ev6-2021-002-min.png",
-                                "It is clear that Kia is quite serious about EVs, with the EV6 boasting impressive capabilities from fast-charging to rapid acceleration that could position it among the more elite models. Kia promises that the EV6 can sprint 0-60 mph in a scant 7 seconds. The company targets 250 miles of range and claims to have the world’s first 800V multi-charging architecture that enables up to 210 miles of range to be charged in under 18 minutes.");
-                electricVehicleStorage.saveElectricVehicle(kiaEvSix);
-
-                ElectricVehicle mazdaMx = new ElectricVehicle("Mazda", "MX-30", "Kate Austen", "Crossover", 38000, true,
-                                725, 130, 100, 9, 90, "RWD", 5, 30, 5, false, true, false, 28, 0, 4.5, false,
-                                "./images/ev30.jpg",
-                                "https://cdn.motor1.com/images/mgl/kJOyQ/s1/2020-mazda-mx-30.jpg",
-                                "The MX-30 is Mazda's most unconventional SUV yet. It's the brand's first EV, and it's Mazda's first SUV with RX-8-style doors. The crossover features a rather small 35.5kWh battery, which allows for range numbers to reside in the low 100s.  The MX-30's motor makes just over 140 horsepower, which permits a zero-to-sixty time of around nine seconds. To combat the lackluster range, the automaker will offer a range-extended variant featuring a rotary engine as a generator.");
-                electricVehicleStorage.saveElectricVehicle(mazdaMx);
-
-                ElectricVehicle mercedesEqa = new ElectricVehicle("Mercedes-Benz", "EQA", "Reginald 'Bubbles' Cousins",
-                                "Crossover", 57000, true, 725, 250, 100, 7.0, 99, "AWD", 7.25, 35, 5, false, true,
-                                false, 12, 0, 4.5, true,
-                                "./images/ev31.jpg",
-                                "https://cdn.motor1.com/images/mgl/6y7J7/s1/illustration-mercedes-benz-eqa.jpg",
-                                "The 2022 Mercedes-Benz EQA is a new all-electric crossover SUV that's based on the regular subcompact GLA-class.  Power comes from an all-electric powertrain that generates 188 horsepower on front-drive models and 268 horses on all-wheel-drive versions, which both source their juice from a battery pack mounted under the floor of the vehicle.");
-                electricVehicleStorage.saveElectricVehicle(mercedesEqa);
-
-                ElectricVehicle nissaAriya = new ElectricVehicle("Nissan", "Ariya", "Russell 'Stringer' Bell",
-                                "Crossover", 40000, true, 725, 300, 105, 7.5, 99, "FWD", 10, 31, 5, true, true, false,
-                                16.5, 0, 4.5, false,
-                                "./images/ev32.jpg",
-                                "https://cdn.mos.cms.futurecdn.net/ARwne5T6bP4KnybiqG59qc.jpg",
-                                "Nissan is expanding its line of electric vehicles with the 2022 Ariya SUV, which is on sale in the U.S. in 2021. The Ariya will join the Leaf hatchback in the Nissan showroom and will offer up to 300 miles of driving range, which beats the Leaf's maximum of 226. The Ariya's design represents a shift from the current sharp, angular lines seen on many of Nissan's vehicles. The low, wide stance of the Ariya differentiates it from the Rogue and gives it a sportier look. Two different battery sizes will be offered—a 63.0-kWh battery is standard, and a larger 87.0-kWh pack is optional—as well as either front- or all-wheel drive. A host of driver-assistance features, infotainment tech, and convenience items will be included here, helping the 2022 Ariya compete with similarly sized EV crossovers, such as the Tesla Model Y and Hyundai Kona Electric.");
-                electricVehicleStorage.saveElectricVehicle(nissaAriya);
-
-                ElectricVehicle rivianROneT = new ElectricVehicle("Rivian", "R1T", "Omar Little", "Truck", 73000, true,
-                                725, 300, 80, 3.0, 100, "AWD", 10, 35, 5, true, true, true, 57, 11.0, 4.5, false,
-                                "./images/ev33.jpg",
-                                "https://cdn.motor1.com/images/mgl/vkP1b/s1/check-out-the-possible-rivian-r1t-production-colors-revealed-by-rivianforums.com.jpg",
-                                "The futuristic R1T is an all-electric pickup truck from new American startup brand Rivian, and it promises 300 miles of driving range and lightning-quick acceleration. The company says that the revealed truck is no concept vehicle—what you see here is what will enter production as the 2021 R1T. At 215.6 inches long, the crew-cab-only R1T splits the difference in size between mid-size pickups such as the Ford Ranger and full-size trucks such as the Ram 1500. The R1T will be one of the first electric pickup trucks in what seems to be a burgeoning market, soon to include the Tesla Cybertruck and the GMC Hummer EV SUT.");
-                electricVehicleStorage.saveElectricVehicle(rivianROneT);
-
-                ElectricVehicle teslaCybertruck = new ElectricVehicle("Tesla", "Cybertruck", "James ‘Sawyer’ Ford",
-                                "Truck", 70000, false, 725, 500, 90, 3.0, 130, "AWD", 10, 44, 6, true, true, true, 90,
-                                10.0, 5.0, true,
-                                "./images/ev34.jpg",
-                                "https://www.tesla.com/xNVh4yUEc3B9/10_Desktop.jpg",
-                                "Cybertruck is designed to have the utility of a truck with sports car performance. Built to be durable, versatile, capable and high-performance both on-road and off.\n"
-                                                + "\n"
-                                                + "The Tesla Cybertruck looks like it was dropped off by an alien race, but it has the capabilities to challenge all of the top-selling pickup trucks. With a sharp-edged exterior that is made of scratch- and dent-resistant stainless steel, Tesla's all-electric truck is seriously tough. Along with available all-wheel drive, the Cybertruck can tow up to 14,000 pounds and has an estimated driving range of 500-plus miles. While that applies only to the most expensive model, the cheapest one starts at $39,900.");
-                electricVehicleStorage.saveElectricVehicle(teslaCybertruck);
-
-                ElectricVehicle teslaRoadsterTwo = new ElectricVehicle("Tesla", "Roadster 2", "Dr. Jack Shephard",
-                                "Sedan", 200000, false, 725, 620, 90, 1.9, 250, "AWD", 8, 44, 4, true, true, true, 15,
-                                4.0, 5.0, true,
-                                "./images/ev35.jpg",
-                                "https://upload.wikimedia.org/wikipedia/commons/8/89/NextGenTeslaRoadster_%28cropped%29.jpg",
-                                "An all-electric vehicle, the Tesla Roadster is the quickest car in the world, with record-setting acceleration, range and performance.\n"
-                                                + "\n"
-                                                + "The original Tesla Roadster put the all-electric automaker on the map, even if most Model S and Model X buyers don't remember it.  The second-generation Roadster bests it predecessor by adding two small rear seats, significantly more driving range, and a much higher level of performance. Tesla CEO Elon Musk boasted about a 1.9-second 60-mph time and a 250-mph top speed when the Roadster 2 was unveiled.");
-                electricVehicleStorage.saveElectricVehicle(teslaRoadsterTwo);
 
         }
 }
