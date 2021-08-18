@@ -73,7 +73,7 @@ const displayArticle = function (article) {
     articleCommentInput.setAttribute("placeholder", "Enter your comment...");
     const submitArticleCommentButton = document.createElement("button");
     submitArticleCommentButton.classList.add("comment-button-bouncy");
-    submitArticleCommentButton.innerText = "Submit a comment";
+    submitArticleCommentButton.innerText = "Submit";
 
     form.appendChild(articleCommentInput);
     form.appendChild(submitArticleCommentButton);

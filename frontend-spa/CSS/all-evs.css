@@ -208,7 +208,6 @@ button:hover {
   color: black;
   animation: bouncy 5s infinite linear;
   position: relative;
-  /* font-family: Lato; */
   background-color: Transparent;
   background-repeat: no-repeat;
   cursor: pointer;
