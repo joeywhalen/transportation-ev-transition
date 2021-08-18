@@ -19,6 +19,7 @@ const displayArticle = function (article) {
     bodyElement.append(displayHeader());
     const articleElement = document.createElement("div");
     articleElement.classList.add("article-content");
+    articleElement.style.backgroundColor = "#E0E4CC"
     // const articleTopicElement = document.getElementById(article.articleTopic.getId());
     const articleTopicElement = document.createElement("h1");
     articleTopicElement.classList.add('article-topic');
@@ -67,11 +68,12 @@ const displayArticle = function (article) {
     const form = document.createElement("form");
     form.classList.add("new-comment-form");
     const articleCommentInput = document.createElement("input");
+    articleCommentInput.classList.add("input-form")
     articleCommentInput.setAttribute("type", "text");
     articleCommentInput.setAttribute("placeholder", "Enter your comment...");
     const submitArticleCommentButton = document.createElement("button");
-    submitArticleCommentButton.classList.add("comment-button");
-    submitArticleCommentButton.innerText = "Submit a comment";
+    submitArticleCommentButton.classList.add("comment-button-bouncy");
+    submitArticleCommentButton.innerText = "Submit";
 
     form.appendChild(articleCommentInput);
     form.appendChild(submitArticleCommentButton);
