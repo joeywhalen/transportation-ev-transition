@@ -31,7 +31,8 @@ const indexArticles = function (articles) {
     articleCount++;
   });
 
-  
+  const body = document.querySelector("body");
+  // body.append(displayFooter());
   contactsModal();
   // return articlesGridElement;
 }
