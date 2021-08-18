@@ -74,6 +74,7 @@ const displaySingleEV = function (ElectricVehicle) {
     const detailsSection = document.createElement("div");
     detailsSection.classList.add("details-section");
     mainElement.append(detailsSection);
+    detailsSection.style.backgroundColor = "white"
 
     const detailsTitle = document.createElement("div");
     detailsSection.innerHTML = '<h1 class="vehicle-details-title">Vehicle Details</h1>';
