@@ -210,13 +210,14 @@ const displaySingleEV = function (ElectricVehicle) {
     centerFour.innerHTML = '<div id="colored-rectangle"></div>';
     maintCostElement.append(centerFour);
 
-    const reviewCommentLineElement = document.createElement("hr");
-    reviewCommentLineElement.classList.add("single-vehicle-line");
-    priceDetailsText.append(reviewCommentLineElement);
     const reviewCommentsNotationElement = document.createElement("review-comments");
     reviewCommentsNotationElement.classList.add("review-comments-notation");
     reviewCommentsNotationElement.innerText = "Comments: ";
-    reviewCommentLineElement.append(reviewCommentsNotationElement);
+    maintCostElement.append(reviewCommentsNotationElement);
+
+    const centerFive = document.createElement("center");
+    centerFive.innerHTML = '<div id="colored-rectangle"></div>';
+    maintCostElement.append(centerFive);
 
     if (ElectricVehicle.reviewComments !== null && ElectricVehicle.reviewComments.length !== 0) {
         ElectricVehicle.reviewComments.forEach((reviewComment) => {
