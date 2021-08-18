@@ -59,25 +59,33 @@ const displaySingleArticle = function (article) {
     const articleAuthorElement = document.createElement("h3");
     articleAuthorElement.classList.add("single-article-author");
     articleAuthorElement.innerText = "By: " + article.authorName;
-    const articleLineElementOne = document.createElement("hr");
-    articleLineElementOne.classList.add("single-article-line");
+
+    const centerOne = document.createElement("center");
+    centerOne.innerHTML = '<div id="colored-rectangle"></div>';
+
     const articleTextElement = document.createElement("p");
     articleTextElement.classList.add("single-article-content");
     articleTextElement.innerText = article.articleContent;
-    const articleLineElementTwo = document.createElement("hr");
-    articleLineElementTwo.classList.add("single-article-line");
+
+    const centerTwo = document.createElement("center");
+    centerTwo.innerHTML = '<div id="colored-rectangle"></div>';
+
     const articleCommentsNotationElement = document.createElement("article-comments");
     articleCommentsNotationElement.classList.add("article-comments-notation");
     articleCommentsNotationElement.innerText = "Comments: ";
+
+    const centerThree = document.createElement("center");
+    centerThree.innerHTML = '<div id="colored-rectangle"></div>';
 
     articleElement.appendChild(articleTopicElement);
     articleElement.appendChild(articleTitleElement);
     articleElement.appendChild(articleImageElement);
     articleElement.appendChild(articleAuthorElement);
-    articleElement.appendChild(articleLineElementOne);
+    articleElement.appendChild(centerOne);
     articleElement.appendChild(articleTextElement);
-    articleElement.appendChild(articleLineElementTwo);
+    articleElement.appendChild(centerTwo);
     articleElement.appendChild(articleCommentsNotationElement);
+    articleElement.appendChild(centerThree);
 
     if (article.articleComments !== null && article.articleComments.length !== 0) {
         article.articleComments.forEach((articleComment) => {
@@ -93,11 +101,12 @@ const displaySingleArticle = function (article) {
     const form = document.createElement("form");
     form.classList.add("new-comment-form");
     const articleCommentInput = document.createElement("input");
+    articleCommentInput.classList.add("input-form");
     articleCommentInput.setAttribute("type", "text");
     articleCommentInput.setAttribute("placeholder", "Enter your comment...");
     const submitArticleCommentButton = document.createElement("button");
-    submitArticleCommentButton.classList.add("comment-button");
-    submitArticleCommentButton.innerText = "Submit a comment";
+    submitArticleCommentButton.classList.add("comment-button-bouncy");
+    submitArticleCommentButton.innerText = "Submit";
 
     form.appendChild(articleCommentInput);
     form.appendChild(submitArticleCommentButton);
@@ -118,7 +127,7 @@ const displaySingleArticle = function (article) {
                 body: unqoutedJson
             })
                 .then(response => response.json())
-                .then(article => displayArticle(article))
+                .then(article => displaySingleArticle(article))
                 .catch(error => console.log(error));
         }
     })
