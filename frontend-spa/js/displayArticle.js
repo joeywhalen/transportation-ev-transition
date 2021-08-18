@@ -1,6 +1,6 @@
-import { displayAllTopics } from "./articleTopics.js";
 import { displayHeader } from "./Header.js";
 import { contactsModal } from "./modal.js";
+import {displayFooter} from "./footer.js";
 
 const clearChildren = function (element) {
     while (element.firstChild) {
@@ -106,6 +106,7 @@ const displayArticle = function (article) {
     })
 
     mainElement.appendChild(articleElement);
+    mainElement.append(displayFooter());
     contactsModal();
     return mainElement;
 }
