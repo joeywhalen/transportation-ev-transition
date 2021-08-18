@@ -31,9 +31,15 @@ body {
     margin-top: 20px;
 }
 
-.single-article-line {
+/* .single-article-line {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+} */
+#colored-rectangle{
+    margin: 2%;
+    height: 10px;
+    width: 500px;
+    background-image: linear-gradient(to right, rgb(250, 116, 26), rgb(128,176,85), black);  
+  }
 
 .single-article-content {
     display: block;
@@ -50,6 +56,7 @@ body {
 .article-comments-notation {
     display: flex;
     justify-content: center;
+    font-size: 30px;
   }
   
   .new-comment-form {
