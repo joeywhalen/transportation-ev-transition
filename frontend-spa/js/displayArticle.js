@@ -19,6 +19,7 @@ const displayArticle = function (article) {
     bodyElement.append(displayHeader());
     const articleElement = document.createElement("div");
     articleElement.classList.add("article-content");
+    articleElement.style.backgroundColor = "#E0E4CC"
     // const articleTopicElement = document.getElementById(article.articleTopic.getId());
     const articleTopicElement = document.createElement("h1");
     articleTopicElement.classList.add('article-topic');
