@@ -19,8 +19,7 @@ const displayArticle = function (article) {
     bodyElement.append(displayHeader());
     const articleElement = document.createElement("div");
     articleElement.classList.add("article-content");
-    articleElement.style.backgroundColor = "#E0E4CC"
-    // const articleTopicElement = document.getElementById(article.articleTopic.getId());
+    articleElement.style.backgroundColor = "white"
     const articleTopicElement = document.createElement("h1");
     articleTopicElement.classList.add('article-topic');
     articleTopicElement.innerText = article.articleTopicTitle;
@@ -33,26 +32,33 @@ const displayArticle = function (article) {
     const articleAuthorElement = document.createElement("h3");
     articleAuthorElement.classList.add("single-article-author");
     articleAuthorElement.innerText = "By: " + article.authorName;
-    const articleLineElementOne = document.createElement("hr");
-    articleLineElementOne.classList.add("single-article-line");
-    // const articleTextElement = document.createElement("p");
+
+    const centerOne = document.createElement("center");
+    centerOne.innerHTML = '<div id="colored-rectangle"></div>';
+
     const articleTextElement = document.createElement("p");
     articleTextElement.classList.add("single-article-content");
     articleTextElement.innerText = article.articleContent;
-    const articleLineElementTwo = document.createElement("hr");
-    articleLineElementTwo.classList.add("single-article-line");
+
+    const centerTwo = document.createElement("center");
+    centerTwo.innerHTML = '<div id="colored-rectangle"></div>';
+
     const articleCommentsNotationElement = document.createElement("article-comments");
     articleCommentsNotationElement.classList.add("article-comments-notation");
     articleCommentsNotationElement.innerText = "Comments: ";
+
+    const centerThree = document.createElement("center");
+    centerThree.innerHTML = '<div id="colored-rectangle"></div>';
 
     articleElement.appendChild(articleTopicElement);
     articleElement.appendChild(articleTitleElement);
     articleElement.appendChild(articleImageElement);
     articleElement.appendChild(articleAuthorElement);
-    articleElement.appendChild(articleLineElementOne);
+    articleElement.appendChild(centerOne);
     articleElement.appendChild(articleTextElement);
-    articleElement.appendChild(articleLineElementTwo);
+    articleElement.appendChild(centerTwo);
     articleElement.appendChild(articleCommentsNotationElement);
+    articleElement.appendChild(centerThree);
 
     if (article.articleComments !== null && article.articleComments.length !== 0) {
         article.articleComments.forEach((articleComment) => {
