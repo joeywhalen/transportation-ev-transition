@@ -15,6 +15,7 @@ public class IceVehicle {
     private float yearlyMaintCost;
     private float zeroToSixty;
     private int topSpeed;
+    private String imageUrl;
 
     @ManyToOne
     @JsonIgnore
@@ -30,7 +31,7 @@ public class IceVehicle {
 
 
     public IceVehicle(int mpg, int range, int msrp, float yearlyMaintCost,
-                      float zeroToSixty, int topSpeed, Year year, Make make, Model model) {
+                      float zeroToSixty, int topSpeed, Year year, Make make, Model model,String imageUrl) {
         this.mpg = mpg;
         this.range = range;
         this.msrp = msrp;
@@ -40,6 +41,7 @@ public class IceVehicle {
         this.year = year;
         this.make = make;
         this.model = model;
+        this.imageUrl = imageUrl;
     }
 
     public IceVehicle() {
@@ -106,5 +108,9 @@ public class IceVehicle {
 
     public Make getMake() {
         return make;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
     }
 }

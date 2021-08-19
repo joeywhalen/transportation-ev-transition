@@ -81,12 +81,15 @@ body {
   margin: auto;
   background-color: white;
   width: 100%;
-  border-radius: 5px;
-  background-image: url("https://images.hgmsites.net/hug/2012-ford-f-150-2wd-supercab-163-xl-side-exterior-view_100373810_h.jpg");
+  /* background-image: url("https://images.hgmsites.net/hug/2012-ford-f-150-2wd-supercab-163-xl-side-exterior-view_100373810_h.jpg"); */
+  border: 5px;
+  border-color: black;
   /* background-attachment: fixed; */
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 20px;
 }
 .ev1 {
   grid-area: 2 / 1 / 3 / 2;

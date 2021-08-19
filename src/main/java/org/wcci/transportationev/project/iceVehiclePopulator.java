@@ -61,7 +61,7 @@ public class iceVehiclePopulator implements CommandLineRunner {
         modelStorage.saveModel(accord);
 
         IceVehicle userVehicle = new IceVehicle(24,350,24000,1800,
-                7f,120, twoTwelve,ford,f150);
+                7f,120, twoTwelve,ford,f150,"https://images.hgmsites.net/hug/2012-ford-f-150-2wd-supercab-163-xl-side-exterior-view_100373810_h.jpg");
         iceVehicleStorage.saveIceVehicle(userVehicle);
     }
 
