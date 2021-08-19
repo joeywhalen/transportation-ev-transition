@@ -110,7 +110,8 @@ public class iceVehiclePopulator implements CommandLineRunner {
         Model explorer = new Model("Explorer",ford);
         Model fiesta = new Model("Fiesta",ford);
         Model taurus = new Model("Taurus",ford);
-        Model fusion = new Model("Fusion",ford);
+        Model fusion = new Model("Fusion",ford2018);
+        Model focus = new Model("Focus",ford2018);
 
         modelStorage.saveModel(f150);
         modelStorage.saveModel(mustang);
@@ -118,6 +119,7 @@ public class iceVehiclePopulator implements CommandLineRunner {
         modelStorage.saveModel(fiesta);
         modelStorage.saveModel(taurus);
         modelStorage.saveModel(fusion);
+        modelStorage.saveModel(focus);
 
         //Honda Models
         Model civic = new Model("Civic",honda);
@@ -146,8 +148,12 @@ public class iceVehiclePopulator implements CommandLineRunner {
         iceVehicleStorage.saveIceVehicle(fordTaurus2012);
 
         IceVehicle fordFusion2018 = new IceVehicle(28,375,20000,1250,
-                6.5f,150, twoTwelve,ford,fusion,"https://file.kelleybluebookimages.com/kbb/base/evox/CP/12239/2018-Ford-Fusion-front_12239_032_1795x753_G1_cropped.png");
+                6.5f,150, twoEighteen,ford2018,fusion,"https://file.kelleybluebookimages.com/kbb/base/evox/CP/12239/2018-Ford-Fusion-front_12239_032_1795x753_G1_cropped.png");
         iceVehicleStorage.saveIceVehicle(fordFusion2018);
+
+        IceVehicle fordFocus2018 = new IceVehicle(31,375,25000,1250,
+                7.5f,120, twoEighteen,ford2018,focus,"https://file.kelleybluebookimages.com/kbb/base/evox/CP/12239/2018-Ford-Fusion-front_12239_032_1795x753_G1_cropped.png");
+        iceVehicleStorage.saveIceVehicle(fordFocus2018);
     }
 
 
