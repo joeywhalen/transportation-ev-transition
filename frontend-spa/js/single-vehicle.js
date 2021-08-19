@@ -133,8 +133,9 @@ const displaySingleEV = function (ElectricVehicle) {
     basicInfoText.append(travelChargeElement);
 
     const autonomousElement = document.createElement("li");
-    let checkAutonomous = ElectricVehicle.autonomous;
-    if (checkAutonomous = true) {
+    var checkAutonomous = ElectricVehicle.autonomous;
+    console.log(checkAutonomous);
+    if (checkAutonomous) {
         autonomousElement.innerHTML = 'Autonomous?: <img src="./images/check.png" height="15" width="15">'
     } else {
         autonomousElement.innerHTML = 'Autonomous?: <img src="./images/x.png" height="15" width="15">'
@@ -147,7 +148,8 @@ const displaySingleEV = function (ElectricVehicle) {
 
     const phoneKeyElement = document.createElement("li");
     let checkPhoneKey = ElectricVehicle.phoneKey;
-    if (checkPhoneKey = true) {
+    console.log(checkPhoneKey);
+    if (checkPhoneKey) {
         phoneKeyElement.innerHTML = 'Phone as key?: <img src="./images/check.png" height="15" width="15">'
     } else {
         phoneKeyElement.innerHTML = 'Phone as key?: <img src="./images/x.png" height="15" width="15">'
@@ -175,11 +177,21 @@ const displaySingleEV = function (ElectricVehicle) {
     standardEquipText.append(seatingItem);
 
     const driverAssistItem = document.createElement("li");
-    driverAssistItem.innerText = "Driver assist?: " + ElectricVehicle.driverAssist;
+    let checkDriverAssist = ElectricVehicle.driverAssist;
+    if (checkDriverAssist) {
+        driverAssistItem.innerHTML = 'Driver assist?: <img src="./images/check.png" height="15" width="15">'
+    } else {
+        driverAssistItem.innerHTML = 'Driver assist?: <img src="./images/x.png" height="15" width="15">'
+    }
     standardEquipText.append(driverAssistItem);
 
     const freeOtaItem = document.createElement("li");
-    freeOtaItem.innerText = "Free Over the Air Updates?: " + ElectricVehicle.freeOtaUpdate;
+    let checkFreeOta = ElectricVehicle.freeOtaUpdate;
+    if (checkFreeOta) {
+        freeOtaItem.innerHTML = 'Free Over the Air Updates?: <img src="./images/check.png" height="15" width="15">'
+    } else {
+        freeOtaItem.innerHTML = 'Free Over the Air Updates?: <img src="./images/x.png" height="15" width="15">'
+    }
     standardEquipText.append(freeOtaItem);
 
     const rearCargoItem = document.createElement("li");
