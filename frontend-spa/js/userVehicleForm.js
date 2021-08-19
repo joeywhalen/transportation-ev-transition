@@ -502,6 +502,26 @@ const displayComparedEV = function (ElectricVehicle,allEVs, userVehicle, userSta
     carMileage.innerText = "MPGe: " + ElectricVehicle.mpgE;
     imageText.append(carMileage);
 
+    // ---------------------Review section-------------------------
+
+    const reviewSection = document.createElement("div");
+    reviewSection.classList.add("review-section");
+    mainElement.appendChild(reviewSection);
+
+    const reviewAuthorElement = document.createElement("h3");
+    reviewAuthorElement.classList.add("single-vehicle-author");
+    reviewAuthorElement.innerText = "By: " + ElectricVehicle.authorName;
+    reviewSection.appendChild(reviewAuthorElement);
+
+    const center = document.createElement("center");
+    center.innerHTML = '<div id="colored-rectangle"></div>';
+    reviewSection.appendChild(center);
+
+    const reviewTextElement = document.createElement("p");
+    reviewTextElement.classList.add("single-review-content");
+    reviewTextElement.innerText = ElectricVehicle.reviewContent;
+    reviewSection.appendChild(reviewTextElement);
+
     // ---------------------white details section-------------------------
 
     const detailsSection = document.createElement("div");

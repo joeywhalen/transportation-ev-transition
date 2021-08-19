@@ -775,6 +775,27 @@ a {
   list-style-type: none;
 }
 
+/* --------------------Review section----------------------- */
+
+.single-vehicle-author {
+  font-family: 'Georama',
+    sans-serif;
+  font-size: 17px;
+  margin-left: 700px;
+  margin-right: 700px;
+  text-align: center;
+}
+
+.single-review-content {
+  display: block;
+  margin-left: 15em;
+  margin-right: 15em;
+  font-family: 'Georama', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  line-height: 35px;
+}
+
 /*   Comments  */
 
 .input-form {
