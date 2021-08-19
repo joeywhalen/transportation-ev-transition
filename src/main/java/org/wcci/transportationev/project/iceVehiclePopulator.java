@@ -100,18 +100,24 @@ public class iceVehiclePopulator implements CommandLineRunner {
         Make mitsubishi = new Make("Mitsubishi",twoTwelve);
         makeStorage.saveMake(mitsubishi);
 
+        //2018 MAKES
+        Make ford2018 = new Make("Ford",twoEighteen);
+        makeStorage.saveMake(ford2018);
+
         //Ford Models
         Model f150 = new Model("F-150",ford);
         Model mustang = new Model("Mustang",ford);
         Model explorer = new Model("Explorer",ford);
         Model fiesta = new Model("Fiesta",ford);
         Model taurus = new Model("Taurus",ford);
+        Model fusion = new Model("Fusion",ford);
 
         modelStorage.saveModel(f150);
         modelStorage.saveModel(mustang);
         modelStorage.saveModel(explorer);
         modelStorage.saveModel(fiesta);
         modelStorage.saveModel(taurus);
+        modelStorage.saveModel(fusion);
 
         //Honda Models
         Model civic = new Model("Civic",honda);
@@ -123,21 +129,25 @@ public class iceVehiclePopulator implements CommandLineRunner {
                 7f,120, twoTwelve,ford,f150,"https://images.hgmsites.net/hug/2012-ford-f-150-2wd-supercab-163-xl-side-exterior-view_100373810_h.jpg");
         iceVehicleStorage.saveIceVehicle(userVehicle);
 
-        IceVehicle fordMustang = new IceVehicle(25,325,16000,1500,
+        IceVehicle fordMustang2012 = new IceVehicle(25,325,16000,1500,
                 6.5f,160, twoTwelve,ford,mustang,"https://s.aolcdn.com/commerce/autodata/images/CAC20FOC051B0101.jpg");
-        iceVehicleStorage.saveIceVehicle(fordMustang);
+        iceVehicleStorage.saveIceVehicle(fordMustang2012);
 
-        IceVehicle fordExplorer = new IceVehicle(24,275,12000,1500,
+        IceVehicle fordExplorer2012 = new IceVehicle(24,275,12000,1500,
                 8.5f,140, twoTwelve,ford,explorer,"https://file.kelleybluebookimages.com/kbb/base/evox/CP/7597/2012-Ford-Explorer-front_7597_032_1812x872_HT_cropped.png");
-        iceVehicleStorage.saveIceVehicle(fordExplorer);
+        iceVehicleStorage.saveIceVehicle(fordExplorer2012);
 
-        IceVehicle fordFiesta = new IceVehicle(35,375,7000,1200,
+        IceVehicle fordFiesta2012 = new IceVehicle(35,375,7000,1200,
                 8f,140, twoTwelve,ford,fiesta,"https://file.kelleybluebookimages.com/kbb/base/evox/CP/7657/2012-Ford-Fiesta-front_7657_032_1753x812_SQ_cropped.png");
-        iceVehicleStorage.saveIceVehicle(fordFiesta);
+        iceVehicleStorage.saveIceVehicle(fordFiesta2012);
 
-        IceVehicle fordTaurus = new IceVehicle(30,375,12000,1250,
+        IceVehicle fordTaurus2012 = new IceVehicle(30,375,12000,1250,
                 7f,135, twoTwelve,ford,taurus,"https://file.kelleybluebookimages.com/kbb/base/evox/CP/7677/2012-Ford-Taurus-front_7677_032_1785x739_HT_cropped.png");
-        iceVehicleStorage.saveIceVehicle(fordTaurus);
+        iceVehicleStorage.saveIceVehicle(fordTaurus2012);
+
+        IceVehicle fordFusion2018 = new IceVehicle(28,375,20000,1250,
+                6.5f,150, twoTwelve,ford,fusion,"https://file.kelleybluebookimages.com/kbb/base/evox/CP/12239/2018-Ford-Fusion-front_12239_032_1795x753_G1_cropped.png");
+        iceVehicleStorage.saveIceVehicle(fordFusion2018);
     }
 
 
