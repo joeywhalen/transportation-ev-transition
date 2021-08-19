@@ -415,8 +415,6 @@ const displayEVs = function (allEVs, userVehicle, userStateObj, weeklyMiles, use
 
         compareExploreButton.addEventListener("click", (clickEvent) => {
             
-            console.log("EV being passed:")
-            console.log(allEVs[i])
             clickEvent.preventDefault;
             
             displayComparedEV(allEVs[i],allEVs, userVehicle, userStateObj, weeklyMiles, userChargeObj)
