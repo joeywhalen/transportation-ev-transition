@@ -4,19 +4,6 @@ const contactsModal = function () {
   let btn = document.getElementById("myBtn");
   let span = document.getElementsByClassName("close")[0];
 
-  console.log(modal)
-  console.log(btn)
-  console.log(span)
-
-  //const modalButton = document.querySelector
-
-  // btn.addEventListener("click", () => {
-  //   clickEvent.preventDefault();
-  //   //modal.setAttribute("display","block")
-  //   modal.style.display = "block";
-  //   console.log("Modal was clicked.")
-  // })
-
   btn.onclick = function () {
     modal.style.display = "block";
     console.log("Clicked.")
