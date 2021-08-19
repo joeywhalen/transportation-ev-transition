@@ -500,6 +500,26 @@ const displayComparedEV = function (ElectricVehicle,allEVs, userVehicle, userSta
     carMileage.innerText = "MPGe: " + ElectricVehicle.mpgE;
     imageText.append(carMileage);
 
+    // ---------------------Review section-------------------------
+
+    const reviewSection = document.createElement("div");
+    reviewSection.classList.add("review-section");
+    mainElement.appendChild(reviewSection);
+
+    const reviewAuthorElement = document.createElement("h3");
+    reviewAuthorElement.classList.add("single-vehicle-author");
+    reviewAuthorElement.innerText = "By: " + ElectricVehicle.authorName;
+    reviewSection.appendChild(reviewAuthorElement);
+
+    const center = document.createElement("center");
+    center.innerHTML = '<div id="colored-rectangle"></div>';
+    reviewSection.appendChild(center);
+
+    const reviewTextElement = document.createElement("p");
+    reviewTextElement.classList.add("single-review-content");
+    reviewTextElement.innerText = ElectricVehicle.reviewContent;
+    reviewSection.appendChild(reviewTextElement);
+
     // ---------------------white details section-------------------------
 
     const detailsSection = document.createElement("div");
@@ -567,9 +587,9 @@ const displayComparedEV = function (ElectricVehicle,allEVs, userVehicle, userSta
     const autonomousElement = document.createElement("li");
     let checkAutonomous = ElectricVehicle.autonomous;
     if (checkAutonomous) {
-        autonomousElement.innerHTML = 'Autonomous?: <img src="./images/check.png" height="15" width="15">'
+        autonomousElement.innerHTML = 'Autonomous? <img src="./images/check.png" height="15" width="15">'
     } else {
-        autonomousElement.innerHTML = 'Autonomous?: <img src="./images/x.png" height="15" width="15">'
+        autonomousElement.innerHTML = 'Autonomous? <img src="./images/x.png" height="15" width="15">'
     }
     basicInfoText.append(autonomousElement);
 
@@ -580,9 +600,9 @@ const displayComparedEV = function (ElectricVehicle,allEVs, userVehicle, userSta
     const phoneKeyElement = document.createElement("li");
     let checkPhoneKey = ElectricVehicle.phoneKey;
     if (checkPhoneKey) {
-        phoneKeyElement.innerHTML = 'Phone as key?: <img src="./images/check.png" height="15" width="15">'
+        phoneKeyElement.innerHTML = 'Phone as key? <img src="./images/check.png" height="15" width="15">'
     } else {
-        phoneKeyElement.innerHTML = 'Phone as key?: <img src="./images/x.png" height="15" width="15">'
+        phoneKeyElement.innerHTML = 'Phone as key? <img src="./images/x.png" height="15" width="15">'
     }
     basicInfoText.append(phoneKeyElement);
 
@@ -608,18 +628,18 @@ const displayComparedEV = function (ElectricVehicle,allEVs, userVehicle, userSta
     const driverAssistItem = document.createElement("li");
     let checkDriverAssist = ElectricVehicle.driverAssist;
     if (checkDriverAssist) {
-        driverAssistItem.innerHTML = 'Driver assist?: <img src="./images/check.png" height="15" width="15">'
+        driverAssistItem.innerHTML = 'Driver assist? <img src="./images/check.png" height="15" width="15">'
     } else {
-        driverAssistItem.innerHTML = 'Driver assist?: <img src="./images/x.png" height="15" width="15">'
+        driverAssistItem.innerHTML = 'Driver assist? <img src="./images/x.png" height="15" width="15">'
     }
     standardEquipText.append(driverAssistItem);
 
     const freeOtaItem = document.createElement("li");
     let checkFreeOta = ElectricVehicle.freeOtaUpdate;
     if (checkFreeOta) {
-        freeOtaItem.innerHTML = 'Free Over the Air Updates?: <img src="./images/check.png" height="15" width="15">'
+        freeOtaItem.innerHTML = 'Free Over the Air Updates? <img src="./images/check.png" height="15" width="15">'
     } else {
-        freeOtaItem.innerHTML = 'Free Over the Air Updates?: <img src="./images/x.png" height="15" width="15">'
+        freeOtaItem.innerHTML = 'Free Over the Air Updates? <img src="./images/x.png" height="15" width="15">'
     }
     standardEquipText.append(freeOtaItem);
 
@@ -653,9 +673,9 @@ const displayComparedEV = function (ElectricVehicle,allEVs, userVehicle, userSta
     const taxCreditElement = document.createElement("li");
     let checkTaxCredit = ElectricVehicle.taxCredit;
     if (checkTaxCredit) {
-        taxCreditElement.innerHTML = 'Eligible for $7500 Federal Tax Credit?: <img src="./images/check.png" height="15" width="15">'
+        taxCreditElement.innerHTML = 'Eligible for $7500 Federal Tax Credit? <img src="./images/check.png" height="15" width="15">'
     } else {
-        taxCreditElement.innerHTML = 'Eligible for $7500 Federal Tax Credit?: <img src="./images/x.png" height="15" width="15">'
+        taxCreditElement.innerHTML = 'Eligible for $7500 Federal Tax Credit? <img src="./images/x.png" height="15" width="15">'
     }
     priceDetailsText.append(taxCreditElement);
 
