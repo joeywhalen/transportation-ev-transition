@@ -133,7 +133,7 @@ const displaySingleEV = function (ElectricVehicle) {
     basicInfoText.append(travelChargeElement);
 
     const autonomousElement = document.createElement("li");
-    var checkAutonomous = ElectricVehicle.autonomous;
+    let checkAutonomous = ElectricVehicle.autonomous;
     console.log(checkAutonomous);
     if (checkAutonomous) {
         autonomousElement.innerHTML = 'Autonomous?: <img src="./images/check.png" height="15" width="15">'
@@ -222,7 +222,12 @@ const displaySingleEV = function (ElectricVehicle) {
     priceDetailsText.append(msrpElement);
 
     const taxCreditElement = document.createElement("li");
-    taxCreditElement.innerText = "Eligible for $7500 Federal Tax Credit?: " + ElectricVehicle.taxCredit;
+    let checkTaxCredit = ElectricVehicle.taxCredit;
+    if (checkTaxCredit) {
+        taxCreditElement.innerHTML = 'Eligible for $7500 Federal Tax Credit?: <img src="./images/check.png" height="15" width="15">'
+    } else {
+        taxCreditElement.innerHTML = 'Eligible for $7500 Federal Tax Credit?: <img src="./images/x.png" height="15" width="15">'
+    }
     priceDetailsText.append(taxCreditElement);
 
     const maintCostElement = document.createElement("li");
