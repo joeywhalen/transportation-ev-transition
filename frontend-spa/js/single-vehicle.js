@@ -156,9 +156,9 @@ const displaySingleEV = function (ElectricVehicle) {
     let checkAutonomous = ElectricVehicle.autonomous;
     console.log(checkAutonomous);
     if (checkAutonomous) {
-        autonomousElement.innerHTML = 'Autonomous?: <img src="./images/check.png" height="15" width="15">'
+        autonomousElement.innerHTML = 'Autonomous? <img src="./images/check.png" height="15" width="15">'
     } else {
-        autonomousElement.innerHTML = 'Autonomous?: <img src="./images/x.png" height="15" width="15">'
+        autonomousElement.innerHTML = 'Autonomous? <img src="./images/x.png" height="15" width="15">'
     }
     basicInfoText.append(autonomousElement);
 
@@ -170,9 +170,9 @@ const displaySingleEV = function (ElectricVehicle) {
     let checkPhoneKey = ElectricVehicle.phoneKey;
     console.log(checkPhoneKey);
     if (checkPhoneKey) {
-        phoneKeyElement.innerHTML = 'Phone as key?: <img src="./images/check.png" height="15" width="15">'
+        phoneKeyElement.innerHTML = 'Phone as key? <img src="./images/check.png" height="15" width="15">'
     } else {
-        phoneKeyElement.innerHTML = 'Phone as key?: <img src="./images/x.png" height="15" width="15">'
+        phoneKeyElement.innerHTML = 'Phone as key? <img src="./images/x.png" height="15" width="15">'
     }
     basicInfoText.append(phoneKeyElement);
 
@@ -199,18 +199,18 @@ const displaySingleEV = function (ElectricVehicle) {
     const driverAssistItem = document.createElement("li");
     let checkDriverAssist = ElectricVehicle.driverAssist;
     if (checkDriverAssist) {
-        driverAssistItem.innerHTML = 'Driver assist?: <img src="./images/check.png" height="15" width="15">'
+        driverAssistItem.innerHTML = 'Driver assist? <img src="./images/check.png" height="15" width="15">'
     } else {
-        driverAssistItem.innerHTML = 'Driver assist?: <img src="./images/x.png" height="15" width="15">'
+        driverAssistItem.innerHTML = 'Driver assist? <img src="./images/x.png" height="15" width="15">'
     }
     standardEquipText.append(driverAssistItem);
 
     const freeOtaItem = document.createElement("li");
     let checkFreeOta = ElectricVehicle.freeOtaUpdate;
     if (checkFreeOta) {
-        freeOtaItem.innerHTML = 'Free Over the Air Updates?: <img src="./images/check.png" height="15" width="15">'
+        freeOtaItem.innerHTML = 'Free Over the Air Updates? <img src="./images/check.png" height="15" width="15">'
     } else {
-        freeOtaItem.innerHTML = 'Free Over the Air Updates?: <img src="./images/x.png" height="15" width="15">'
+        freeOtaItem.innerHTML = 'Free Over the Air Updates? <img src="./images/x.png" height="15" width="15">'
     }
     standardEquipText.append(freeOtaItem);
 
@@ -244,9 +244,9 @@ const displaySingleEV = function (ElectricVehicle) {
     const taxCreditElement = document.createElement("li");
     let checkTaxCredit = ElectricVehicle.taxCredit;
     if (checkTaxCredit) {
-        taxCreditElement.innerHTML = 'Eligible for $7500 Federal Tax Credit?: <img src="./images/check.png" height="15" width="15">'
+        taxCreditElement.innerHTML = 'Eligible for $7500 Federal Tax Credit? <img src="./images/check.png" height="15" width="15">'
     } else {
-        taxCreditElement.innerHTML = 'Eligible for $7500 Federal Tax Credit?: <img src="./images/x.png" height="15" width="15">'
+        taxCreditElement.innerHTML = 'Eligible for $7500 Federal Tax Credit? <img src="./images/x.png" height="15" width="15">'
     }
     priceDetailsText.append(taxCreditElement);
 
