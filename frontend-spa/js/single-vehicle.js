@@ -133,7 +133,13 @@ const displaySingleEV = function (ElectricVehicle) {
     basicInfoText.append(travelChargeElement);
 
     const autonomousElement = document.createElement("li");
-    autonomousElement.innerText = "Autonomous?: " + ElectricVehicle.autonomous;
+    let checkAutonomous = ElectricVehicle.autonomous;
+    if (checkAutonomous = true) {
+        autonomousElement.innerHTML = '<br>Autonomous?: <img src="./images/check.png" height="15" width="15">'
+    } else {
+        autonomousElement.innerHTML = '<br>Autonomous?: <img src="./images/x.png" height="15" width="15">'
+    }
+    
     basicInfoText.append(autonomousElement);
 
     const nhtsaElement = document.createElement("li");
