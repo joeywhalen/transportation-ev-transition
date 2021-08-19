@@ -130,6 +130,14 @@ public class iceVehiclePopulator implements CommandLineRunner {
         IceVehicle fordExplorer = new IceVehicle(24,275,12000,1500,
                 8.5f,140, twoTwelve,ford,explorer,"https://file.kelleybluebookimages.com/kbb/base/evox/CP/7597/2012-Ford-Explorer-front_7597_032_1812x872_HT_cropped.png");
         iceVehicleStorage.saveIceVehicle(fordExplorer);
+
+        IceVehicle fordFiesta = new IceVehicle(35,375,7000,1200,
+                8f,140, twoTwelve,ford,fiesta,"https://file.kelleybluebookimages.com/kbb/base/evox/CP/7657/2012-Ford-Fiesta-front_7657_032_1753x812_SQ_cropped.png");
+        iceVehicleStorage.saveIceVehicle(fordFiesta);
+
+        IceVehicle fordTaurus = new IceVehicle(30,375,12000,1250,
+                7f,135, twoTwelve,ford,taurus,"https://file.kelleybluebookimages.com/kbb/base/evox/CP/7677/2012-Ford-Taurus-front_7677_032_1785x739_HT_cropped.png");
+        iceVehicleStorage.saveIceVehicle(fordTaurus);
     }
 
 
