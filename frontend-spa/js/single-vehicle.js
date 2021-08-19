@@ -70,11 +70,31 @@ const displaySingleEV = function (ElectricVehicle) {
     carMileage.innerText = "MPGe: " + ElectricVehicle.mpgE;
     imageText.append(carMileage);
 
+    // ---------------------Review section-------------------------
+
+    const reviewSection = document.createElement("div");
+    reviewSection.classList.add("review-section");
+    mainElement.appendChild(reviewSection);
+
+    const reviewAuthorElement = document.createElement("h3");
+    reviewAuthorElement.classList.add("single-vehicle-author");
+    reviewAuthorElement.innerText = "By: " + ElectricVehicle.authorName;
+    reviewSection.append(reviewAuthorElement);
+
+    const center = document.createElement("center");
+    center.innerHTML = '<div id="colored-rectangle"></div>';
+    reviewSection.prepend(center);
+
+    const reviewTextElement = document.createElement("p");
+    reviewTextElement.classList.add("single-review-content");
+    reviewTextElement.innerText = ElectricVehicle.reviewContent;
+    reviewAuthorElement.append(reviewTextElement);
+
     // ---------------------white details section-------------------------
 
     const detailsSection = document.createElement("div");
     detailsSection.classList.add("details-section");
-    mainElement.append(detailsSection);
+    reviewSection.append(detailsSection);
     detailsSection.style.backgroundColor = "white"
 
     const detailsTitle = document.createElement("div");
