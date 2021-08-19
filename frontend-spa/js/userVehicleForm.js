@@ -287,7 +287,7 @@ const displayEVs = function (allEVs, userVehicle, userStateObj, weeklyMiles, use
     userVehicleElement.appendChild(userVehicleStatsDiv)
 
     const userVehicleTitle = document.createElement("h1")
-    userVehicleTitle.innerHTML = 'Comparing:<br> 2012 Ford F-150'
+    userVehicleTitle.innerHTML = 'Comparing:<br>' + userVehicle.makeName + ' ' +  userVehicle.modelName
     userVehicleStatsDiv.appendChild(userVehicleTitle)
 
     const userVehicleMsrp = document.createElement("h2")
