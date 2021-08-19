@@ -280,6 +280,8 @@ const displayEVs = function (allEVs, userVehicle, userStateObj, weeklyMiles, use
 
     const userVehicleElement = document.createElement("div")
     userVehicleElement.classList.add("user-vehicle")
+    userVehicleElement.style.backgroundImage = 'url(' + userVehicle.imageUrl + ')'
+    //userVehicleElement.setAttribute("")
     compareGridElement.appendChild(userVehicleElement)
 
     const userVehicleStatsDiv = document.createElement("div")
