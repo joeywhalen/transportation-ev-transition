@@ -123,9 +123,13 @@ public class iceVehiclePopulator implements CommandLineRunner {
                 7f,120, twoTwelve,ford,f150,"https://images.hgmsites.net/hug/2012-ford-f-150-2wd-supercab-163-xl-side-exterior-view_100373810_h.jpg");
         iceVehicleStorage.saveIceVehicle(userVehicle);
 
-        IceVehicle fordMustang = new IceVehicle(25,325,23000,1500,
+        IceVehicle fordMustang = new IceVehicle(25,325,16000,1500,
                 6.5f,160, twoTwelve,ford,mustang,"https://s.aolcdn.com/commerce/autodata/images/CAC20FOC051B0101.jpg");
         iceVehicleStorage.saveIceVehicle(fordMustang);
+
+        IceVehicle fordExplorer = new IceVehicle(24,275,12000,1500,
+                8.5f,140, twoTwelve,ford,explorer,"https://file.kelleybluebookimages.com/kbb/base/evox/CP/7597/2012-Ford-Explorer-front_7597_032_1812x872_HT_cropped.png");
+        iceVehicleStorage.saveIceVehicle(fordExplorer);
     }
 
 
