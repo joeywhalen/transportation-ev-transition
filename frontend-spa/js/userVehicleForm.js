@@ -617,7 +617,12 @@ const displayComparedEV = function (ElectricVehicle,allEVs, userVehicle, userSta
     standardEquipText.append(driverAssistItem);
 
     const freeOtaItem = document.createElement("li");
-    freeOtaItem.innerText = "Free Over the Air Updates?: " + ElectricVehicle.freeOtaUpdate;
+    let checkFreeOta = ElectricVehicle.freeOtaUpdate;
+    if (checkFreeOta) {
+        freeOtaItem.innerHTML = 'Free Over the Air Updates?: <img src="./images/check.png" height="15" width="15">'
+    } else {
+        freeOtaItem.innerHTML = 'Free Over the Air Updates?: <img src="./images/x.png" height="15" width="15">'
+    }
     standardEquipText.append(freeOtaItem);
 
     const rearCargoItem = document.createElement("li");
@@ -648,7 +653,12 @@ const displayComparedEV = function (ElectricVehicle,allEVs, userVehicle, userSta
     priceDetailsText.append(msrpElement);
 
     const taxCreditElement = document.createElement("li");
-    taxCreditElement.innerText = "Eligible for $7500 Federal Tax Credit?: " + ElectricVehicle.taxCredit;
+    let checkTaxCredit = ElectricVehicle.taxCredit;
+    if (checkTaxCredit) {
+        taxCreditElement.innerHTML = 'Eligible for $7500 Federal Tax Credit?: <img src="./images/check.png" height="15" width="15">'
+    } else {
+        taxCreditElement.innerHTML = 'Eligible for $7500 Federal Tax Credit?: <img src="./images/x.png" height="15" width="15">'
+    }
     priceDetailsText.append(taxCreditElement);
 
     const maintCostElement = document.createElement("li");
