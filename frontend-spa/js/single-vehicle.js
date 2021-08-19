@@ -135,11 +135,10 @@ const displaySingleEV = function (ElectricVehicle) {
     const autonomousElement = document.createElement("li");
     let checkAutonomous = ElectricVehicle.autonomous;
     if (checkAutonomous = true) {
-        autonomousElement.innerHTML = '<br>Autonomous?: <img src="./images/check.png" height="15" width="15">'
+        autonomousElement.innerHTML = 'Autonomous?: <img src="./images/check.png" height="15" width="15">'
     } else {
-        autonomousElement.innerHTML = '<br>Autonomous?: <img src="./images/x.png" height="15" width="15">'
+        autonomousElement.innerHTML = 'Autonomous?: <img src="./images/x.png" height="15" width="15">'
     }
-    
     basicInfoText.append(autonomousElement);
 
     const nhtsaElement = document.createElement("li");
@@ -147,7 +146,12 @@ const displaySingleEV = function (ElectricVehicle) {
     basicInfoText.append(nhtsaElement);
 
     const phoneKeyElement = document.createElement("li");
-    phoneKeyElement.innerText = "Phone as key?: " + ElectricVehicle.phoneKey;
+    let checkPhoneKey = ElectricVehicle.phoneKey;
+    if (checkPhoneKey = true) {
+        phoneKeyElement.innerHTML = 'Phone as key?: <img src="./images/check.png" height="15" width="15">'
+    } else {
+        phoneKeyElement.innerHTML = 'Phone as key?: <img src="./images/x.png" height="15" width="15">'
+    }
     basicInfoText.append(phoneKeyElement);
 
     // standard equipment section -----------
