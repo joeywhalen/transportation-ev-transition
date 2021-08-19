@@ -78,12 +78,27 @@ public class iceVehiclePopulator implements CommandLineRunner {
         Year twoTwenty = new Year(2020);
         yearStorage.saveYear(twoTwenty);
 
-        //FORD MAKE
+        //2012 MAKES
         Make ford = new Make("Ford",twoTwelve);
         makeStorage.saveMake(ford);
-        //HONDA MAKE
+        
         Make honda = new Make("Honda",twoTwelve);
         makeStorage.saveMake(honda);
+
+        Make vw = new Make("Volkswagen",twoTwelve);
+        makeStorage.saveMake(vw);
+
+        Make kia = new Make("Kia",twoTwelve);
+        makeStorage.saveMake(kia);
+
+        Make mazda = new Make("Mazda",twoTwelve);
+        makeStorage.saveMake(mazda);
+
+        Make toyota = new Make("Toyota",twoTwelve);
+        makeStorage.saveMake(toyota);
+
+        Make mitsubishi = new Make("Mitsubishi",twoTwelve);
+        makeStorage.saveMake(mitsubishi);
 
         //Ford Models
         Model f150 = new Model("F-150",ford);
