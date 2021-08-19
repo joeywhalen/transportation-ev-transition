@@ -103,8 +103,16 @@ public class iceVehiclePopulator implements CommandLineRunner {
         //Ford Models
         Model f150 = new Model("F-150",ford);
         Model mustang = new Model("Mustang",ford);
+        Model explorer = new Model("Explorer",ford);
+        Model fiesta = new Model("Fiesta",ford);
+        Model taurus = new Model("Taurus",ford);
+
         modelStorage.saveModel(f150);
         modelStorage.saveModel(mustang);
+        modelStorage.saveModel(explorer);
+        modelStorage.saveModel(fiesta);
+        modelStorage.saveModel(taurus);
+
         //Honda Models
         Model civic = new Model("Civic",honda);
         Model accord = new Model("Accord",honda);
