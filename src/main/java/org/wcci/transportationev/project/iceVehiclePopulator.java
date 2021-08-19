@@ -122,6 +122,10 @@ public class iceVehiclePopulator implements CommandLineRunner {
         IceVehicle userVehicle = new IceVehicle(24,350,24000,1800,
                 7f,120, twoTwelve,ford,f150,"https://images.hgmsites.net/hug/2012-ford-f-150-2wd-supercab-163-xl-side-exterior-view_100373810_h.jpg");
         iceVehicleStorage.saveIceVehicle(userVehicle);
+
+        IceVehicle fordMustang = new IceVehicle(25,325,23000,1500,
+                6.5f,160, twoTwelve,ford,mustang,"https://s.aolcdn.com/commerce/autodata/images/CAC20FOC051B0101.jpg");
+        iceVehicleStorage.saveIceVehicle(fordMustang);
     }
 
 
