@@ -580,7 +580,12 @@ const displayComparedEV = function (ElectricVehicle,allEVs, userVehicle, userSta
     basicInfoText.append(nhtsaElement);
 
     const phoneKeyElement = document.createElement("li");
-    phoneKeyElement.innerText = "Phone as key?: " + ElectricVehicle.phoneKey;
+    let checkPhoneKey = ElectricVehicle.phoneKey;
+    if (checkPhoneKey) {
+        phoneKeyElement.innerHTML = 'Phone as key?: <img src="./images/check.png" height="15" width="15">'
+    } else {
+        phoneKeyElement.innerHTML = 'Phone as key?: <img src="./images/x.png" height="15" width="15">'
+    }
     basicInfoText.append(phoneKeyElement);
 
     // standard equipment section -----------
@@ -603,7 +608,12 @@ const displayComparedEV = function (ElectricVehicle,allEVs, userVehicle, userSta
     standardEquipText.append(seatingItem);
 
     const driverAssistItem = document.createElement("li");
-    driverAssistItem.innerText = "Driver assist?: " + ElectricVehicle.driverAssist;
+    let checkDriverAssist = ElectricVehicle.driverAssist;
+    if (checkDriverAssist) {
+        driverAssistItem.innerHTML = 'Driver assist?: <img src="./images/check.png" height="15" width="15">'
+    } else {
+        driverAssistItem.innerHTML = 'Driver assist?: <img src="./images/x.png" height="15" width="15">'
+    }
     standardEquipText.append(driverAssistItem);
 
     const freeOtaItem = document.createElement("li");
