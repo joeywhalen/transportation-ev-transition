@@ -79,16 +79,16 @@ const displaySingleEV = function (ElectricVehicle) {
     const reviewAuthorElement = document.createElement("h3");
     reviewAuthorElement.classList.add("single-vehicle-author");
     reviewAuthorElement.innerText = "By: " + ElectricVehicle.authorName;
-    reviewSection.append(reviewAuthorElement);
+    reviewSection.appendChild(reviewAuthorElement);
 
     const center = document.createElement("center");
     center.innerHTML = '<div id="colored-rectangle"></div>';
-    reviewSection.prepend(center);
+    reviewSection.appendChild(center);
 
     const reviewTextElement = document.createElement("p");
     reviewTextElement.classList.add("single-review-content");
     reviewTextElement.innerText = ElectricVehicle.reviewContent;
-    reviewAuthorElement.append(reviewTextElement);
+    reviewSection.appendChild(reviewTextElement);
 
     // ---------------------white details section-------------------------
 
