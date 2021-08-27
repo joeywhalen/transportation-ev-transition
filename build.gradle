@@ -8,7 +8,7 @@ jar {
     manifest {
         attributes(
  
-                'Main-Class': 'org.wcci.transportation-ev.ProjectApplication'
+                'Main-Class': 'org.wcci.transportationev.project.ProjectApplication'
         )
     }
 }
