@@ -92,7 +92,7 @@ const displayArticle = function (article) {
         if (articleCommentInput.value !== "") {
             const json = JSON.stringify(articleCommentInput.value);
             const unqoutedJson = json.replace(/\"/g, "");
-            fetch("http://localhost:8080/api/articleTopics/" + article.articleTopicId + "/articles/" + article.id + "/comments", {
+            fetch("/api/articleTopics/" + article.articleTopicId + "/articles/" + article.id + "/comments", {
                 method: "PATCH",
                 headers: {
                     'Content-Type': 'application/json'

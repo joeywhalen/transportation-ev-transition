@@ -7,12 +7,12 @@ import { displaySingleEV } from "./single-vehicle.js";
 
 
 
-fetch("http://localhost:8080/api/ice/states")
+fetch("/api/ice/states")
     .then(response => response.json())
     .then(states => genStates(states))
     .catch(error => console.log(error))
 
-fetch("http://localhost:8080/api/ice/years")
+fetch("/api/ice/years")
     .then(response => response.json())
     .then(years => genYears(years))
     .catch(error => console.log(error))
@@ -54,7 +54,7 @@ submitButton.addEventListener("click", () => {
     const userMakeId = makeSelectElement.getElementsByClassName("make-option")[userMakeIndex].getAttribute("id")
     const userModelId = modelSelectElement.getElementsByClassName("model-option")[userModelIndex].getAttribute("id")
 
-    fetch("http://localhost:8080/api/ice/userVehicle/" + userStateId, {
+    fetch("/api/ice/userVehicle/" + userStateId, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -64,8 +64,8 @@ submitButton.addEventListener("click", () => {
         .then(userState => userStateObj = userState)
         .catch(error => console.log(error))
 
-    // http://localhost:8080/api/ice/userVehicle/{year}/{make}/{model}
-    fetch("http://localhost:8080/api/ice/userVehicle/" + userYearId + "/" + userMakeId + "/" + userModelId, {
+    // /api/ice/userVehicle/{year}/{make}/{model}
+    fetch("/api/ice/userVehicle/" + userYearId + "/" + userMakeId + "/" + userModelId, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -116,7 +116,7 @@ const genYears = function (years) {
         clearChildren(makeSelectElement)
         clearChildren(modelSelectElement)
 
-        fetch("http://localhost:8080/api/ice/years/" + yearSelectElement.value, {
+        fetch("/api/ice/years/" + yearSelectElement.value, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -150,8 +150,8 @@ const genMakes = function (makes) {
     makeSelectElement.addEventListener("change", () => {
 
         let userMake = makeSelectElement.value
-        // http://localhost:8080/api/ice/years/2012/ford
-        fetch("http://localhost:8080/api/ice/years/" + yearSelectElement.value + "/" + userMake.toLowerCase(), {
+        // /api/ice/years/2012/ford
+        fetch("/api/ice/years/" + yearSelectElement.value + "/" + userMake.toLowerCase(), {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -238,9 +238,9 @@ const genUserVehicleComp = function (userVehicle, userStateObj) {
 
 const genEVComparison = function (priceRange, userVehicle, userStateObj, weeklyMiles) {
 
-    console.log("http://localhost:8080/api/ev/charge/" + stateSelectElement.value)
+    console.log("/api/ev/charge/" + stateSelectElement.value)
 
-    fetch("http://localhost:8080/api/ev/charge/" + stateSelectElement.value, {
+    fetch("/api/ev/charge/" + stateSelectElement.value, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -251,7 +251,7 @@ const genEVComparison = function (priceRange, userVehicle, userStateObj, weeklyM
         .catch(error => console.log(error))
 
 
-    fetch("http://localhost:8080/api/electricVehicles/compare/" + priceRange, {
+    fetch("/api/electricVehicles/compare/" + priceRange, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -735,7 +735,7 @@ const displayComparedEV = function (ElectricVehicle,allEVs, userVehicle, userSta
         if (reviewCommentInput.value !== "") {
             const json = JSON.stringify(reviewCommentInput.value);
             const unqoutedJson = json.replace(/\"/g, "");
-            fetch("http://localhost:8080/api/electricVehicles/" + ElectricVehicle.id + "/comments", {
+            fetch("/api/electricVehicles/" + ElectricVehicle.id + "/comments", {
                     method: "PATCH",
                     headers: {
                         'Content-Type': 'application/json'
@@ -757,7 +757,7 @@ const displayComparedEV = function (ElectricVehicle,allEVs, userVehicle, userSta
 
 }
 
-fetch("http://localhost:8080/api/articles")
+fetch("/api/articles")
     .then(response => response.json())
     .then(articles => indexArticles(articles))
     .catch(error => console.log(error))

@@ -14,15 +14,15 @@
 }
 
 /* .parallax-one{
-    background-image: url("/frontend-spa/images/topic1-parallax.png");
+    background-image: url("/images/topic1-parallax.png");
 }
 
 .parallax-two{
-    background-image: url("/frontend-spa/images/topic2-parallax.jpg");
+    background-image: url("/images/topic2-parallax.jpg");
 }
 
 .parallax-three{
-    background-image: url("/frontend-spa/images/topic3-parallax.jpg");
+    background-image: url("/images/topic3-parallax.jpg");
 } */
 
 .article img {
@@ -78,7 +78,7 @@
 .article {
   margin: 2%;
   margin-top: 5%;
-  /* background-image: url("/frontend-spa/images/blog-article1.png"); */
+  /* background-image: url("/images/blog-article1.png"); */
 }
 p {
   color: #fff;
