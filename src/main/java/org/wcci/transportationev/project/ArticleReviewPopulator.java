@@ -21,7 +21,7 @@ public class ArticleReviewPopulator implements CommandLineRunner {
         public void run(String... args) throws Exception {
 
                 ArticleTopic whyTransition = new ArticleTopic("Why We Should Transition To EVs",
-                                "/frontend-spa/images/topic1-parallax.png");
+                                "/images/topic1-parallax.png");
                 articleTopicStorage.saveArticleTopic(whyTransition);
 
                 Article evBenefiits = new Article(whyTransition, "Electric Vehicle Benefits and Considerations",
@@ -50,7 +50,7 @@ public class ArticleReviewPopulator implements CommandLineRunner {
                 articleStorage.saveArticle(checkYourFacts);
 
                 ArticleTopic howToCharge = new ArticleTopic("How To Charge At Home And On The Road",
-                                "/frontend-spa/images/topic2-parallax.jpg");
+                                "/images/topic2-parallax.jpg");
                 articleTopicStorage.saveArticleTopic(howToCharge);
 
                 Article chargeAtHome = new Article(howToCharge, "What you need to charge at home.", "Rick Dalton",
@@ -75,7 +75,7 @@ public class ArticleReviewPopulator implements CommandLineRunner {
                 articleStorage.saveArticle(chargeOnTheRoad);
 
                 ArticleTopic factFromFiction = new ArticleTopic("Electric Vehicles - Separating Fact From Fiction",
-                                "/frontend-spa/images/topic3-parallax.jpg");
+                                "/images/topic3-parallax.jpg");
                 articleTopicStorage.saveArticleTopic(factFromFiction);
 
                 Article commonMyths = new Article(factFromFiction, "5 common Electric Vehicle myths", "Billy Crash",
