@@ -78,18 +78,109 @@ public class iceVehiclePopulator implements CommandLineRunner {
                 Year twoTwenty = new Year(2020);
                 yearStorage.saveYear(twoTwenty);
 
+<<<<<<< HEAD
                 // 2012 MAKES
                 Make ford = new Make("Ford", twoTwelve);
                 makeStorage.saveMake(ford);
 
                 Make honda = new Make("Honda", twoTwelve);
                 makeStorage.saveMake(honda);
+=======
+        // Acura Models
+        Model mdx4wd = new Model("MDX 4WD", acura2016);
+        modelStorage.saveModel(mdx4wd);
+
+        // Audi Models
+        Model a6 = new Model("A6", audi2018);
+        modelStorage.saveModel(a6);
+
+        // BMW Models
+        Model five30i = new Model("530i", bmw2017);
+        modelStorage.saveModel(five30i);
+
+        // Cadillac Models
+        Model ctsSedanAwd = new Model("CTS Sedan AWD", cadillac2015);
+        modelStorage.saveModel(ctsSedanAwd);
+
+        // Chevrolet Models
+        Model camaro = new Model("Camaro", chevrolet2014);
+        modelStorage.saveModel(camaro);
+
+        // Dodge Models
+        Model challenger = new Model("Challenger", dodge2013);
+        modelStorage.saveModel(challenger);
+
+        //Ford Models
+        Model f150 = new Model("F-150",ford);
+        Model mustang = new Model("Mustang",ford);
+        Model explorer = new Model("Explorer",ford);
+        Model fiesta = new Model("Fiesta",ford);
+        Model taurus = new Model("Taurus",ford);
+        Model fusion = new Model("Fusion",ford2018);
+        Model focus = new Model("Focus", ford2018);
+        Model escape = new Model("Escape", ford2018);
+
+        modelStorage.saveModel(f150);
+        modelStorage.saveModel(mustang);
+        modelStorage.saveModel(explorer);
+        modelStorage.saveModel(fiesta);
+        modelStorage.saveModel(taurus);
+        modelStorage.saveModel(fusion);
+        modelStorage.saveModel(focus);
+        modelStorage.saveModel(escape);
+
+        // Genesis Models
+        Model g80Awd = new Model("G80 AWD", genesis2017);
+        modelStorage.saveModel(g80Awd);
+
+        // GMC Models
+        Model terrainAwd = new Model("Terrain AWD", gmc2018);
+        modelStorage.saveModel(terrainAwd);
+>>>>>>> 345bfe2 (Finished adding Models)
 
                 Make vw = new Make("Volkswagen", twoTwelve);
                 makeStorage.saveMake(vw);
 
+<<<<<<< HEAD
                 Make kia = new Make("Kia", twoTwelve);
                 makeStorage.saveMake(kia);
+=======
+        // Hyundai Models
+        Model konaAwd = new Model("Kona AWD", hyundai2019);
+        modelStorage.saveModel(konaAwd);
+
+        // Jaguar Models
+        Model fTypeCoupe = new Model("F-Type Coupe", jaguar2016);
+        modelStorage.saveModel(fTypeCoupe);
+
+        // Jeep Models
+        Model wrangler4Wd = new Model("Wrangler 4WD", jeep2015);
+        modelStorage.saveModel(wrangler4Wd);
+
+        // Kia Models
+        Model niro = new Model("Niro", kia2019);
+        modelStorage.saveModel(niro);
+
+        // Lexus Models
+        Model rx350Awd = new Model("RX350 AWD", lexus2014);
+        modelStorage.saveModel(rx350Awd);
+
+        // Lincoln Models
+        Model mksAwd = new Model("MKS AWD", lincoln2016);
+        modelStorage.saveModel(mksAwd);
+
+        // Mazda Models
+        Model cx54Wd = new Model("CX-5 4WD", mazda2017);
+        modelStorage.saveModel(cx54Wd);
+
+        // Mercedes-Benz Models
+        Model cls550 = new Model("CLS550", mercedes2013);
+        modelStorage.saveModel(cls550);
+
+        IceVehicle userVehicle = new IceVehicle(24,350,24000,1800,
+                7f,120, twoTwelve,ford,f150,"https://images.hgmsites.net/hug/2012-ford-f-150-2wd-supercab-163-xl-side-exterior-view_100373810_h.jpg");
+        iceVehicleStorage.saveIceVehicle(userVehicle);
+>>>>>>> 345bfe2 (Finished adding Models)
 
                 Make mazda = new Make("Mazda", twoTwelve);
                 makeStorage.saveMake(mazda);
