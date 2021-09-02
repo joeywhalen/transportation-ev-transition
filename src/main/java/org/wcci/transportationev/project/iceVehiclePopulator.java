@@ -142,8 +142,23 @@ public class iceVehiclePopulator implements CommandLineRunner {
         makeStorage.saveMake(mazda2017);
 
         //2018 MAKES
+        Make audi2018 = new Make("Audi", twoEighteen);
+        makeStorage.saveMake(audi2018);
+
         Make ford2018 = new Make("Ford",twoEighteen);
         makeStorage.saveMake(ford2018);
+
+        Make gmc2018 = new Make("GMC", twoEighteen);
+        makeStorage.saveMake(gmc2018);
+
+        // 2019 Makes
+        Make hyundai2019 = new Make("Hyundai", twoNineteen);
+        makeStorage.saveMake(hyundai2019);
+
+        Make kia2019 = new Make("Kia", twoNineteen);
+        makeStorage.saveMake(kia2019);
+
+        
 
         //Ford Models
         Model f150 = new Model("F-150",ford);
