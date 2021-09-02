@@ -100,6 +100,47 @@ public class iceVehiclePopulator implements CommandLineRunner {
         Make mitsubishi = new Make("Mitsubishi",twoTwelve);
         makeStorage.saveMake(mitsubishi);
 
+        // 2013 Makes
+        Make dodge2013 = new Make("Dodge", twoThirteen);
+        makeStorage.saveMake(dodge2013);
+
+        Make mercedes2013 = new Make("Mercedes-Benz", twoThirteen);
+        makeStorage.saveMake(mercedes2013);
+
+        // 2014 Makes
+        Make chevrolet2014 = new Make("Chevrolet", twoFourteen);
+        makeStorage.saveMake(chevrolet2014);
+
+        Make lexus2014 = new Make("Lexus", twoFourteen);
+        makeStorage.saveMake(lexus2014);
+
+        // 2015 Makes
+        Make cadillac2015 = new Make("Cadillac", twoFifteen);
+        makeStorage.saveMake(cadillac2015);
+
+        Make jeep2015 = new Make("Jeep", twoFifteen);
+        makeStorage.saveMake(jeep2015);
+
+        // 2016 Makes
+        Make acura2016 = new Make("Acura", twoSixteen);
+        makeStorage.saveMake(acura2016);
+
+        Make jaguar2016 = new Make("Jaguar", twoSixteen);
+        makeStorage.saveMake(jaguar2016);
+
+        Make lincoln2016 = new Make("Lincoln", twoSixteen);
+        makeStorage.saveMake(lincoln2016);
+
+        // 2017 Makes
+        Make bmw2017 = new Make("BMW", twoSeventeen);
+        makeStorage.saveMake(bmw2017);
+
+        Make genesis2017 = new Make("Genesis", twoSeventeen);
+        makeStorage.saveMake(genesis2017);
+
+        Make mazda2017 = new Make("Mazda", twoSeventeen);
+        makeStorage.saveMake(mazda2017);
+
         //2018 MAKES
         Make ford2018 = new Make("Ford",twoEighteen);
         makeStorage.saveMake(ford2018);
